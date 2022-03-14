@@ -1,0 +1,226 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="equipe">
+            <h2><span jhiTranslate="iotaOrignAdminApp.equipe.detail.title">Equipe</span> {{ equipe.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.titreFr">Titre Fr</span></dt>
+                <dd>
+                    <span>{{ equipe.titreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.titreEn">Titre En</span></dt>
+                <dd>
+                    <span>{{ equipe.titreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.titreGer">Titre Ger</span></dt>
+                <dd>
+                    <span>{{ equipe.titreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.titreSw">Titre Sw</span></dt>
+                <dd>
+                    <span>{{ equipe.titreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.souTitreFr">Sou Titre Fr</span></dt>
+                <dd>
+                    <span>{{ equipe.souTitreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.souTitreEn">Sou Titre En</span></dt>
+                <dd>
+                    <span>{{ equipe.souTitreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.souTitreGer">Sou Titre Ger</span></dt>
+                <dd>
+                    <span>{{ equipe.souTitreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.souTitreSw">Sou Titre Sw</span></dt>
+                <dd>
+                    <span>{{ equipe.souTitreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.nom1">Nom 1</span></dt>
+                <dd>
+                    <span>{{ equipe.nom1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.nom2">Nom 2</span></dt>
+                <dd>
+                    <span>{{ equipe.nom2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.nom3">Nom 3</span></dt>
+                <dd>
+                    <span>{{ equipe.nom3 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.nom4">Nom 4</span></dt>
+                <dd>
+                    <span>{{ equipe.nom4 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.nom5">Nom 5</span></dt>
+                <dd>
+                    <span>{{ equipe.nom5 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.nom6">Nom 6</span></dt>
+                <dd>
+                    <span>{{ equipe.nom6 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.nom7">Nom 7</span></dt>
+                <dd>
+                    <span>{{ equipe.nom7 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.nom8">Nom 8</span></dt>
+                <dd>
+                    <span>{{ equipe.nom8 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.prenom1">Prenom 1</span></dt>
+                <dd>
+                    <span>{{ equipe.prenom1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.prenom2">Prenom 2</span></dt>
+                <dd>
+                    <span>{{ equipe.prenom2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.prenom3">Prenom 3</span></dt>
+                <dd>
+                    <span>{{ equipe.prenom3 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.prenom4">Prenom 4</span></dt>
+                <dd>
+                    <span>{{ equipe.prenom4 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.prenom5">Prenom 5</span></dt>
+                <dd>
+                    <span>{{ equipe.prenom5 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.prenom6">Prenom 6</span></dt>
+                <dd>
+                    <span>{{ equipe.prenom6 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.prenom7">Prenom 7</span></dt>
+                <dd>
+                    <span>{{ equipe.prenom7 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.prenom8">Prenom 8</span></dt>
+                <dd>
+                    <span>{{ equipe.prenom8 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.qualite1">Qualite 1</span></dt>
+                <dd>
+                    <span>{{ equipe.qualite1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.qualite2">Qualite 2</span></dt>
+                <dd>
+                    <span>{{ equipe.qualite2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.qualite3">Qualite 3</span></dt>
+                <dd>
+                    <span>{{ equipe.qualite3 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.qualite4">Qualite 4</span></dt>
+                <dd>
+                    <span>{{ equipe.qualite4 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.qualite5">Qualite 5</span></dt>
+                <dd>
+                    <span>{{ equipe.qualite5 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.qualite6">Qualite 6</span></dt>
+                <dd>
+                    <span>{{ equipe.qualite6 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.qualite7">Qualite 7</span></dt>
+                <dd>
+                    <span>{{ equipe.qualite7 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.qualite8">Qualite 8</span></dt>
+                <dd>
+                    <span>{{ equipe.qualite8 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.image1">Image 1</span></dt>
+                <dd>
+                    <div *ngIf="equipe.image1">
+                        <a (click)="openFile(equipe?.image1ContentType!, equipe?.image1)">
+                            <img [src]="'data:' + equipe.image1ContentType + ';base64,' + equipe.image1" style="max-width: 100%;" alt="equipe image"/>
+                        </a>
+                        {{ equipe.image1ContentType }}, {{ byteSize(equipe.image1) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.image2">Image 2</span></dt>
+                <dd>
+                    <div *ngIf="equipe.image2">
+                        <a (click)="openFile(equipe?.image2ContentType!, equipe?.image2)">
+                            <img [src]="'data:' + equipe.image2ContentType + ';base64,' + equipe.image2" style="max-width: 100%;" alt="equipe image"/>
+                        </a>
+                        {{ equipe.image2ContentType }}, {{ byteSize(equipe.image2) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.image3">Image 3</span></dt>
+                <dd>
+                    <div *ngIf="equipe.image3">
+                        <a (click)="openFile(equipe?.image3ContentType!, equipe?.image3)">
+                            <img [src]="'data:' + equipe.image3ContentType + ';base64,' + equipe.image3" style="max-width: 100%;" alt="equipe image"/>
+                        </a>
+                        {{ equipe.image3ContentType }}, {{ byteSize(equipe.image3) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.image4">Image 4</span></dt>
+                <dd>
+                    <div *ngIf="equipe.image4">
+                        <a (click)="openFile(equipe?.image4ContentType!, equipe?.image4)">
+                            <img [src]="'data:' + equipe.image4ContentType + ';base64,' + equipe.image4" style="max-width: 100%;" alt="equipe image"/>
+                        </a>
+                        {{ equipe.image4ContentType }}, {{ byteSize(equipe.image4) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.image5">Image 5</span></dt>
+                <dd>
+                    <div *ngIf="equipe.image5">
+                        <a (click)="openFile(equipe?.image5ContentType!, equipe?.image5)">
+                            <img [src]="'data:' + equipe.image5ContentType + ';base64,' + equipe.image5" style="max-width: 100%;" alt="equipe image"/>
+                        </a>
+                        {{ equipe.image5ContentType }}, {{ byteSize(equipe.image5) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.image6">Image 6</span></dt>
+                <dd>
+                    <div *ngIf="equipe.image6">
+                        <a (click)="openFile(equipe?.image6ContentType!, equipe?.image6)">
+                            <img [src]="'data:' + equipe.image6ContentType + ';base64,' + equipe.image6" style="max-width: 100%;" alt="equipe image"/>
+                        </a>
+                        {{ equipe.image6ContentType }}, {{ byteSize(equipe.image6) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.image7">Image 7</span></dt>
+                <dd>
+                    <div *ngIf="equipe.image7">
+                        <a (click)="openFile(equipe?.image7ContentType!, equipe?.image7)">
+                            <img [src]="'data:' + equipe.image7ContentType + ';base64,' + equipe.image7" style="max-width: 100%;" alt="equipe image"/>
+                        </a>
+                        {{ equipe.image7ContentType }}, {{ byteSize(equipe.image7) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.equipe.image8">Image 8</span></dt>
+                <dd>
+                    <div *ngIf="equipe.image8">
+                        <a (click)="openFile(equipe?.image8ContentType!, equipe?.image8)">
+                            <img [src]="'data:' + equipe.image8ContentType + ';base64,' + equipe.image8" style="max-width: 100%;" alt="equipe image"/>
+                        </a>
+                        {{ equipe.image8ContentType }}, {{ byteSize(equipe.image8) }}
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/equipe', equipe.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

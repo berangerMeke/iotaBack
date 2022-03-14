@@ -1,0 +1,232 @@
+<div>
+    <h2 id="page-heading">
+        <!-- <span jhiTranslate="iotaOrignAdminApp.avantages.home.title">Avantages</span> -->
+        <span>Benefits  Section</span>&nbsp;&nbsp; | &nbsp;&nbsp;
+        <span style="color: rgb(82, 82, 82); font-size:60%">Cliquez sur l'élément que vous souhaitez mettre à jour.</span>
+
+        <button *ngIf="avantages.length == 0"  id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-avantages" [routerLink]="['/avantages/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.avantages.home.createLabel">
+            Create a new Avantages
+            </span>
+        </button>
+    </h2>
+
+    <hr>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="avantages?.length === 0">
+        <span jhiTranslate="iotaOrignAdminApp.avantages.home.notFound">No avantages found</span>
+    </div>
+<!-- 
+    <div class="table-responsive" id="entities" *ngIf="avantages?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreFr"><span jhiTranslate="iotaOrignAdminApp.avantages.titreFr">Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreEn"><span jhiTranslate="iotaOrignAdminApp.avantages.titreEn">Titre En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreGer"><span jhiTranslate="iotaOrignAdminApp.avantages.titreGer">Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSw"><span jhiTranslate="iotaOrignAdminApp.avantages.titreSw">Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreFr"><span jhiTranslate="iotaOrignAdminApp.avantages.sousTitreFr">Sous Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreEn"><span jhiTranslate="iotaOrignAdminApp.avantages.sousTitreEn">Sous Titre En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreGer"><span jhiTranslate="iotaOrignAdminApp.avantages.sousTitreGer">Sous Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreSw"><span jhiTranslate="iotaOrignAdminApp.avantages.sousTitreSw">Sous Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe1FR"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe1FR">Text Paragraphe 1 FR</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe1En"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe1En">Text Paragraphe 1 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe1Ger"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe1Ger">Text Paragraphe 1 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe1Sw"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe1Sw">Text Paragraphe 1 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe2Fr"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe2Fr">Text Paragraphe 2 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe2En"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe2En">Text Paragraphe 2 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe2Ger"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe2Ger">Text Paragraphe 2 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe2Sw"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe2Sw">Text Paragraphe 2 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe3FR"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe3FR">Text Paragraphe 3 FR</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe3En"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe3En">Text Paragraphe 3 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe3Ger"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe3Ger">Text Paragraphe 3 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe3Sw"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe3Sw">Text Paragraphe 3 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe4Fr"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe4Fr">Text Paragraphe 4 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe4En"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe4En">Text Paragraphe 4 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe4Ger"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe4Ger">Text Paragraphe 4 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe4Sw"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe4Sw">Text Paragraphe 4 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe5Fr"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe5Fr">Text Paragraphe 5 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe5En"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe5En">Text Paragraphe 5 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe5Ger"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe5Ger">Text Paragraphe 5 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe5Sw"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe5Sw">Text Paragraphe 5 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe6Fr"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe6Fr">Text Paragraphe 6 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe6En"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe6En">Text Paragraphe 6 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe6Ger"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe6Ger">Text Paragraphe 6 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe6Sw"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe6Sw">Text Paragraphe 6 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe7Fr"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe7Fr">Text Paragraphe 7 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe7En"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe7En">Text Paragraphe 7 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe7Ger"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe7Ger">Text Paragraphe 7 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe7Sw"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe7Sw">Text Paragraphe 7 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe8Fr"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe8Fr">Text Paragraphe 8 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe8En"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe8En">Text Paragraphe 8 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe8Ger"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe8Ger">Text Paragraphe 8 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe8Sw"><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe8Sw">Text Paragraphe 8 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="image"><span jhiTranslate="iotaOrignAdminApp.avantages.image">Image</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let avantages of avantages ;trackBy: trackId">
+                    <td><a [routerLink]="['/avantages', avantages.id, 'view']">{{ avantages.id }}</a></td>
+                    <td>{{ avantages.titreFr }}</td>
+                    <td>{{ avantages.titreEn }}</td>
+                    <td>{{ avantages.titreGer }}</td>
+                    <td>{{ avantages.titreSw }}</td>
+                    <td>{{ avantages.sousTitreFr }}</td>
+                    <td>{{ avantages.sousTitreEn }}</td>
+                    <td>{{ avantages.sousTitreGer }}</td>
+                    <td>{{ avantages.sousTitreSw }}</td>
+                    <td>{{ avantages.textParagraphe1FR }}</td>
+                    <td>{{ avantages.textParagraphe1En }}</td>
+                    <td>{{ avantages.textParagraphe1Ger }}</td>
+                    <td>{{ avantages.textParagraphe1Sw }}</td>
+                    <td>{{ avantages.textParagraphe2Fr }}</td>
+                    <td>{{ avantages.textParagraphe2En }}</td>
+                    <td>{{ avantages.textParagraphe2Ger }}</td>
+                    <td>{{ avantages.textParagraphe2Sw }}</td>
+                    <td>{{ avantages.textParagraphe3FR }}</td>
+                    <td>{{ avantages.textParagraphe3En }}</td>
+                    <td>{{ avantages.textParagraphe3Ger }}</td>
+                    <td>{{ avantages.textParagraphe3Sw }}</td>
+                    <td>{{ avantages.textParagraphe4Fr }}</td>
+                    <td>{{ avantages.textParagraphe4En }}</td>
+                    <td>{{ avantages.textParagraphe4Ger }}</td>
+                    <td>{{ avantages.textParagraphe4Sw }}</td>
+                    <td>{{ avantages.textParagraphe5Fr }}</td>
+                    <td>{{ avantages.textParagraphe5En }}</td>
+                    <td>{{ avantages.textParagraphe5Ger }}</td>
+                    <td>{{ avantages.textParagraphe5Sw }}</td>
+                    <td>{{ avantages.textParagraphe6Fr }}</td>
+                    <td>{{ avantages.textParagraphe6En }}</td>
+                    <td>{{ avantages.textParagraphe6Ger }}</td>
+                    <td>{{ avantages.textParagraphe6Sw }}</td>
+                    <td>{{ avantages.textParagraphe7Fr }}</td>
+                    <td>{{ avantages.textParagraphe7En }}</td>
+                    <td>{{ avantages.textParagraphe7Ger }}</td>
+                    <td>{{ avantages.textParagraphe7Sw }}</td>
+                    <td>{{ avantages.textParagraphe8Fr }}</td>
+                    <td>{{ avantages.textParagraphe8En }}</td>
+                    <td>{{ avantages.textParagraphe8Ger }}</td>
+                    <td>{{ avantages.textParagraphe8Sw }}</td>
+                    <td>
+                        <a *ngIf="avantages.image" (click)="openFile(avantages.imageContentType, avantages.image)">
+                            <img [src]="'data:' + avantages.imageContentType + ';base64,' + avantages.image" style="max-height: 30px;" alt="avantages image"/>
+                        </a>
+                        <span *ngIf="avantages.image">{{ avantages.imageContentType }}, {{ byteSize(avantages.image) }}</span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/avantages', avantages.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/avantages', avantages.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(avantages)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->
+
+
+
+
+
+<div>
+
+        <!-- START THE SECTION 4 : THE BENEFITS  -->
+        <section id="benefits" class="benefits display-4">
+            <div class="container">
+                <div class="row infos d-flex align-items-center">
+                    <div class="col-md-6 infos--content">
+                        <h1 *ngIf="avantages[0]"
+                        class="display-3  fw-bold display-4--title anim-elt-11 title-style"
+                        (click)="update('titre')">
+                            <a [routerLink]="['/avantages', avantages[0].id, 'edit']">
+                                {{ avantages[0].titreFr }}
+                            </a> 
+                        </h1>
+
+                        <h4 *ngIf="avantages[0]"
+                        (click)="update('soustitre')">
+                            <a [routerLink]="['/avantages', avantages[0].id, 'edit']" 
+                            class="sousTitre-style">
+                                {{ avantages[0].sousTitreFr }}
+                            </a> 
+                        </h4>
+
+
+                        <p class="display-4--description">
+                            <ul class="benefits__list">
+                                <li *ngIf="avantages[0]" class="anim-elt-13">
+                                    <span class="item-icon"><i class="fas fa-check"></i></span>
+                                    <a class="display-4--description anim-elt-10 text-vide"
+                                    (click)="update('paragraphe1')"
+                                    [routerLink]="['/avantages', avantages[0].id, 'edit']">
+                                        {{ avantages[0].textParagraphe1FR }}
+                                    </a>
+                                </li>
+                                <li *ngIf="avantages[0]" class="anim-elt-14">
+                                    <span class="item-icon"><i class="fas fa-check"></i></span>
+                                    <a class="display-4--description anim-elt-10 text-vide"
+                                    (click)="update('paragraphe2')"
+                                    [routerLink]="['/avantages', avantages[0].id, 'edit']">
+                                        {{ avantages[0].textParagraphe2Fr }} 
+                                    </a>
+                                </li>
+                                <li class="anim-elt-15">
+                                    <span class="item-icon"><i class="fas fa-check"></i></span>
+                                    <a class="display-4--description anim-elt-10 text-vide"
+                                    (click)="update('paragraphe3')"
+                                    [routerLink]="['/avantages', avantages[0].id, 'edit']">
+                                        {{ avantages[0].textParagraphe3FR }} 
+                                    </a>
+                                </li>
+                                <li class="anim-elt-16">
+                                    <span class="item-icon"><i class="fas fa-check"></i></span>
+                                    <a class="display-4--description anim-elt-10 text-vide"
+                                    (click)="update('paragraphe4')"
+                                    [routerLink]="['/avantages', avantages[0].id, 'edit']">
+                                        {{ avantages[0].textParagraphe4Fr }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="col-md-6 display-4--img-box text-end">
+                            <a *ngIf="avantages[0]" class="brand d-inline-block mb-2 anim-elt-1" 
+                            (click)="update('image')"
+                            [routerLink]="['/avantages', avantages[0].id, 'edit']" 
+                            >
+                                <a *ngIf="avantages[0].image">
+                                    <img [src]="'data:' + avantages[0].imageContentType + ';base64,' + avantages[0].image" style="max-height: 390px;" alt="accueil image"/>
+                                </a>
+                            </a>                                    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+</div>

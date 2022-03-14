@@ -1,0 +1,195 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="avantages">
+            <h2><span jhiTranslate="iotaOrignAdminApp.avantages.detail.title">Avantages</span> {{ avantages.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.titreFr">Titre Fr</span></dt>
+                <dd>
+                    <span>{{ avantages.titreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.titreEn">Titre En</span></dt>
+                <dd>
+                    <span>{{ avantages.titreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.titreGer">Titre Ger</span></dt>
+                <dd>
+                    <span>{{ avantages.titreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.titreSw">Titre Sw</span></dt>
+                <dd>
+                    <span>{{ avantages.titreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.sousTitreFr">Sous Titre Fr</span></dt>
+                <dd>
+                    <span>{{ avantages.sousTitreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.sousTitreEn">Sous Titre En</span></dt>
+                <dd>
+                    <span>{{ avantages.sousTitreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.sousTitreGer">Sous Titre Ger</span></dt>
+                <dd>
+                    <span>{{ avantages.sousTitreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.sousTitreSw">Sous Titre Sw</span></dt>
+                <dd>
+                    <span>{{ avantages.sousTitreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe1FR">Text Paragraphe 1 FR</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe1FR }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe1En">Text Paragraphe 1 En</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe1En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe1Ger">Text Paragraphe 1 Ger</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe1Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe1Sw">Text Paragraphe 1 Sw</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe1Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe2Fr">Text Paragraphe 2 Fr</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe2Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe2En">Text Paragraphe 2 En</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe2En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe2Ger">Text Paragraphe 2 Ger</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe2Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe2Sw">Text Paragraphe 2 Sw</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe2Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe3FR">Text Paragraphe 3 FR</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe3FR }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe3En">Text Paragraphe 3 En</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe3En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe3Ger">Text Paragraphe 3 Ger</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe3Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe3Sw">Text Paragraphe 3 Sw</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe3Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe4Fr">Text Paragraphe 4 Fr</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe4Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe4En">Text Paragraphe 4 En</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe4En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe4Ger">Text Paragraphe 4 Ger</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe4Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe4Sw">Text Paragraphe 4 Sw</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe4Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe5Fr">Text Paragraphe 5 Fr</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe5Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe5En">Text Paragraphe 5 En</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe5En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe5Ger">Text Paragraphe 5 Ger</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe5Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe5Sw">Text Paragraphe 5 Sw</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe5Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe6Fr">Text Paragraphe 6 Fr</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe6Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe6En">Text Paragraphe 6 En</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe6En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe6Ger">Text Paragraphe 6 Ger</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe6Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe6Sw">Text Paragraphe 6 Sw</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe6Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe7Fr">Text Paragraphe 7 Fr</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe7Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe7En">Text Paragraphe 7 En</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe7En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe7Ger">Text Paragraphe 7 Ger</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe7Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe7Sw">Text Paragraphe 7 Sw</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe7Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe8Fr">Text Paragraphe 8 Fr</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe8Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe8En">Text Paragraphe 8 En</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe8En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe8Ger">Text Paragraphe 8 Ger</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe8Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe8Sw">Text Paragraphe 8 Sw</span></dt>
+                <dd>
+                    <span>{{ avantages.textParagraphe8Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.avantages.image">Image</span></dt>
+                <dd>
+                    <div *ngIf="avantages.image">
+                        <a (click)="openFile(avantages?.imageContentType!, avantages?.image)">
+                            <img [src]="'data:' + avantages.imageContentType + ';base64,' + avantages.image" style="max-width: 100%;" alt="avantages image"/>
+                        </a>
+                        {{ avantages.imageContentType }}, {{ byteSize(avantages.image) }}
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/avantages', avantages.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

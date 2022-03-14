@@ -1,0 +1,368 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "titreFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion1Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion1En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion1Gr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion1Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion2Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion2En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion2Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion2Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion3Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion3En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion3Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion3Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion4Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion4En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion4Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion4Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion5Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion5En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion5Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion5Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion6Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion6En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion6Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion6Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion7Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion7En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion7Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion7Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion8Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion8En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion8Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion8Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion9Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion9En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion9Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion9Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion10Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion10En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion10Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreAccordion10Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion1Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion1En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion1Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion1Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion2Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion2En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion2Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion2Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion3Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion3En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion3Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion3Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion4Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion4En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion4Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion4Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion5Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion5En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion5Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion5Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion6Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion6En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion6Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion6Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion7Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion7En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion7Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion7Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion8Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion8En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion8Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion8Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion9Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion9En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion9Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion9Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion10Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion10En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion10Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAccordion10Sw",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20220310005112",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "faqs",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}

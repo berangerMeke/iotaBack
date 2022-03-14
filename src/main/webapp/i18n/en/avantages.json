@@ -1,0 +1,62 @@
+{
+  "iotaOrignAdminApp": {
+    "avantages": {
+      "home": {
+        "title": "Avantages",
+        "createLabel": "Create a new Avantages",
+        "createOrEditLabel": "Create or edit a Avantages",
+        "notFound": "No Avantages found"
+      },
+      "created": "A new Avantages is created with identifier {{ param }}",
+      "updated": "A Avantages is updated with identifier {{ param }}",
+      "deleted": "A Avantages is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Avantages {{ id }}?"
+      },
+      "detail": {
+        "title": "Avantages"
+      },
+      "titreFr": "Titre Fr",
+      "titreEn": "Titre En",
+      "titreGer": "Titre Ger",
+      "titreSw": "Titre Sw",
+      "sousTitreFr": "Sous Titre Fr",
+      "sousTitreEn": "Sous Titre En",
+      "sousTitreGer": "Sous Titre Ger",
+      "sousTitreSw": "Sous Titre Sw",
+      "textParagraphe1FR": "Text Paragraphe 1 FR",
+      "textParagraphe1En": "Text Paragraphe 1 En",
+      "textParagraphe1Ger": "Text Paragraphe 1 Ger",
+      "textParagraphe1Sw": "Text Paragraphe 1 Sw",
+      "textParagraphe2Fr": "Text Paragraphe 2 Fr",
+      "textParagraphe2En": "Text Paragraphe 2 En",
+      "textParagraphe2Ger": "Text Paragraphe 2 Ger",
+      "textParagraphe2Sw": "Text Paragraphe 2 Sw",
+      "textParagraphe3FR": "Text Paragraphe 3 FR",
+      "textParagraphe3En": "Text Paragraphe 3 En",
+      "textParagraphe3Ger": "Text Paragraphe 3 Ger",
+      "textParagraphe3Sw": "Text Paragraphe 3 Sw",
+      "textParagraphe4Fr": "Text Paragraphe 4 Fr",
+      "textParagraphe4En": "Text Paragraphe 4 En",
+      "textParagraphe4Ger": "Text Paragraphe 4 Ger",
+      "textParagraphe4Sw": "Text Paragraphe 4 Sw",
+      "textParagraphe5Fr": "Text Paragraphe 5 Fr",
+      "textParagraphe5En": "Text Paragraphe 5 En",
+      "textParagraphe5Ger": "Text Paragraphe 5 Ger",
+      "textParagraphe5Sw": "Text Paragraphe 5 Sw",
+      "textParagraphe6Fr": "Text Paragraphe 6 Fr",
+      "textParagraphe6En": "Text Paragraphe 6 En",
+      "textParagraphe6Ger": "Text Paragraphe 6 Ger",
+      "textParagraphe6Sw": "Text Paragraphe 6 Sw",
+      "textParagraphe7Fr": "Text Paragraphe 7 Fr",
+      "textParagraphe7En": "Text Paragraphe 7 En",
+      "textParagraphe7Ger": "Text Paragraphe 7 Ger",
+      "textParagraphe7Sw": "Text Paragraphe 7 Sw",
+      "textParagraphe8Fr": "Text Paragraphe 8 Fr",
+      "textParagraphe8En": "Text Paragraphe 8 En",
+      "textParagraphe8Ger": "Text Paragraphe 8 Ger",
+      "textParagraphe8Sw": "Text Paragraphe 8 Sw",
+      "image": "Image"
+    }
+  }
+}

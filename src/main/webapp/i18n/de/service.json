@@ -1,0 +1,50 @@
+{
+  "iotaOrignAdminApp": {
+    "service": {
+      "home": {
+        "title": "Services",
+        "createLabel": "Service erstellen",
+        "createOrEditLabel": "Service erstellen oder bearbeiten",
+        "notFound": "No Services found"
+      },
+      "created": "Service erstellt mit ID {{ param }}",
+      "updated": "Service aktualisiert mit ID {{ param }}",
+      "deleted": "Service gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Service {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Service"
+      },
+      "titreFr": "Titre Fr",
+      "titreEn": "Titre En",
+      "titreGer": "Titre Ger",
+      "titreSw": "Titre Sw",
+      "sousTitreFr": "Sous Titre Fr",
+      "sousTitreEn": "Sous Titre En",
+      "sousTitreGer": "Sous Titre Ger",
+      "sousTitreSw": "Sous Titre Sw",
+      "textParagraphe1Fr": "Text Paragraphe 1 Fr",
+      "textParagraphe1En": "Text Paragraphe 1 En",
+      "textParagraphe1Ger": "Text Paragraphe 1 Ger",
+      "textParagraphe1Sw": "Text Paragraphe 1 Sw",
+      "textParagraphe2Fr": "Text Paragraphe 2 Fr",
+      "textParagraphe2En": "Text Paragraphe 2 En",
+      "textParagraphe2Ger": "Text Paragraphe 2 Ger",
+      "textParagraphe2Sw": "Text Paragraphe 2 Sw",
+      "textParagraphe3Fr": "Text Paragraphe 3 Fr",
+      "textParagraphe3En": "Text Paragraphe 3 En",
+      "textParagraphe3Ger": "Text Paragraphe 3 Ger",
+      "textParagraphe3Sw": "Text Paragraphe 3 Sw",
+      "textParagraphe4Fr": "Text Paragraphe 4 Fr",
+      "textParagraphe4En": "Text Paragraphe 4 En",
+      "textParagraphe4Ger": "Text Paragraphe 4 Ger",
+      "textParagraphe4Sw": "Text Paragraphe 4 Sw",
+      "textParagraphe5Fr": "Text Paragraphe 5 Fr",
+      "textParagraphe5En": "Text Paragraphe 5 En",
+      "textParagraphe5Ger": "Text Paragraphe 5 Ger",
+      "textParagraphe5Sw": "Text Paragraphe 5 Sw",
+      "image": "Image"
+    }
+  }
+}

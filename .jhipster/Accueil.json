@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "titreFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "changelogDate": "20220307183359",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "accueil",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}

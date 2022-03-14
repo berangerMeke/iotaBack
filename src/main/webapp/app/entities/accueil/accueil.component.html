@@ -1,0 +1,152 @@
+<div>
+    <h2 id="page-heading">
+        <!-- <span jhiTranslate="iotaOrignAdminApp.accueil.home.title">Accueils</span> -->
+        <span>Intro Section</span>&nbsp;&nbsp; | &nbsp;&nbsp;
+        <span style="color: rgb(82, 82, 82); font-size:60%">Cliquez sur l'élément que vous souhaitez mettre à jour.</span>
+
+        <button *ngIf="!accueils" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-accueil" [routerLink]="['/accueil/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.accueil.home.createLabel">
+            Create a new Accueil
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="accueils?.length === 0">
+        <span jhiTranslate="iotaOrignAdminApp.accueil.home.notFound">No accueils found</span>
+    </div>
+
+   <!-- <div class="table-responsive" id="entities" *ngIf="accueils?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreFr"><span jhiTranslate="iotaOrignAdminApp.accueil.titreFr">Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreEn"><span jhiTranslate="iotaOrignAdminApp.accueil.titreEn">Titre En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreGer"><span jhiTranslate="iotaOrignAdminApp.accueil.titreGer">Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSw"><span jhiTranslate="iotaOrignAdminApp.accueil.titreSw">Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreFr"><span jhiTranslate="iotaOrignAdminApp.accueil.sousTitreFr">Sous Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreEn"><span jhiTranslate="iotaOrignAdminApp.accueil.sousTitreEn">Sous Titre En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreGer"><span jhiTranslate="iotaOrignAdminApp.accueil.sousTitreGer">Sous Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreSw"><span jhiTranslate="iotaOrignAdminApp.accueil.sousTitreSw">Sous Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="image"><span jhiTranslate="iotaOrignAdminApp.accueil.image">Image</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let accueil of accueils ;trackBy: trackId">
+                    <td><a [routerLink]="['/accueil', accueil.id, 'view']">{{ accueil.id }}</a></td>
+                    <td>{{ accueil.titreFr }}</td>
+                    <td>{{ accueil.titreEn }}</td>
+                    <td>{{ accueil.titreGer }}</td>
+                    <td>{{ accueil.titreSw }}</td>
+                    <td>{{ accueil.sousTitreFr }}</td>
+                    <td>{{ accueil.sousTitreEn }}</td>
+                    <td>{{ accueil.sousTitreGer }}</td>
+                    <td>{{ accueil.sousTitreSw }}</td>
+                    <td>
+                        <a *ngIf="accueil.image" (click)="openFile(accueil.imageContentType, accueil.image)">
+                            <img [src]="'data:' + accueil.imageContentType + ';base64,' + accueil.image" style="max-height: 30px;" alt="accueil image"/>
+                        </a>
+                        <span *ngIf="accueil.image">{{ accueil.imageContentType }}, {{ byteSize(accueil.image) }}</span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/accueil', accueil.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/accueil', accueil.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(accueil)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>  -->
+
+</div>
+
+
+
+<div>
+   
+
+
+
+
+    <section class="intro-section">
+        <div class="container">
+            <div class="row d-flex align-items-top text-white">
+                <!-- START THE CONTENT FOR THE INTRO  -->
+                <div class="col col-md-6  col-12 intros couleur-texte">
+                    <a *ngIf="accueils[0]" class="brand d-inline-block mb-2 anim-elt-1" 
+                    (click)="update('logo')"
+                    [routerLink]="['/accueil', accueils[0].id, 'edit']" 
+                    >
+
+                    <a *ngIf="accueils[0].image">
+                        <img [src]="'data:' + accueils[0].imageContentType + ';base64,' + accueils[0].image" style="max-height: 200px;" alt="accueil image"/>
+                    </a>
+                    <!-- <span *ngIf="accueils[0].image">{{ accueil.imageContentType }}, {{ byteSize(accueil.image) }}</span> -->
+                                         
+                    <!-- <img src="../../../content/images/iotaOrign-images/logo.png" alt="" class=""> -->
+                    </a>
+                    
+                    <h1 class="display-2" *ngIf="accueils[0]" [routerLink]="['/accueil', accueils[0].id, 'edit']">
+                       <a> 
+                           <span class="display-2--intro" (click)="update('titre')" 
+                            >
+                            {{accueils[0].titreFr}}
+                            </span>
+                        </a>
+                    </h1>
+
+                    <div *ngIf="accueils[0]"  class="display-2--description" [routerLink]="['/accueil', accueils[0].id, 'edit']" (click)="update('soustitre')"> 
+                        <a >
+                            <span class="mov-deco">
+                                {{accueils[0].sousTitreFr}}
+                            </span>                    
+                        </a>
+                    </div>                  
+                    <div style="margin-top: 5%; margin-bottom: 5%;">
+                        <a class="cta-btn btn rounded-pill btn-rounded text-sm-center" >Contact us
+                            <span><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>                    
+                </div>
+
+                <!-- START THE CONTENT FOR THE LOTTIE ANIMATION -->
+                <div class="col col-md-6 col-12">
+                    <img src="../../../content/images/iotaOrign-images/intro-anim.png" 
+                    style="width: 100%;"
+                    alt="" class="">
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+
+
+
+
+
+</div>

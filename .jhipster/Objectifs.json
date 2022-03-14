@@ -1,0 +1,133 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "titreFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe1Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe1En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe1Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe1Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe2Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe2En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe2Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe2Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe3Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe3En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe3Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe3Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe4Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe4En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe4Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe4Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe5Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe5En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe5Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textParagraphe5Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "changelogDate": "20220307182552",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "objectifs",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}

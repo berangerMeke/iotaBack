@@ -1,0 +1,354 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dernieresNouvelles">
+            <h2><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.detail.title">Dernieres Nouvelles</span> {{ dernieresNouvelles.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreFr">Titre Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreEn">Titre En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreGer">Titre Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSw">Titre Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.sousTitreFr">Sous Titre Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.sousTitreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.sousTitreEn">Sous Titre En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.sousTitreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.sousTitreGer">Sous Titre Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.sousTitreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.sousTitreSw">Sous Titre Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.sousTitreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1Fr">Titre Slide 1 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide1Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1En">Titre Slide 1 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide1En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1Ger">Titre Slide 1 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide1Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1Sw">Titre Slide 1 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide1Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide2Fr">Titre Slide 2 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide2Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide2En">Titre Slide 2 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide2En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide2Ger">Titre Slide 2 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide2Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide2Sw">Titre Slide 2 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide2Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide3Fr">Titre Slide 3 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide3Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide3En">Titre Slide 3 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide3En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide3Ger">Titre Slide 3 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide3Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide3Sw">Titre Slide 3 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide3Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide4Fr">Titre Slide 4 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide4Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide4En">Titre Slide 4 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide4En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide4Ger">Titre Slide 4 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide4Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide4Sw">Titre Slide 4 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide4Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide5Fr">Titre Slide 5 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide5Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide5En">Titre Slide 5 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide5En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide5Ger">Titre Slide 5 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide5Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide5Sw">Titre Slide 5 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide5Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide6Fr">Titre Slide 6 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide6Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide6En">Titre Slide 6 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide6En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide6Ger">Titre Slide 6 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide6Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide6Sw">Titre Slide 6 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide6Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide7Fr">Titre Slide 7 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide7Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide7En">Titre Slide 7 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide7En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide7Ger">Titre Slide 7 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide7Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide7Sw">Titre Slide 7 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide7Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide8Fr">Titre Slide 8 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide8Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide8En">Titre Slide 8 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide8En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide8Ger">Titre Slide 8 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide8Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide8Sw">Titre Slide 8 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide8Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide9Fr">Titre Slide 9 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide9Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide9En">Titre Slide 9 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide9En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide9Ger">Titre Slide 9 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide9Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide9Sw">Titre Slide 9 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide9Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1OFr">Titre Slide 1 O Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide1OFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1OEn">Titre Slide 1 O En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide1OEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1OGer">Titre Slide 1 O Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide1OGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1OSw">Titre Slide 1 O Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.titreSlide1OSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1Fr">Text Slide 1 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide1Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1En">Text Slide 1 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide1En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1Ger">Text Slide 1 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide1Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1Sw">Text Slide 1 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide1Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2Fr">Text Slide 2 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide2Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2En">Text Slide 2 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide2En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2Ger">Text Slide 2 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide2Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2Sw">Text Slide 2 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide2Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3Fr">Text Slide 3 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide3Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3En">Text Slide 3 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide3En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3Ger">Text Slide 3 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide3Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3Sw">Text Slide 3 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide3Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4Fr">Text Slide 4 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide4Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4En">Text Slide 4 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide4En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4Ger">Text Slide 4 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide4Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4Sw">Text Slide 4 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide4Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5Fr">Text Slide 5 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide5Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5En">Text Slide 5 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide5En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5Ger">Text Slide 5 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide5Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5Sw">Text Slide 5 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide5Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6Fr">Text Slide 6 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide6Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6En">Text Slide 6 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide6En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6Ger">Text Slide 6 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide6Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6Sw">Text Slide 6 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide6Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Fr">Text Slide 7 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide7Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7En">Text Slide 7 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide7En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Ger">Text Slide 7 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide7Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Sw">Text Slide 7 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide7Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Fr">Text Slide 8 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide8Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8En">Text Slide 8 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide8En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Ger">Text Slide 8 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide8Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Sw">Text Slide 8 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide8Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9Fr">Text Slide 9 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide9Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9En">Text Slide 9 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide9En }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dernieres-nouvelles', dernieresNouvelles.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,399 @@
+<div>
+    <h2 id="page-heading">
+        <!-- <span jhiTranslate="iotaOrignAdminApp.fAQs.home.title">FA Qs</span> -->
+        <span>FAQs  Section</span>&nbsp;&nbsp; | &nbsp;&nbsp;
+        <span style="color: rgb(82, 82, 82); font-size:60%">Cliquez sur l'élément que vous souhaitez mettre à jour.</span>
+
+        <button *ngIf="fAQs.length == 0"  id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-fa-qs" [routerLink]="['/fa-qs/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.fAQs.home.createLabel">
+            Create a new FA Qs
+            </span>
+        </button>
+    </h2>
+
+<hr>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="fAQs?.length === 0">
+        <span jhiTranslate="iotaOrignAdminApp.fAQs.home.notFound">No fAQs found</span>
+    </div>
+
+    <!-- <div class="table-responsive" id="entities" *ngIf="fAQs?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreFr"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreFr">Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreEn"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreEn">Titre En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreGer"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreGer">Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSw"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreSw">Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreFr"><span jhiTranslate="iotaOrignAdminApp.fAQs.sousTitreFr">Sous Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreEn"><span jhiTranslate="iotaOrignAdminApp.fAQs.sousTitreEn">Sous Titre En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreGer"><span jhiTranslate="iotaOrignAdminApp.fAQs.sousTitreGer">Sous Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreSw"><span jhiTranslate="iotaOrignAdminApp.fAQs.sousTitreSw">Sous Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion1Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion1Fr">Titre Accordion 1 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion1En"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion1En">Titre Accordion 1 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion1Gr"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion1Gr">Titre Accordion 1 Gr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion1Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion1Sw">Titre Accordion 1 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion2Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion2Fr">Titre Accordion 2 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion2En"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion2En">Titre Accordion 2 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion2Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion2Ger">Titre Accordion 2 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion2Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion2Sw">Titre Accordion 2 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion3Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion3Fr">Titre Accordion 3 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion3En"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion3En">Titre Accordion 3 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion3Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion3Ger">Titre Accordion 3 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion3Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion3Sw">Titre Accordion 3 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion4Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion4Fr">Titre Accordion 4 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion4En"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion4En">Titre Accordion 4 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion4Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion4Ger">Titre Accordion 4 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion4Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion4Sw">Titre Accordion 4 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion5Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion5Fr">Titre Accordion 5 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion5En"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion5En">Titre Accordion 5 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion5Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion5Ger">Titre Accordion 5 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion5Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion5Sw">Titre Accordion 5 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion6Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion6Fr">Titre Accordion 6 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion6En"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion6En">Titre Accordion 6 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion6Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion6Ger">Titre Accordion 6 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion6Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion6Sw">Titre Accordion 6 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion7Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion7Fr">Titre Accordion 7 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion7En"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion7En">Titre Accordion 7 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion7Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion7Ger">Titre Accordion 7 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion7Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion7Sw">Titre Accordion 7 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion8Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion8Fr">Titre Accordion 8 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion8En"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion8En">Titre Accordion 8 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion8Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion8Ger">Titre Accordion 8 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion8Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion8Sw">Titre Accordion 8 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion9Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion9Fr">Titre Accordion 9 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion9En"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion9En">Titre Accordion 9 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion9Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion9Ger">Titre Accordion 9 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion9Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion9Sw">Titre Accordion 9 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion10Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion10Fr">Titre Accordion 10 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion10En"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion10En">Titre Accordion 10 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion10Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion10Ger">Titre Accordion 10 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreAccordion10Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion10Sw">Titre Accordion 10 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion1Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion1Fr">Text Accordion 1 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion1En"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion1En">Text Accordion 1 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion1Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion1Ger">Text Accordion 1 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion1Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion1Sw">Text Accordion 1 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion2Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion2Fr">Text Accordion 2 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion2En"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion2En">Text Accordion 2 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion2Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion2Ger">Text Accordion 2 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion2Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion2Sw">Text Accordion 2 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion3Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion3Fr">Text Accordion 3 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion3En"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion3En">Text Accordion 3 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion3Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion3Ger">Text Accordion 3 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion3Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion3Sw">Text Accordion 3 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion4Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion4Fr">Text Accordion 4 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion4En"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion4En">Text Accordion 4 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion4Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion4Ger">Text Accordion 4 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion4Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion4Sw">Text Accordion 4 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion5Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion5Fr">Text Accordion 5 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion5En"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion5En">Text Accordion 5 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion5Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion5Ger">Text Accordion 5 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion5Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion5Sw">Text Accordion 5 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion6Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion6Fr">Text Accordion 6 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion6En"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion6En">Text Accordion 6 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion6Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion6Ger">Text Accordion 6 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion6Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion6Sw">Text Accordion 6 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion7Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion7Fr">Text Accordion 7 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion7En"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion7En">Text Accordion 7 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion7Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion7Ger">Text Accordion 7 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion7Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion7Sw">Text Accordion 7 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion8Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion8Fr">Text Accordion 8 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion8En"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion8En">Text Accordion 8 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion8Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion8Ger">Text Accordion 8 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion8Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion8Sw">Text Accordion 8 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion9Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion9Fr">Text Accordion 9 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion9En"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion9En">Text Accordion 9 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion9Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion9Ger">Text Accordion 9 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion9Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion9Sw">Text Accordion 9 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion10Fr"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion10Fr">Text Accordion 10 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion10En"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion10En">Text Accordion 10 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion10Ger"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion10Ger">Text Accordion 10 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textAccordion10Sw"><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion10Sw">Text Accordion 10 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let fAQs of fAQs ;trackBy: trackId">
+                    <td><a [routerLink]="['/fa-qs', fAQs.id, 'view']">{{ fAQs.id }}</a></td>
+                    <td>{{ fAQs.titreFr }}</td>
+                    <td>{{ fAQs.titreEn }}</td>
+                    <td>{{ fAQs.titreGer }}</td>
+                    <td>{{ fAQs.titreSw }}</td>
+                    <td>{{ fAQs.sousTitreFr }}</td>
+                    <td>{{ fAQs.sousTitreEn }}</td>
+                    <td>{{ fAQs.sousTitreGer }}</td>
+                    <td>{{ fAQs.sousTitreSw }}</td>
+                    <td>{{ fAQs.titreAccordion1Fr }}</td>
+                    <td>{{ fAQs.titreAccordion1En }}</td>
+                    <td>{{ fAQs.titreAccordion1Gr }}</td>
+                    <td>{{ fAQs.titreAccordion1Sw }}</td>
+                    <td>{{ fAQs.titreAccordion2Fr }}</td>
+                    <td>{{ fAQs.titreAccordion2En }}</td>
+                    <td>{{ fAQs.titreAccordion2Ger }}</td>
+                    <td>{{ fAQs.titreAccordion2Sw }}</td>
+                    <td>{{ fAQs.titreAccordion3Fr }}</td>
+                    <td>{{ fAQs.titreAccordion3En }}</td>
+                    <td>{{ fAQs.titreAccordion3Ger }}</td>
+                    <td>{{ fAQs.titreAccordion3Sw }}</td>
+                    <td>{{ fAQs.titreAccordion4Fr }}</td>
+                    <td>{{ fAQs.titreAccordion4En }}</td>
+                    <td>{{ fAQs.titreAccordion4Ger }}</td>
+                    <td>{{ fAQs.titreAccordion4Sw }}</td>
+                    <td>{{ fAQs.titreAccordion5Fr }}</td>
+                    <td>{{ fAQs.titreAccordion5En }}</td>
+                    <td>{{ fAQs.titreAccordion5Ger }}</td>
+                    <td>{{ fAQs.titreAccordion5Sw }}</td>
+                    <td>{{ fAQs.titreAccordion6Fr }}</td>
+                    <td>{{ fAQs.titreAccordion6En }}</td>
+                    <td>{{ fAQs.titreAccordion6Ger }}</td>
+                    <td>{{ fAQs.titreAccordion6Sw }}</td>
+                    <td>{{ fAQs.titreAccordion7Fr }}</td>
+                    <td>{{ fAQs.titreAccordion7En }}</td>
+                    <td>{{ fAQs.titreAccordion7Ger }}</td>
+                    <td>{{ fAQs.titreAccordion7Sw }}</td>
+                    <td>{{ fAQs.titreAccordion8Fr }}</td>
+                    <td>{{ fAQs.titreAccordion8En }}</td>
+                    <td>{{ fAQs.titreAccordion8Ger }}</td>
+                    <td>{{ fAQs.titreAccordion8Sw }}</td>
+                    <td>{{ fAQs.titreAccordion9Fr }}</td>
+                    <td>{{ fAQs.titreAccordion9En }}</td>
+                    <td>{{ fAQs.titreAccordion9Ger }}</td>
+                    <td>{{ fAQs.titreAccordion9Sw }}</td>
+                    <td>{{ fAQs.titreAccordion10Fr }}</td>
+                    <td>{{ fAQs.titreAccordion10En }}</td>
+                    <td>{{ fAQs.titreAccordion10Ger }}</td>
+                    <td>{{ fAQs.titreAccordion10Sw }}</td>
+                    <td>{{ fAQs.textAccordion1Fr }}</td>
+                    <td>{{ fAQs.textAccordion1En }}</td>
+                    <td>{{ fAQs.textAccordion1Ger }}</td>
+                    <td>{{ fAQs.textAccordion1Sw }}</td>
+                    <td>{{ fAQs.textAccordion2Fr }}</td>
+                    <td>{{ fAQs.textAccordion2En }}</td>
+                    <td>{{ fAQs.textAccordion2Ger }}</td>
+                    <td>{{ fAQs.textAccordion2Sw }}</td>
+                    <td>{{ fAQs.textAccordion3Fr }}</td>
+                    <td>{{ fAQs.textAccordion3En }}</td>
+                    <td>{{ fAQs.textAccordion3Ger }}</td>
+                    <td>{{ fAQs.textAccordion3Sw }}</td>
+                    <td>{{ fAQs.textAccordion4Fr }}</td>
+                    <td>{{ fAQs.textAccordion4En }}</td>
+                    <td>{{ fAQs.textAccordion4Ger }}</td>
+                    <td>{{ fAQs.textAccordion4Sw }}</td>
+                    <td>{{ fAQs.textAccordion5Fr }}</td>
+                    <td>{{ fAQs.textAccordion5En }}</td>
+                    <td>{{ fAQs.textAccordion5Ger }}</td>
+                    <td>{{ fAQs.textAccordion5Sw }}</td>
+                    <td>{{ fAQs.textAccordion6Fr }}</td>
+                    <td>{{ fAQs.textAccordion6En }}</td>
+                    <td>{{ fAQs.textAccordion6Ger }}</td>
+                    <td>{{ fAQs.textAccordion6Sw }}</td>
+                    <td>{{ fAQs.textAccordion7Fr }}</td>
+                    <td>{{ fAQs.textAccordion7En }}</td>
+                    <td>{{ fAQs.textAccordion7Ger }}</td>
+                    <td>{{ fAQs.textAccordion7Sw }}</td>
+                    <td>{{ fAQs.textAccordion8Fr }}</td>
+                    <td>{{ fAQs.textAccordion8En }}</td>
+                    <td>{{ fAQs.textAccordion8Ger }}</td>
+                    <td>{{ fAQs.textAccordion8Sw }}</td>
+                    <td>{{ fAQs.textAccordion9Fr }}</td>
+                    <td>{{ fAQs.textAccordion9En }}</td>
+                    <td>{{ fAQs.textAccordion9Ger }}</td>
+                    <td>{{ fAQs.textAccordion9Sw }}</td>
+                    <td>{{ fAQs.textAccordion10Fr }}</td>
+                    <td>{{ fAQs.textAccordion10En }}</td>
+                    <td>{{ fAQs.textAccordion10Ger }}</td>
+                    <td>{{ fAQs.textAccordion10Sw }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/fa-qs', fAQs.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/fa-qs', fAQs.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(fAQs)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->
+
+
+
+
+<div class="row">
+    <div *ngIf="fAQs[0]" class="col col-md-12 col-12 faqs-style1">
+        <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
+        (click)="update('titre')"
+        class="faqs-style">{{ fAQs[0].titreFr }}</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col col-md-3 col-12">
+        <div class="card" *ngIf="fAQs[0]" >
+            <a class="card-header titre-card" 
+            (click)="update('titreAccordion1')"
+            [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
+                {{ fAQs[0].titreAccordion1Fr }} 
+            </a>
+            <div class="card-body">
+              <p class="card-text ">
+                  <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
+                  (click)="update('textAccordion1')"
+                  class="paragraphe-style ">{{ fAQs[0].textAccordion1Fr }} </a>
+              </p>
+            </div>
+          </div>
+    </div>
+    <div class="col col-md-3 col-12">
+        <div class="card" *ngIf="fAQs[0]">
+            <a class="card-header" 
+            (click)="update('titreAccordion2')"
+            [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
+                {{ fAQs[0].titreAccordion2Fr }} 
+            </a>
+            <div class="card-body">
+                <p class="card-text">
+                  <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']"  
+                  (click)="update('textAccordion2')"
+                  class="paragraphe-style ">{{ fAQs[0].textAccordion2Fr }}</a>
+                </p>
+            </div>
+          </div>
+    </div>
+    <div class="col col-md-3 col-12">
+        <div class="card" *ngIf="fAQs[0]">
+            <a class="card-header titre-card " 
+            (click)="update('titreAccordion3')"
+            [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
+                {{ fAQs[0].titreAccordion3Fr }} 
+            </a>
+            <div class="card-body">
+                <p class="card-text">
+                    <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']"  
+                    (click)="update('textAccordion3')"
+                    class="paragraphe-style ">{{ fAQs[0].textAccordion3Fr }}</a>
+                </p>
+            </div>
+          </div>
+    </div>
+    <div class="col col-md-3 col-12">
+        <div class="card" *ngIf="fAQs[0]">
+            <a class="card-header titre-card " 
+            (click)="update('titreAccordion4')"
+            [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
+                {{ fAQs[0].titreAccordion4Fr }} 
+            </a>
+            <div class="card-body">
+                <p class="card-text">
+                    <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
+                    (click)="update('textAccordion4')"
+                    class="paragraphe-style ">{{ fAQs[0].textAccordion4Fr }} </a>
+                </p>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+
+<div class="row" style="margin-top: 3%;">
+    <div class="col col-md-3 col-12">
+        <div class="card" *ngIf="fAQs[0]">
+            <a class="card-header titre-card " 
+            (click)="update('titreAccordion5')"
+            [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
+                {{ fAQs[0].titreAccordion5Fr }} 
+            </a>
+            <div class="card-body">
+                <p class="card-text">
+                    <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
+                    (click)="update('textAccordion5')"
+                    class="paragraphe-style "> {{ fAQs[0].textAccordion5Fr }} </a>
+                </p>
+            </div>
+          </div>
+    </div>
+    <div class="col col-md-3 col-12">
+        <div class="card" *ngIf="fAQs[0]">
+            <a class="card-header titre-card " 
+            (click)="update('titreAccordion6')"
+            [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
+                {{ fAQs[0].titreAccordion6Fr }} 
+            </a>
+            <div class="card-body">
+                <p class="card-text">
+                    <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
+                    (click)="update('textAccordion6')"
+                    class="paragraphe-style "> {{ fAQs[0].textAccordion6Fr }} </a>
+                </p>
+            </div>
+          </div>
+    </div>
+    <div class="col col-md-3 col-12">
+        <div class="card" *ngIf="fAQs[0]">
+            <a class="card-header titre-card " 
+            (click)="update('titreAccordion7')"
+            [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
+                {{ fAQs[0].titreAccordion7Fr }} 
+            </a>
+            <div class="card-body">
+                <p class="card-text">
+                    <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
+                    (click)="update('textAccordion7')"
+                    class="paragraphe-style "> {{ fAQs[0].textAccordion7Fr }} </a>
+                </p>
+            </div>
+          </div>
+    </div>
+    <div class="col col-md-3 col-12">
+        <div class="card" *ngIf="fAQs[0]">            
+            <a class="card-header titre-card " 
+            (click)="update('titreAccordion8')"
+            [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
+                {{ fAQs[0].titreAccordion8Fr }} 
+            </a> 
+            <div class="card-body">              
+                <p class="card-text">
+                    <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
+                    (click)="update('textAccordion8')"
+                    class="paragraphe-style "> {{ fAQs[0].textAccordion8Fr }} </a>
+                </p>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

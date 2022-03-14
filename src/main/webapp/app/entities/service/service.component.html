@@ -1,0 +1,228 @@
+<div>
+    <h2 id="page-heading">
+        <!-- <span jhiTranslate="iotaOrignAdminApp.service.home.title">Services</span> -->
+        <span>Services Section</span>&nbsp;&nbsp; | &nbsp;&nbsp;
+        <span style="color: rgb(82, 82, 82); font-size:60%">Cliquez sur l'élément que vous souhaitez mettre à jour.</span>
+
+        <button *ngIf="services.length == 0" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service" [routerLink]="['/service/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.service.home.createLabel">
+            Create a new Service
+            </span>
+        </button>
+    </h2>
+
+    <hr>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <!-- <div class="alert alert-warning" id="no-result" *ngIf="services?.length === 0">
+        <span jhiTranslate="iotaOrignAdminApp.service.home.notFound">No services found</span>
+    </div> -->
+
+    <!-- <div class="table-responsive" id="entities" *ngIf="services?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreFr"><span jhiTranslate="iotaOrignAdminApp.service.titreFr">Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreEn"><span jhiTranslate="iotaOrignAdminApp.service.titreEn">Titre En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreGer"><span jhiTranslate="iotaOrignAdminApp.service.titreGer">Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSw"><span jhiTranslate="iotaOrignAdminApp.service.titreSw">Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreFr"><span jhiTranslate="iotaOrignAdminApp.service.sousTitreFr">Sous Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreEn"><span jhiTranslate="iotaOrignAdminApp.service.sousTitreEn">Sous Titre En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreGer"><span jhiTranslate="iotaOrignAdminApp.service.sousTitreGer">Sous Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreSw"><span jhiTranslate="iotaOrignAdminApp.service.sousTitreSw">Sous Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe1Fr"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe1Fr">Text Paragraphe 1 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe1En"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe1En">Text Paragraphe 1 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe1Ger"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe1Ger">Text Paragraphe 1 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe1Sw"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe1Sw">Text Paragraphe 1 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe2Fr"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe2Fr">Text Paragraphe 2 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe2En"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe2En">Text Paragraphe 2 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe2Ger"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe2Ger">Text Paragraphe 2 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe2Sw"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe2Sw">Text Paragraphe 2 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe3Fr"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe3Fr">Text Paragraphe 3 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe3En"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe3En">Text Paragraphe 3 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe3Ger"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe3Ger">Text Paragraphe 3 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe3Sw"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe3Sw">Text Paragraphe 3 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe4Fr"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe4Fr">Text Paragraphe 4 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe4En"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe4En">Text Paragraphe 4 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe4Ger"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe4Ger">Text Paragraphe 4 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe4Sw"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe4Sw">Text Paragraphe 4 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe5Fr"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe5Fr">Text Paragraphe 5 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe5En"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe5En">Text Paragraphe 5 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe5Ger"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe5Ger">Text Paragraphe 5 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textParagraphe5Sw"><span jhiTranslate="iotaOrignAdminApp.service.textParagraphe5Sw">Text Paragraphe 5 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="image"><span jhiTranslate="iotaOrignAdminApp.service.image">Image</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let service of services ;trackBy: trackId">
+                    <td><a [routerLink]="['/service', service.id, 'view']">{{ service.id }}</a></td>
+                    <td>{{ service.titreFr }}</td>
+                    <td>{{ service.titreEn }}</td>
+                    <td>{{ service.titreGer }}</td>
+                    <td>{{ service.titreSw }}</td>
+                    <td>{{ service.sousTitreFr }}</td>
+                    <td>{{ service.sousTitreEn }}</td>
+                    <td>{{ service.sousTitreGer }}</td>
+                    <td>{{ service.sousTitreSw }}</td>
+                    <td>{{ service.textParagraphe1Fr }}</td>
+                    <td>{{ service.textParagraphe1En }}</td>
+                    <td>{{ service.textParagraphe1Ger }}</td>
+                    <td>{{ service.textParagraphe1Sw }}</td>
+                    <td>{{ service.textParagraphe2Fr }}</td>
+                    <td>{{ service.textParagraphe2En }}</td>
+                    <td>{{ service.textParagraphe2Ger }}</td>
+                    <td>{{ service.textParagraphe2Sw }}</td>
+                    <td>{{ service.textParagraphe3Fr }}</td>
+                    <td>{{ service.textParagraphe3En }}</td>
+                    <td>{{ service.textParagraphe3Ger }}</td>
+                    <td>{{ service.textParagraphe3Sw }}</td>
+                    <td>{{ service.textParagraphe4Fr }}</td>
+                    <td>{{ service.textParagraphe4En }}</td>
+                    <td>{{ service.textParagraphe4Ger }}</td>
+                    <td>{{ service.textParagraphe4Sw }}</td>
+                    <td>{{ service.textParagraphe5Fr }}</td>
+                    <td>{{ service.textParagraphe5En }}</td>
+                    <td>{{ service.textParagraphe5Ger }}</td>
+                    <td>{{ service.textParagraphe5Sw }}</td>
+                    <td>
+                        <a *ngIf="service.image" (click)="openFile(service.imageContentType, service.image)">
+                            <img [src]="'data:' + service.imageContentType + ';base64,' + service.image" style="max-height: 30px;" alt="service image"/>
+                        </a>
+                        <span *ngIf="service.image">{{ service.imageContentType }}, {{ byteSize(service.image) }}</span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/service', service.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/service', service.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(service)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div> -->
+
+
+
+
+
+ <!-- START THE SECTION 3 : SERVICE  -->
+ <section id="service" class="service">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+
+                <!-- <img src="assets/images/mining-13.png" alt="" class="display-4--img w-75 anim-elt-7"> -->
+                     
+                <div >
+                    <a *ngIf="services[0]" class="brand d-inline-block mb-2 anim-elt-1" 
+                    (click)="update('image')"
+                    [routerLink]="['/service', services[0].id, 'edit']" 
+                    >
+                        <a *ngIf="services[0].image">
+                            <img [src]="'data:' + services[0].imageContentType + ';base64,' + services[0].image" style="width: 80%;" alt="accueil image"/>
+                        </a>
+                    </a>
+                               
+                </div>
+
+            </div>    
+
+            <div class="col-md-6 infos--content">
+                    <h1 *ngIf="services[0]"
+                            class="fw-bold title-style"
+                            (click)="update('titre')">
+                            <a [routerLink]="['/service', services[0].id, 'edit']">
+                                {{ services[0].titreFr }}
+                            </a> 
+                    </h1>
+                    <!-- <div *ngIf="!services[0].titreFr && 
+                                    !services[0].titreEn && 
+                                    !services[0].titreGer"
+                                    (click)="update('paragraphe1')"
+                                    [routerLink]="['/service', services[0].id, 'edit']">
+                            <a class="text-vide">
+                                <span class="vide"> Titre Vide !!</span> <span> ici pour y mettre un texte.</span>
+                            </a>
+                    </div> -->
+                
+                              
+                    <h4 *ngIf="services[0]"
+                    (click)="update('sousTitre')">
+                        <a [routerLink]="['/service', services[0].id, 'edit']" 
+                            class="sousTitre-style">
+                            {{ services[0].sousTitreFr }}
+                        </a> 
+                    </h4>
+                    <!-- <div *ngIf="!services[0].sousTitreFr && 
+                                    !services[0].sousTitreEn && 
+                                    !services[0].sousTitreGer"
+                                    (click)="update('paragraphe1')"
+                                    [routerLink]="['/service', services[0].id, 'edit']">
+                            <a class="display-4--subheading anim-elt-9">
+                                <span class="vide"> Titre Vide !!</span> <span> ici pour y mettre un texte.</span>
+                            </a>
+                    </div> -->
+
+                    <p class="description--info anim-elt-6">
+                        <div (click)="update('paragraphe1')" [routerLink]="['/service', services[0].id, 'edit']" *ngIf="services[0]" >
+                            <a class="display-4--description anim-elt-10  text-vide">
+                                {{ services[0].textParagraphe1Fr }}
+                            </a>
+                        </div>
+                        <!-- <div *ngIf="!services[0].textParagraphe1Fr && 
+                                    !services[0].textParagraphe1En && 
+                                    !services[0].textParagraphe1Ger"
+                                    (click)="update('paragraphe1')"
+                                    [routerLink]="['/service', services[0].id, 'edit']">
+                            <a class="text-vide">
+                                <span class="vide"> Paragraphe Vide !!</span> <span> ici pour y mettre un texte.</span>
+                            </a>
+                        </div> -->
+                    </p>
+
+                </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+</div>

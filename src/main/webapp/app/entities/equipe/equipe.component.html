@@ -1,0 +1,349 @@
+<div>
+    <h2 id="page-heading">
+        <!-- <span jhiTranslate="iotaOrignAdminApp.equipe.home.title">Equipes</span> -->
+        <!-- <span jhiTranslate="iotaOrignAdminApp.aPropos.home.title">A Propos</span> -->
+        <span>Team Section</span>&nbsp;&nbsp; | &nbsp;&nbsp;
+        <span style="color: rgb(82, 82, 82); font-size:60%">Cliquez sur l'élément que vous souhaitez mettre à jour.</span>
+
+        <button *ngIf="equipes.length == 0"  id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-equipe" [routerLink]="['/equipe/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.equipe.home.createLabel">
+            Create a new Equipe
+            </span>
+        </button>
+    </h2>
+
+    <hr>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="equipes?.length === 0">
+        <span jhiTranslate="iotaOrignAdminApp.equipe.home.notFound">No equipes found</span>
+    </div>
+
+    <!-- <div class="table-responsive" id="entities" *ngIf="equipes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreFr"><span jhiTranslate="iotaOrignAdminApp.equipe.titreFr">Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreEn"><span jhiTranslate="iotaOrignAdminApp.equipe.titreEn">Titre En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreGer"><span jhiTranslate="iotaOrignAdminApp.equipe.titreGer">Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSw"><span jhiTranslate="iotaOrignAdminApp.equipe.titreSw">Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="souTitreFr"><span jhiTranslate="iotaOrignAdminApp.equipe.souTitreFr">Sou Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="souTitreEn"><span jhiTranslate="iotaOrignAdminApp.equipe.souTitreEn">Sou Titre En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="souTitreGer"><span jhiTranslate="iotaOrignAdminApp.equipe.souTitreGer">Sou Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="souTitreSw"><span jhiTranslate="iotaOrignAdminApp.equipe.souTitreSw">Sou Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nom1"><span jhiTranslate="iotaOrignAdminApp.equipe.nom1">Nom 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nom2"><span jhiTranslate="iotaOrignAdminApp.equipe.nom2">Nom 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nom3"><span jhiTranslate="iotaOrignAdminApp.equipe.nom3">Nom 3</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nom4"><span jhiTranslate="iotaOrignAdminApp.equipe.nom4">Nom 4</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nom5"><span jhiTranslate="iotaOrignAdminApp.equipe.nom5">Nom 5</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nom6"><span jhiTranslate="iotaOrignAdminApp.equipe.nom6">Nom 6</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nom7"><span jhiTranslate="iotaOrignAdminApp.equipe.nom7">Nom 7</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nom8"><span jhiTranslate="iotaOrignAdminApp.equipe.nom8">Nom 8</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prenom1"><span jhiTranslate="iotaOrignAdminApp.equipe.prenom1">Prenom 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prenom2"><span jhiTranslate="iotaOrignAdminApp.equipe.prenom2">Prenom 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prenom3"><span jhiTranslate="iotaOrignAdminApp.equipe.prenom3">Prenom 3</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prenom4"><span jhiTranslate="iotaOrignAdminApp.equipe.prenom4">Prenom 4</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prenom5"><span jhiTranslate="iotaOrignAdminApp.equipe.prenom5">Prenom 5</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prenom6"><span jhiTranslate="iotaOrignAdminApp.equipe.prenom6">Prenom 6</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prenom7"><span jhiTranslate="iotaOrignAdminApp.equipe.prenom7">Prenom 7</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prenom8"><span jhiTranslate="iotaOrignAdminApp.equipe.prenom8">Prenom 8</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qualite1"><span jhiTranslate="iotaOrignAdminApp.equipe.qualite1">Qualite 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qualite2"><span jhiTranslate="iotaOrignAdminApp.equipe.qualite2">Qualite 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qualite3"><span jhiTranslate="iotaOrignAdminApp.equipe.qualite3">Qualite 3</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qualite4"><span jhiTranslate="iotaOrignAdminApp.equipe.qualite4">Qualite 4</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qualite5"><span jhiTranslate="iotaOrignAdminApp.equipe.qualite5">Qualite 5</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qualite6"><span jhiTranslate="iotaOrignAdminApp.equipe.qualite6">Qualite 6</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qualite7"><span jhiTranslate="iotaOrignAdminApp.equipe.qualite7">Qualite 7</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qualite8"><span jhiTranslate="iotaOrignAdminApp.equipe.qualite8">Qualite 8</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="image1"><span jhiTranslate="iotaOrignAdminApp.equipe.image1">Image 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="image2"><span jhiTranslate="iotaOrignAdminApp.equipe.image2">Image 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="image3"><span jhiTranslate="iotaOrignAdminApp.equipe.image3">Image 3</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="image4"><span jhiTranslate="iotaOrignAdminApp.equipe.image4">Image 4</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="image5"><span jhiTranslate="iotaOrignAdminApp.equipe.image5">Image 5</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="image6"><span jhiTranslate="iotaOrignAdminApp.equipe.image6">Image 6</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="image7"><span jhiTranslate="iotaOrignAdminApp.equipe.image7">Image 7</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="image8"><span jhiTranslate="iotaOrignAdminApp.equipe.image8">Image 8</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let equipe of equipes ;trackBy: trackId">
+                    <td><a [routerLink]="['/equipe', equipe.id, 'view']">{{ equipe.id }}</a></td>
+                    <td>{{ equipe.titreFr }}</td>
+                    <td>{{ equipe.titreEn }}</td>
+                    <td>{{ equipe.titreGer }}</td>
+                    <td>{{ equipe.titreSw }}</td>
+                    <td>{{ equipe.souTitreFr }}</td>
+                    <td>{{ equipe.souTitreEn }}</td>
+                    <td>{{ equipe.souTitreGer }}</td>
+                    <td>{{ equipe.souTitreSw }}</td>
+                    <td>{{ equipe.nom1 }}</td>
+                    <td>{{ equipe.nom2 }}</td>
+                    <td>{{ equipe.nom3 }}</td>
+                    <td>{{ equipe.nom4 }}</td>
+                    <td>{{ equipe.nom5 }}</td>
+                    <td>{{ equipe.nom6 }}</td>
+                    <td>{{ equipe.nom7 }}</td>
+                    <td>{{ equipe.nom8 }}</td>
+                    <td>{{ equipe.prenom1 }}</td>
+                    <td>{{ equipe.prenom2 }}</td>
+                    <td>{{ equipe.prenom3 }}</td>
+                    <td>{{ equipe.prenom4 }}</td>
+                    <td>{{ equipe.prenom5 }}</td>
+                    <td>{{ equipe.prenom6 }}</td>
+                    <td>{{ equipe.prenom7 }}</td>
+                    <td>{{ equipe.prenom8 }}</td>
+                    <td>{{ equipe.qualite1 }}</td>
+                    <td>{{ equipe.qualite2 }}</td>
+                    <td>{{ equipe.qualite3 }}</td>
+                    <td>{{ equipe.qualite4 }}</td>
+                    <td>{{ equipe.qualite5 }}</td>
+                    <td>{{ equipe.qualite6 }}</td>
+                    <td>{{ equipe.qualite7 }}</td>
+                    <td>{{ equipe.qualite8 }}</td>
+                    <td>
+                        <a *ngIf="equipe.image1" (click)="openFile(equipe.image1ContentType, equipe.image1)">
+                            <img [src]="'data:' + equipe.image1ContentType + ';base64,' + equipe.image1" style="max-height: 30px;" alt="equipe image"/>
+                        </a>
+                        <span *ngIf="equipe.image1">{{ equipe.image1ContentType }}, {{ byteSize(equipe.image1) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="equipe.image2" (click)="openFile(equipe.image2ContentType, equipe.image2)">
+                            <img [src]="'data:' + equipe.image2ContentType + ';base64,' + equipe.image2" style="max-height: 30px;" alt="equipe image"/>
+                        </a>
+                        <span *ngIf="equipe.image2">{{ equipe.image2ContentType }}, {{ byteSize(equipe.image2) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="equipe.image3" (click)="openFile(equipe.image3ContentType, equipe.image3)">
+                            <img [src]="'data:' + equipe.image3ContentType + ';base64,' + equipe.image3" style="max-height: 30px;" alt="equipe image"/>
+                        </a>
+                        <span *ngIf="equipe.image3">{{ equipe.image3ContentType }}, {{ byteSize(equipe.image3) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="equipe.image4" (click)="openFile(equipe.image4ContentType, equipe.image4)">
+                            <img [src]="'data:' + equipe.image4ContentType + ';base64,' + equipe.image4" style="max-height: 30px;" alt="equipe image"/>
+                        </a>
+                        <span *ngIf="equipe.image4">{{ equipe.image4ContentType }}, {{ byteSize(equipe.image4) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="equipe.image5" (click)="openFile(equipe.image5ContentType, equipe.image5)">
+                            <img [src]="'data:' + equipe.image5ContentType + ';base64,' + equipe.image5" style="max-height: 30px;" alt="equipe image"/>
+                        </a>
+                        <span *ngIf="equipe.image5">{{ equipe.image5ContentType }}, {{ byteSize(equipe.image5) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="equipe.image6" (click)="openFile(equipe.image6ContentType, equipe.image6)">
+                            <img [src]="'data:' + equipe.image6ContentType + ';base64,' + equipe.image6" style="max-height: 30px;" alt="equipe image"/>
+                        </a>
+                        <span *ngIf="equipe.image6">{{ equipe.image6ContentType }}, {{ byteSize(equipe.image6) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="equipe.image7" (click)="openFile(equipe.image7ContentType, equipe.image7)">
+                            <img [src]="'data:' + equipe.image7ContentType + ';base64,' + equipe.image7" style="max-height: 30px;" alt="equipe image"/>
+                        </a>
+                        <span *ngIf="equipe.image7">{{ equipe.image7ContentType }}, {{ byteSize(equipe.image7) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="equipe.image8" (click)="openFile(equipe.image8ContentType, equipe.image8)">
+                            <img [src]="'data:' + equipe.image8ContentType + ';base64,' + equipe.image8" style="max-height: 30px;" alt="equipe image"/>
+                        </a>
+                        <span *ngIf="equipe.image8">{{ equipe.image8ContentType }}, {{ byteSize(equipe.image8) }}</span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/equipe', equipe.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/equipe', equipe.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(equipe)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+</div>
+
+
+
+
+
+
+<div class="row">
+    <div *ngIf="equipes[0]" class="col col-md-12 col-12 faqs-style1">
+        <a [routerLink]="['/equipe', equipes[0].id, 'edit']" class="faqs-style">{{ equipes[0].titreFr }} </a>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col col-md-3 col-12">
+        <div *ngIf="equipes[0].image1" class="card" style="width: 18rem;" (click)="update('personne1')" >
+            <a [routerLink]="['/equipe', equipes[0].id, 'edit']" style="text-align: center;">
+                <span >
+                    <img [src]="'data:' + equipes[0].image1ContentType + ';base64,' + equipes[0].image1" 
+                    class="card-img-top" style ="width: 80%; border-radius: 50%; margin-top:5%" alt="equipe image"/>
+                </span>
+                <div class="card-body" style="text-align: center; text-decoration: none;">
+                    <h5 class="card-title">
+                        {{ equipes[0].nom1 }} {{ equipes[0].prenom1 }}
+                        </h5>
+                    <p class="card-text">
+                        {{ equipes[0].qualite1 }}
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col col-md-3 col-12">
+        <div *ngIf="equipes[0].image2" class="card" style="width: 18rem;" (click)="update('personne1')" >
+            <a [routerLink]="['/equipe', equipes[0].id, 'edit']" style="text-align: center;">
+                <span >
+                    <img [src]="'data:' + equipes[0].image2ContentType + ';base64,' + equipes[0].image2" 
+                    class="card-img-top" style ="width: 80%; border-radius: 50%; margin-top:5%" alt="equipe image"/>
+                </span>
+                <div class="card-body" style="text-align: center; text-decoration: none;">
+                    <h5 class="card-title">
+                        {{ equipes[0].nom2 }} {{ equipes[0].prenom2 }}
+                        </h5>
+                    <p class="card-text">
+                        {{ equipes[0].qualite2 }}
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col col-md-3 col-12">
+        <div *ngIf="equipes[0].image3" class="card" style="width: 18rem;" (click)="update('personne1')" >
+            <a [routerLink]="['/equipe', equipes[0].id, 'edit']" style="text-align: center;">
+                <span >
+                    <img [src]="'data:' + equipes[0].image3ContentType + ';base64,' + equipes[0].image3" 
+                    class="card-img-top" style ="width: 80%; border-radius: 50%; margin-top:5%" alt="equipe image"/>
+                </span>
+                <div class="card-body" style="text-align: center; text-decoration: none;">
+                    <h5 class="card-title">
+                        {{ equipes[0].nom3 }} {{ equipes[0].prenom3 }}
+                        </h5>
+                    <p class="card-text">
+                        {{ equipes[0].qualite3 }}
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col col-md-3 col-12">
+        <div *ngIf="equipes[0].image4" class="card" style="width: 18rem;" (click)="update('personne1')" >
+            <a [routerLink]="['/equipe', equipes[0].id, 'edit']" style="text-align: center;">
+                <span >
+                    <img [src]="'data:' + equipes[0].image4ContentType + ';base64,' + equipes[0].image4" 
+                    class="card-img-top" style ="width: 80%; border-radius: 50%; margin-top:5%" alt="equipe image"/>
+                </span>
+                <div class="card-body" style="text-align: center; text-decoration: none;">
+                    <h5 class="card-title">
+                        {{ equipes[0].nom4 }} {{ equipes[0].prenom4 }}
+                        </h5>
+                    <p class="card-text">
+                        {{ equipes[0].qualite4 }}
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col col-md-3 col-12">
+        <div *ngIf="equipes[0].image5" class="card" style="width: 18rem;" (click)="update('personne1')" >
+            <a [routerLink]="['/equipe', equipes[0].id, 'edit']" style="text-align: center;">
+                <span >
+                    <img [src]="'data:' + equipes[0].image5ContentType + ';base64,' + equipes[0].image5" 
+                    class="card-img-top" style ="width: 80%; border-radius: 50%; margin-top:5%" alt="equipe image"/>
+                </span>
+                <div class="card-body" style="text-align: center; text-decoration: none;">
+                    <h5 class="card-title">
+                        {{ equipes[0].nom5 }} {{ equipes[0].prenom5 }}
+                        </h5>
+                    <p class="card-text">
+                        {{ equipes[0].qualite5 }}
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col col-md-3 col-12">
+        <div *ngIf="equipes[0].image6" class="card" style="width: 18rem;" (click)="update('personne1')" >
+            <a [routerLink]="['/equipe', equipes[0].id, 'edit']" style="text-align: center;">
+                <span >
+                    <img [src]="'data:' + equipes[0].image6ContentType + ';base64,' + equipes[0].image6" 
+                    class="card-img-top" style ="width: 80%; border-radius: 50%; margin-top:5%" alt="equipe image"/>
+                </span>
+                <div class="card-body" style="text-align: center; text-decoration: none;">
+                    <h5 class="card-title">
+                        {{ equipes[0].nom6 }} {{ equipes[0].prenom6 }}
+                        </h5>
+                    <p class="card-text">
+                        {{ equipes[0].qualite6 }}
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col col-md-3 col-12">
+        <div *ngIf="equipes[0].image7" class="card" style="width: 18rem;" (click)="update('personne1')" >
+            <a [routerLink]="['/equipe', equipes[0].id, 'edit']" style="text-align: center;">
+                <span >
+                    <img [src]="'data:' + equipes[0].image7ContentType + ';base64,' + equipes[0].image7" 
+                    class="card-img-top" style ="width: 80%; border-radius: 50%; margin-top:5%" alt="equipe image"/>
+                </span>
+                <div class="card-body" style="text-align: center; text-decoration: none;">
+                    <h5 class="card-title">
+                        {{ equipes[0].nom7 }} {{ equipes[0].prenom7 }}
+                        </h5>
+                    <p class="card-text">
+                        {{ equipes[0].qualite7 }}
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col col-md-3 col-12">
+        <div *ngIf="equipes[0].image8" class="card" style="width: 18rem;" (click)="update('personne1')" >
+            <a [routerLink]="['/equipe', equipes[0].id, 'edit']" style="text-align: center;">
+                <span >
+                    <img [src]="'data:' + equipes[0].image8ContentType + ';base64,' + equipes[0].image8" 
+                    class="card-img-top" style ="width: 80%; border-radius: 50%; margin-top:5%" alt="equipe image"/>
+                </span>
+                <div class="card-body" style="text-align: center; text-decoration: none;">
+                    <h5 class="card-title">
+                        {{ equipes[0].nom8 }} {{ equipes[0].prenom8 }}
+                        </h5>
+                    <p class="card-text">
+                        {{ equipes[0].qualite8 }}
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

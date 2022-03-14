@@ -1,0 +1,147 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="aPropos">
+            <h2><span jhiTranslate="iotaOrignAdminApp.aPropos.detail.title">A Propos</span> {{ aPropos.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.titreFr">Titre Fr</span></dt>
+                <dd>
+                    <span>{{ aPropos.titreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.titreEn">Titre En</span></dt>
+                <dd>
+                    <span>{{ aPropos.titreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.titreGer">Titre Ger</span></dt>
+                <dd>
+                    <span>{{ aPropos.titreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.titreSw">Titre Sw</span></dt>
+                <dd>
+                    <span>{{ aPropos.titreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.sousTitreFr">Sous Titre Fr</span></dt>
+                <dd>
+                    <span>{{ aPropos.sousTitreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.sousTitreEn">Sous Titre En</span></dt>
+                <dd>
+                    <span>{{ aPropos.sousTitreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.sousTitreGer">Sous Titre Ger</span></dt>
+                <dd>
+                    <span>{{ aPropos.sousTitreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.sousTitreSw">Sous Titre Sw</span></dt>
+                <dd>
+                    <span>{{ aPropos.sousTitreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe1Fr">Text Paragraphe 1 Fr</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe1Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe1En">Text Paragraphe 1 En</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe1En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe1Ger">Text Paragraphe 1 Ger</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe1Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe1Sw">Text Paragraphe 1 Sw</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe1Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe2Fr">Text Paragraphe 2 Fr</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe2Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe2En">Text Paragraphe 2 En</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe2En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe2Ger">Text Paragraphe 2 Ger</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe2Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe2Sw">Text Paragraphe 2 Sw</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe2Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe3Fr">Text Paragraphe 3 Fr</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe3Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe3En">Text Paragraphe 3 En</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe3En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe3Ger">Text Paragraphe 3 Ger</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe3Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe3Sw">Text Paragraphe 3 Sw</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe3Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe4Fr">Text Paragraphe 4 Fr</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe4Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe4En">Text Paragraphe 4 En</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe4En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe4Ger">Text Paragraphe 4 Ger</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe4Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe4Sw">Text Paragraphe 4 Sw</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe4Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe5Fr">Text Paragraphe 5 Fr</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe5Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe5En">Text Paragraphe 5 En</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe5En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe5Ger">Text Paragraphe 5 Ger</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe5Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe5Sw">Text Paragraphe 5 Sw</span></dt>
+                <dd>
+                    <span>{{ aPropos.textParagraphe5Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.aPropos.image">Image</span></dt>
+                <dd>
+                    <div *ngIf="aPropos.image">
+                        <a (click)="openFile(aPropos?.imageContentType!, aPropos?.image)">
+                            <img [src]="'data:' + aPropos.imageContentType + ';base64,' + aPropos.image" style="max-width: 100%;" alt="aPropos image"/>
+                        </a>
+                        {{ aPropos.imageContentType }}, {{ byteSize(aPropos.image) }}
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/a-propos', aPropos.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,222 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-objectifs-heading">Update Achievements Section</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <!-- <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div> -->
+
+                <div *ngIf="eltChoisi === 'titre'">  
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreFr">French Title</label>
+                        <input type="text" class="form-control" name="titreFr" id="field_titreFr"
+                            formControlName="titreFr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreEn">English Title</label>
+                        <input type="text" class="form-control" name="titreEn" id="field_titreEn"
+                            formControlName="titreEn"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreGer">German Title</label>
+                        <input type="text" class="form-control" name="titreGer" id="field_titreGer"
+                            formControlName="titreGer"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreSw">Swahili Title</label>
+                        <input type="text" class="form-control" name="titreSw" id="field_titreSw"
+                            formControlName="titreSw"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_sousTitreFr">French Subtitle</label>
+                        <input type="text" class="form-control" name="sousTitreFr" id="field_sousTitreFr"
+                            formControlName="sousTitreFr"/>
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'soustitre'">  
+                    <div class="form-group">
+                        <label class="form-control-label"  for="field_sousTitreEn">English Subtitle</label>
+                        <input type="text" class="form-control" name="sousTitreEn" id="field_sousTitreEn"
+                            formControlName="sousTitreEn"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_sousTitreGer">German Subtitle</label>
+                        <input type="text" class="form-control" name="sousTitreGer" id="field_sousTitreGer"
+                            formControlName="sousTitreGer"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_sousTitreSw">Swahili Subtitle</label>
+                        <input type="text" class="form-control" name="sousTitreSw" id="field_sousTitreSw"
+                            formControlName="sousTitreSw"/>
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'paragraphe1'">  
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textParagraphe1Fr">Text Paragraphe 1 French</label>
+                        <textarea type="text" class="form-control" name="textParagraphe1Fr" id="field_textParagraphe1Fr"
+                            formControlName="textParagraphe1Fr" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textParagraphe1En">Text Paragraphe 1 English</label>
+                        <textarea type="text" class="form-control" name="textParagraphe1En" id="field_textParagraphe1En"
+                            formControlName="textParagraphe1En" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textParagraphe1Ger">Text Paragraphe 1 German</label>
+                        <textarea type="text" class="form-control" name="textParagraphe1Ger" id="field_textParagraphe1Ger"
+                            formControlName="textParagraphe1Ger" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textParagraphe1Sw">Text Paragraphe 1 Swahili</label>
+                        <textarea type="text" class="form-control" name="textParagraphe1Sw" id="field_textParagraphe1Sw"
+                            formControlName="textParagraphe1Sw" rows="7"></textarea>
+                    </div>
+                </div>
+
+
+                <!-- <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe2Fr" for="field_textParagraphe2Fr">Text Paragraphe 2 Fr</label>
+                    <input type="text" class="form-control" name="textParagraphe2Fr" id="field_textParagraphe2Fr"
+                           formControlName="textParagraphe2Fr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe2En" for="field_textParagraphe2En">Text Paragraphe 2 En</label>
+                    <input type="text" class="form-control" name="textParagraphe2En" id="field_textParagraphe2En"
+                           formControlName="textParagraphe2En"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe2Ger" for="field_textParagraphe2Ger">Text Paragraphe 2 Ger</label>
+                    <input type="text" class="form-control" name="textParagraphe2Ger" id="field_textParagraphe2Ger"
+                           formControlName="textParagraphe2Ger"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe2Sw" for="field_textParagraphe2Sw">Text Paragraphe 2 Sw</label>
+                    <input type="text" class="form-control" name="textParagraphe2Sw" id="field_textParagraphe2Sw"
+                           formControlName="textParagraphe2Sw"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe3Fr" for="field_textParagraphe3Fr">Text Paragraphe 3 Fr</label>
+                    <input type="text" class="form-control" name="textParagraphe3Fr" id="field_textParagraphe3Fr"
+                           formControlName="textParagraphe3Fr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe3En" for="field_textParagraphe3En">Text Paragraphe 3 En</label>
+                    <input type="text" class="form-control" name="textParagraphe3En" id="field_textParagraphe3En"
+                           formControlName="textParagraphe3En"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe3Ger" for="field_textParagraphe3Ger">Text Paragraphe 3 Ger</label>
+                    <input type="text" class="form-control" name="textParagraphe3Ger" id="field_textParagraphe3Ger"
+                           formControlName="textParagraphe3Ger"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe3Sw" for="field_textParagraphe3Sw">Text Paragraphe 3 Sw</label>
+                    <input type="text" class="form-control" name="textParagraphe3Sw" id="field_textParagraphe3Sw"
+                           formControlName="textParagraphe3Sw"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe4Fr" for="field_textParagraphe4Fr">Text Paragraphe 4 Fr</label>
+                    <input type="text" class="form-control" name="textParagraphe4Fr" id="field_textParagraphe4Fr"
+                           formControlName="textParagraphe4Fr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe4En" for="field_textParagraphe4En">Text Paragraphe 4 En</label>
+                    <input type="text" class="form-control" name="textParagraphe4En" id="field_textParagraphe4En"
+                           formControlName="textParagraphe4En"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe4Ger" for="field_textParagraphe4Ger">Text Paragraphe 4 Ger</label>
+                    <input type="text" class="form-control" name="textParagraphe4Ger" id="field_textParagraphe4Ger"
+                           formControlName="textParagraphe4Ger"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe4Sw" for="field_textParagraphe4Sw">Text Paragraphe 4 Sw</label>
+                    <input type="text" class="form-control" name="textParagraphe4Sw" id="field_textParagraphe4Sw"
+                           formControlName="textParagraphe4Sw"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe5Fr" for="field_textParagraphe5Fr">Text Paragraphe 5 Fr</label>
+                    <input type="text" class="form-control" name="textParagraphe5Fr" id="field_textParagraphe5Fr"
+                           formControlName="textParagraphe5Fr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe5En" for="field_textParagraphe5En">Text Paragraphe 5 En</label>
+                    <input type="text" class="form-control" name="textParagraphe5En" id="field_textParagraphe5En"
+                           formControlName="textParagraphe5En"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe5Ger" for="field_textParagraphe5Ger">Text Paragraphe 5 Ger</label>
+                    <input type="text" class="form-control" name="textParagraphe5Ger" id="field_textParagraphe5Ger"
+                           formControlName="textParagraphe5Ger"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.textParagraphe5Sw" for="field_textParagraphe5Sw">Text Paragraphe 5 Sw</label>
+                    <input type="text" class="form-control" name="textParagraphe5Sw" id="field_textParagraphe5Sw"
+                           formControlName="textParagraphe5Sw"/>
+                </div> -->
+
+                  
+                <div *ngIf="eltChoisi === 'image'" class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.objectifs.image" for="field_image">Image</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('imageContentType')!.value + ';base64,' + editForm.get('image')!.value" style="max-height: 100px;" *ngIf="editForm.get('image')!.value" alt="objectifs image"/>
+                        <div *ngIf="editForm.get('image')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('imageContentType')!.value }}, {{ byteSize(editForm.get('image')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('image', 'imageContentType', 'file_image')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_image" (change)="setFileData($event, 'image', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="image" id="field_image"
+                           formControlName="image"/>
+                    <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                           formControlName="imageContentType" />
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

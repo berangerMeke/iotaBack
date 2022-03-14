@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.iota.orign",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "iotaOrignAdmin",
+    "packageName": "com.iota.orign",
+    "packageFolder": "com/iota/orign",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZTE0ZjAzMTg1ODg3OGY0NjdlYTNlMTA2M2I3ZmM3M2JlZTZkOWI1YjVmZGQ2MWEyMTY4MDBiMGI1Nzk3NDRkMjM0NTE3MmExMTFmZjBlYjNmN2ViZWMxMjU4MDM3ZGYwMDc2MzA3Njk4OTM5MDBkNjE1OTVhYWI2MDZkOTUzYzc=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1646410218093,
+    "testFrameworks": ["gatling"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "fr", "de", "es"],
+    "blueprints": []
+  }
+}

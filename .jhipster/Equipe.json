@@ -1,0 +1,184 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "titreFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "souTitreFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "souTitreEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "souTitreGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "souTitreSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nom1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nom2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nom3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nom4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nom5",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nom6",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nom7",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nom8",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom5",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom6",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom7",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom8",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qualite1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qualite2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qualite3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qualite4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qualite5",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qualite6",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qualite7",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qualite8",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "image1",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "image2",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "image3",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "image4",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "image5",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "image6",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "image7",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "image8",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "changelogDate": "20220309222933",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "equipe",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}

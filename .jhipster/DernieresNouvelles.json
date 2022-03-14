@@ -1,0 +1,345 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "titreFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreEn",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "titreGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide1Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide1En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide1Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide1Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide2Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide2En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide2Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide2Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide3Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide3En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide3Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide3Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide4Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide4En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide4Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide4Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide5Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide5En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide5Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide5Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide6Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide6En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide6Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide6Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide7Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide7En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide7Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide7Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide8Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide8En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide8Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide8Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide9Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide9En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide9Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide9Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide1OFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide1OEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide1OGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSlide1OSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide1Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide1En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide1Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide1Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide2Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide2En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide2Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide2Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide3Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide3En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide3Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide3Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide4Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide4En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide4Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide4Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide5Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide5En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide5Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide5Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide6Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide6En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide6Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide6Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide7Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide7En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide7Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide7Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide8Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide8En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide8Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide8Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide9Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide9En",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20220311125928",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "dernieres_nouvelles",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}

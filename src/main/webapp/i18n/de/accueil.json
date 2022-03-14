@@ -1,0 +1,30 @@
+{
+  "iotaOrignAdminApp": {
+    "accueil": {
+      "home": {
+        "title": "Accueils",
+        "createLabel": "Accueil erstellen",
+        "createOrEditLabel": "Accueil erstellen oder bearbeiten",
+        "notFound": "No Accueils found"
+      },
+      "created": "Accueil erstellt mit ID {{ param }}",
+      "updated": "Accueil aktualisiert mit ID {{ param }}",
+      "deleted": "Accueil gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Accueil {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Accueil"
+      },
+      "titreFr": "Titre Fr",
+      "titreEn": "Titre En",
+      "titreGer": "Titre Ger",
+      "titreSw": "Titre Sw",
+      "sousTitreFr": "Sous Titre Fr",
+      "sousTitreEn": "Sous Titre En",
+      "sousTitreGer": "Sous Titre Ger",
+      "sousTitreSw": "Sous Titre Sw",
+      "image": "Image"
+    }
+  }
+}

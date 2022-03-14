@@ -1,0 +1,378 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fAQs">
+            <h2><span jhiTranslate="iotaOrignAdminApp.fAQs.detail.title">FA Qs</span> {{ fAQs.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreFr">Titre Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreEn">Titre En</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreGer">Titre Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreSw">Titre Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.sousTitreFr">Sous Titre Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.sousTitreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.sousTitreEn">Sous Titre En</span></dt>
+                <dd>
+                    <span>{{ fAQs.sousTitreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.sousTitreGer">Sous Titre Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.sousTitreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.sousTitreSw">Sous Titre Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.sousTitreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion1Fr">Titre Accordion 1 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion1Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion1En">Titre Accordion 1 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion1En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion1Gr">Titre Accordion 1 Gr</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion1Gr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion1Sw">Titre Accordion 1 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion1Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion2Fr">Titre Accordion 2 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion2Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion2En">Titre Accordion 2 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion2En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion2Ger">Titre Accordion 2 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion2Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion2Sw">Titre Accordion 2 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion2Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion3Fr">Titre Accordion 3 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion3Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion3En">Titre Accordion 3 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion3En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion3Ger">Titre Accordion 3 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion3Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion3Sw">Titre Accordion 3 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion3Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion4Fr">Titre Accordion 4 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion4Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion4En">Titre Accordion 4 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion4En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion4Ger">Titre Accordion 4 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion4Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion4Sw">Titre Accordion 4 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion4Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion5Fr">Titre Accordion 5 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion5Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion5En">Titre Accordion 5 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion5En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion5Ger">Titre Accordion 5 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion5Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion5Sw">Titre Accordion 5 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion5Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion6Fr">Titre Accordion 6 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion6Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion6En">Titre Accordion 6 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion6En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion6Ger">Titre Accordion 6 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion6Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion6Sw">Titre Accordion 6 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion6Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion7Fr">Titre Accordion 7 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion7Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion7En">Titre Accordion 7 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion7En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion7Ger">Titre Accordion 7 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion7Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion7Sw">Titre Accordion 7 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion7Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion8Fr">Titre Accordion 8 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion8Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion8En">Titre Accordion 8 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion8En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion8Ger">Titre Accordion 8 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion8Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion8Sw">Titre Accordion 8 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion8Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion9Fr">Titre Accordion 9 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion9Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion9En">Titre Accordion 9 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion9En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion9Ger">Titre Accordion 9 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion9Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion9Sw">Titre Accordion 9 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion9Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion10Fr">Titre Accordion 10 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion10Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion10En">Titre Accordion 10 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion10En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion10Ger">Titre Accordion 10 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion10Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion10Sw">Titre Accordion 10 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.titreAccordion10Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion1Fr">Text Accordion 1 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion1Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion1En">Text Accordion 1 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion1En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion1Ger">Text Accordion 1 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion1Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion1Sw">Text Accordion 1 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion1Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion2Fr">Text Accordion 2 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion2Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion2En">Text Accordion 2 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion2En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion2Ger">Text Accordion 2 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion2Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion2Sw">Text Accordion 2 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion2Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion3Fr">Text Accordion 3 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion3Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion3En">Text Accordion 3 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion3En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion3Ger">Text Accordion 3 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion3Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion3Sw">Text Accordion 3 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion3Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion4Fr">Text Accordion 4 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion4Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion4En">Text Accordion 4 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion4En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion4Ger">Text Accordion 4 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion4Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion4Sw">Text Accordion 4 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion4Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion5Fr">Text Accordion 5 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion5Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion5En">Text Accordion 5 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion5En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion5Ger">Text Accordion 5 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion5Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion5Sw">Text Accordion 5 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion5Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion6Fr">Text Accordion 6 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion6Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion6En">Text Accordion 6 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion6En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion6Ger">Text Accordion 6 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion6Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion6Sw">Text Accordion 6 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion6Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion7Fr">Text Accordion 7 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion7Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion7En">Text Accordion 7 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion7En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion7Ger">Text Accordion 7 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion7Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion7Sw">Text Accordion 7 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion7Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion8Fr">Text Accordion 8 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion8Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion8En">Text Accordion 8 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion8En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion8Ger">Text Accordion 8 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion8Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion8Sw">Text Accordion 8 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion8Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion9Fr">Text Accordion 9 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion9Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion9En">Text Accordion 9 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion9En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion9Ger">Text Accordion 9 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion9Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion9Sw">Text Accordion 9 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion9Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion10Fr">Text Accordion 10 Fr</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion10Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion10En">Text Accordion 10 En</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion10En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion10Ger">Text Accordion 10 Ger</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion10Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion10Sw">Text Accordion 10 Sw</span></dt>
+                <dd>
+                    <span>{{ fAQs.textAccordion10Sw }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fa-qs', fAQs.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

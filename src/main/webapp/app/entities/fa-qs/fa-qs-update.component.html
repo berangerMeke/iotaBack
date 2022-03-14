@@ -1,0 +1,627 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-fa-qs-heading">Update FAQs Section</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <!-- <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div> -->
+
+
+                <div *ngIf="eltChoisi === 'titre'">  
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreFr">French Title</label>
+                        <input type="text" class="form-control" name="titreFr" id="field_titreFr"
+                            formControlName="titreFr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label"  for="field_titreEn">English Title</label>
+                        <input type="text" class="form-control" name="titreEn" id="field_titreEn"
+                            formControlName="titreEn"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreGer">German Title</label>
+                        <input type="text" class="form-control" name="titreGer" id="field_titreGer"
+                            formControlName="titreGer"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label"for="field_titreSw">Swahili Title</label>
+                        <input type="text" class="form-control" name="titreSw" id="field_titreSw"
+                            formControlName="titreSw"/>
+                    </div>
+
+                </div>
+
+
+<!--                 
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.sousTitreFr" for="field_sousTitreFr">Sous Titre Fr</label>
+                    <input type="text" class="form-control" name="sousTitreFr" id="field_sousTitreFr"
+                           formControlName="sousTitreFr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.sousTitreEn" for="field_sousTitreEn">Sous Titre En</label>
+                    <input type="text" class="form-control" name="sousTitreEn" id="field_sousTitreEn"
+                           formControlName="sousTitreEn"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.sousTitreGer" for="field_sousTitreGer">Sous Titre Ger</label>
+                    <input type="text" class="form-control" name="sousTitreGer" id="field_sousTitreGer"
+                           formControlName="sousTitreGer"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.sousTitreSw" for="field_sousTitreSw">Sous Titre Sw</label>
+                    <input type="text" class="form-control" name="sousTitreSw" id="field_sousTitreSw"
+                           formControlName="sousTitreSw"/>
+                </div> -->
+
+                <div *ngIf="eltChoisi === 'titreAccordion1'"> 
+                    <div class="form-group">
+                        <label class="form-control-label"  for="field_titreAccordion1Fr">Title Accordion 1 French</label>
+                        <input type="text" class="form-control" name="titreAccordion1Fr" id="field_titreAccordion1Fr"
+                            formControlName="titreAccordion1Fr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion1En">Title Accordion 1 English</label>
+                        <input type="text" class="form-control" name="titreAccordion1En" id="field_titreAccordion1En"
+                            formControlName="titreAccordion1En"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion1Gr">Title Accordion 1 German</label>
+                        <input type="text" class="form-control" name="titreAccordion1Gr" id="field_titreAccordion1Gr"
+                            formControlName="titreAccordion1Gr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion1Sw">Title Accordion 1 Swahili</label>
+                        <input type="text" class="form-control" name="titreAccordion1Sw" id="field_titreAccordion1Sw"
+                            formControlName="titreAccordion1Sw"/>
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'titreAccordion2'"> 
+                    <div class="form-group">
+                        <label class="form-control-label"  for="field_titreAccordion2Fr">Title Accordion 2 French</label>
+                        <input type="text" class="form-control" name="titreAccordion2Fr" id="field_titreAccordion2Fr"
+                            formControlName="titreAccordion2Fr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion2En">Title Accordion 2 English</label>
+                        <input type="text" class="form-control" name="titreAccordion2En" id="field_titreAccordion2En"
+                            formControlName="titreAccordion2En"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion2Ger">Title Accordion 2 German</label>
+                        <input type="text" class="form-control" name="titreAccordion2Ger" id="field_titreAccordion2Ger"
+                            formControlName="titreAccordion2Ger"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion2Sw">Title Accordion 2 Swahili</label>
+                        <input type="text" class="form-control" name="titreAccordion2Sw" id="field_titreAccordion2Sw"
+                            formControlName="titreAccordion2Sw"/>
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'titreAccordion3'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion3Fr">Title Accordion 3 French</label>
+                        <input type="text" class="form-control" name="titreAccordion3Fr" id="field_titreAccordion3Fr"
+                            formControlName="titreAccordion3Fr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion3En">Title Accordion 3 English</label>
+                        <input type="text" class="form-control" name="titreAccordion3En" id="field_titreAccordion3En"
+                            formControlName="titreAccordion3En"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion3Ger">Title Accordion 3 German</label>
+                        <input type="text" class="form-control" name="titreAccordion3Ger" id="field_titreAccordion3Ger"
+                            formControlName="titreAccordion3Ger"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion3Sw">Title Accordion 3 Swahili</label>
+                        <input type="text" class="form-control" name="titreAccordion3Sw" id="field_titreAccordion3Sw"
+                            formControlName="titreAccordion3Sw"/>
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'titreAccordion4'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion4Fr">Title Accordion 4 French</label>
+                        <input type="text" class="form-control" name="titreAccordion4Fr" id="field_titreAccordion4Fr"
+                            formControlName="titreAccordion4Fr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion4En">Title Accordion 4 English</label>
+                        <input type="text" class="form-control" name="titreAccordion4En" id="field_titreAccordion4En"
+                            formControlName="titreAccordion4En"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion4Ger">Title Accordion 4 German</label>
+                        <input type="text" class="form-control" name="titreAccordion4Ger" id="field_titreAccordion4Ger"
+                            formControlName="titreAccordion4Ger"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion4Sw">Titre Accordion 4 Swahili</label>
+                        <input type="text" class="form-control" name="titreAccordion4Sw" id="field_titreAccordion4Sw"
+                            formControlName="titreAccordion4Sw"/>
+                    </div>
+                </div>
+
+
+
+
+                <div *ngIf="eltChoisi === 'titreAccordion5'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion5Fr">Title Accordion 5 French</label>
+                        <input type="text" class="form-control" name="titreAccordion5Fr" id="field_titreAccordion5Fr"
+                            formControlName="titreAccordion5Fr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion5En">Title Accordion 5 English</label>
+                        <input type="text" class="form-control" name="titreAccordion5En" id="field_titreAccordion5En"
+                            formControlName="titreAccordion5En"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion5Ger">Title Accordion 5 German</label>
+                        <input type="text" class="form-control" name="titreAccordion5Ger" id="field_titreAccordion5Ger"
+                            formControlName="titreAccordion5Ger"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion5Sw">Title Accordion 5 Swahili</label>
+                        <input type="text" class="form-control" name="titreAccordion5Sw" id="field_titreAccordion5Sw"
+                            formControlName="titreAccordion5Sw"/>
+                    </div>
+                </div>
+
+
+
+                <div *ngIf="eltChoisi === 'titreAccordion6'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion6Fr">Title Accordion 6 French</label>
+                        <input type="text" class="form-control" name="titreAccordion6Fr" id="field_titreAccordion6Fr"
+                            formControlName="titreAccordion6Fr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion6En">Title Accordion 6 English</label>
+                        <input type="text" class="form-control" name="titreAccordion6En" id="field_titreAccordion6En"
+                            formControlName="titreAccordion6En"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion6Ger">Titre Accordion 6 German</label>
+                        <input type="text" class="form-control" name="titreAccordion6Ger" id="field_titreAccordion6Ger"
+                            formControlName="titreAccordion6Ger"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion6Sw">Titre Accordion 6 Swahili</label>
+                        <input type="text" class="form-control" name="titreAccordion6Sw" id="field_titreAccordion6Sw"
+                            formControlName="titreAccordion6Sw"/>
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'titreAccordion7'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion7Fr">Title Accordion 7 French</label>
+                        <input type="text" class="form-control" name="titreAccordion7Fr" id="field_titreAccordion7Fr"
+                            formControlName="titreAccordion7Fr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion7En">Title Accordion 7 English</label>
+                        <input type="text" class="form-control" name="titreAccordion7En" id="field_titreAccordion7En"
+                            formControlName="titreAccordion7En"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion7Ger">Title Accordion 7 German</label>
+                        <input type="text" class="form-control" name="titreAccordion7Ger" id="field_titreAccordion7Ger"
+                            formControlName="titreAccordion7Ger"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion7Sw" for="field_titreAccordion7Sw">Titre Accordion 7 Sw</label>
+                        <input type="text" class="form-control" name="titreAccordion7Sw" id="field_titreAccordion7Sw"
+                            formControlName="titreAccordion7Sw"/>
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'titreAccordion8'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion8Fr">Title Accordion 8 French</label>
+                        <input type="text" class="form-control" name="titreAccordion8Fr" id="field_titreAccordion8Fr"
+                            formControlName="titreAccordion8Fr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion8En">Titre Accordion 8 English</label>
+                        <input type="text" class="form-control" name="titreAccordion8En" id="field_titreAccordion8En"
+                            formControlName="titreAccordion8En"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion8Ger">Titre Accordion 8 German</label>
+                        <input type="text" class="form-control" name="titreAccordion8Ger" id="field_titreAccordion8Ger"
+                            formControlName="titreAccordion8Ger"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_titreAccordion8Sw">Titre Accordion 8 Swahili</label>
+                        <input type="text" class="form-control" name="titreAccordion8Sw" id="field_titreAccordion8Sw"
+                            formControlName="titreAccordion8Sw"/>
+                    </div>
+
+                </div>
+
+
+                <!-- <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion9Fr" for="field_titreAccordion9Fr">Titre Accordion 9 Fr</label>
+                    <input type="text" class="form-control" name="titreAccordion9Fr" id="field_titreAccordion9Fr"
+                           formControlName="titreAccordion9Fr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion9En" for="field_titreAccordion9En">Titre Accordion 9 En</label>
+                    <input type="text" class="form-control" name="titreAccordion9En" id="field_titreAccordion9En"
+                           formControlName="titreAccordion9En"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion9Ger" for="field_titreAccordion9Ger">Titre Accordion 9 Ger</label>
+                    <input type="text" class="form-control" name="titreAccordion9Ger" id="field_titreAccordion9Ger"
+                           formControlName="titreAccordion9Ger"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion9Sw" for="field_titreAccordion9Sw">Titre Accordion 9 Sw</label>
+                    <input type="text" class="form-control" name="titreAccordion9Sw" id="field_titreAccordion9Sw"
+                           formControlName="titreAccordion9Sw"/>
+                </div> -->
+<!-- 
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion10Fr" for="field_titreAccordion10Fr">Titre Accordion 10 Fr</label>
+                    <input type="text" class="form-control" name="titreAccordion10Fr" id="field_titreAccordion10Fr"
+                           formControlName="titreAccordion10Fr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion10En" for="field_titreAccordion10En">Titre Accordion 10 En</label>
+                    <input type="text" class="form-control" name="titreAccordion10En" id="field_titreAccordion10En"
+                           formControlName="titreAccordion10En"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion10Ger" for="field_titreAccordion10Ger">Titre Accordion 10 Ger</label>
+                    <input type="text" class="form-control" name="titreAccordion10Ger" id="field_titreAccordion10Ger"
+                           formControlName="titreAccordion10Ger"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.titreAccordion10Sw" for="field_titreAccordion10Sw">Titre Accordion 10 Sw</label>
+                    <input type="text" class="form-control" name="titreAccordion10Sw" id="field_titreAccordion10Sw"
+                           formControlName="titreAccordion10Sw"/>
+                </div> -->
+
+
+
+                <div *ngIf="eltChoisi === 'textAccordion1'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion1Fr">Text Accordion 1 French</label>
+                        <textarea type="text" class="form-control" name="textAccordion1Fr" id="field_textAccordion1Fr"
+                            formControlName="textAccordion1Fr" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion1En">Text Accordion 1 English</label>
+                        <textarea type="text" class="form-control" name="textAccordion1En" id="field_textAccordion1En"
+                            formControlName="textAccordion1En" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion1Ger">Text Accordion 1 German</label>
+                        <textarea type="text" class="form-control" name="textAccordion1Ger" id="field_textAccordion1Ger"
+                            formControlName="textAccordion1Ger" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion1Sw" for="field_textAccordion1Sw">Text Accordion 1 Sw</label>
+                        <textarea type="text" class="form-control" name="textAccordion1Sw" id="field_textAccordion1Sw"
+                            formControlName="textAccordion1Sw" rows="7"></textarea>
+                    </div>
+                </div>
+
+
+
+                <div *ngIf="eltChoisi === 'textAccordion2'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion2Fr">Text Accordion 2 French</label>
+                        <textarea type="text" class="form-control" name="textAccordion2Fr" id="field_textAccordion2Fr"
+                            formControlName="textAccordion2Fr" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion2En">Text Accordion 2 English</label>
+                        <textarea type="text" class="form-control" name="textAccordion2En" id="field_textAccordion2En"
+                            formControlName="textAccordion2En" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion2Ger">Text Accordion 2 German</label>
+                        <textarea type="text" class="form-control" name="textAccordion2Ger" id="field_textAccordion2Ger"
+                            formControlName="textAccordion2Ger" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion2Sw">Text Accordion 2 Swahili</label>
+                        <textarea type="text" class="form-control" name="textAccordion2Sw" id="field_textAccordion2Sw"
+                            formControlName="textAccordion2Sw" rows="7"></textarea>
+                    </div>
+                </div>
+
+
+
+
+                <div *ngIf="eltChoisi === 'textAccordion3'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion3Fr">Text Accordion 3 French</label>
+                        <textarea type="text" class="form-control" name="textAccordion3Fr" id="field_textAccordion3Fr"
+                            formControlName="textAccordion3Fr" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion3En">Text Accordion 3 English</label>
+                        <textarea type="text" class="form-control" name="textAccordion3En" id="field_textAccordion3En"
+                            formControlName="textAccordion3En" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion3Ger">Text Accordion 3 German</label>
+                        <textarea type="text" class="form-control" name="textAccordion3Ger" id="field_textAccordion3Ger"
+                            formControlName="textAccordion3Ger" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion3Sw">Text Accordion 3 Swahili</label>
+                        <textarea type="text" class="form-control" name="textAccordion3Sw" id="field_textAccordion3Sw"
+                            formControlName="textAccordion3Sw" rows="7"></textarea>
+                    </div>
+                </div>
+
+
+
+                <div *ngIf="eltChoisi === 'textAccordion4'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion4Fr">Text Accordion 4 French</label>
+                        <textarea type="text" class="form-control" name="textAccordion4Fr" id="field_textAccordion4Fr"
+                            formControlName="textAccordion4Fr" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label"  for="field_textAccordion4En">Text Accordion 4 English</label>
+                        <textarea type="text" class="form-control" name="textAccordion4En" id="field_textAccordion4En"
+                            formControlName="textAccordion4En" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion4Ger">Text Accordion 4 German</label>
+                        <textarea type="text" class="form-control" name="textAccordion4Ger" id="field_textAccordion4Ger"
+                            formControlName="textAccordion4Ger" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion4Sw">Text Accordion 4 Swahili</label>
+                        <textarea type="text" class="form-control" name="textAccordion4Sw" id="field_textAccordion4Sw"
+                            formControlName="textAccordion4Sw" rows="7"></textarea>
+                    </div>
+                </div>
+
+
+
+                <div *ngIf="eltChoisi === 'textAccordion5'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion5Fr">Text Accordion 5 French</label>
+                        <textarea type="text" class="form-control" name="textAccordion5Fr" id="field_textAccordion5Fr"
+                            formControlName="textAccordion5Fr" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion5En">Text Accordion 5 English</label>
+                        <textarea type="text" class="form-control" name="textAccordion5En" id="field_textAccordion5En"
+                            formControlName="textAccordion5En" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion5Ger">Text Accordion 5 German</label>
+                        <textarea type="text" class="form-control" name="textAccordion5Ger" id="field_textAccordion5Ger"
+                            formControlName="textAccordion5Ger" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion5Sw">Text Accordion 5 Swahili</label>
+                        <textarea type="text" class="form-control" name="textAccordion5Sw" id="field_textAccordion5Sw"
+                            formControlName="textAccordion5Sw" rows="7">
+                    </div>
+                </div>
+
+
+
+
+                <div *ngIf="eltChoisi === 'textAccordion6'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion6Fr">Text Accordion 6 French</label>
+                        <textarea type="text" class="form-control" name="textAccordion6Fr" id="field_textAccordion6Fr"
+                            formControlName="textAccordion6Fr" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion6En">Text Accordion 6 English</label>
+                        <textarea type="text" class="form-control" name="textAccordion6En" id="field_textAccordion6En"
+                            formControlName="textAccordion6En" rows="7">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion6Ger">Text Accordion 6 German</label>
+                        <textarea type="text" class="form-control" name="textAccordion6Ger" id="field_textAccordion6Ger"
+                            formControlName="textAccordion6Ger" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion6Sw">Text Accordion 6 Swahili</label>
+                        <textarea type="text" class="form-control" name="textAccordion6Sw" id="field_textAccordion6Sw"
+                            formControlName="textAccordion6Sw" rows="7"></textarea>
+                    </div>
+                </div>
+
+
+
+
+                <div *ngIf="eltChoisi === 'textAccordion7'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion7Fr">Text Accordion 7 French</label>
+                        <textarea type="text" class="form-control" name="textAccordion7Fr" id="field_textAccordion7Fr"
+                            formControlName="textAccordion7Fr" rows="7">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion7En">Text Accordion 7 English</label>
+                        <textarea type="text" class="form-control" name="textAccordion7En" id="field_textAccordion7En"
+                            formControlName="textAccordion7En" rows="7">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion7Ger">Text Accordion 7 Ger</label>
+                        <textarea type="text" class="form-control" name="textAccordion7Ger" id="field_textAccordion7Ger"
+                            formControlName="textAccordion7Ger" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion7Sw">Text Accordion 7 Sw</label>
+                        <textarea type="text" class="form-control" name="textAccordion7Sw" id="field_textAccordion7Sw"
+                            formControlName="textAccordion7Sw" rows="7"></textarea>
+                    </div>
+
+                </div>
+
+
+
+                <div *ngIf="eltChoisi === 'textAccordion8'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion8Fr">Text Accordion 8 French</label>
+                        <textarea type="text" class="form-control" name="textAccordion8Fr" id="field_textAccordion8Fr"
+                            formControlName="textAccordion8Fr" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion8En">Text Accordion 8 English</label>
+                        <textarea type="text" class="form-control" name="textAccordion8En" id="field_textAccordion8En"
+                            formControlName="textAccordion8En" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion8Ger">Text Accordion 8 German</label>
+                        <textarea type="text" class="form-control" name="textAccordion8Ger" id="field_textAccordion8Ger"
+                            formControlName="textAccordion8Ger" rows="7"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" for="field_textAccordion8Sw">Text Accordion 8 Sw</label>
+                        <textarea type="text" class="form-control" name="textAccordion8Sw" id="field_textAccordion8Sw"
+                            formControlName="textAccordion8Sw" rows="7"></textarea>
+                    </div>
+
+                </div>
+
+
+
+                <!-- <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion9Fr" for="field_textAccordion9Fr">Text Accordion 9 Fr</label>
+                    <input type="text" class="form-control" name="textAccordion9Fr" id="field_textAccordion9Fr"
+                           formControlName="textAccordion9Fr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion9En" for="field_textAccordion9En">Text Accordion 9 En</label>
+                    <input type="text" class="form-control" name="textAccordion9En" id="field_textAccordion9En"
+                           formControlName="textAccordion9En"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion9Ger" for="field_textAccordion9Ger">Text Accordion 9 Ger</label>
+                    <input type="text" class="form-control" name="textAccordion9Ger" id="field_textAccordion9Ger"
+                           formControlName="textAccordion9Ger"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion9Sw" for="field_textAccordion9Sw">Text Accordion 9 Sw</label>
+                    <input type="text" class="form-control" name="textAccordion9Sw" id="field_textAccordion9Sw"
+                           formControlName="textAccordion9Sw"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion10Fr" for="field_textAccordion10Fr">Text Accordion 10 Fr</label>
+                    <input type="text" class="form-control" name="textAccordion10Fr" id="field_textAccordion10Fr"
+                           formControlName="textAccordion10Fr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion10En" for="field_textAccordion10En">Text Accordion 10 En</label>
+                    <input type="text" class="form-control" name="textAccordion10En" id="field_textAccordion10En"
+                           formControlName="textAccordion10En"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion10Ger" for="field_textAccordion10Ger">Text Accordion 10 Ger</label>
+                    <input type="text" class="form-control" name="textAccordion10Ger" id="field_textAccordion10Ger"
+                           formControlName="textAccordion10Ger"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.fAQs.textAccordion10Sw" for="field_textAccordion10Sw">Text Accordion 10 Sw</label>
+                    <input type="text" class="form-control" name="textAccordion10Sw" id="field_textAccordion10Sw"
+                           formControlName="textAccordion10Sw"/>
+                </div>
+            </div> -->
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

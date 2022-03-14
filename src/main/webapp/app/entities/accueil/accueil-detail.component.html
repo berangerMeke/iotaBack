@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="accueil">
+            <h2><span jhiTranslate="iotaOrignAdminApp.accueil.detail.title">Accueil</span> {{ accueil.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="iotaOrignAdminApp.accueil.titreFr">Titre Fr</span></dt>
+                <dd>
+                    <span>{{ accueil.titreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.accueil.titreEn">Titre En</span></dt>
+                <dd>
+                    <span>{{ accueil.titreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.accueil.titreGer">Titre Ger</span></dt>
+                <dd>
+                    <span>{{ accueil.titreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.accueil.titreSw">Titre Sw</span></dt>
+                <dd>
+                    <span>{{ accueil.titreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.accueil.sousTitreFr">Sous Titre Fr</span></dt>
+                <dd>
+                    <span>{{ accueil.sousTitreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.accueil.sousTitreEn">Sous Titre En</span></dt>
+                <dd>
+                    <span>{{ accueil.sousTitreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.accueil.sousTitreGer">Sous Titre Ger</span></dt>
+                <dd>
+                    <span>{{ accueil.sousTitreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.accueil.sousTitreSw">Sous Titre Sw</span></dt>
+                <dd>
+                    <span>{{ accueil.sousTitreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.accueil.image">Image</span></dt>
+                <dd>
+                    <div *ngIf="accueil.image">
+                        <a (click)="openFile(accueil?.imageContentType!, accueil?.image)">
+                            <img [src]="'data:' + accueil.imageContentType + ';base64,' + accueil.image" style="max-width: 100%;" alt="accueil image"/>
+                        </a>
+                        {{ accueil.imageContentType }}, {{ byteSize(accueil.image) }}
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/accueil', accueil.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,223 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.title">Dernieres Nouvelles</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dernieres-nouvelles" [routerLink]="['/dernieres-nouvelles/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.createLabel">
+            Create a new Dernieres Nouvelles
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="dernieresNouvelles?.length === 0">
+        <span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.notFound">No dernieresNouvelles found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="dernieresNouvelles?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreFr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreFr">Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreEn"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreEn">Titre En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreGer"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreGer">Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSw">Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreFr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.sousTitreFr">Sous Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreEn"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.sousTitreEn">Sous Titre En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreGer"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.sousTitreGer">Sous Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="sousTitreSw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.sousTitreSw">Sous Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide1Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1Fr">Titre Slide 1 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide1En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1En">Titre Slide 1 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide1Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1Ger">Titre Slide 1 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide1Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1Sw">Titre Slide 1 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide2Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide2Fr">Titre Slide 2 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide2En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide2En">Titre Slide 2 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide2Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide2Ger">Titre Slide 2 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide2Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide2Sw">Titre Slide 2 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide3Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide3Fr">Titre Slide 3 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide3En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide3En">Titre Slide 3 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide3Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide3Ger">Titre Slide 3 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide3Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide3Sw">Titre Slide 3 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide4Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide4Fr">Titre Slide 4 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide4En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide4En">Titre Slide 4 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide4Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide4Ger">Titre Slide 4 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide4Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide4Sw">Titre Slide 4 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide5Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide5Fr">Titre Slide 5 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide5En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide5En">Titre Slide 5 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide5Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide5Ger">Titre Slide 5 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide5Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide5Sw">Titre Slide 5 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide6Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide6Fr">Titre Slide 6 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide6En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide6En">Titre Slide 6 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide6Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide6Ger">Titre Slide 6 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide6Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide6Sw">Titre Slide 6 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide7Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide7Fr">Titre Slide 7 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide7En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide7En">Titre Slide 7 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide7Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide7Ger">Titre Slide 7 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide7Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide7Sw">Titre Slide 7 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide8Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide8Fr">Titre Slide 8 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide8En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide8En">Titre Slide 8 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide8Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide8Ger">Titre Slide 8 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide8Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide8Sw">Titre Slide 8 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide9Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide9Fr">Titre Slide 9 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide9En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide9En">Titre Slide 9 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide9Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide9Ger">Titre Slide 9 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide9Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide9Sw">Titre Slide 9 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide1OFr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1OFr">Titre Slide 1 O Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide1OEn"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1OEn">Titre Slide 1 O En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide1OGer"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1OGer">Titre Slide 1 O Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreSlide1OSw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1OSw">Titre Slide 1 O Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide1Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1Fr">Text Slide 1 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide1En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1En">Text Slide 1 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide1Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1Ger">Text Slide 1 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide1Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1Sw">Text Slide 1 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide2Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2Fr">Text Slide 2 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide2En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2En">Text Slide 2 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide2Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2Ger">Text Slide 2 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide2Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2Sw">Text Slide 2 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide3Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3Fr">Text Slide 3 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide3En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3En">Text Slide 3 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide3Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3Ger">Text Slide 3 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide3Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3Sw">Text Slide 3 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide4Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4Fr">Text Slide 4 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide4En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4En">Text Slide 4 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide4Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4Ger">Text Slide 4 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide4Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4Sw">Text Slide 4 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide5Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5Fr">Text Slide 5 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide5En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5En">Text Slide 5 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide5Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5Ger">Text Slide 5 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide5Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5Sw">Text Slide 5 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide6Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6Fr">Text Slide 6 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide6En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6En">Text Slide 6 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide6Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6Ger">Text Slide 6 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide6Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6Sw">Text Slide 6 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide7Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Fr">Text Slide 7 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide7En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7En">Text Slide 7 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide7Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Ger">Text Slide 7 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide7Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Sw">Text Slide 7 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide8Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Fr">Text Slide 8 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide8En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8En">Text Slide 8 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide8Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Ger">Text Slide 8 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide8Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Sw">Text Slide 8 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide9Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9Fr">Text Slide 9 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide9En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9En">Text Slide 9 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let dernieresNouvelles of dernieresNouvelles ;trackBy: trackId">
+                    <td><a [routerLink]="['/dernieres-nouvelles', dernieresNouvelles.id, 'view']">{{ dernieresNouvelles.id }}</a></td>
+                    <td>{{ dernieresNouvelles.titreFr }}</td>
+                    <td>{{ dernieresNouvelles.titreEn }}</td>
+                    <td>{{ dernieresNouvelles.titreGer }}</td>
+                    <td>{{ dernieresNouvelles.titreSw }}</td>
+                    <td>{{ dernieresNouvelles.sousTitreFr }}</td>
+                    <td>{{ dernieresNouvelles.sousTitreEn }}</td>
+                    <td>{{ dernieresNouvelles.sousTitreGer }}</td>
+                    <td>{{ dernieresNouvelles.sousTitreSw }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide1Fr }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide1En }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide1Ger }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide1Sw }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide2Fr }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide2En }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide2Ger }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide2Sw }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide3Fr }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide3En }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide3Ger }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide3Sw }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide4Fr }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide4En }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide4Ger }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide4Sw }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide5Fr }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide5En }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide5Ger }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide5Sw }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide6Fr }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide6En }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide6Ger }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide6Sw }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide7Fr }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide7En }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide7Ger }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide7Sw }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide8Fr }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide8En }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide8Ger }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide8Sw }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide9Fr }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide9En }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide9Ger }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide9Sw }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide1OFr }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide1OEn }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide1OGer }}</td>
+                    <td>{{ dernieresNouvelles.titreSlide1OSw }}</td>
+                    <td>{{ dernieresNouvelles.textSlide1Fr }}</td>
+                    <td>{{ dernieresNouvelles.textSlide1En }}</td>
+                    <td>{{ dernieresNouvelles.textSlide1Ger }}</td>
+                    <td>{{ dernieresNouvelles.textSlide1Sw }}</td>
+                    <td>{{ dernieresNouvelles.textSlide2Fr }}</td>
+                    <td>{{ dernieresNouvelles.textSlide2En }}</td>
+                    <td>{{ dernieresNouvelles.textSlide2Ger }}</td>
+                    <td>{{ dernieresNouvelles.textSlide2Sw }}</td>
+                    <td>{{ dernieresNouvelles.textSlide3Fr }}</td>
+                    <td>{{ dernieresNouvelles.textSlide3En }}</td>
+                    <td>{{ dernieresNouvelles.textSlide3Ger }}</td>
+                    <td>{{ dernieresNouvelles.textSlide3Sw }}</td>
+                    <td>{{ dernieresNouvelles.textSlide4Fr }}</td>
+                    <td>{{ dernieresNouvelles.textSlide4En }}</td>
+                    <td>{{ dernieresNouvelles.textSlide4Ger }}</td>
+                    <td>{{ dernieresNouvelles.textSlide4Sw }}</td>
+                    <td>{{ dernieresNouvelles.textSlide5Fr }}</td>
+                    <td>{{ dernieresNouvelles.textSlide5En }}</td>
+                    <td>{{ dernieresNouvelles.textSlide5Ger }}</td>
+                    <td>{{ dernieresNouvelles.textSlide5Sw }}</td>
+                    <td>{{ dernieresNouvelles.textSlide6Fr }}</td>
+                    <td>{{ dernieresNouvelles.textSlide6En }}</td>
+                    <td>{{ dernieresNouvelles.textSlide6Ger }}</td>
+                    <td>{{ dernieresNouvelles.textSlide6Sw }}</td>
+                    <td>{{ dernieresNouvelles.textSlide7Fr }}</td>
+                    <td>{{ dernieresNouvelles.textSlide7En }}</td>
+                    <td>{{ dernieresNouvelles.textSlide7Ger }}</td>
+                    <td>{{ dernieresNouvelles.textSlide7Sw }}</td>
+                    <td>{{ dernieresNouvelles.textSlide8Fr }}</td>
+                    <td>{{ dernieresNouvelles.textSlide8En }}</td>
+                    <td>{{ dernieresNouvelles.textSlide8Ger }}</td>
+                    <td>{{ dernieresNouvelles.textSlide8Sw }}</td>
+                    <td>{{ dernieresNouvelles.textSlide9Fr }}</td>
+                    <td>{{ dernieresNouvelles.textSlide9En }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/dernieres-nouvelles', dernieresNouvelles.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/dernieres-nouvelles', dernieresNouvelles.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(dernieresNouvelles)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

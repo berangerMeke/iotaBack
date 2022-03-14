@@ -1,0 +1,362 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-equipe-heading" jhiTranslate="iotaOrignAdminApp.equipe.home.createOrEditLabel">Create or edit a Equipe</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.titreFr" for="field_titreFr">Titre Fr</label>
+                    <input type="text" class="form-control" name="titreFr" id="field_titreFr"
+                           formControlName="titreFr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.titreEn" for="field_titreEn">Titre En</label>
+                    <input type="text" class="form-control" name="titreEn" id="field_titreEn"
+                           formControlName="titreEn"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.titreGer" for="field_titreGer">Titre Ger</label>
+                    <input type="text" class="form-control" name="titreGer" id="field_titreGer"
+                           formControlName="titreGer"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.titreSw" for="field_titreSw">Titre Sw</label>
+                    <input type="text" class="form-control" name="titreSw" id="field_titreSw"
+                           formControlName="titreSw"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.souTitreFr" for="field_souTitreFr">Sou Titre Fr</label>
+                    <input type="text" class="form-control" name="souTitreFr" id="field_souTitreFr"
+                           formControlName="souTitreFr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.souTitreEn" for="field_souTitreEn">Sou Titre En</label>
+                    <input type="text" class="form-control" name="souTitreEn" id="field_souTitreEn"
+                           formControlName="souTitreEn"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.souTitreGer" for="field_souTitreGer">Sou Titre Ger</label>
+                    <input type="text" class="form-control" name="souTitreGer" id="field_souTitreGer"
+                           formControlName="souTitreGer"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.souTitreSw" for="field_souTitreSw">Sou Titre Sw</label>
+                    <input type="text" class="form-control" name="souTitreSw" id="field_souTitreSw"
+                           formControlName="souTitreSw"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.nom1" for="field_nom1">Nom 1</label>
+                    <input type="text" class="form-control" name="nom1" id="field_nom1"
+                           formControlName="nom1"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.nom2" for="field_nom2">Nom 2</label>
+                    <input type="text" class="form-control" name="nom2" id="field_nom2"
+                           formControlName="nom2"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.nom3" for="field_nom3">Nom 3</label>
+                    <input type="text" class="form-control" name="nom3" id="field_nom3"
+                           formControlName="nom3"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.nom4" for="field_nom4">Nom 4</label>
+                    <input type="text" class="form-control" name="nom4" id="field_nom4"
+                           formControlName="nom4"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.nom5" for="field_nom5">Nom 5</label>
+                    <input type="text" class="form-control" name="nom5" id="field_nom5"
+                           formControlName="nom5"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.nom6" for="field_nom6">Nom 6</label>
+                    <input type="text" class="form-control" name="nom6" id="field_nom6"
+                           formControlName="nom6"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.nom7" for="field_nom7">Nom 7</label>
+                    <input type="text" class="form-control" name="nom7" id="field_nom7"
+                           formControlName="nom7"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.nom8" for="field_nom8">Nom 8</label>
+                    <input type="text" class="form-control" name="nom8" id="field_nom8"
+                           formControlName="nom8"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.prenom1" for="field_prenom1">Prenom 1</label>
+                    <input type="text" class="form-control" name="prenom1" id="field_prenom1"
+                           formControlName="prenom1"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.prenom2" for="field_prenom2">Prenom 2</label>
+                    <input type="text" class="form-control" name="prenom2" id="field_prenom2"
+                           formControlName="prenom2"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.prenom3" for="field_prenom3">Prenom 3</label>
+                    <input type="text" class="form-control" name="prenom3" id="field_prenom3"
+                           formControlName="prenom3"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.prenom4" for="field_prenom4">Prenom 4</label>
+                    <input type="text" class="form-control" name="prenom4" id="field_prenom4"
+                           formControlName="prenom4"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.prenom5" for="field_prenom5">Prenom 5</label>
+                    <input type="text" class="form-control" name="prenom5" id="field_prenom5"
+                           formControlName="prenom5"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.prenom6" for="field_prenom6">Prenom 6</label>
+                    <input type="text" class="form-control" name="prenom6" id="field_prenom6"
+                           formControlName="prenom6"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.prenom7" for="field_prenom7">Prenom 7</label>
+                    <input type="text" class="form-control" name="prenom7" id="field_prenom7"
+                           formControlName="prenom7"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.prenom8" for="field_prenom8">Prenom 8</label>
+                    <input type="text" class="form-control" name="prenom8" id="field_prenom8"
+                           formControlName="prenom8"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.qualite1" for="field_qualite1">Qualite 1</label>
+                    <input type="text" class="form-control" name="qualite1" id="field_qualite1"
+                           formControlName="qualite1"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.qualite2" for="field_qualite2">Qualite 2</label>
+                    <input type="text" class="form-control" name="qualite2" id="field_qualite2"
+                           formControlName="qualite2"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.qualite3" for="field_qualite3">Qualite 3</label>
+                    <input type="text" class="form-control" name="qualite3" id="field_qualite3"
+                           formControlName="qualite3"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.qualite4" for="field_qualite4">Qualite 4</label>
+                    <input type="text" class="form-control" name="qualite4" id="field_qualite4"
+                           formControlName="qualite4"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.qualite5" for="field_qualite5">Qualite 5</label>
+                    <input type="text" class="form-control" name="qualite5" id="field_qualite5"
+                           formControlName="qualite5"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.qualite6" for="field_qualite6">Qualite 6</label>
+                    <input type="text" class="form-control" name="qualite6" id="field_qualite6"
+                           formControlName="qualite6"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.qualite7" for="field_qualite7">Qualite 7</label>
+                    <input type="text" class="form-control" name="qualite7" id="field_qualite7"
+                           formControlName="qualite7"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.qualite8" for="field_qualite8">Qualite 8</label>
+                    <input type="text" class="form-control" name="qualite8" id="field_qualite8"
+                           formControlName="qualite8"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.image1" for="field_image1">Image 1</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('image1ContentType')!.value + ';base64,' + editForm.get('image1')!.value" style="max-height: 100px;" *ngIf="editForm.get('image1')!.value" alt="equipe image"/>
+                        <div *ngIf="editForm.get('image1')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('image1ContentType')!.value }}, {{ byteSize(editForm.get('image1')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('image1', 'image1ContentType', 'file_image1')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_image1" (change)="setFileData($event, 'image1', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="image1" id="field_image1"
+                           formControlName="image1"/>
+                    <input type="hidden" class="form-control" name="image1ContentType" id="field_image1ContentType"
+                           formControlName="image1ContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.image2" for="field_image2">Image 2</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('image2ContentType')!.value + ';base64,' + editForm.get('image2')!.value" style="max-height: 100px;" *ngIf="editForm.get('image2')!.value" alt="equipe image"/>
+                        <div *ngIf="editForm.get('image2')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('image2ContentType')!.value }}, {{ byteSize(editForm.get('image2')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('image2', 'image2ContentType', 'file_image2')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_image2" (change)="setFileData($event, 'image2', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="image2" id="field_image2"
+                           formControlName="image2"/>
+                    <input type="hidden" class="form-control" name="image2ContentType" id="field_image2ContentType"
+                           formControlName="image2ContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.image3" for="field_image3">Image 3</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('image3ContentType')!.value + ';base64,' + editForm.get('image3')!.value" style="max-height: 100px;" *ngIf="editForm.get('image3')!.value" alt="equipe image"/>
+                        <div *ngIf="editForm.get('image3')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('image3ContentType')!.value }}, {{ byteSize(editForm.get('image3')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('image3', 'image3ContentType', 'file_image3')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_image3" (change)="setFileData($event, 'image3', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="image3" id="field_image3"
+                           formControlName="image3"/>
+                    <input type="hidden" class="form-control" name="image3ContentType" id="field_image3ContentType"
+                           formControlName="image3ContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.image4" for="field_image4">Image 4</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('image4ContentType')!.value + ';base64,' + editForm.get('image4')!.value" style="max-height: 100px;" *ngIf="editForm.get('image4')!.value" alt="equipe image"/>
+                        <div *ngIf="editForm.get('image4')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('image4ContentType')!.value }}, {{ byteSize(editForm.get('image4')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('image4', 'image4ContentType', 'file_image4')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_image4" (change)="setFileData($event, 'image4', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="image4" id="field_image4"
+                           formControlName="image4"/>
+                    <input type="hidden" class="form-control" name="image4ContentType" id="field_image4ContentType"
+                           formControlName="image4ContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.image5" for="field_image5">Image 5</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('image5ContentType')!.value + ';base64,' + editForm.get('image5')!.value" style="max-height: 100px;" *ngIf="editForm.get('image5')!.value" alt="equipe image"/>
+                        <div *ngIf="editForm.get('image5')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('image5ContentType')!.value }}, {{ byteSize(editForm.get('image5')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('image5', 'image5ContentType', 'file_image5')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_image5" (change)="setFileData($event, 'image5', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="image5" id="field_image5"
+                           formControlName="image5"/>
+                    <input type="hidden" class="form-control" name="image5ContentType" id="field_image5ContentType"
+                           formControlName="image5ContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.image6" for="field_image6">Image 6</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('image6ContentType')!.value + ';base64,' + editForm.get('image6')!.value" style="max-height: 100px;" *ngIf="editForm.get('image6')!.value" alt="equipe image"/>
+                        <div *ngIf="editForm.get('image6')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('image6ContentType')!.value }}, {{ byteSize(editForm.get('image6')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('image6', 'image6ContentType', 'file_image6')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_image6" (change)="setFileData($event, 'image6', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="image6" id="field_image6"
+                           formControlName="image6"/>
+                    <input type="hidden" class="form-control" name="image6ContentType" id="field_image6ContentType"
+                           formControlName="image6ContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.image7" for="field_image7">Image 7</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('image7ContentType')!.value + ';base64,' + editForm.get('image7')!.value" style="max-height: 100px;" *ngIf="editForm.get('image7')!.value" alt="equipe image"/>
+                        <div *ngIf="editForm.get('image7')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('image7ContentType')!.value }}, {{ byteSize(editForm.get('image7')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('image7', 'image7ContentType', 'file_image7')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_image7" (change)="setFileData($event, 'image7', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="image7" id="field_image7"
+                           formControlName="image7"/>
+                    <input type="hidden" class="form-control" name="image7ContentType" id="field_image7ContentType"
+                           formControlName="image7ContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.equipe.image8" for="field_image8">Image 8</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('image8ContentType')!.value + ';base64,' + editForm.get('image8')!.value" style="max-height: 100px;" *ngIf="editForm.get('image8')!.value" alt="equipe image"/>
+                        <div *ngIf="editForm.get('image8')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('image8ContentType')!.value }}, {{ byteSize(editForm.get('image8')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('image8', 'image8ContentType', 'file_image8')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_image8" (change)="setFileData($event, 'image8', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="image8" id="field_image8"
+                           formControlName="image8"/>
+                    <input type="hidden" class="form-control" name="image8ContentType" id="field_image8ContentType"
+                           formControlName="image8ContentType" />
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
