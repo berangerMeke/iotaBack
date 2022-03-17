@@ -23,7 +23,7 @@
         <span jhiTranslate="iotaOrignAdminApp.equipe.home.notFound">No equipes found</span>
     </div>
 
-    <!-- <div class="table-responsive" id="entities" *ngIf="equipes?.length > 0">
+    <div class="table-responsive" id="entities" *ngIf="equipes?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
@@ -180,7 +180,7 @@
                 </tr>
             </tbody>
         </table>
-    </div> -->
+    </div>
 </div>
 
 
@@ -190,7 +190,8 @@
 
 <div class="row">
     <div *ngIf="equipes[0]" class="col col-md-12 col-12 faqs-style1">
-        <a [routerLink]="['/equipe', equipes[0].id, 'edit']" class="faqs-style">{{ equipes[0].titreFr }} </a>
+        <a [routerLink]="['/equipe', equipes[0].id, 'edit']" class="faqs-style"
+        (click)="update('titre')" >{{ equipes[0].titreFr }} </a>
     </div>
 </div>
 
