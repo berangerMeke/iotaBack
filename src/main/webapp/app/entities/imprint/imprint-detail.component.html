@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="imprint">
+            <h2><span jhiTranslate="iotaOrignAdminApp.imprint.detail.title">Imprint</span> {{ imprint.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="iotaOrignAdminApp.imprint.titreImprintEn">Titre Imprint En</span></dt>
+                <dd>
+                    <span>{{ imprint.titreImprintEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.imprint.titreImprintFr">Titre Imprint Fr</span></dt>
+                <dd>
+                    <span>{{ imprint.titreImprintFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.imprint.titreImprintGer">Titre Imprint Ger</span></dt>
+                <dd>
+                    <span>{{ imprint.titreImprintGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.imprint.titreImprintSw">Titre Imprint Sw</span></dt>
+                <dd>
+                    <span>{{ imprint.titreImprintSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.imprint.contenuImprintEn">Contenu Imprint En</span></dt>
+                <dd>
+                    <span>{{ imprint.contenuImprintEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.imprint.contenuImprintGer">Contenu Imprint Ger</span></dt>
+                <dd>
+                    <span>{{ imprint.contenuImprintGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.imprint.contenuImprintFr">Contenu Imprint Fr</span></dt>
+                <dd>
+                    <span>{{ imprint.contenuImprintFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.imprint.contenuImprintSw">Contenu Imprint Sw</span></dt>
+                <dd>
+                    <span>{{ imprint.contenuImprintSw }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/imprint', imprint.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

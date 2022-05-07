@@ -1,8 +1,26 @@
-<div class="row justify-content-center">
-    <div class="col-8">
-        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <!-- <h2 id="jhi-accueil-heading" jhiTranslate="iotaOrignAdminApp.accueil.home.createOrEditLabel">Update Inttro Section</h2> -->
-            <h2 id="jhi-accueil-heading">Update Intro Section</h2>
+<div class="row justify-content-center" style="margin-left: 0px !important">
+    <div class="col-11">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">         
+            <a> 
+                <span (click)="back()" >
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="4%" alt="back">
+                 <span class="arrow-back-update" jhiTranslate="iotaOrignAdminApp.accueil.home.backButton">Back</span>    
+                </span>
+            </a>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <span jhiTranslate="iotaOrignAdminApp.accueil.home.title" class="section-title">Intro Section</span>
+             &nbsp;&nbsp; | &nbsp;&nbsp;  
+            <span *ngIf="isIntroNoExist === 'true'" id="jhi-accueil-heading" jhiTranslate="iotaOrignAdminApp.accueil.home.createLabel" 
+            class="section-title2"> 
+                Create Intro Section
+            </span>
+            <span *ngIf="isIntroNoExist != 'true'" id="jhi-accueil-heading" jhiTranslate="iotaOrignAdminApp.accueil.home.EditLabel" 
+            class="section-title2">
+                Update Intro Section
+            </span>
+            <!-- <h2 id="jhi-accueil-heading">Update Intro Section</h2> -->
+            <hr>
+
             <div>
                 <jhi-alert-error></jhi-alert-error>
 
@@ -11,76 +29,92 @@
                     <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
                 </div> -->
 
-
-                <div *ngIf="eltChoisi === 'titre'">    
+                <div *ngIf="eltChoisi === 'titre' || isIntroNoExist === 'true'"> 
+                    
                     <div class="form-group">
-                        <label class="form-control-label"  for="field_titreFr">French Title</label>
-                        <input type="text" class="form-control" name="titreFr" id="field_titreFr"
-                            formControlName="titreFr"/>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-control-label" j for="field_titreEn">French Title</label>
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.accueil.titreEn" 
+                        for="field_titreEn">French Title
+                        </label>
                         <input type="text" class="form-control" name="titreEn" id="field_titreEn"
                             formControlName="titreEn"/>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-control-label" j for="field_titreGer">German Title</label>
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.accueil.titreGer"  
+                        for="field_titreGer">German Title
+                        </label>
                         <input type="text" class="form-control" name="titreGer" id="field_titreGer"
                             formControlName="titreGer"/>
                     </div>
+                    
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.accueil.titreFr"  
+                        for="field_titreFr">French Title
+                        </label>
+                        <input type="text" class="form-control" name="titreFr" id="field_titreFr"
+                            formControlName="titreFr"/>
+                           
+                    </div>
 
                     <div class="form-group">
-                        <label class="form-control-label" jfor="field_titreSw">Swahili Title</label>
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.accueil.titreSw" 
+                         for="field_titreSw">Swahili Title</label>
                         <input type="text" class="form-control" name="titreSw" id="field_titreSw"
                             formControlName="titreSw"/>
                     </div>
                 </div>
 
 
+                <div *ngIf="eltChoisi === 'soustitre' || isIntroNoExist === 'true'">
+                    <div class="form-group">
+                        <label class="form-control-label"  
+                        for="field_sousTitreEn" jhiTranslate="iotaOrignAdminApp.accueil.sousTitreEn">
+                            English Subtitle
+                        </label>
+                        <textarea  class="form-control" name="sousTitreEn" id="field_sousTitreEn"
+                            formControlName="sousTitreEn" rows="3">
+                        </textarea>
+                    </div>
 
+                    <div class="form-group">
+                        <label class="form-control-label" 
+                            for="field_sousTitreGer" jhiTranslate="iotaOrignAdminApp.accueil.sousTitreGer">
+                                German Subtitle
+                        </label>
+                        <textarea  class="form-control" name="sousTitreGer" id="field_sousTitreGer"
+                            formControlName="sousTitreGer" rows="3">
+                        </textarea>
+                    </div>
+               
+                    <div class="form-group">
+                        <label class="form-control-label"  
+                        for="field_sousTitreFr" jhiTranslate="iotaOrignAdminApp.accueil.sousTitreFr">
+                            French Subtitle
+                        </label>
+                        <textarea  class="form-control" name="sousTitreFr" id="field_sousTitreFr"
+                            formControlName="sousTitreFr" rows="3">
+                        </textarea>       
+                    </div>
 
-
-
-                <div *ngIf="eltChoisi === 'soustitre'">
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_sousTitreFr">French Subtitle</label>
-                    <textarea  class="form-control" name="sousTitreFr" id="field_sousTitreFr"
-                           formControlName="sousTitreFr" rows="3">
-                    </textarea>       
+                    <div class="form-group">
+                        <label class="form-control-label" 
+                            for="field_sousTitreSw" jhiTranslate="iotaOrignAdminApp.accueil.sousTitreSw"> 
+                                Swahili Subtitle
+                        </label>
+                        <textarea  class="form-control" name="sousTitreSw" id="field_sousTitreSw"
+                            formControlName="sousTitreSw" rows="3">
+                        </textarea>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_sousTitreEn">English Subtitle</label>
-                    <textarea  class="form-control" name="sousTitreEn" id="field_sousTitreEn"
-                           formControlName="sousTitreEn" rows="3">
-                    </textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" for="field_sousTitreGer">German Subtitle</label>
-                    <textarea  class="form-control" name="sousTitreGer" id="field_sousTitreGer"
-                           formControlName="sousTitreGer" rows="3">
-                    </textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" for="field_sousTitreSw"> Swahili Subtitle</label>
-                    <textarea  class="form-control" name="sousTitreSw" id="field_sousTitreSw"
-                           formControlName="sousTitreSw" rows="3">
-                    </textarea>
-                </div>
-
-
-            </div>
-
-
-                <div *ngIf="eltChoisi === 'logo'" class="form-group">
+            <hr>
+                <div *ngIf="eltChoisi === 'logo' || isIntroNoExist === 'true'" class="form-group">
                     <!-- <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.accueil.image" for="field_image">logo</label> -->
-                    <label class="form-control-label" for="field_image">Logo</label>
+                    <label class="form-control-label" for="field_image" jhiTranslate="iotaOrignAdminApp.accueil.logoText">
+                        Logo
+                    </label>
                     <div>
-                        <img [src]="'data:' + editForm.get('imageContentType')!.value + ';base64,' + editForm.get('image')!.value" style="max-height: 500px;" *ngIf="editForm.get('image')!.value" alt="accueil image"/>
+                        <img [src]="'data:' + editForm.get('imageContentType')!.value + ';base64,' + editForm.get('image')!.value" style="width: 70%;" *ngIf="editForm.get('image')!.value" alt="accueil image"/>
                         <div *ngIf="editForm.get('image')!.value" class="form-text text-danger clearfix">
                             <span class="pull-left">{{ editForm.get('imageContentType')!.value }}, {{ byteSize(editForm.get('image')!.value) }}</span>
                             <button type="button" (click)="clearInputImage('image', 'imageContentType', 'file_image')" class="btn btn-secondary btn-xs pull-right">
@@ -95,12 +129,8 @@
                            formControlName="imageContentType" />
                 </div>
 
-
-
-
-
             </div>
-
+            <hr>            
             <div>
                 <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
                     <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>

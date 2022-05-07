@@ -2,10 +2,12 @@
   "iotaOrignAdminApp": {
     "accueil": {
       "home": {
-        "title": "Accueils",
-        "createLabel": "Crear nuevo Accueil",
-        "createOrEditLabel": "Crear o editar Accueil",
-        "notFound": "Ningún Accueils encontrado"
+        "title": "Sehemu ya utangulizi",
+        "createLabel": "Unda sehemu",
+        "EditLabel": "Sehemu ya sasisho",
+        "consigne": "Bofya kwenye kipengee unachotaka kusasisha",
+        "notFound": "Sehemu tupu",
+        "backButton": "Rudi"
       },
       "created": "Un nuevo Accueil ha sido creado con el identificador {{ param }}",
       "updated": "Un Accueil ha sido actualizado con el identificador {{ param }}",
@@ -14,17 +16,18 @@
         "question": "¿Seguro que quiere eliminar Accueil {{ id }}?"
       },
       "detail": {
-        "title": "Accueil"
+        "title": "Utangulizi"
       },
-      "titreFr": "Titre Fr",
-      "titreEn": "Titre En",
-      "titreGer": "Titre Ger",
-      "titreSw": "Titre Sw",
-      "sousTitreFr": "Sous Titre Fr",
-      "sousTitreEn": "Sous Titre En",
-      "sousTitreGer": "Sous Titre Ger",
-      "sousTitreSw": "Sous Titre Sw",
-      "image": "Image"
+      "titreFr": "Kichwa kwa Kifaransa",
+      "titreEn": "Kichwa kwa Kiingereza",
+      "titreGer": "Kichwa kwa Kijerumani",
+      "titreSw": "Title kwa Kiswahili",
+      "sousTitreFr": "Manukuu ya Kifaransa",
+      "sousTitreEn": "Manukuu ya Kiingereza",
+      "sousTitreGer": "Manukuu ya Kijerumani",
+      "sousTitreSw": "Manukuu ya Kiswahili",
+      "image": "Picha",
+      "textButton": "Wasiliana nasi"
     }
   }
 }

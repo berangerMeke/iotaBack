@@ -2,19 +2,32 @@
   "global": {
     "title": "Administration Panel",
     "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
+
+    "titrePanneauSection": "Page : Home - Section",
+    "titrePanneauImprint": "Page : Imprint",
+    "titrePanneauPrivacyPolicy": "Page : Privacy Policy",
+    "titrePanneauText": "Create or Update this section",
+    "titrePanneauTextButton": "Open",
+
     "menu": {
       "home": "Home",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
-        "main": "Entities",
-        "accueil": "Accueil",
-        "aPropos": "A Propos",
+        "main": "Sections/Pages",
+        "accueil": "Intro",
+        "aPropos": "About us",
         "service": "Service",
-        "avantages": "Avantages",
-        "objectifs": "Objectifs",
-        "faQs": "FA Qs",
-        "equipe": "Equipe",
+        "avantages": "Benefits",
+        "objectifs": "Achievements",
+        "faQs": "FAQs",
+        "equipe": "Team",
+        "dernieresNouvelles": "Latest News",
+        "imprint": "Imprint",
+        "privacyPolicy": "Privacy Policy",
+        "piedPage": "Footer",
+        "footerSection": "Footer Section",
         "dernieresNouvelles": "Dernieres Nouvelles",
+        "googleAnalitcs": "Google Analitcs",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -144,5 +157,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "This is your footer"
+  "footer": "© 2022 IotaOrigin UG. All rights reserved."
 }

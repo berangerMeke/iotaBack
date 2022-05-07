@@ -82,6 +82,52 @@ export interface IDernieresNouvelles {
   textSlide8Sw?: string;
   textSlide9Fr?: string;
   textSlide9En?: string;
+  textSlide9Ger?: string;
+  textSlide9Sw?: string;
+  textSlide10Fr?: string;
+  textSlide10En?: string;
+  textSlide10Ger?: string;
+  textSlide10Sw?: string;
+  imageSlide1ContentType?: string;
+  imageSlide1?: any;
+  imageSlide2ContentType?: string;
+  imageSlide2?: any;
+  imageSlide3ContentType?: string;
+  imageSlide3?: any;
+  imageSlide4ContentType?: string;
+  imageSlide4?: any;
+  imageSlide5ContentType?: string;
+  imageSlide5?: any;
+  imageSlide6ContentType?: string;
+  imageSlide6?: any;
+  imageSlide7ContentType?: string;
+  imageSlide7?: any;
+  imageSlide8ContentType?: string;
+  imageSlide8?: any;
+  imageSlide9ContentType?: string;
+  imageSlide9?: any;
+  imageSlide10ContentType?: string;
+  imageSlide10?: any;
+  readMore1?: string;
+  readMore2?: string;
+  readMore3?: string;
+  readMore4?: string;
+  readMore5?: string;
+  readMore6?: string;
+  readMore7?: string;
+  readMore8?: string;
+  readMore9?: string;
+  readMore10?: string;
+  date1?: string;
+  date2?: string;
+  date3?: string;
+  date4?: string;
+  date5?: string;
+  date6?: string;
+  date7?: string;
+  date8?: string;
+  date9?: string;
+  date10?: string;
 }
 
 export class DernieresNouvelles implements IDernieresNouvelles {
@@ -168,6 +214,52 @@ export class DernieresNouvelles implements IDernieresNouvelles {
     public textSlide8Ger?: string,
     public textSlide8Sw?: string,
     public textSlide9Fr?: string,
-    public textSlide9En?: string
+    public textSlide9En?: string,
+    public textSlide9Ger?: string,
+    public textSlide9Sw?: string,
+    public textSlide10Fr?: string,
+    public textSlide10En?: string,
+    public textSlide10Ger?: string,
+    public textSlide10Sw?: string,
+    public imageSlide1ContentType?: string,
+    public imageSlide1?: any,
+    public imageSlide2ContentType?: string,
+    public imageSlide2?: any,
+    public imageSlide3ContentType?: string,
+    public imageSlide3?: any,
+    public imageSlide4ContentType?: string,
+    public imageSlide4?: any,
+    public imageSlide5ContentType?: string,
+    public imageSlide5?: any,
+    public imageSlide6ContentType?: string,
+    public imageSlide6?: any,
+    public imageSlide7ContentType?: string,
+    public imageSlide7?: any,
+    public imageSlide8ContentType?: string,
+    public imageSlide8?: any,
+    public imageSlide9ContentType?: string,
+    public imageSlide9?: any,
+    public imageSlide10ContentType?: string,
+    public imageSlide10?: any,
+    public readMore1?: string,
+    public readMore2?: string,
+    public readMore3?: string,
+    public readMore4?: string,
+    public readMore5?: string,
+    public readMore6?: string,
+    public readMore7?: string,
+    public readMore8?: string,
+    public readMore9?: string,
+    public readMore10?: string,
+    public date1?: string,
+    public date2?: string,
+    public date3?: string,
+    public date4?: string,
+    public date5?: string,
+    public date6?: string,
+    public date7?: string,
+    public date8?: string,
+    public date9?: string,
+    public date10?: string
   ) {}
 }

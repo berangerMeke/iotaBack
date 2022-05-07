@@ -1,0 +1,64 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "titrePrivacyPolicyEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titrePrivacyPolicyGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titrePrivacyPolicyFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titrePrivacyPolicySw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contenuPrivacyPolicyEn",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "7000"
+        },
+        {
+            "fieldName": "contenuPrivacyPolicyGer",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "7000"
+        },
+        {
+            "fieldName": "contenuPrivacyPolicyFr",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "7000"
+        },
+        {
+            "fieldName": "contenuPrivacyPolicySw",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "7000"
+        }
+    ],
+    "changelogDate": "20220328021904",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "privacy_policy",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}

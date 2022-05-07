@@ -12,6 +12,13 @@
         Added the entity DernieresNouvelles.
     -->
     <changeSet id="20220311125928-1" author="jhipster">
+
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="dernieres_nouvelles"/>
+            </not>
+        </preConditions>
+
         <createTable tableName="dernieres_nouvelles">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -262,6 +269,144 @@
             <column name="text_slide_9_en" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="text_slide_9_ger" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="text_slide_9_sw" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="text_slide_10_fr" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="text_slide_10_en" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="text_slide_10_ger" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="text_slide_10_sw" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_1" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_1_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_2" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_2_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_3" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_3_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_4" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_4_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_5" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_5_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_6" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_6_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_7" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_7_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_8" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_8_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_9" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_9_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_10" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_slide_10_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="read_more_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="read_more_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="read_more_3" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="read_more_4" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="read_more_5" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="read_more_6" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="read_more_7" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="read_more_8" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="read_more_9" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="read_more_10" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_3" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_4" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_5" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_6" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_7" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_8" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_9" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="date_10" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
     </changeSet>
@@ -367,6 +512,52 @@
             <column name="text_slide_8_sw" type="string"/>
             <column name="text_slide_9_fr" type="string"/>
             <column name="text_slide_9_en" type="string"/>
+            <column name="text_slide_9_ger" type="string"/>
+            <column name="text_slide_9_sw" type="string"/>
+            <column name="text_slide_10_fr" type="string"/>
+            <column name="text_slide_10_en" type="string"/>
+            <column name="text_slide_10_ger" type="string"/>
+            <column name="text_slide_10_sw" type="string"/>
+            <column name="image_slide_1" type="blob"/>
+            <column name="image_slide_1_content_type" type="string"/>
+            <column name="image_slide_2" type="blob"/>
+            <column name="image_slide_2_content_type" type="string"/>
+            <column name="image_slide_3" type="blob"/>
+            <column name="image_slide_3_content_type" type="string"/>
+            <column name="image_slide_4" type="blob"/>
+            <column name="image_slide_4_content_type" type="string"/>
+            <column name="image_slide_5" type="blob"/>
+            <column name="image_slide_5_content_type" type="string"/>
+            <column name="image_slide_6" type="blob"/>
+            <column name="image_slide_6_content_type" type="string"/>
+            <column name="image_slide_7" type="blob"/>
+            <column name="image_slide_7_content_type" type="string"/>
+            <column name="image_slide_8" type="blob"/>
+            <column name="image_slide_8_content_type" type="string"/>
+            <column name="image_slide_9" type="blob"/>
+            <column name="image_slide_9_content_type" type="string"/>
+            <column name="image_slide_10" type="blob"/>
+            <column name="image_slide_10_content_type" type="string"/>
+            <column name="read_more_1" type="string"/>
+            <column name="read_more_2" type="string"/>
+            <column name="read_more_3" type="string"/>
+            <column name="read_more_4" type="string"/>
+            <column name="read_more_5" type="string"/>
+            <column name="read_more_6" type="string"/>
+            <column name="read_more_7" type="string"/>
+            <column name="read_more_8" type="string"/>
+            <column name="read_more_9" type="string"/>
+            <column name="read_more_10" type="string"/>
+            <column name="date_1" type="string"/>
+            <column name="date_2" type="string"/>
+            <column name="date_3" type="string"/>
+            <column name="date_4" type="string"/>
+            <column name="date_5" type="string"/>
+            <column name="date_6" type="string"/>
+            <column name="date_7" type="string"/>
+            <column name="date_8" type="string"/>
+            <column name="date_9" type="string"/>
+            <column name="date_10" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>

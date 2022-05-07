@@ -1,25 +1,42 @@
 <div>
-    <h2 id="page-heading">
-        <!-- <span jhiTranslate="iotaOrignAdminApp.accueil.home.title">Accueils</span> -->
-        <span>Intro Section</span>&nbsp;&nbsp; | &nbsp;&nbsp;
-        <span style="color: rgb(82, 82, 82); font-size:60%">Cliquez sur l'élément que vous souhaitez mettre à jour.</span>
+    <h3 id="page-heading" class="intro-button">
+        <a> 
+           <span (click)="back()">
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="3%" alt="back">
+                <span class="arrow-back" jhiTranslate="iotaOrignAdminApp.accueil.home.backButton">Back</span>    
+            </span>
+        </a>
+        &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span jhiTranslate="iotaOrignAdminApp.accueil.home.title">Intro Section</span>
+         &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span *ngIf="accueils.length > 0" style="color: rgb(82, 82, 82); font-size:60%" jhiTranslate="iotaOrignAdminApp.accueil.home.consigne">
+            Cliquez sur l'élément que vous souhaitez mettre à jour.
+        </span>    
 
-        <button *ngIf="!accueils" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-accueil" [routerLink]="['/accueil/new']">
+        <button *ngIf="accueils.length < 1" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-accueil" 
+            [routerLink]="['/accueil/new']"
+            (click)="createIntro()">
             <fa-icon icon="plus"></fa-icon>
             <span  jhiTranslate="iotaOrignAdminApp.accueil.home.createLabel">
             Create a new Accueil
             </span>
         </button>
-    </h2>
+        &nbsp;&nbsp;&nbsp;
+        <button *ngIf="accueils.length >= 1" type="submit" (click)="delete(accueils[0])"
+                class="btn btn-danger btn-sm">
+            <fa-icon icon="times"></fa-icon>
+            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+        </button>
+    </h3>
 
-    <jhi-alert-error></jhi-alert-error>
+    <!-- <jhi-alert-error></jhi-alert-error> -->
 
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="accueils?.length === 0">
         <span jhiTranslate="iotaOrignAdminApp.accueil.home.notFound">No accueils found</span>
     </div>
-
+    <hr>
    <!-- <div class="table-responsive" id="entities" *ngIf="accueils?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
@@ -88,10 +105,6 @@
 
 <div>
    
-
-
-
-
     <section class="intro-section">
         <div class="container">
             <div class="row d-flex align-items-top text-white">
@@ -100,21 +113,24 @@
                     <a *ngIf="accueils[0]" class="brand d-inline-block mb-2 anim-elt-1" 
                     (click)="update('logo')"
                     [routerLink]="['/accueil', accueils[0].id, 'edit']" 
-                    >
+                    style="padding-left: 0px !important">
 
                     <a *ngIf="accueils[0].image">
-                        <img [src]="'data:' + accueils[0].imageContentType + ';base64,' + accueils[0].image" style="max-height: 200px;" alt="accueil image"/>
+                        <img [src]="'data:' + accueils[0].imageContentType + ';base64,' + accueils[0].image" style="width: 100%;" alt="accueil image"/>
                     </a>
                     <!-- <span *ngIf="accueils[0].image">{{ accueil.imageContentType }}, {{ byteSize(accueil.image) }}</span> -->
                                          
                     <!-- <img src="../../../content/images/iotaOrign-images/logo.png" alt="" class=""> -->
                     </a>
                     
-                    <h1 class="display-2" *ngIf="accueils[0]" [routerLink]="['/accueil', accueils[0].id, 'edit']">
+                    <h1 class="display-2" *ngIf="accueils[0]" [routerLink]="['/accueil', accueils[0].id, 'edit']"
+                    style="padding-left: 0px !important">
                        <a> 
-                           <span class="display-2--intro" (click)="update('titre')" 
-                            >
-                            {{accueils[0].titreFr}}
+                           <span class="display-2--intro" (click)="update('titre')">
+                                <span *ngIf="languageService.currentLang === 'fr'">{{accueils[0].titreFr}}</span>
+                                <span *ngIf="languageService.currentLang === 'en'">{{accueils[0].titreEn}}</span>
+                                <span *ngIf="languageService.currentLang === 'es'">{{accueils[0].titreSw}}</span>
+                                <span *ngIf="languageService.currentLang === 'de'">{{accueils[0].titreGer}}</span>
                             </span>
                         </a>
                     </h1>
@@ -122,13 +138,18 @@
                     <div *ngIf="accueils[0]"  class="display-2--description" [routerLink]="['/accueil', accueils[0].id, 'edit']" (click)="update('soustitre')"> 
                         <a >
                             <span class="mov-deco">
-                                {{accueils[0].sousTitreFr}}
+                                <span *ngIf="languageService.currentLang === 'en'">{{accueils[0].sousTitreEn}}</span>
+                                <span *ngIf="languageService.currentLang === 'es'">{{accueils[0].sousTitreSw}}</span>
+                                <span *ngIf="languageService.currentLang === 'de'">{{accueils[0].sousTitreGer}}</span>
+                                <span *ngIf="languageService.currentLang === 'fr'">{{accueils[0].sousTitreFr}}</span>
                             </span>                    
                         </a>
                     </div>                  
                     <div style="margin-top: 5%; margin-bottom: 5%;">
-                        <a class="cta-btn btn rounded-pill btn-rounded text-sm-center" >Contact us
-                            <span><i class="fas fa-arrow-right"></i></span>
+                        <a class="cta-btn btn rounded-pill btn-rounded text-sm-center" 
+                        jhiTranslate="iotaOrignAdminApp.accueil.textButton" >
+                        Contact us
+                        <span><i class="fas fa-arrow-right"></i></span>
                         </a>
                     </div>                    
                 </div>

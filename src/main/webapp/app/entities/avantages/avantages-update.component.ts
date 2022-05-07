@@ -4,35 +4,43 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Location } from '@angular/common';
 import { JhiDataUtils, JhiFileLoadError, JhiEventManager, JhiEventWithContent } from 'ng-jhipster';
 import {TransfertDataService} from '../../core/services/transfert-data.service'
 
 import { IAvantages, Avantages } from 'app/shared/model/avantages.model';
 import { AvantagesService } from './avantages.service';
 import { AlertError } from 'app/shared/alert/alert-error.model';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 
 @Component({
   selector: 'jhi-avantages-update',
-  templateUrl: './avantages-update.component.html'
+  templateUrl: './avantages-update.component.html',
+  styleUrls: ['./avantages-update.scss']
 })
 export class AvantagesUpdateComponent implements OnInit {
   isSaving = false;
   eltChoisi : any;
 
+  public Editor = ClassicEditor;
+
+  isAvantagesNoExist: any;
+
   editForm = this.fb.group({
     id: [],
-    titreFr: [],
-    titreEn: [],
-    titreGer: [],
-    titreSw: [],
-    sousTitreFr: [],
-    sousTitreEn: [],
-    sousTitreGer: [],
-    sousTitreSw: [],
-    textParagraphe1FR: [],
-    textParagraphe1En: [],
-    textParagraphe1Ger: [],
-    textParagraphe1Sw: [],
+    titreFr: ['', Validators.required],
+    titreEn: ['', Validators.required],
+    titreGer: ['', Validators.required],
+    titreSw: ['', Validators.required],
+    sousTitreFr: ['', Validators.required],
+    sousTitreEn: ['', Validators.required],
+    sousTitreGer: ['', Validators.required],
+    sousTitreSw: ['', Validators.required],
+    textParagraphe1FR: ['', Validators.required],
+    textParagraphe1En: ['', Validators.required],
+    textParagraphe1Ger: ['', Validators.required],
+    textParagraphe1Sw: ['', Validators.required],
     textParagraphe2Fr: [],
     textParagraphe2En: [],
     textParagraphe2Ger: [],
@@ -61,8 +69,8 @@ export class AvantagesUpdateComponent implements OnInit {
     textParagraphe8En: [],
     textParagraphe8Ger: [],
     textParagraphe8Sw: [],
-    image: [],
-    imageContentType: []
+    image: ['', Validators.required],
+    imageContentType: ['', Validators.required]
   });
 
   constructor(
@@ -70,12 +78,45 @@ export class AvantagesUpdateComponent implements OnInit {
     protected eventManager: JhiEventManager,
     protected avantagesService: AvantagesService,
     protected elementRef: ElementRef,
+    private location: Location,
     public transfertDataService: TransfertDataService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
-  ) {}
+  ) {
+
+    ClassicEditor.defaultConfig = {
+      toolbar: {
+          items: [
+              'heading',
+              '|',
+              'bold',
+              'italic',
+              'link',
+              'bulletedList',
+              'numberedList',
+            //  'uploadImage',
+            // 'blockQuote',
+              'undo',
+              'redo'
+          ]
+      },
+      image: {
+          toolbar: [
+              'imageStyle:inline',
+              'imageStyle:block',
+              'imageStyle:side',
+              '|',
+              'toggleImageCaption',
+              'imageTextAlternative'
+          ]
+      },
+      language: 'en'
+    };
+
+  }
 
   ngOnInit(): void {
+    this.isAvantagesNoExist = localStorage.getItem('isNewAvantages'); 
     this.eltChoisi = this.transfertDataService.getData();
     this.activatedRoute.data.subscribe(({ avantages }) => {
       this.updateForm(avantages);
@@ -157,8 +198,15 @@ export class AvantagesUpdateComponent implements OnInit {
   }
 
   previousState(): void {
+    localStorage.removeItem("isNewAvantages");
     window.history.back();
   }
+
+  back(): void {
+    this.location.back()
+    localStorage.removeItem("isNewAvantages");
+  }
+
 
   update(elt: any): void {
     this.transfertDataService.setData(elt);
@@ -168,8 +216,10 @@ export class AvantagesUpdateComponent implements OnInit {
     this.isSaving = true;
     const avantages = this.createFromForm();
     if (avantages.id !== undefined) {
+      localStorage.removeItem("isNewAvantages");
       this.subscribeToSaveResponse(this.avantagesService.update(avantages));
     } else {
+      localStorage.removeItem("isNewAvantages");
       this.subscribeToSaveResponse(this.avantagesService.create(avantages));
     }
   }

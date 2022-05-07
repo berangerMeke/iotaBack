@@ -1,16 +1,37 @@
 <div>
-    <h2 id="page-heading">
-        <span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.title">Dernieres Nouvelles</span>
-
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dernieres-nouvelles" [routerLink]="['/dernieres-nouvelles/new']">
-            <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.createLabel">
-            Create a new Dernieres Nouvelles
+    <h3 id="page-heading" class="intro-button">
+        <a> 
+           <span (click)="back()">
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="3%" alt="back">
+                <span class="arrow-back" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.backButton">Back</span>    
             </span>
+        </a>
+        &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.title">dernieresNouvelles us Section</span>
+         &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span *ngIf="dernieresNouvelles.length > 0" style="color: rgb(82, 82, 82); font-size:60%" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.consigne">
+            Cliquez sur l'élément que vous souhaitez mettre à jour.
+        </span>    
+    
+        <button *ngIf="dernieresNouvelles.length < 1" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-dernieresNouvelles" 
+            [routerLink]="['/dernieres-nouvelles/new']"
+            (click)="createDernieresnouvelles()">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.createLabel">Create a new A Propos</span>
         </button>
-    </h2>
+        &nbsp;&nbsp;&nbsp;
+        <button type="submit" (click)="delete(dernieresNouvelles[0])"
+                class="btn btn-danger btn-sm">
+            <fa-icon icon="times"></fa-icon>
+            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+        </button>
+    </h3>
+    
+    <hr>
 
-    <jhi-alert-error></jhi-alert-error>
+
+
+    <!-- <jhi-alert-error></jhi-alert-error> -->
 
     <jhi-alert></jhi-alert>
 
@@ -18,7 +39,7 @@
         <span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.notFound">No dernieresNouvelles found</span>
     </div>
 
-    <div class="table-responsive" id="entities" *ngIf="dernieresNouvelles?.length > 0">
+    <!-- <div class="table-responsive" id="entities" *ngIf="dernieresNouvelles?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
@@ -105,6 +126,42 @@
                     <th scope="col"  jhiSortBy="textSlide8Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Sw">Text Slide 8 Sw</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="textSlide9Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9Fr">Text Slide 9 Fr</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="textSlide9En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9En">Text Slide 9 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide9Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9Ger">Text Slide 9 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide9Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9Sw">Text Slide 9 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide10Fr"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide10Fr">Text Slide 10 Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide10En"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide10En">Text Slide 10 En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide10Ger"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide10Ger">Text Slide 10 Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="textSlide10Sw"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide10Sw">Text Slide 10 Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imageSlide1"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide1">Image Slide 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imageSlide2"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide2">Image Slide 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imageSlide3"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide3">Image Slide 3</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imageSlide4"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide4">Image Slide 4</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imageSlide5"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide5">Image Slide 5</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imageSlide6"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide6">Image Slide 6</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imageSlide7"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide7">Image Slide 7</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imageSlide8"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide8">Image Slide 8</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imageSlide9"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide9">Image Slide 9</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="imageSlide10"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide10">Image Slide 10</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="readMore1"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore1">Read More 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="readMore2"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore2">Read More 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="readMore3"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore3">Read More 3</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="readMore4"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore4">Read More 4</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="readMore5"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore5">Read More 5</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="readMore6"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore6">Read More 6</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="readMore7"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore7">Read More 7</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="readMore8"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore8">Read More 8</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="readMore9"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore9">Read More 9</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="readMore10"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore10">Read More 10</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date1"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date1">Date 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date2"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date2">Date 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date3"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date3">Date 3</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date4"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date4">Date 4</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date5"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date5">Date 5</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date6"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date6">Date 6</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date7"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date7">Date 7</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date8"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date8">Date 8</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date9"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date9">Date 9</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="date10"><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date10">Date 10</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -193,6 +250,92 @@
                     <td>{{ dernieresNouvelles.textSlide8Sw }}</td>
                     <td>{{ dernieresNouvelles.textSlide9Fr }}</td>
                     <td>{{ dernieresNouvelles.textSlide9En }}</td>
+                    <td>{{ dernieresNouvelles.textSlide9Ger }}</td>
+                    <td>{{ dernieresNouvelles.textSlide9Sw }}</td>
+                    <td>{{ dernieresNouvelles.textSlide10Fr }}</td>
+                    <td>{{ dernieresNouvelles.textSlide10En }}</td>
+                    <td>{{ dernieresNouvelles.textSlide10Ger }}</td>
+                    <td>{{ dernieresNouvelles.textSlide10Sw }}</td>
+                    <td>
+                        <a *ngIf="dernieresNouvelles.imageSlide1" (click)="openFile(dernieresNouvelles.imageSlide1ContentType, dernieresNouvelles.imageSlide1)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide1ContentType + ';base64,' + dernieresNouvelles.imageSlide1" style="max-height: 30px;" alt="dernieresNouvelles image"/>
+                        </a>
+                        <span *ngIf="dernieresNouvelles.imageSlide1">{{ dernieresNouvelles.imageSlide1ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide1) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="dernieresNouvelles.imageSlide2" (click)="openFile(dernieresNouvelles.imageSlide2ContentType, dernieresNouvelles.imageSlide2)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide2ContentType + ';base64,' + dernieresNouvelles.imageSlide2" style="max-height: 30px;" alt="dernieresNouvelles image"/>
+                        </a>
+                        <span *ngIf="dernieresNouvelles.imageSlide2">{{ dernieresNouvelles.imageSlide2ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide2) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="dernieresNouvelles.imageSlide3" (click)="openFile(dernieresNouvelles.imageSlide3ContentType, dernieresNouvelles.imageSlide3)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide3ContentType + ';base64,' + dernieresNouvelles.imageSlide3" style="max-height: 30px;" alt="dernieresNouvelles image"/>
+                        </a>
+                        <span *ngIf="dernieresNouvelles.imageSlide3">{{ dernieresNouvelles.imageSlide3ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide3) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="dernieresNouvelles.imageSlide4" (click)="openFile(dernieresNouvelles.imageSlide4ContentType, dernieresNouvelles.imageSlide4)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide4ContentType + ';base64,' + dernieresNouvelles.imageSlide4" style="max-height: 30px;" alt="dernieresNouvelles image"/>
+                        </a>
+                        <span *ngIf="dernieresNouvelles.imageSlide4">{{ dernieresNouvelles.imageSlide4ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide4) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="dernieresNouvelles.imageSlide5" (click)="openFile(dernieresNouvelles.imageSlide5ContentType, dernieresNouvelles.imageSlide5)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide5ContentType + ';base64,' + dernieresNouvelles.imageSlide5" style="max-height: 30px;" alt="dernieresNouvelles image"/>
+                        </a>
+                        <span *ngIf="dernieresNouvelles.imageSlide5">{{ dernieresNouvelles.imageSlide5ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide5) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="dernieresNouvelles.imageSlide6" (click)="openFile(dernieresNouvelles.imageSlide6ContentType, dernieresNouvelles.imageSlide6)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide6ContentType + ';base64,' + dernieresNouvelles.imageSlide6" style="max-height: 30px;" alt="dernieresNouvelles image"/>
+                        </a>
+                        <span *ngIf="dernieresNouvelles.imageSlide6">{{ dernieresNouvelles.imageSlide6ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide6) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="dernieresNouvelles.imageSlide7" (click)="openFile(dernieresNouvelles.imageSlide7ContentType, dernieresNouvelles.imageSlide7)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide7ContentType + ';base64,' + dernieresNouvelles.imageSlide7" style="max-height: 30px;" alt="dernieresNouvelles image"/>
+                        </a>
+                        <span *ngIf="dernieresNouvelles.imageSlide7">{{ dernieresNouvelles.imageSlide7ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide7) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="dernieresNouvelles.imageSlide8" (click)="openFile(dernieresNouvelles.imageSlide8ContentType, dernieresNouvelles.imageSlide8)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide8ContentType + ';base64,' + dernieresNouvelles.imageSlide8" style="max-height: 30px;" alt="dernieresNouvelles image"/>
+                        </a>
+                        <span *ngIf="dernieresNouvelles.imageSlide8">{{ dernieresNouvelles.imageSlide8ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide8) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="dernieresNouvelles.imageSlide9" (click)="openFile(dernieresNouvelles.imageSlide9ContentType, dernieresNouvelles.imageSlide9)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide9ContentType + ';base64,' + dernieresNouvelles.imageSlide9" style="max-height: 30px;" alt="dernieresNouvelles image"/>
+                        </a>
+                        <span *ngIf="dernieresNouvelles.imageSlide9">{{ dernieresNouvelles.imageSlide9ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide9) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="dernieresNouvelles.imageSlide10" (click)="openFile(dernieresNouvelles.imageSlide10ContentType, dernieresNouvelles.imageSlide10)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide10ContentType + ';base64,' + dernieresNouvelles.imageSlide10" style="max-height: 30px;" alt="dernieresNouvelles image"/>
+                        </a>
+                        <span *ngIf="dernieresNouvelles.imageSlide10">{{ dernieresNouvelles.imageSlide10ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide10) }}</span>
+                    </td>
+                    <td>{{ dernieresNouvelles.readMore1 }}</td>
+                    <td>{{ dernieresNouvelles.readMore2 }}</td>
+                    <td>{{ dernieresNouvelles.readMore3 }}</td>
+                    <td>{{ dernieresNouvelles.readMore4 }}</td>
+                    <td>{{ dernieresNouvelles.readMore5 }}</td>
+                    <td>{{ dernieresNouvelles.readMore6 }}</td>
+                    <td>{{ dernieresNouvelles.readMore7 }}</td>
+                    <td>{{ dernieresNouvelles.readMore8 }}</td>
+                    <td>{{ dernieresNouvelles.readMore9 }}</td>
+                    <td>{{ dernieresNouvelles.readMore10 }}</td>
+                    <td>{{ dernieresNouvelles.date1 }}</td>
+                    <td>{{ dernieresNouvelles.date2 }}</td>
+                    <td>{{ dernieresNouvelles.date3 }}</td>
+                    <td>{{ dernieresNouvelles.date4 }}</td>
+                    <td>{{ dernieresNouvelles.date5 }}</td>
+                    <td>{{ dernieresNouvelles.date6 }}</td>
+                    <td>{{ dernieresNouvelles.date7 }}</td>
+                    <td>{{ dernieresNouvelles.date8 }}</td>
+                    <td>{{ dernieresNouvelles.date9 }}</td>
+                    <td>{{ dernieresNouvelles.date10 }}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"
@@ -219,5 +362,275 @@
                 </tr>
             </tbody>
         </table>
+    </div> -->
+
+</div>
+
+
+
+
+<div class="row">
+    <div *ngIf="dernieresNouvelles[0]" class="col col-md-12 col-12 faqs-style1">
+        <a [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']" 
+        (click)="update('titre')"
+        class="faqs-style">
+            <span *ngIf="languageService.currentLang === 'fr'">{{dernieresNouvelles[0].titreFr}}</span>
+            <span *ngIf="languageService.currentLang === 'en'">{{dernieresNouvelles[0].titreEn}}</span>
+            <span *ngIf="languageService.currentLang === 'es'">{{dernieresNouvelles[0].titreSw}}</span>
+            <span *ngIf="languageService.currentLang === 'de'">{{dernieresNouvelles[0].titreGer}}</span>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col col-md-3 col-12 space">
+        <div class="card" *ngIf="dernieresNouvelles[0]?.textSlide1Fr" >
+            <a class="card-header titre-card" 
+            (click)="update('contenuSlide1')"
+            [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']">     
+                <img [src]="'data:' + dernieresNouvelles[0].imageSlide1ContentType + ';base64,' + dernieresNouvelles[0].imageSlide1" style="width: 100%;" alt="accueil image"/>           
+            </a>
+            <div class="card-body">
+              <p class="card-text ">
+                <a [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']" 
+                  (click)="update('contenuSlide1')"
+                  class="paragraphe-style">
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="dernieresNouvelles[0].textSlide1Fr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="dernieresNouvelles[0].textSlide1En"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="dernieresNouvelles[0].textSlide1Ger"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="dernieresNouvelles[0].textSlide1Sw"></div>
+                </a>
+              </p>
+              <div>
+                <span>{{dernieresNouvelles[0].date1}}</span>
+              </div>
+              <div class="button-style">
+                <button type="button" (click)="update('readMore1')" [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']"   class="btn btn-success">
+                    <fa-icon icon="th-list"></fa-icon>&nbsp;<span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore" >read More</span>
+                </button>
+              </div>
+          </div>
+            </div>
+    </div>
+
+
+      <div class="col col-md-3 col-12 space">
+        <div class="card" *ngIf="dernieresNouvelles[0]?.textSlide2Fr" >
+            <a class="card-header titre-card" 
+            (click)="update('contenuSlide2')"
+            [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']">                   
+            <img [src]="'data:' + dernieresNouvelles[0].imageSlide2ContentType + ';base64,' + dernieresNouvelles[0].imageSlide2" style="width: 100%;" alt="dernieresNouvelles image"/>           
+            </a>
+            <div class="card-body">
+              <p class="card-text ">
+                  <a [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']" 
+                  (click)="update('contenuSlide2')"
+                  class="paragraphe-style">
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="dernieresNouvelles[0].textSlide2Fr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="dernieresNouvelles[0].textSlide2En"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="dernieresNouvelles[0].textSlide2Ger"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="dernieresNouvelles[0].textSlide2Sw"></div> 
+                </a>
+              </p>
+              <div>
+                <span>{{dernieresNouvelles[0].date2}}</span>
+              </div>
+              <div class="button-style">
+                <button type="button" (click)="update('readMore2')" [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']"   class="btn btn-success">
+                    <fa-icon icon="th-list"></fa-icon>&nbsp;<span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore" >read More</span>
+                </button>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+    <div class="col col-md-3 col-12 space">
+        <div class="card" *ngIf="dernieresNouvelles[0]?.textSlide3Fr" >
+            <a class="card-header titre-card" 
+            (click)="update('contenuSlide3')"
+            [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']">                   
+            <img [src]="'data:' + dernieresNouvelles[0].imageSlide3ContentType + ';base64,' + dernieresNouvelles[0].imageSlide3" style="width: 100%;" alt="dernieresNouvelles image"/>           
+            </a>
+            <div class="card-body">
+              <p class="card-text ">
+                  <a [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']" 
+                  (click)="update('contenuSlide3')"
+                  class="paragraphe-style">
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="dernieresNouvelles[0].textSlide3Fr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="dernieresNouvelles[0].textSlide3En"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="dernieresNouvelles[0].textSlide3Ger"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="dernieresNouvelles[0].textSlide3Sw"></div>
+                </a>
+              </p>
+              <div>
+                <span>{{dernieresNouvelles[0].date3}}</span>
+              </div>
+              <div class="button-style">
+                <button type="button" (click)="update('readMore3')" [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']"   class="btn btn-success">
+                    <fa-icon icon="th-list"></fa-icon>&nbsp;<span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore" >read More</span>
+                </button>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+    <div class="col col-md-3 col-12 space">
+        <div class="card" *ngIf="dernieresNouvelles[0]?.textSlide4Fr" >
+            <a class="card-header titre-card" 
+            (click)="update('contenuSlide4')"
+            [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']">                   
+            <img [src]="'data:' + dernieresNouvelles[0].imageSlide4ContentType + ';base64,' + dernieresNouvelles[0].imageSlide4" style="width: 100%;" alt="dernieresNouvelles image"/>           
+            </a>
+            <div class="card-body">
+              <p class="card-text ">
+                  <a [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']" 
+                  (click)="update('contenuSlide4')"
+                  class="paragraphe-style">
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="dernieresNouvelles[0].textSlide4Fr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="dernieresNouvelles[0].textSlide4En"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="dernieresNouvelles[0].textSlide4Ger"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="dernieresNouvelles[0].textSlide4Sw"></div>
+                </a>
+              </p>
+              <div>
+                <span>{{dernieresNouvelles[0].date4}}</span>
+              </div>
+              <div class="button-style">
+                <button type="button" (click)="update('readMore4')" [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']"   class="btn btn-success">
+                    <fa-icon icon="th-list"></fa-icon>&nbsp;<span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore" >read More</span>
+                </button>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+
+<div class="row" style="margin-top: 3%;">
+   
+    <div class="col col-md-3 col-12 space">
+        <div class="card" *ngIf="dernieresNouvelles[0]?.textSlide5Fr" >
+            <a class="card-header titre-card" 
+            (click)="update('contenuSlide5')"
+            [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']">     
+                <img [src]="'data:' + dernieresNouvelles[0].imageSlide5ContentType + ';base64,' + dernieresNouvelles[0].imageSlide5" style="width: 100%;" alt="accueil image"/>           
+            </a>
+            <div class="card-body">
+              <p class="card-text ">
+                  <a [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']" 
+                  (click)="update('contenuSlide5')"
+                  class="paragraphe-style">
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="dernieresNouvelles[0].textSlide5Fr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="dernieresNouvelles[0].textSlide5En"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="dernieresNouvelles[0].textSlide5Ger"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="dernieresNouvelles[0].textSlide5Sw"></div>
+                </a>
+              </p>
+              <div>
+                <span>{{dernieresNouvelles[0].date5}}</span>
+              </div>
+              <div class="button-style">
+                <button type="button" (click)="update('readMore5')" [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']"   class="btn btn-success">
+                    <fa-icon icon="th-list"></fa-icon>&nbsp;<span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore" >read More</span>
+                </button>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="col col-md-3 col-12 space">
+        <div class="card" *ngIf="dernieresNouvelles[0]?.textSlide6Fr" >
+            <a class="card-header titre-card" 
+            (click)="update('contenuSlide6')"
+            [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']">                   
+            <img [src]="'data:' + dernieresNouvelles[0].imageSlide6ContentType + ';base64,' + dernieresNouvelles[0].imageSlide6" style="width: 100%;" alt="dernieresNouvelles image"/>           
+            </a>
+            <div class="card-body">
+              <p class="card-text ">
+                  <a [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']" 
+                  (click)="update('contenuSlide6')"
+                  class="paragraphe-style">
+                  <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="dernieresNouvelles[0].textSlide6Fr"></div>
+                  <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="dernieresNouvelles[0].textSlide6En"></div>
+                  <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="dernieresNouvelles[0].textSlide6Ger"></div>
+                  <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="dernieresNouvelles[0].textSlide6Sw"></div>
+                 </a>
+              </p>
+              <div>
+                <span>{{dernieresNouvelles[0].date6}}</span>
+              </div>
+              <div class="button-style">
+                <button type="button" (click)="update('readMore6')" [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']"   class="btn btn-success">
+                    <fa-icon icon="th-list"></fa-icon>&nbsp;<span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore" >read More</span>
+                </button>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+    <div class="col col-md-3 col-12 space">
+        <div class="card" *ngIf="dernieresNouvelles[0]?.textSlide7Fr" >
+            <a class="card-header titre-card" 
+            (click)="update('contenuSlide7')"
+            [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']">                   
+            <img [src]="'data:' + dernieresNouvelles[0].imageSlide7ContentType + ';base64,' + dernieresNouvelles[0].imageSlide7" style="width: 100%;" alt="dernieresNouvelles image"/>           
+            </a>
+            <div class="card-body">
+              <p class="card-text ">
+                  <a [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']" 
+                  (click)="update('contenuSlide7')"
+                  class="paragraphe-style">
+                  <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="dernieresNouvelles[0].textSlide7Fr"></div>
+                  <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="dernieresNouvelles[0].textSlide7En"></div>
+                  <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="dernieresNouvelles[0].textSlide7Ger"></div>
+                  <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="dernieresNouvelles[0].textSlide7Sw"></div>
+                </a>
+              </p>
+              <div>
+                <span>{{dernieresNouvelles[0].date7}}</span>
+              </div>
+              <div class="button-style">
+                <button type="button" (click)="update('readMore7')" [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']"   class="btn btn-success">
+                    <fa-icon icon="th-list"></fa-icon>&nbsp;<span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore" >read More</span>
+                </button>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+    <div class="col col-md-3 col-12 space">
+        <div class="card" *ngIf="dernieresNouvelles[0]?.textSlide8Fr" >
+            <a class="card-header titre-card" 
+            (click)="update('contenuSlide8')"
+            [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']">                   
+            <img [src]="'data:' + dernieresNouvelles[0].imageSlide8ContentType + ';base64,' + dernieresNouvelles[0].imageSlide8" style="width: 100%;" alt="dernieresNouvelles image"/>           
+            </a>
+            <div class="card-body">
+              <p class="card-text ">
+                  <a [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']" 
+                  (click)="update('contenuSlide8')"
+                  class="paragraphe-style">
+                  <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="dernieresNouvelles[0].textSlide8Fr"></div>
+                  <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="dernieresNouvelles[0].textSlide8En"></div>
+                  <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="dernieresNouvelles[0].textSlide8Ger"></div>
+                  <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="dernieresNouvelles[0].textSlide8Sw"></div>
+                 </a>
+              </p>
+              <div>
+                <span>{{dernieresNouvelles[0].date8}}</span>
+              </div>
+              <div class="button-style">
+                <button type="button" (click)="update('readMore8')" [routerLink]="['/dernieres-nouvelles', dernieresNouvelles[0].id, 'edit']"   class="btn btn-success">
+                    <fa-icon icon="th-list"></fa-icon>&nbsp;<span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore" >read More</span>
+                </button>
+              </div>
+            </div>
+          </div>
     </div>
 </div>

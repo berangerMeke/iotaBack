@@ -1,9 +1,21 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="user">
-            <h2>
+            <!-- <h2>
                 <span jhiTranslate="userManagement.detail.title">User</span> [<b>{{ user.login }}</b>]
-            </h2>
+            </h2> -->
+            <a> 
+                <span (click)="back()" >
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="4%" alt="back">
+                 <span class="arrow-back-update" jhiTranslate="iotaOrignAdminApp.aPropos.home.backButton">Back</span>    
+                </span> 
+            </a>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <span jhiTranslate="userManagement.detail.title" class="section-title">User</span> [<b>{{ user.login }}</b>]          
+            </span>
+            
+            <hr>
+
 
             <dl class="row-md jh-entity-details">
                 <dt><span jhiTranslate="userManagement.login">Login</span></dt>

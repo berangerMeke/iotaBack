@@ -22,6 +22,10 @@
     <include file="config/liquibase/changelog/20220310005112_added_entity_FAQs.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20220309222933_added_entity_Equipe.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20220311125928_added_entity_DernieresNouvelles.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220327165238_added_entity_Imprint.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220328021904_added_entity_PrivacyPolicy.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220407060658_added_entity_FooterSection.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220422054756_added_entity_GoogleAnalitcs.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

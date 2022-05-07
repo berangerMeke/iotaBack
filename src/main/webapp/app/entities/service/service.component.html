@@ -1,28 +1,50 @@
 <div>
-    <h2 id="page-heading">
-        <!-- <span jhiTranslate="iotaOrignAdminApp.service.home.title">Services</span> -->
-        <span>Services Section</span>&nbsp;&nbsp; | &nbsp;&nbsp;
-        <span style="color: rgb(82, 82, 82); font-size:60%">Cliquez sur l'élément que vous souhaitez mettre à jour.</span>
 
-        <button *ngIf="services.length == 0" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service" [routerLink]="['/service/new']">
-            <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="iotaOrignAdminApp.service.home.createLabel">
-            Create a new Service
+    <h3 id="page-heading" class="intro-button">
+        <a> 
+           <span (click)="back()">
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="3%" alt="back">
+                <span class="arrow-back" jhiTranslate="iotaOrignAdminApp.accueil.home.backButton">Back</span>    
             </span>
+        </a>
+        &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span jhiTranslate="iotaOrignAdminApp.service.home.title">About us Section</span>
+         &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span *ngIf="services.length > 0" style="color: rgb(82, 82, 82); font-size:60%" jhiTranslate="iotaOrignAdminApp.service.home.consigne">
+            Cliquez sur l'élément que vous souhaitez mettre à jour.
+        </span>    
+
+        <button *ngIf="services.length < 1" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service" 
+            [routerLink]="['/service/new']"
+            (click)="createService()">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.service.home.createLabel">Create a new A Propos</span>
         </button>
-    </h2>
+        &nbsp;&nbsp;&nbsp;
+        <button *ngIf="services.length >= 1" type="submit" (click)="delete(services[0])"
+                class="btn btn-danger btn-sm">
+            <fa-icon icon="times"></fa-icon>
+            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+        </button>
+    </h3>
 
     <hr>
 
-    <jhi-alert-error></jhi-alert-error>
+    <!-- <jhi-alert-error></jhi-alert-error> -->
 
     <jhi-alert></jhi-alert>
 
-    <!-- <div class="alert alert-warning" id="no-result" *ngIf="services?.length === 0">
-        <span jhiTranslate="iotaOrignAdminApp.service.home.notFound">No services found</span>
-    </div> -->
+    
 
-    <!-- <div class="table-responsive" id="entities" *ngIf="services?.length > 0">
+
+
+
+<!-- 
+    <div class="alert alert-warning" id="no-result" *ngIf="services?.length === 0">
+        <span jhiTranslate="iotaOrignAdminApp.service.home.notFound">No services found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="services?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
@@ -123,16 +145,10 @@
             </tbody>
         </table>
     </div>
-</div>
+</div> -->
 
 
-
-
-
-
-
-<div> -->
-
+<div>
 
 
 
@@ -153,63 +169,44 @@
                         <a *ngIf="services[0].image">
                             <img [src]="'data:' + services[0].imageContentType + ';base64,' + services[0].image" style="width: 80%;" alt="accueil image"/>
                         </a>
-                    </a>
-                               
+                    </a>                               
                 </div>
 
             </div>    
 
             <div class="col-md-6 infos--content">
-                    <h1 *ngIf="services[0]"
-                            class="fw-bold title-style"
-                            (click)="update('titre')">
-                            <a [routerLink]="['/service', services[0].id, 'edit']">
-                                {{ services[0].titreFr }}
-                            </a> 
-                    </h1>
-                    <!-- <div *ngIf="!services[0].titreFr && 
-                                    !services[0].titreEn && 
-                                    !services[0].titreGer"
-                                    (click)="update('paragraphe1')"
-                                    [routerLink]="['/service', services[0].id, 'edit']">
-                            <a class="text-vide">
-                                <span class="vide"> Titre Vide !!</span> <span> ici pour y mettre un texte.</span>
-                            </a>
-                    </div> -->
-                
-                              
+
+                    <h1 class="fw-bold title-style" *ngIf="services[0]" [routerLink]="['/service', services[0].id, 'edit']">
+                        <a> 
+                            <span class="display-2--intro" (click)="update('titre')">
+                                 <span *ngIf="languageService.currentLang === 'fr'">{{services[0].titreFr}}</span>
+                                 <span *ngIf="languageService.currentLang === 'en'">{{services[0].titreEn}}</span>
+                                 <span *ngIf="languageService.currentLang === 'es'">{{services[0].titreSw}}</span>
+                                 <span *ngIf="languageService.currentLang === 'de'">{{services[0].titreGer}}</span>
+                             </span>
+                         </a>
+                     </h1>
+                            
                     <h4 *ngIf="services[0]"
                     (click)="update('sousTitre')">
                         <a [routerLink]="['/service', services[0].id, 'edit']" 
                             class="sousTitre-style">
-                            {{ services[0].sousTitreFr }}
+                            <span *ngIf="languageService.currentLang === 'fr'">{{services[0].sousTitreFr}}</span>
+                            <span *ngIf="languageService.currentLang === 'en'">{{services[0].sousTitreEn}}</span>
+                            <span *ngIf="languageService.currentLang === 'es'">{{services[0].sousTitreSw}}</span>
+                            <span *ngIf="languageService.currentLang === 'de'">{{services[0].sousTitreGer}}</span>
                         </a> 
                     </h4>
-                    <!-- <div *ngIf="!services[0].sousTitreFr && 
-                                    !services[0].sousTitreEn && 
-                                    !services[0].sousTitreGer"
-                                    (click)="update('paragraphe1')"
-                                    [routerLink]="['/service', services[0].id, 'edit']">
-                            <a class="display-4--subheading anim-elt-9">
-                                <span class="vide"> Titre Vide !!</span> <span> ici pour y mettre un texte.</span>
-                            </a>
-                    </div> -->
 
                     <p class="description--info anim-elt-6">
                         <div (click)="update('paragraphe1')" [routerLink]="['/service', services[0].id, 'edit']" *ngIf="services[0]" >
                             <a class="display-4--description anim-elt-10  text-vide">
-                                {{ services[0].textParagraphe1Fr }}
+                                <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="services[0].textParagraphe1Fr"></div>
+                                <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="services[0].textParagraphe1En"></div>
+                                <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="services[0].textParagraphe1Sw"></div>
+                                <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="services[0].textParagraphe1Ger"></div>
                             </a>
                         </div>
-                        <!-- <div *ngIf="!services[0].textParagraphe1Fr && 
-                                    !services[0].textParagraphe1En && 
-                                    !services[0].textParagraphe1Ger"
-                                    (click)="update('paragraphe1')"
-                                    [routerLink]="['/service', services[0].id, 'edit']">
-                            <a class="text-vide">
-                                <span class="vide"> Paragraphe Vide !!</span> <span> ici pour y mettre un texte.</span>
-                            </a>
-                        </div> -->
                     </p>
 
                 </div>
@@ -218,11 +215,5 @@
         </div>
     </div>
 </section>
-
-
-
-
-
-
 
 </div>

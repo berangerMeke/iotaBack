@@ -7,9 +7,11 @@ import { AProposDetailComponent } from './a-propos-detail.component';
 import { AProposUpdateComponent } from './a-propos-update.component';
 import { AProposDeleteDialogComponent } from './a-propos-delete-dialog.component';
 import { aProposRoute } from './a-propos.route';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 @NgModule({
-  imports: [IotaOrignAdminSharedModule, RouterModule.forChild(aProposRoute)],
+  imports: [CKEditorModule , IotaOrignAdminSharedModule, RouterModule.forChild(aProposRoute)],
   declarations: [AProposComponent, AProposDetailComponent, AProposUpdateComponent, AProposDeleteDialogComponent],
   entryComponents: [AProposDeleteDialogComponent]
 })

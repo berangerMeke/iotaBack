@@ -1,7 +1,27 @@
 <div class="row justify-content-center">
-    <div class="col-8">
+    <div class="col-11">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-avantages-heading" >Update Benefits Section</h2>
+            <!-- <h2 id="jhi-avantages-heading" >Update Benefits Section</h2> -->
+
+            <a> 
+                <span (click)="back()" >
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="4%" alt="back">
+                 <span class="arrow-back-update" jhiTranslate="iotaOrignAdminApp.avantages.home.backButton">Back</span>    
+                </span>
+            </a>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <span jhiTranslate="iotaOrignAdminApp.avantages.home.title" class="section-title">Intro Section</span>
+             &nbsp;&nbsp; | &nbsp;&nbsp;  
+            <span *ngIf="isAvantagesNoExist === 'true'" id="jhi-avantages-heading" jhiTranslate="iotaOrignAdminApp.avantages.home.createLabel" 
+            class="section-title2"> 
+                Create avantages Section
+            </span> 
+            <span *ngIf="isAvantagesNoExist != 'true'" id="jhi-avantages-heading" jhiTranslate="iotaOrignAdminApp.avantages.home.EditLabel" 
+            class="section-title2">
+                Update avantages Section
+            </span>
+            
+            <hr>
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
@@ -12,270 +32,136 @@
                 </div> -->
 
 
-            <div *ngIf="eltChoisi === 'titre'">
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_titreFr">French Title</label>
-                    <input type="text" class="form-control" name="titreFr" id="field_titreFr"
-                           formControlName="titreFr"/>
+                <div *ngIf="eltChoisi === 'titre' || isAvantagesNoExist === 'true'">
+
+                    <div class="form-group">
+                        <!-- <label class="form-control-label" for="field_titreEn">English Title</label> -->
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.titreEn" 
+                        for="field_titreEn">English Title
+                        </label> 
+                        <input type="text" class="form-control" name="titreEn" id="field_titreEn" formControlName="titreEn"/>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label class="form-control-label"  for="field_titreGer">German Title</label> -->
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.titreGer" 
+                        for="field_titreGer">German Title
+                        </label> 
+                        <input type="text" class="form-control" name="titreGer" id="field_titreGer" formControlName="titreGer"/>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label class="form-control-label"  for="field_titreFr">French Title</label> -->
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.titreFr" 
+                        for="field_titreFr">French Title
+                        </label> 
+                        <input type="text" class="form-control" name="titreFr" id="field_titreFr" formControlName="titreFr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label class="form-control-label" for="field_titreSw">Swahili Title</label> -->
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.titreSw" 
+                        for="field_titreSw">Swahili Title
+                        </label>
+                        <input type="text" class="form-control" name="titreSw" id="field_titreSw" formControlName="titreSw"/>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" for="field_titreEn">English Title</label>
-                    <input type="text" class="form-control" name="titreEn" id="field_titreEn"
-                           formControlName="titreEn"/>
+
+                <div *ngIf="eltChoisi === 'soustitre' || isAvantagesNoExist === 'true'">  
+                    
+                    <div class="form-group">
+                        <!-- <label class="form-control-label"  for="field_sousTitreEn">English Subtitle</label> -->
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.sousTitreEn" 
+                        for="field_sousTitreEn">English Subtitle
+                        </label>
+                        <input type="text" class="form-control" name="sousTitreEn" id="field_sousTitreEn" formControlName="sousTitreEn"/>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label class="form-control-label"  for="field_sousTitreGer">German Subtitle</label> -->
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.sousTitreGer" 
+                        for="field_sousTitreGer">German Subtitle
+                        </label>
+                        <input type="text" class="form-control" name="sousTitreGer" id="field_sousTitreGer" formControlName="sousTitreGer"/>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label class="form-control-label"  for="field_sousTitreFr">French Subtitle</label> -->
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.sousTitreFr" 
+                        for="field_sousTitreFr">French Subtitle
+                        </label> 
+                        <input type="text" class="form-control" name="sousTitreFr" id="field_sousTitreFr" formControlName="sousTitreFr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label class="form-control-label" j for="field_sousTitreSw">Swahili Subtitle</label> -->
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.sousTitreSw" 
+                        for="field_sousTitreSw">Swahili Subtitle
+                        </label>
+                        <input type="text" class="form-control" name="sousTitreSw" id="field_sousTitreSw"
+                            formControlName="sousTitreSw"/>
+                    </div>
+
                 </div>
 
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_titreGer">German Title</label>
-                    <input type="text" class="form-control" name="titreGer" id="field_titreGer"
-                           formControlName="titreGer"/>
+
+
+                <div *ngIf="eltChoisi === 'paragraphe1' || isAvantagesNoExist === 'true'"> 
+                            
+                    <div class="form-group">
+                        <!-- <label class="form-control-label"  for="field_textParagraphe1En"> Text content English</label> -->
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe1En" 
+                        for="field_textParagraphe1En">Text content English
+                        </label>
+                        <ckeditor [editor]="Editor" name="textParagraphe1En" 
+                                    id="field_textParagraphe1En" formControlName="textParagraphe1En" 
+                                    data="textParagraphe1En">
+                        </ckeditor> 
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label class="form-control-label"  for="field_textParagraphe1Ger">Text content German</label> -->
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe1Ger" 
+                        for="field_textParagraphe1Ger">Text content German
+                        </label>
+                        <ckeditor [editor]="Editor" name="textParagraphe1Ger" 
+                                    id="field_textParagraphe1Ger" formControlName="textParagraphe1Ger" 
+                                    data="textParagraphe1Ger">
+                        </ckeditor> 
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label class="form-control-label"  for="field_textParagraphe1FR">Text content French</label> -->
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe1Fr" 
+                        for="field_textParagraphe1Fr">Text content French
+                        </label>
+                        <ckeditor [editor]="Editor" name="textParagraphe1FR" 
+                                    id="field_textParagraphe1FR" formControlName="textParagraphe1FR" 
+                                    data="textParagraphe1FR">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <!-- <label class="form-control-label" for="field_textParagraphe1Sw">Text content Swahili</label> -->
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe1Sw" 
+                        for="field_textParagraphe1Sw">Text content Swahili
+                        </label>             
+                        <ckeditor [editor]="Editor" name="textParagraphe1Sw" 
+                                    id="field_textParagraphe1Sw" formControlName="textParagraphe1Sw" 
+                                    data="textParagraphe1Sw">
+                        </ckeditor> 
+                    
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-control-label" for="field_titreSw">Swahili Title</label>
-                    <input type="text" class="form-control" name="titreSw" id="field_titreSw"
-                           formControlName="titreSw"/>
-                </div>
-            </div>
 
 
-            <div *ngIf="eltChoisi === 'soustitre'">   
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_sousTitreFr">French Subtitle</label>
-                    <input type="text" class="form-control" name="sousTitreFr" id="field_sousTitreFr"
-                           formControlName="sousTitreFr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_sousTitreEn">English Subtitle</label>
-                    <input type="text" class="form-control" name="sousTitreEn" id="field_sousTitreEn"
-                           formControlName="sousTitreEn"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_sousTitreGer">German Subtitle</label>
-                    <input type="text" class="form-control" name="sousTitreGer" id="field_sousTitreGer"
-                           formControlName="sousTitreGer"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" j for="field_sousTitreSw">Swahili Subtitle</label>
-                    <input type="text" class="form-control" name="sousTitreSw" id="field_sousTitreSw"
-                           formControlName="sousTitreSw"/>
-                </div>
-
-            </div>
-
-
-            <div *ngIf="eltChoisi === 'paragraphe1'">
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_textParagraphe1FR">Text Paragraphe 1 French</label>
-                    <textarea type="text" class="form-control" name="textParagraphe1FR" id="field_textParagraphe1FR"
-                           formControlName="textParagraphe1FR" rows="7"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_textParagraphe1En">Text Paragraphe 1 English</label>
-                    <textarea type="text" class="form-control" name="textParagraphe1En" id="field_textParagraphe1En"
-                           formControlName="textParagraphe1En" rows="7"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_textParagraphe1Ger">Text Paragraphe 1 German</label>
-                    <textarea type="text" class="form-control" name="textParagraphe1Ger" id="field_textParagraphe1Ger"
-                           formControlName="textParagraphe1Ger" rows="7"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" j for="field_textParagraphe1Sw">Text Paragraphe 1 Swahili</label>
-                    <textarea type="text" class="form-control" name="textParagraphe1Sw" id="field_textParagraphe1Sw"
-                           formControlName="textParagraphe1Sw" rows="7"></textarea>
-                </div>
-            </div>
-
-
-            <div *ngIf="eltChoisi === 'paragraphe2'">
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_textParagraphe2Fr">Text Paragraphe 2 French</label>
-                    <textarea type="text" class="form-control" name="textParagraphe2Fr" id="field_textParagraphe2Fr"
-                           formControlName="textParagraphe2Fr" rows="7"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_textParagraphe2En">Text Paragraphe 2 English</label>
-                    <textarea type="text" class="form-control" name="textParagraphe2En" id="field_textParagraphe2En"
-                           formControlName="textParagraphe2En" rows="7"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_textParagraphe2Ger">Text Paragraphe 2 German</label>
-                    <textarea type="text" class="form-control" name="textParagraphe2Ger" id="field_textParagraphe2Ger"
-                           formControlName="textParagraphe2Ger" rows="7"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" j for="field_textParagraphe2Sw">Text Paragraphe 2 Swahili</label>
-                    <textarea type="text" class="form-control" name="textParagraphe2Sw" id="field_textParagraphe2Sw"
-                           formControlName="textParagraphe2Sw" rows="7"></textarea>
-                </div>
-
-            </div>
-
-
-            <div *ngIf="eltChoisi === 'paragraphe3'">
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_textParagraphe3FR">Text Paragraphe 3 French</label>
-                    <textarea type="text" class="form-control" name="textParagraphe3FR" id="field_textParagraphe3FR"
-                           formControlName="textParagraphe3FR" rows="7"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" j for="field_textParagraphe3En">Text Paragraphe 3 English</label>
-                    <textarea type="text" class="form-control" name="textParagraphe3En" id="field_textParagraphe3En"
-                           formControlName="textParagraphe3En" rows="7"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_textParagraphe3Ger">Text Paragraphe 3 German</label>
-                    <textarea type="text" class="form-control" name="textParagraphe3Ger" id="field_textParagraphe3Ger"
-                           formControlName="textParagraphe3Ger" rows="7"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_textParagraphe3Sw">Text Paragraphe 3 Swahili</label>
-                    <textarea type="text" class="form-control" name="textParagraphe3Sw" id="field_textParagraphe3Sw"
-                           formControlName="textParagraphe3Sw" rows="7"></textarea>
-                </div>
-            </div>
-
-
-            <div *ngIf="eltChoisi === 'paragraphe4'">
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_textParagraphe4Fr">Text Paragraphe 4 French</label>
-                    <textarea type="text" class="form-control" name="textParagraphe4Fr" id="field_textParagraphe4Fr"
-                           formControlName="textParagraphe4Fr" rows="7"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_textParagraphe4En">Text Paragraphe 4 English</label>
-                    <textarea type="text" class="form-control" name="textParagraphe4En" id="field_textParagraphe4En"
-                           formControlName="textParagraphe4En" rows="7"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"  for="field_textParagraphe4Ger">Text Paragraphe 4 German</label>
-                    <textarea type="text" class="form-control" name="textParagraphe4Ger" id="field_textParagraphe4Ger"
-                           formControlName="textParagraphe4Ger" rows="7"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" j for="field_textParagraphe4Sw">Text Paragraphe 4 Swahili</label>
-                    <textarea type="text" class="form-control" name="textParagraphe4Sw" id="field_textParagraphe4Sw"
-                           formControlName="textParagraphe4Sw" rows="7"></textarea>
-                </div>
-            </div>
-
-                <!-- <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe5Fr" for="field_textParagraphe5Fr">Text Paragraphe 5 Fr</label>
-                    <input type="text" class="form-control" name="textParagraphe5Fr" id="field_textParagraphe5Fr"
-                           formControlName="textParagraphe5Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe5En" for="field_textParagraphe5En">Text Paragraphe 5 En</label>
-                    <input type="text" class="form-control" name="textParagraphe5En" id="field_textParagraphe5En"
-                           formControlName="textParagraphe5En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe5Ger" for="field_textParagraphe5Ger">Text Paragraphe 5 Ger</label>
-                    <input type="text" class="form-control" name="textParagraphe5Ger" id="field_textParagraphe5Ger"
-                           formControlName="textParagraphe5Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe5Sw" for="field_textParagraphe5Sw">Text Paragraphe 5 Sw</label>
-                    <input type="text" class="form-control" name="textParagraphe5Sw" id="field_textParagraphe5Sw"
-                           formControlName="textParagraphe5Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe6Fr" for="field_textParagraphe6Fr">Text Paragraphe 6 Fr</label>
-                    <input type="text" class="form-control" name="textParagraphe6Fr" id="field_textParagraphe6Fr"
-                           formControlName="textParagraphe6Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe6En" for="field_textParagraphe6En">Text Paragraphe 6 En</label>
-                    <input type="text" class="form-control" name="textParagraphe6En" id="field_textParagraphe6En"
-                           formControlName="textParagraphe6En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe6Ger" for="field_textParagraphe6Ger">Text Paragraphe 6 Ger</label>
-                    <input type="text" class="form-control" name="textParagraphe6Ger" id="field_textParagraphe6Ger"
-                           formControlName="textParagraphe6Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe6Sw" for="field_textParagraphe6Sw">Text Paragraphe 6 Sw</label>
-                    <input type="text" class="form-control" name="textParagraphe6Sw" id="field_textParagraphe6Sw"
-                           formControlName="textParagraphe6Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe7Fr" for="field_textParagraphe7Fr">Text Paragraphe 7 Fr</label>
-                    <input type="text" class="form-control" name="textParagraphe7Fr" id="field_textParagraphe7Fr"
-                           formControlName="textParagraphe7Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe7En" for="field_textParagraphe7En">Text Paragraphe 7 En</label>
-                    <input type="text" class="form-control" name="textParagraphe7En" id="field_textParagraphe7En"
-                           formControlName="textParagraphe7En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe7Ger" for="field_textParagraphe7Ger">Text Paragraphe 7 Ger</label>
-                    <input type="text" class="form-control" name="textParagraphe7Ger" id="field_textParagraphe7Ger"
-                           formControlName="textParagraphe7Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe7Sw" for="field_textParagraphe7Sw">Text Paragraphe 7 Sw</label>
-                    <input type="text" class="form-control" name="textParagraphe7Sw" id="field_textParagraphe7Sw"
-                           formControlName="textParagraphe7Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe8Fr" for="field_textParagraphe8Fr">Text Paragraphe 8 Fr</label>
-                    <input type="text" class="form-control" name="textParagraphe8Fr" id="field_textParagraphe8Fr"
-                           formControlName="textParagraphe8Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe8En" for="field_textParagraphe8En">Text Paragraphe 8 En</label>
-                    <input type="text" class="form-control" name="textParagraphe8En" id="field_textParagraphe8En"
-                           formControlName="textParagraphe8En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe8Ger" for="field_textParagraphe8Ger">Text Paragraphe 8 Ger</label>
-                    <input type="text" class="form-control" name="textParagraphe8Ger" id="field_textParagraphe8Ger"
-                           formControlName="textParagraphe8Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.avantages.textParagraphe8Sw" for="field_textParagraphe8Sw">Text Paragraphe 8 Sw</label>
-                    <input type="text" class="form-control" name="textParagraphe8Sw" id="field_textParagraphe8Sw"
-                           formControlName="textParagraphe8Sw"/>
-                </div> -->
-
-                <div *ngIf="eltChoisi === 'image'">
+                <div *ngIf="eltChoisi === 'image' || isAvantagesNoExist === 'true'">
                     <div class="form-group">
                         <label class="form-control-label" for="field_image">Image</label>
                         <div>
-                            <img [src]="'data:' + editForm.get('imageContentType')!.value + ';base64,' + editForm.get('image')!.value" style="max-height: 500px;" *ngIf="editForm.get('image')!.value" alt="avantages image"/>
+                            <img [src]="'data:' + editForm.get('imageContentType')!.value + ';base64,' + editForm.get('image')!.value" style="width: 60%;" *ngIf="editForm.get('image')!.value" alt="avantages image"/>
                             <div *ngIf="editForm.get('image')!.value" class="form-text text-danger clearfix">
                                 <span class="pull-left">{{ editForm.get('imageContentType')!.value }}, {{ byteSize(editForm.get('image')!.value) }}</span>
                                 <button type="button" (click)="clearInputImage('image', 'imageContentType', 'file_image')" class="btn btn-secondary btn-xs pull-right">

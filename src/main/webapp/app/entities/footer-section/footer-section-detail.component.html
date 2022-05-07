@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="footerSection">
+            <h2><span jhiTranslate="iotaOrignAdminApp.footerSection.detail.title">Footer Section</span> {{ footerSection.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="iotaOrignAdminApp.footerSection.titreEn">Titre En</span></dt>
+                <dd>
+                    <span>{{ footerSection.titreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.footerSection.titreGer">Titre Ger</span></dt>
+                <dd>
+                    <span>{{ footerSection.titreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.footerSection.titreFr">Titre Fr</span></dt>
+                <dd>
+                    <span>{{ footerSection.titreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.footerSection.titreSw">Titre Sw</span></dt>
+                <dd>
+                    <span>{{ footerSection.titreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.footerSection.sousTitreEn">Sous Titre En</span></dt>
+                <dd>
+                    <span>{{ footerSection.sousTitreEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.footerSection.sousTitreGer">Sous Titre Ger</span></dt>
+                <dd>
+                    <span>{{ footerSection.sousTitreGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.footerSection.sousTitreFr">Sous Titre Fr</span></dt>
+                <dd>
+                    <span>{{ footerSection.sousTitreFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.footerSection.sousTitreSw">Sous Titre Sw</span></dt>
+                <dd>
+                    <span>{{ footerSection.sousTitreSw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.footerSection.logo">Logo</span></dt>
+                <dd>
+                    <div *ngIf="footerSection.logo">
+                        <a (click)="openFile(footerSection?.logoContentType!, footerSection?.logo)">
+                            <img [src]="'data:' + footerSection.logoContentType + ';base64,' + footerSection.logo" style="max-width: 100%;" alt="footerSection image"/>
+                        </a>
+                        {{ footerSection.logoContentType }}, {{ byteSize(footerSection.logo) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.footerSection.texteBouton">Texte Bouton</span></dt>
+                <dd>
+                    <span>{{ footerSection.texteBouton }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.footerSection.twitterlink">Twitterlink</span></dt>
+                <dd>
+                    <span>{{ footerSection.twitterlink }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.footerSection.discordLink">Discord Link</span></dt>
+                <dd>
+                    <span>{{ footerSection.discordLink }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/footer-section', footerSection.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

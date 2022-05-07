@@ -13,6 +13,20 @@
   color: #5DBA47;
 }
 
+
+.intro-button {
+  position: relative;
+  z-index: 10;
+}
+
+
+.arrow-back {
+  color: #3e8acc;
+  font-size: 70%;
+}
+
+
+
 .text-vide {
   text-decoration: none;
   color: rgb(58, 58, 58);
@@ -11469,7 +11483,7 @@ body {
 
 .benefits {
   background-color: #fff;
-  padding: 5rem 0 8rem;
+ /* padding: 5rem 0 8rem; */
 }
 @media (max-width: 767.98px) {
   .benefits {

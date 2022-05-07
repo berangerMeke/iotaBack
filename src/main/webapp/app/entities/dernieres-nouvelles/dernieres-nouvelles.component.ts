@@ -1,8 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
-import { JhiEventManager, JhiParseLinks } from 'ng-jhipster';
+import { Location } from '@angular/common';
+import { JhiLanguageService } from 'ng-jhipster';
+import { JhiEventManager, JhiParseLinks, JhiDataUtils } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {TransfertDataService} from '../../core/services/transfert-data.service';
 
 import { IDernieresNouvelles } from 'app/shared/model/dernieres-nouvelles.model';
 
@@ -10,9 +13,11 @@ import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
 import { DernieresNouvellesService } from './dernieres-nouvelles.service';
 import { DernieresNouvellesDeleteDialogComponent } from './dernieres-nouvelles-delete-dialog.component';
 
+
 @Component({
   selector: 'jhi-dernieres-nouvelles',
-  templateUrl: './dernieres-nouvelles.component.html'
+  templateUrl: './dernieres-nouvelles.component.html',
+  styleUrls: ['./dernieres-nouvelles.component.scss']
 })
 export class DernieresNouvellesComponent implements OnInit, OnDestroy {
   dernieresNouvelles: IDernieresNouvelles[];
@@ -23,9 +28,15 @@ export class DernieresNouvellesComponent implements OnInit, OnDestroy {
   predicate: string;
   ascending: boolean;
 
+  lg: any;
+
   constructor(
     protected dernieresNouvellesService: DernieresNouvellesService,
+    protected dataUtils: JhiDataUtils,
     protected eventManager: JhiEventManager,
+    private location: Location,
+    public languageService: JhiLanguageService,
+    public transfertDataService:TransfertDataService,
     protected modalService: NgbModal,
     protected parseLinks: JhiParseLinks
   ) {
@@ -61,9 +72,24 @@ export class DernieresNouvellesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.lg = this.languageService.currentLang;
     this.loadAll();
     this.registerChangeInDernieresNouvelles();
   }
+
+  back(): void {
+    this.location.back()
+  }
+
+  createDernieresnouvelles(): void {
+    localStorage.setItem("isNewDernieresNouvelles", "true");
+  }
+
+
+  update(elt: any): void {
+    this.transfertDataService.setData(elt);
+  }
+
 
   ngOnDestroy(): void {
     if (this.eventSubscriber) {
@@ -74,6 +100,14 @@ export class DernieresNouvellesComponent implements OnInit, OnDestroy {
   trackId(index: number, item: IDernieresNouvelles): number {
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-type-assertion
     return item.id!;
+  }
+
+  byteSize(base64String: string): string {
+    return this.dataUtils.byteSize(base64String);
+  }
+
+  openFile(contentType: string, base64String: string): void {
+    return this.dataUtils.openFile(contentType, base64String);
   }
 
   registerChangeInDernieresNouvelles(): void {

@@ -81,6 +81,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/api/activate").permitAll()
 
             .antMatchers("/api/accueils").permitAll()
+            .antMatchers("/api/a-propos").permitAll()
+            .antMatchers("/api/services").permitAll()
+            .antMatchers("/api/avantages").permitAll()
+            .antMatchers("/api/objectifs").permitAll()
+            .antMatchers("/api/fa-qs").permitAll()
+            .antMatchers("/api/dernieres-nouvelles").permitAll()
+            .antMatchers("/api/imprints").permitAll()
+            .antMatchers("/api/privacy-policies").permitAll()
+            .antMatchers("/api/account/send-email").permitAll()
+            .antMatchers("/api/footer-sections").permitAll()
+            .antMatchers("/api/google-analitcs").permitAll()
 
             .antMatchers("/api/account/reset-password/init").permitAll()
             .antMatchers("/api/account/reset-password/finish").permitAll()

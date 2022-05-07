@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { Location } from '@angular/common';
 
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/user/account.model';
@@ -8,7 +9,8 @@ import { PasswordService } from './password.service';
 
 @Component({
   selector: 'jhi-password',
-  templateUrl: './password.component.html'
+  templateUrl: './password.component.html',
+  styleUrls: ['./password.scss']
 })
 export class PasswordComponent implements OnInit {
   doNotMatch = false;
@@ -21,10 +23,17 @@ export class PasswordComponent implements OnInit {
     confirmPassword: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]]
   });
 
-  constructor(private passwordService: PasswordService, private accountService: AccountService, private fb: FormBuilder) {}
+  constructor(private passwordService: PasswordService, 
+              private accountService: AccountService,
+              private location: Location, 
+              private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.account$ = this.accountService.identity();
+  }
+
+  back(): void {
+    this.location.back()
   }
 
   changePassword(): void {

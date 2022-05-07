@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="privacyPolicy">
+            <h2><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.detail.title">Privacy Policy</span> {{ privacyPolicy.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.titrePrivacyPolicyEn">Titre Privacy Policy En</span></dt>
+                <dd>
+                    <span>{{ privacyPolicy.titrePrivacyPolicyEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.titrePrivacyPolicyGer">Titre Privacy Policy Ger</span></dt>
+                <dd>
+                    <span>{{ privacyPolicy.titrePrivacyPolicyGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.titrePrivacyPolicyFr">Titre Privacy Policy Fr</span></dt>
+                <dd>
+                    <span>{{ privacyPolicy.titrePrivacyPolicyFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.titrePrivacyPolicySw">Titre Privacy Policy Sw</span></dt>
+                <dd>
+                    <span>{{ privacyPolicy.titrePrivacyPolicySw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.contenuPrivacyPolicyEn">Contenu Privacy Policy En</span></dt>
+                <dd>
+                    <span>{{ privacyPolicy.contenuPrivacyPolicyEn }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.contenuPrivacyPolicyGer">Contenu Privacy Policy Ger</span></dt>
+                <dd>
+                    <span>{{ privacyPolicy.contenuPrivacyPolicyGer }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.contenuPrivacyPolicyFr">Contenu Privacy Policy Fr</span></dt>
+                <dd>
+                    <span>{{ privacyPolicy.contenuPrivacyPolicyFr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.contenuPrivacyPolicySw">Contenu Privacy Policy Sw</span></dt>
+                <dd>
+                    <span>{{ privacyPolicy.contenuPrivacyPolicySw }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/privacy-policy', privacyPolicy.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

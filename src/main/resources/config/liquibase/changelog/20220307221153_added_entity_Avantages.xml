@@ -12,6 +12,13 @@
         Added the entity Avantages.
     -->
     <changeSet id="20220307221153-1" author="jhipster">
+
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="avantages"/>
+            </not>
+        </preConditions>
+
         <createTable tableName="avantages">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>

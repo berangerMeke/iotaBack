@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-11">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <!-- <h2 id="jhi-google-analitcs-heading" jhiTranslate="iotaOrignAdminApp.googleAnalitcs.home.createOrEditLabel">Create or edit a Google Analitcs</h2> -->
+            <a> 
+                <span (click)="back()" >
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="4%" alt="back">
+                 <span class="arrow-back-update" jhiTranslate="iotaOrignAdminApp.googleAnalitcs.home.backButton">Back</span>    
+                </span>
+            </a>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <span jhiTranslate="iotaOrignAdminApp.googleAnalitcs.home.title" class="section-title">Intro Section</span>
+             &nbsp;&nbsp; | &nbsp;&nbsp;  
+            <span *ngIf="isGoogleStatIdNoExist === 'true'" id="jhi-googleAnalitcs-heading" jhiTranslate="iotaOrignAdminApp.googleAnalitcs.home.createLabel" 
+            class="section-title2"> 
+                Create googleAnalitcs ID
+            </span>
+            <span *ngIf="isGoogleStatIdNoExist != 'true'" id="jhi-googleAnalitcs-heading" jhiTranslate="iotaOrignAdminApp.googleAnalitcs.home.EditLabel" 
+            class="section-title2">
+                Update googleAnalitcs ID
+            </span>
+            <hr>
+
+
+
+
+
+
+
+
+
+
+
+            <div>
+                <!-- <jhi-alert-error></jhi-alert-error> -->
+
+                <!-- <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div> -->
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.googleAnalitcs.googleAnalyticsID" for="field_googleAnalyticsID">Google Analytics ID</label>
+                    <input type="text" class="form-control" name="googleAnalyticsID" id="field_googleAnalyticsID"
+                           formControlName="googleAnalyticsID"/>
+                    <div *ngIf="editForm.get('googleAnalyticsID')!.invalid && (editForm.get('googleAnalyticsID')!.dirty || editForm.get('googleAnalyticsID')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('googleAnalyticsID')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

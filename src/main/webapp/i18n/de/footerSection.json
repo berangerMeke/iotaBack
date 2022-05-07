@@ -1,0 +1,35 @@
+{
+  "iotaOrignAdminApp": {
+    "footerSection": {
+      "home": {
+        "title": "Fusszeile",
+        "createLabel": "Abschnitt erstellen",
+        "EditLabel": "Abschnitt aktualisieren",
+        "consigne": "Klicken Sie zum Aktualisieren auf die folgende Schaltfläche",
+        "notFound": "Leerer Abschnitt",
+        "backButton": "Rückfahrt"
+      },
+      "created": "Footer Section erstellt mit ID {{ param }}",
+      "updated": "Footer Section aktualisiert mit ID {{ param }}",
+      "deleted": "Footer Section gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Footer Section {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Fusszeile"
+      },
+      "titreFr": "Titel auf Französisch",
+      "titreEn": "Titel auf englisch",
+      "titreGer": "Titel auf Deutsch",
+      "titreSw": "Titel in Suaheli",
+      "sousTitreFr": "Untertitel auf Französisch",
+      "sousTitreEn": "englischer Untertitel",
+      "sousTitreGer": "Deutscher Untertitel",
+      "sousTitreSw": "Untertitel in Suaheli",
+      "logo": "Logo",
+      "texteBouton": "Senden",
+      "twitterlink": "Twitterlink",
+      "discordLink": "Discord Link"
+    }
+  }
+}

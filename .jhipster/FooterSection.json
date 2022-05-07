@@ -1,0 +1,65 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "titreEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sousTitreSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "logo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "texteBouton",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "twitterlink",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "discordLink",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20220407060658",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "footer_section",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}

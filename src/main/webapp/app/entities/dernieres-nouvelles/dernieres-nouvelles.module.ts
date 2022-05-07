@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { IotaOrignAdminSharedModule } from 'app/shared/shared.module';
 import { DernieresNouvellesComponent } from './dernieres-nouvelles.component';
@@ -9,7 +10,7 @@ import { DernieresNouvellesDeleteDialogComponent } from './dernieres-nouvelles-d
 import { dernieresNouvellesRoute } from './dernieres-nouvelles.route';
 
 @NgModule({
-  imports: [IotaOrignAdminSharedModule, RouterModule.forChild(dernieresNouvellesRoute)],
+  imports: [CKEditorModule ,IotaOrignAdminSharedModule, RouterModule.forChild(dernieresNouvellesRoute)],
   declarations: [
     DernieresNouvellesComponent,
     DernieresNouvellesDetailComponent,

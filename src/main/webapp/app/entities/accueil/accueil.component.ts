@@ -1,8 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { JhiLanguageService } from 'ng-jhipster';
 import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiParseLinks, JhiDataUtils } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Location } from '@angular/common';
+
 import {TransfertDataService} from '../../core/services/transfert-data.service';
 
 import { IAccueil } from 'app/shared/model/accueil.model';
@@ -24,12 +27,15 @@ export class AccueilComponent implements OnInit, OnDestroy {
   page: number;
   predicate: string;
   ascending: boolean;
+  lg: any;
 
   constructor(
     protected accueilService: AccueilService,
     protected dataUtils: JhiDataUtils,
     protected eventManager: JhiEventManager,
     protected modalService: NgbModal,
+    public languageService: JhiLanguageService,
+    private location: Location,
     public transfertDataService: TransfertDataService,
     protected parseLinks: JhiParseLinks
   ) {
@@ -65,9 +71,21 @@ export class AccueilComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.lg = this.languageService.currentLang;
     this.loadAll();
     this.registerChangeInAccueils();
+    localStorage.setItem("isNew", "false");
   }
+
+
+  createIntro(): void {
+    localStorage.setItem("isNew", "true");
+  }
+
+  back(): void {
+    this.location.back()
+  }
+
 
   ngOnDestroy(): void {
     if (this.eventSubscriber) {

@@ -1,0 +1,24 @@
+{
+  "iotaOrignAdminApp": {
+    "googleAnalitcs": {
+      "home": {
+        "title": "Identifiant Google Analytics",
+        "createLabel": "Affecter un identifiant",
+        "EditLabel": "Mettre à jour l'identifiant",
+        "consigne": "Cliquez sur le bouton suivant pour mettre à jour",
+        "notFound": "Aucun Identifiant",
+        "backButton": "Retour"
+      },
+      "created": "Un nouveau Google Analitcs a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Google Analitcs avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Google Analitcs avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Google Analitcs {{ id }} ?"
+      },
+      "detail": {
+        "title": "Google Analitcs"
+      },
+      "googleAnalyticsID": "Google Analytics ID"
+    }
+  }
+}

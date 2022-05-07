@@ -12,6 +12,13 @@
         Added the entity APropos.
     -->
     <changeSet id="20220307194926-1" author="jhipster">
+
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="a_propos"/>
+            </not>
+        </preConditions>       
+
         <createTable tableName="a_propos">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
@@ -40,64 +47,64 @@
             <column name="sous_titre_sw" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_1_fr" type="varchar(10000)">
+            <column name="text_paragraphe_1_fr" type="text">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_1_en" type="varchar(10000)">
+            <column name="text_paragraphe_1_en" type="text">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_1_ger" type="varchar((10000))">
+            <column name="text_paragraphe_1_ger" type="text">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_1_sw" type="varchar((10000))">
+            <column name="text_paragraphe_1_sw" type="text">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_2_fr" type="varchar((10000))">
+            <column name="text_paragraphe_2_fr" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_2_en" type="varchar(2000)">
+            <column name="text_paragraphe_2_en" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_2_ger" type="varchar(2000)">
+            <column name="text_paragraphe_2_ger" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_2_sw" type="varchar(2000)">
+            <column name="text_paragraphe_2_sw" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_3_fr" type="varchar(2000)">
+            <column name="text_paragraphe_3_fr" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_3_en" type="varchar(2000)">
+            <column name="text_paragraphe_3_en" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_3_ger" type="varchar(2000)">
+            <column name="text_paragraphe_3_ger" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_3_sw" type="varchar(2000)">
+            <column name="text_paragraphe_3_sw" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_4_fr" type="varchar(2000)">
+            <column name="text_paragraphe_4_fr" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_4_en" type="varchar(2000)">
+            <column name="text_paragraphe_4_en" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_4_ger" type="varchar(2000)">
+            <column name="text_paragraphe_4_ger" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_4_sw" type="varchar(2000)">
+            <column name="text_paragraphe_4_sw" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_5_fr" type="varchar(2000)">
+            <column name="text_paragraphe_5_fr" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_5_en" type="varchar(2000)">
+            <column name="text_paragraphe_5_en" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_5_ger" type="varchar(2000)">
+            <column name="text_paragraphe_5_ger" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="text_paragraphe_5_sw" type="varchar(2000)">
+            <column name="text_paragraphe_5_sw" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="image" type="longblob">

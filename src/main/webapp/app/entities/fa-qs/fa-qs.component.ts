@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
+import { Location } from '@angular/common';
+import { JhiLanguageService } from 'ng-jhipster';
 import { JhiEventManager, JhiParseLinks } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {TransfertDataService} from '../../core/services/transfert-data.service';
@@ -13,7 +15,7 @@ import { FAQsDeleteDialogComponent } from './fa-qs-delete-dialog.component';
 
 @Component({
   selector: 'jhi-fa-qs',
-  templateUrl: './fa-qs.component.html',
+  templateUrl: './fa-qs.component.html', 
   styleUrls: ['./fa-qs.component.scss']
 })
 export class FAQsComponent implements OnInit, OnDestroy {
@@ -25,10 +27,14 @@ export class FAQsComponent implements OnInit, OnDestroy {
   predicate: string;
   ascending: boolean;
 
+  lg: any;
+
   constructor(
     protected fAQsService: FAQsService,
     protected eventManager: JhiEventManager,
     public transfertDataService:TransfertDataService,
+    private location: Location,
+    public languageService: JhiLanguageService,
     protected modalService: NgbModal,
     protected parseLinks: JhiParseLinks
   ) {
@@ -64,9 +70,21 @@ export class FAQsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.lg = this.languageService.currentLang;
     this.loadAll();
     this.registerChangeInFAQs();
   }
+
+
+  back(): void {
+    this.location.back()
+  }
+
+  createfAQs(): void {
+    localStorage.setItem("isNewFAQs", "true");
+  }
+
+
 
   ngOnDestroy(): void {
     if (this.eventSubscriber) {

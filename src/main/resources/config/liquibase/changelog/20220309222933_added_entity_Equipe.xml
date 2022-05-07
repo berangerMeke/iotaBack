@@ -12,6 +12,13 @@
         Added the entity Equipe.
     -->
     <changeSet id="20220309222933-1" author="jhipster">
+
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="equipe"/>
+            </not>
+        </preConditions>
+
         <createTable tableName="equipe">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>

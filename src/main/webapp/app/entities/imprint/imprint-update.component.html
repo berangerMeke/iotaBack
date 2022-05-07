@@ -1,0 +1,127 @@
+<div class="row justify-content-center">
+    <div class="col-11">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            
+            <a> 
+                <span (click)="back()" >
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="4%" alt="back">
+                 <span class="arrow-back-update" jhiTranslate="iotaOrignAdminApp.imprint.home.backButton">Back</span>    
+                </span>
+            </a>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <span jhiTranslate="iotaOrignAdminApp.imprint.home.title" class="section-title">Intro Section</span>
+             &nbsp;&nbsp; | &nbsp;&nbsp;  
+            <span *ngIf="isImprintNoExist === 'true'" id="jhi-imprint-heading" jhiTranslate="iotaOrignAdminApp.imprint.home.createLabel" 
+            class="section-title2"> 
+                Create imprint Section
+            </span> 
+            <span *ngIf="isImprintNoExist != 'true'" id="jhi-imprint-heading" jhiTranslate="iotaOrignAdminApp.imprint.home.EditLabel" 
+            class="section-title2">
+                Update imprint Section
+            </span>
+            
+            <hr>
+
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+
+                <div *ngIf="eltChoisi === 'titre' || isImprintNoExist === 'true'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.imprint.titreImprintEn" for="field_titreImprintEn">Titre Imprint En</label>
+                        <input type="text" class="form-control" name="titreImprintEn" id="field_titreImprintEn"
+                            formControlName="titreImprintEn"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.imprint.titreImprintFr" for="field_titreImprintFr">Titre Imprint Fr</label>
+                        <input type="text" class="form-control" name="titreImprintFr" id="field_titreImprintFr"
+                            formControlName="titreImprintFr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.imprint.titreImprintGer" for="field_titreImprintGer">Titre Imprint Ger</label>
+                        <input type="text" class="form-control" name="titreImprintGer" id="field_titreImprintGer"
+                            formControlName="titreImprintGer"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.imprint.titreImprintSw" for="field_titreImprintSw">Titre Imprint Sw</label>
+                        <input type="text" class="form-control" name="titreImprintSw" id="field_titreImprintSw"
+                            formControlName="titreImprintSw"/>
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'contenu' || isImprintNoExist === 'true'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.imprint.contenuImprintEn" for="field_contenuImprintEn">Contenu Imprint En</label>
+                            <ckeditor [editor]="Editor" name="contenuImprintEn" 
+                            id="field_contenuImprintEn" formControlName="contenuImprintEn" 
+                            data="contenuImprintEn">
+                            </ckeditor> 
+                        <div *ngIf="editForm.get('contenuImprintEn')!.invalid && (editForm.get('contenuImprintEn')!.dirty || editForm.get('contenuImprintEn')!.touched)">
+                            <small class="form-text text-danger"
+                                *ngIf="editForm.get('contenuImprintEn')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 7000 }">
+                            This field cannot be longer than 7000 characters.
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.imprint.contenuImprintGer" for="field_contenuImprintGer">Contenu Imprint Ger</label>
+                            <ckeditor [editor]="Editor" name="contenuImprintGer" 
+                            id="field_contenuImprintGer" formControlName="contenuImprintGer" 
+                            data="contenuImprintGer">
+                            </ckeditor> 
+                        <div *ngIf="editForm.get('contenuImprintGer')!.invalid && (editForm.get('contenuImprintGer')!.dirty || editForm.get('contenuImprintGer')!.touched)">
+                            <small class="form-text text-danger"
+                                *ngIf="editForm.get('contenuImprintGer')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 7000 }">
+                            This field cannot be longer than 7000 characters.
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.imprint.contenuImprintFr" for="field_contenuImprintFr">Contenu Imprint Fr</label>
+                            <ckeditor [editor]="Editor" name="contenuImprintFr" 
+                            id="field_contenuImprintFr" formControlName="contenuImprintFr" 
+                            data="contenuImprintFr">
+                            </ckeditor> 
+                        <div *ngIf="editForm.get('contenuImprintFr')!.invalid && (editForm.get('contenuImprintFr')!.dirty || editForm.get('contenuImprintFr')!.touched)">
+                            <small class="form-text text-danger"
+                                *ngIf="editForm.get('contenuImprintFr')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 7000 }">
+                            This field cannot be longer than 7000 characters.
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.imprint.contenuImprintSw" for="field_contenuImprintSw">Contenu Imprint Sw</label>
+                            <ckeditor [editor]="Editor" name="contenuImprintSw" 
+                            id="field_contenuImprintSw" formControlName="contenuImprintSw" 
+                            data="contenuImprintSw">
+                            </ckeditor> 
+                        <div *ngIf="editForm.get('contenuImprintSw')!.invalid && (editForm.get('contenuImprintSw')!.dirty || editForm.get('contenuImprintSw')!.touched)">
+                            <small class="form-text text-danger"
+                                *ngIf="editForm.get('contenuImprintSw')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 7000 }">
+                            This field cannot be longer than 7000 characters.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

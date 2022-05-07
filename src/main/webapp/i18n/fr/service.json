@@ -2,10 +2,12 @@
   "iotaOrignAdminApp": {
     "service": {
       "home": {
-        "title": "Services",
-        "createLabel": "Créer un nouveau Service",
-        "createOrEditLabel": "Créer ou éditer un Service",
-        "notFound": "Aucun Service trouvé"
+        "title": "Section Service",
+        "createLabel": "Créer la section",
+        "EditLabel": "Mettre à jour la section",
+        "consigne": "Cliquez sur l'élément que vous souhaitez mettre à jour",
+        "notFound": "Section vide",
+        "backButton": "Retour"
       },
       "created": "Un nouveau Service a été créé avec l'identifiant {{ param }}",
       "updated": "Le Service avec l'identifiant {{ param }} a été mis à jour",
@@ -14,20 +16,20 @@
         "question": "Etes-vous certain de vouloir supprimer le Service {{ id }} ?"
       },
       "detail": {
-        "title": "Service"
+        "title": "SERVICE"
       },
-      "titreFr": "Titre Fr",
-      "titreEn": "Titre En",
-      "titreGer": "Titre Ger",
-      "titreSw": "Titre Sw",
-      "sousTitreFr": "Sous Titre Fr",
-      "sousTitreEn": "Sous Titre En",
-      "sousTitreGer": "Sous Titre Ger",
-      "sousTitreSw": "Sous Titre Sw",
-      "textParagraphe1Fr": "Text Paragraphe 1 Fr",
-      "textParagraphe1En": "Text Paragraphe 1 En",
-      "textParagraphe1Ger": "Text Paragraphe 1 Ger",
-      "textParagraphe1Sw": "Text Paragraphe 1 Sw",
+      "titreFr": "Titre en Français",
+      "titreEn": "Titre en Anglais",
+      "titreGer": "Titre en Allemand",
+      "titreSw": "Titre en Swahili",
+      "sousTitreFr": "Sous-titre en Français",
+      "sousTitreEn": "Sous-titre en Anglais",
+      "sousTitreGer": "Sous-titre en Allemand",
+      "sousTitreSw": "Sous-titre en Swahili",
+      "textParagraphe1Fr": "Contenu en Français",
+      "textParagraphe1En": "Contenu en Anglais",
+      "textParagraphe1Ger": "Contenu en Allemand",
+      "textParagraphe1Sw": "Contenu en Swahili",
       "textParagraphe2Fr": "Text Paragraphe 2 Fr",
       "textParagraphe2En": "Text Paragraphe 2 En",
       "textParagraphe2Ger": "Text Paragraphe 2 Ger",

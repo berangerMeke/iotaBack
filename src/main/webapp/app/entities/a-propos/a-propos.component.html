@@ -1,218 +1,74 @@
 <div>
-    <h2 id="page-heading">
-        <!-- <span jhiTranslate="iotaOrignAdminApp.aPropos.home.title">A Propos</span> -->
-        <span>About us Section</span>&nbsp;&nbsp; | &nbsp;&nbsp;
-        <span style="color: rgb(82, 82, 82); font-size:60%">Cliquez sur l'élément que vous souhaitez mettre à jour.</span>
-
-        <button *ngIf="aPropos.length == 0" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-a-propos" [routerLink]="['/a-propos/new']">
-            <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="iotaOrignAdminApp.aPropos.home.createLabel">
-            Create a new A Propos
+    <!--Stard header to A_Propos section  -->
+    <h3 id="page-heading" class="intro-button">
+        <a> 
+           <span (click)="back()">
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="3%" alt="back">
+                <span class="arrow-back" jhiTranslate="iotaOrignAdminApp.accueil.home.backButton">Back</span>    
             </span>
+        </a>
+        &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span jhiTranslate="iotaOrignAdminApp.aPropos.home.title">About us Section</span>
+         &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span *ngIf="aPropos.length > 0" style="color: rgb(82, 82, 82); font-size:60%" jhiTranslate="iotaOrignAdminApp.aPropos.home.consigne">
+            Cliquez sur l'élément que vous souhaitez mettre à jour.
+        </span>    
+
+        <button *ngIf="aPropos.length < 1" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-aPropos" 
+            [routerLink]="['/a-propos/new']"
+            (click)="createApropos()">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.aPropos.home.createLabel">Create a new A Propos</span>
         </button>
-    </h2>
-
+        &nbsp;&nbsp;&nbsp;
+        <button *ngIf="aPropos.length >= 1" type="submit" (click)="delete(aPropos[0])"
+                class="btn btn-danger btn-sm">
+            <fa-icon icon="times"></fa-icon>
+            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+        </button>
+    </h3>
     <hr>
-
-    <jhi-alert-error></jhi-alert-error>
 
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="aPropos?.length === 0">
         <span jhiTranslate="iotaOrignAdminApp.aPropos.home.notFound">No aPropos found</span>
     </div>
+    <!--End header to A_Propos section  -->
 
-    <!-- <div class="table-responsive" id="entities" *ngIf="aPropos?.length > 0">
-        <table class="table table-striped" aria-describedby="page-heading">
-            <thead>
-                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
-                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="titreFr"><span jhiTranslate="iotaOrignAdminApp.aPropos.titreFr">Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="titreEn"><span jhiTranslate="iotaOrignAdminApp.aPropos.titreEn">Titre En</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="titreGer"><span jhiTranslate="iotaOrignAdminApp.aPropos.titreGer">Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="titreSw"><span jhiTranslate="iotaOrignAdminApp.aPropos.titreSw">Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="sousTitreFr"><span jhiTranslate="iotaOrignAdminApp.aPropos.sousTitreFr">Sous Titre Fr</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="sousTitreEn"><span jhiTranslate="iotaOrignAdminApp.aPropos.sousTitreEn">Sous Titre En</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="sousTitreGer"><span jhiTranslate="iotaOrignAdminApp.aPropos.sousTitreGer">Sous Titre Ger</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="sousTitreSw"><span jhiTranslate="iotaOrignAdminApp.aPropos.sousTitreSw">Sous Titre Sw</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe1Fr"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe1Fr">Text Paragraphe 1 Fr</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe1En"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe1En">Text Paragraphe 1 En</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe1Ger"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe1Ger">Text Paragraphe 1 Ger</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe1Sw"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe1Sw">Text Paragraphe 1 Sw</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe2Fr"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe2Fr">Text Paragraphe 2 Fr</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe2En"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe2En">Text Paragraphe 2 En</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe2Ger"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe2Ger">Text Paragraphe 2 Ger</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe2Sw"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe2Sw">Text Paragraphe 2 Sw</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe3Fr"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe3Fr">Text Paragraphe 3 Fr</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe3En"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe3En">Text Paragraphe 3 En</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe3Ger"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe3Ger">Text Paragraphe 3 Ger</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe3Sw"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe3Sw">Text Paragraphe 3 Sw</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe4Fr"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe4Fr">Text Paragraphe 4 Fr</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe4En"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe4En">Text Paragraphe 4 En</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe4Ger"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe4Ger">Text Paragraphe 4 Ger</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe4Sw"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe4Sw">Text Paragraphe 4 Sw</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe5Fr"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe5Fr">Text Paragraphe 5 Fr</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe5En"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe5En">Text Paragraphe 5 En</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe5Ger"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe5Ger">Text Paragraphe 5 Ger</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="textParagraphe5Sw"><span jhiTranslate="iotaOrignAdminApp.aPropos.textParagraphe5Sw">Text Paragraphe 5 Sw</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="image"><span jhiTranslate="iotaOrignAdminApp.aPropos.image">Image</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
-                <tr *ngFor="let aPropos of aPropos ;trackBy: trackId">
-                    <td><a [routerLink]="['/a-propos', aPropos.id, 'view']">{{ aPropos.id }}</a></td>
-                    <td>{{ aPropos.titreFr }}</td>
-                    <td>{{ aPropos.titreEn }}</td>
-                    <td>{{ aPropos.titreGer }}</td>
-                    <td>{{ aPropos.titreSw }}</td>
-                    <td>{{ aPropos.sousTitreFr }}</td>
-                    <td>{{ aPropos.sousTitreEn }}</td>
-                    <td>{{ aPropos.sousTitreGer }}</td>
-                    <td>{{ aPropos.sousTitreSw }}</td>
-                    <td>{{ aPropos.textParagraphe1Fr }}</td>
-                    <td>{{ aPropos.textParagraphe1En }}</td>
-                    <td>{{ aPropos.textParagraphe1Ger }}</td>
-                    <td>{{ aPropos.textParagraphe1Sw }}</td>
-                    <td>{{ aPropos.textParagraphe2Fr }}</td>
-                    <td>{{ aPropos.textParagraphe2En }}</td>
-                    <td>{{ aPropos.textParagraphe2Ger }}</td>
-                    <td>{{ aPropos.textParagraphe2Sw }}</td>
-                    <td>{{ aPropos.textParagraphe3Fr }}</td>
-                    <td>{{ aPropos.textParagraphe3En }}</td>
-                    <td>{{ aPropos.textParagraphe3Ger }}</td>
-                    <td>{{ aPropos.textParagraphe3Sw }}</td>
-                    <td>{{ aPropos.textParagraphe4Fr }}</td>
-                    <td>{{ aPropos.textParagraphe4En }}</td>
-                    <td>{{ aPropos.textParagraphe4Ger }}</td>
-                    <td>{{ aPropos.textParagraphe4Sw }}</td>
-                    <td>{{ aPropos.textParagraphe5Fr }}</td>
-                    <td>{{ aPropos.textParagraphe5En }}</td>
-                    <td>{{ aPropos.textParagraphe5Ger }}</td>
-                    <td>{{ aPropos.textParagraphe5Sw }}</td>
-                    <td>
-                        <a *ngIf="aPropos.image" (click)="openFile(aPropos.imageContentType, aPropos.image)">
-                            <img [src]="'data:' + aPropos.imageContentType + ';base64,' + aPropos.image" style="max-height: 30px;" alt="aPropos image"/>
-                        </a>
-                        <span *ngIf="aPropos.image">{{ aPropos.imageContentType }}, {{ byteSize(aPropos.image) }}</span>
-                    </td>
-                    <td class="text-right">
-                        <div class="btn-group">
-                            <button type="submit"
-                                    [routerLink]="['/a-propos', aPropos.id, 'view']"
-                                    class="btn btn-info btn-sm">
-                                <fa-icon icon="eye"></fa-icon>
-                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-                            </button>
-
-                            <button type="submit"
-                                    [routerLink]="['/a-propos', aPropos.id, 'edit']"
-                                    class="btn btn-primary btn-sm">
-                                <fa-icon icon="pencil-alt"></fa-icon>
-                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
-                            </button>
-
-                            <button type="submit" (click)="delete(aPropos)"
-                                    class="btn btn-danger btn-sm">
-                                <fa-icon icon="times"></fa-icon>
-                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div> -->
-
-
-
-
-
+    
+    <!-- START THE SECTION : A PROPOS  -->
     <div>      
         <section id="about-us" class="about-us">
             <div class="container pt-5">
                 <div class="row text-center">
-                    <h1 *ngIf="aPropos[0]"
-                            class="fw-bold title-style"
-                            (click)="update('titre')">
-                            <a [routerLink]="['/a-propos', aPropos[0].id, 'edit']">
-                                {{ aPropos[0].titreFr }}
-                            </a> 
+                    <h1 class="fw-bold title-style" *ngIf="aPropos[0]" [routerLink]="['/a-propos', aPropos[0].id, 'edit']">
+                       <a> 
+                           <span class="display-2--intro" (click)="update('titre')">
+                                <span *ngIf="languageService.currentLang === 'fr'">{{aPropos[0].titreFr}}</span>
+                                <span *ngIf="languageService.currentLang === 'en'">{{aPropos[0].titreEn}}</span>
+                                <span *ngIf="languageService.currentLang === 'es'">{{aPropos[0].titreSw}}</span>
+                                <span *ngIf="languageService.currentLang === 'de'">{{aPropos[0].titreGer}}</span>
+                            </span>
+                        </a>
                     </h1>
-                    <div *ngIf="!aPropos[0].titreFr && 
-                                    !aPropos[0].titreEn && 
-                                    !aPropos[0].titreGer"
-                                    (click)="update('paragraphe1')"
-                                    [routerLink]="['/a-propos', aPropos[0].id, 'edit']">
-                            <a class="text-vide">
-                                <span class="vide"> Titre Vide !!</span> <span> ici pour y mettre un texte.</span>
-                            </a>
-                    </div>
                 </div>
     
                 <!-- START THE DESCRIPTION CONTENT -->
                 <div class="row description pt-2 pb-5 mt-0 mb-3">
-                    <p class="description--info anim-elt-6">
+                    <p class="description--info anim-elt-6">                      
                         <div (click)="update('paragraphe1')" [routerLink]="['/a-propos', aPropos[0].id, 'edit']" *ngIf="aPropos[0]" >
                             <a class="paragraphe-style ">
-                                {{ aPropos[0].textParagraphe1Fr }}
+                                <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="aPropos[0].textParagraphe1Fr"></div>
+                                <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="aPropos[0].textParagraphe1En"></div>
+                                <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="aPropos[0].textParagraphe1Sw"></div>
+                                <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="aPropos[0].textParagraphe1Ger"></div>
                             </a>
                         </div>
-                        <div *ngIf="!aPropos[0].textParagraphe1Fr && 
-                                    !aPropos[0].textParagraphe1En && 
-                                    !aPropos[0].textParagraphe1Ger"
-                                    (click)="update('paragraphe1')"
-                                    [routerLink]="['/a-propos', aPropos[0].id, 'edit']">
-                            <a class="text-vide">
-                                <span class="vide"> Paragraphe Vide !!</span> <span> ici pour y mettre un texte.</span>
-                            </a>
-                        </div>
-                    </p>
-                    <p class="description--info anim-elt-52" >
-                        <div (click)="update('paragraphe2')" [routerLink]="['/a-propos', aPropos[0].id, 'edit']">
-                            <a class="paragraphe-style ">
-                                {{ aPropos[0].textParagraphe2Fr }}
-                            </a class="paragraphe-style ">
-                        </div>
-                        <div *ngIf="!aPropos[0].textParagraphe2Fr && 
-                                    !aPropos[0].textParagraphe2En && 
-                                    !aPropos[0].textParagraphe2Ger"
-                                    (click)="update('paragraphe2')"
-                                    [routerLink]="['/a-propos', aPropos[0].id, 'edit']">
-                            <a class="text-vide">
-                                <span class="vide"> Paragraphe Vide !!</span> <span> ici pour y mettre un texte.</span>
-                            </a>
-                        </div>
-                    </p>
-                    <p  class="description--info anim-elt-53">
-                        <div (click)="update('paragraphe3')" [routerLink]="['/a-propos', aPropos[0].id, 'edit']">
-                            <a class="paragraphe-style ">
-                                {{ aPropos[0].textParagraphe3Fr }}
-                            </a>
-                        </div>
-                        <div (click)="update('paragraphe3')" 
-                                *ngIf="!aPropos[0].textParagraphe3Fr && 
-                                !aPropos[0].textParagraphe3Fr && 
-                                !aPropos[0].textParagraphe3Fr"
-                                [routerLink]="['/a-propos', aPropos[0].id, 'edit']">
-                            <a class="text-vide">
-                                <span class="vide"> Paragraphe Vide !!</span> <span> ici pour y mettre un texte.</span>
-                            </a>
-                        </div>
-                    </p>
+                    </p>                                 
                 </div>
             </div>
         </section>
-
-
     </div>
-
-
-
-
-
-
-
-
-
+    <!-- END THE SECTION : A PROPOS  -->
 </div>

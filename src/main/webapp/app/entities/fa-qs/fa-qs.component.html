@@ -1,26 +1,46 @@
 <div>
-    <h2 id="page-heading">
-        <!-- <span jhiTranslate="iotaOrignAdminApp.fAQs.home.title">FA Qs</span> -->
-        <span>FAQs  Section</span>&nbsp;&nbsp; | &nbsp;&nbsp;
-        <span style="color: rgb(82, 82, 82); font-size:60%">Cliquez sur l'élément que vous souhaitez mettre à jour.</span>
 
-        <button *ngIf="fAQs.length == 0"  id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-fa-qs" [routerLink]="['/fa-qs/new']">
-            <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="iotaOrignAdminApp.fAQs.home.createLabel">
-            Create a new FA Qs
-            </span>
-        </button>
-    </h2>
+<h3 id="page-heading" class="intro-button">
+    <a> 
+       <span (click)="back()">
+            <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="3%" alt="back">
+            <span class="arrow-back" jhiTranslate="iotaOrignAdminApp.fAQs.home.backButton">Back</span>    
+        </span>
+    </a>
+    &nbsp;&nbsp; | &nbsp;&nbsp;
+    <span jhiTranslate="iotaOrignAdminApp.fAQs.home.title">FAQs us Section</span>
+     &nbsp;&nbsp; | &nbsp;&nbsp;
+    <span *ngIf="fAQs.length > 0" style="color: rgb(82, 82, 82); font-size:60%" jhiTranslate="iotaOrignAdminApp.fAQs.home.consigne">
+        Cliquez sur l'élément que vous souhaitez mettre à jour.
+    </span>    
+
+    <button *ngIf="fAQs.length < 1" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-fAQs" 
+        [routerLink]="['/fa-qs/new']"
+        (click)="createfAQs()">
+        <fa-icon icon="plus"></fa-icon>
+        <span  jhiTranslate="iotaOrignAdminApp.fAQs.home.createLabel">Create a new A Propos</span>
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button *ngIf="fAQs.length >= 1" type="submit" (click)="delete(fAQs[0])"
+            class="btn btn-danger btn-sm">
+        <fa-icon icon="times"></fa-icon>
+        <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+    </button>
+</h3>
 
 <hr>
 
-    <jhi-alert-error></jhi-alert-error>
+
+
+    <!-- <jhi-alert-error></jhi-alert-error> -->
 
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="fAQs?.length === 0">
         <span jhiTranslate="iotaOrignAdminApp.fAQs.home.notFound">No fAQs found</span>
     </div>
+
+
 
     <!-- <div class="table-responsive" id="entities" *ngIf="fAQs?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
@@ -241,11 +261,18 @@
 
 
 
+
+
 <div class="row">
     <div *ngIf="fAQs[0]" class="col col-md-12 col-12 faqs-style1">
         <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
         (click)="update('titre')"
-        class="faqs-style">{{ fAQs[0].titreFr }}</a>
+        class="faqs-style">
+            <span *ngIf="languageService.currentLang === 'fr'">{{fAQs[0].titreFr}}</span>
+            <span *ngIf="languageService.currentLang === 'en'">{{fAQs[0].titreEn}}</span>
+            <span *ngIf="languageService.currentLang === 'es'">{{fAQs[0].titreSw}}</span>
+            <span *ngIf="languageService.currentLang === 'de'">{{fAQs[0].titreGer}}</span>
+        </a>
     </div>
 </div>
 
@@ -255,13 +282,21 @@
             <a class="card-header titre-card" 
             (click)="update('titreAccordion1')"
             [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
-                {{ fAQs[0].titreAccordion1Fr }} 
+                <span *ngIf="languageService.currentLang === 'fr'">{{fAQs[0].titreAccordion1Fr}}</span>
+                <span *ngIf="languageService.currentLang === 'en'">{{fAQs[0].titreAccordion1En}}</span>
+                <span *ngIf="languageService.currentLang === 'es'">{{fAQs[0].titreAccordion1Sw}}</span>
+                <span *ngIf="languageService.currentLang === 'de'">{{fAQs[0].titreAccordion1Gr}}</span>
             </a>
             <div class="card-body">
               <p class="card-text ">
-                  <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
-                  (click)="update('textAccordion1')"
-                  class="paragraphe-style ">{{ fAQs[0].textAccordion1Fr }} </a>
+                    <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
+                    (click)="update('textAccordion1')"
+                    class="paragraphe-style ">
+                        <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="fAQs[0].textAccordion1Fr"></div>
+                        <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="fAQs[0].textAccordion1En"></div>
+                        <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="fAQs[0].textAccordion1Ger"></div>
+                        <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="fAQs[0].textAccordion1Sw"></div>
+                    </a>
               </p>
             </div>
           </div>
@@ -271,13 +306,21 @@
             <a class="card-header" 
             (click)="update('titreAccordion2')"
             [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
-                {{ fAQs[0].titreAccordion2Fr }} 
+            <span *ngIf="languageService.currentLang === 'fr'">{{fAQs[0].titreAccordion2Fr}}</span>
+            <span *ngIf="languageService.currentLang === 'en'">{{fAQs[0].titreAccordion2En}}</span>
+            <span *ngIf="languageService.currentLang === 'es'">{{fAQs[0].titreAccordion2Sw}}</span>
+            <span *ngIf="languageService.currentLang === 'de'">{{fAQs[0].titreAccordion2Ger}}</span>
             </a>
             <div class="card-body">
                 <p class="card-text">
                   <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']"  
                   (click)="update('textAccordion2')"
-                  class="paragraphe-style ">{{ fAQs[0].textAccordion2Fr }}</a>
+                  class="paragraphe-style ">
+                  <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="fAQs[0].textAccordion2Fr"></div>
+                  <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="fAQs[0].textAccordion2En"></div>
+                  <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="fAQs[0].textAccordion2Ger"></div>
+                  <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="fAQs[0].textAccordion2Sw"></div>
+                    </a>
                 </p>
             </div>
           </div>
@@ -287,13 +330,21 @@
             <a class="card-header titre-card " 
             (click)="update('titreAccordion3')"
             [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
-                {{ fAQs[0].titreAccordion3Fr }} 
+            <span *ngIf="languageService.currentLang === 'fr'">{{fAQs[0].titreAccordion3Fr}}</span>
+            <span *ngIf="languageService.currentLang === 'en'">{{fAQs[0].titreAccordion3En}}</span>
+            <span *ngIf="languageService.currentLang === 'es'">{{fAQs[0].titreAccordion3Sw}}</span>
+            <span *ngIf="languageService.currentLang === 'de'">{{fAQs[0].titreAccordion3Ger}}</span>
             </a>
             <div class="card-body">
                 <p class="card-text">
                     <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']"  
                     (click)="update('textAccordion3')"
-                    class="paragraphe-style ">{{ fAQs[0].textAccordion3Fr }}</a>
+                    class="paragraphe-style ">
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="fAQs[0].textAccordion3Fr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="fAQs[0].textAccordion3En"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="fAQs[0].textAccordion3Ger"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="fAQs[0].textAccordion3Sw"></div>
+                </a>
                 </p>
             </div>
           </div>
@@ -303,20 +354,26 @@
             <a class="card-header titre-card " 
             (click)="update('titreAccordion4')"
             [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
-                {{ fAQs[0].titreAccordion4Fr }} 
+            <span *ngIf="languageService.currentLang === 'fr'">{{fAQs[0].titreAccordion4Fr}}</span>
+            <span *ngIf="languageService.currentLang === 'en'">{{fAQs[0].titreAccordion4En}}</span>
+            <span *ngIf="languageService.currentLang === 'es'">{{fAQs[0].titreAccordion4Sw}}</span>
+            <span *ngIf="languageService.currentLang === 'de'">{{fAQs[0].titreAccordion4Ger}}</span>
             </a>
             <div class="card-body">
                 <p class="card-text">
                     <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
                     (click)="update('textAccordion4')"
-                    class="paragraphe-style ">{{ fAQs[0].textAccordion4Fr }} </a>
+                    class="paragraphe-style ">
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="fAQs[0].textAccordion4Fr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="fAQs[0].textAccordion4En"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="fAQs[0].textAccordion4Ger"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="fAQs[0].textAccordion4Sw"></div>
+                    </a>
                 </p>
             </div>
           </div>
     </div>
 </div>
-
-
 
 <div class="row" style="margin-top: 3%;">
     <div class="col col-md-3 col-12">
@@ -325,12 +382,21 @@
             (click)="update('titreAccordion5')"
             [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
                 {{ fAQs[0].titreAccordion5Fr }} 
+                <span *ngIf="languageService.currentLang === 'fr'">{{fAQs[0].titreAccordion5Fr}}</span>
+                <span *ngIf="languageService.currentLang === 'en'">{{fAQs[0].titreAccordion5En}}</span>
+                <span *ngIf="languageService.currentLang === 'es'">{{fAQs[0].titreAccordion5Sw}}</span>
+                <span *ngIf="languageService.currentLang === 'de'">{{fAQs[0].titreAccordion5Ger}}</span>
             </a>
             <div class="card-body">
                 <p class="card-text">
                     <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
                     (click)="update('textAccordion5')"
-                    class="paragraphe-style "> {{ fAQs[0].textAccordion5Fr }} </a>
+                    class="paragraphe-style "> 
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="fAQs[0].textAccordion5Fr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="fAQs[0].textAccordion5En"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="fAQs[0].textAccordion5Ger"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="fAQs[0].textAccordion5Sw"></div>
+                </a>
                 </p>
             </div>
           </div>
@@ -340,13 +406,21 @@
             <a class="card-header titre-card " 
             (click)="update('titreAccordion6')"
             [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
-                {{ fAQs[0].titreAccordion6Fr }} 
+            <span *ngIf="languageService.currentLang === 'fr'">{{fAQs[0].titreAccordion6Fr}}</span>
+            <span *ngIf="languageService.currentLang === 'en'">{{fAQs[0].titreAccordion6En}}</span>
+            <span *ngIf="languageService.currentLang === 'es'">{{fAQs[0].titreAccordion6Sw}}</span>
+            <span *ngIf="languageService.currentLang === 'de'">{{fAQs[0].titreAccordion6Ger}}</span> 
             </a>
             <div class="card-body">
                 <p class="card-text">
                     <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
                     (click)="update('textAccordion6')"
-                    class="paragraphe-style "> {{ fAQs[0].textAccordion6Fr }} </a>
+                    class="paragraphe-style ">  
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="fAQs[0].textAccordion6Fr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="fAQs[0].textAccordion6En"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="fAQs[0].textAccordion6Ger"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="fAQs[0].textAccordion6Sw"></div>
+                    </a>
                 </p>
             </div>
           </div>
@@ -356,13 +430,21 @@
             <a class="card-header titre-card " 
             (click)="update('titreAccordion7')"
             [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
-                {{ fAQs[0].titreAccordion7Fr }} 
+            <span *ngIf="languageService.currentLang === 'fr'">{{fAQs[0].titreAccordion7Fr}}</span>
+            <span *ngIf="languageService.currentLang === 'en'">{{fAQs[0].titreAccordion7En}}</span>
+            <span *ngIf="languageService.currentLang === 'es'">{{fAQs[0].titreAccordion7Sw}}</span>
+            <span *ngIf="languageService.currentLang === 'de'">{{fAQs[0].titreAccordion7Ger}}</span>
             </a>
             <div class="card-body">
                 <p class="card-text">
                     <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
                     (click)="update('textAccordion7')"
-                    class="paragraphe-style "> {{ fAQs[0].textAccordion7Fr }} </a>
+                    class="paragraphe-style "> 
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="fAQs[0].textAccordion7Fr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="fAQs[0].textAccordion7En"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="fAQs[0].textAccordion7Ger"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="fAQs[0].textAccordion7Sw"></div>
+                    </a>
                 </p>
             </div>
           </div>
@@ -372,13 +454,21 @@
             <a class="card-header titre-card " 
             (click)="update('titreAccordion8')"
             [routerLink]="['/fa-qs', fAQs[0].id, 'edit']">
-                {{ fAQs[0].titreAccordion8Fr }} 
+                <span *ngIf="languageService.currentLang === 'fr'">{{fAQs[0].titreAccordion8Fr}}</span>
+                <span *ngIf="languageService.currentLang === 'en'">{{fAQs[0].titreAccordion8En}}</span>
+                <span *ngIf="languageService.currentLang === 'es'">{{fAQs[0].titreAccordion8Sw}}</span>
+                <span *ngIf="languageService.currentLang === 'de'">{{fAQs[0].titreAccordion8Ger}}</span>
             </a> 
             <div class="card-body">              
                 <p class="card-text">
                     <a [routerLink]="['/fa-qs', fAQs[0].id, 'edit']" 
                     (click)="update('textAccordion8')"
-                    class="paragraphe-style "> {{ fAQs[0].textAccordion8Fr }} </a>
+                    class="paragraphe-style "> 
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="fAQs[0].textAccordion8Fr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="fAQs[0].textAccordion8En"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="fAQs[0].textAccordion8Ger"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="fAQs[0].textAccordion8Sw"></div>
+                    </a>
                 </p>
             </div>
           </div>

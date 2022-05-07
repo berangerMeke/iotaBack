@@ -50,10 +50,10 @@ spring:
   liquibase:
     contexts: prod
   mail:
-    host: localhost
-    port: 25
-    username:
-    password:
+    host: smtp.iotaorigin.de
+    port: 587
+    username: hello@iotaorigin.de
+    password: toutou123576
   thymeleaf:
     cache: true
 

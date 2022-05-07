@@ -4,8 +4,10 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Location } from '@angular/common';
 import { JhiDataUtils, JhiFileLoadError, JhiEventManager, JhiEventWithContent } from 'ng-jhipster';
 import {TransfertDataService} from '../../core/services/transfert-data.service'
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import { IObjectifs, Objectifs } from 'app/shared/model/objectifs.model';
 import { ObjectifsService } from './objectifs.service';
@@ -13,26 +15,30 @@ import { AlertError } from 'app/shared/alert/alert-error.model';
 
 @Component({
   selector: 'jhi-objectifs-update',
-  templateUrl: './objectifs-update.component.html'
+  templateUrl: './objectifs-update.component.html',
+  styleUrls: ['./objectifs-update.scss']
 })
 export class ObjectifsUpdateComponent implements OnInit {
   isSaving = false;
   eltChoisi: any;
 
+  public Editor = ClassicEditor
+  isObjectifsNoExist: any;
+
   editForm = this.fb.group({
     id: [],
-    titreFr: [],
-    titreEn: [],
-    titreGer: [],
-    titreSw: [],
-    sousTitreFr: [],
-    sousTitreEn: [],
-    sousTitreGer: [],
-    sousTitreSw: [],
-    textParagraphe1Fr: [],
-    textParagraphe1En: [],
-    textParagraphe1Ger: [],
-    textParagraphe1Sw: [],
+    titreFr: ['', Validators.required],
+    titreEn: ['', Validators.required],
+    titreGer: ['', Validators.required],
+    titreSw: ['', Validators.required],
+    sousTitreFr: ['', Validators.required],
+    sousTitreEn: ['', Validators.required],
+    sousTitreGer: ['', Validators.required],
+    sousTitreSw: ['', Validators.required],
+    textParagraphe1Fr: ['', Validators.required],
+    textParagraphe1En: ['', Validators.required],
+    textParagraphe1Ger: ['', Validators.required],
+    textParagraphe1Sw: ['', Validators.required],
     textParagraphe2Fr: [],
     textParagraphe2En: [],
     textParagraphe2Ger: [],
@@ -49,8 +55,8 @@ export class ObjectifsUpdateComponent implements OnInit {
     textParagraphe5En: [],
     textParagraphe5Ger: [],
     textParagraphe5Sw: [],
-    image: [],
-    imageContentType: []
+    image: ['', Validators.required],
+    imageContentType: ['', Validators.required]
   });
 
   constructor(
@@ -58,12 +64,43 @@ export class ObjectifsUpdateComponent implements OnInit {
     protected eventManager: JhiEventManager,
     protected objectifsService: ObjectifsService,
     protected elementRef: ElementRef,
+    private location: Location,
     public transfertDataService: TransfertDataService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
-  ) {}
+  ) {
+      ClassicEditor.defaultConfig = {
+        toolbar: {
+            items: [
+                'heading',
+                '|',
+                'bold',
+                'italic',
+                'link',
+                'bulletedList',
+                'numberedList',
+              //  'uploadImage',
+              // 'blockQuote',
+                'undo',
+                'redo'
+            ]
+        },
+        image: {
+            toolbar: [
+                'imageStyle:inline',
+                'imageStyle:block',
+                'imageStyle:side',
+                '|',
+                'toggleImageCaption',
+                'imageTextAlternative'
+            ]
+        },
+        language: 'en'
+      };
+  }
 
   ngOnInit(): void {
+    this.isObjectifsNoExist = localStorage.getItem('isNewObjectifs'); 
     this.eltChoisi = this.transfertDataService.getData();
     this.activatedRoute.data.subscribe(({ objectifs }) => {
       this.updateForm(objectifs);
@@ -133,9 +170,14 @@ export class ObjectifsUpdateComponent implements OnInit {
   }
 
   previousState(): void {
+    localStorage.removeItem("isNewObjectifs");
     window.history.back();
   }
 
+  back(): void {
+    this.location.back()
+    localStorage.removeItem("isNewObjectifs");
+  } 
 
   update(elt: any): void {
     this.transfertDataService.setData(elt);
@@ -145,8 +187,10 @@ export class ObjectifsUpdateComponent implements OnInit {
     this.isSaving = true;
     const objectifs = this.createFromForm();
     if (objectifs.id !== undefined) {
+      localStorage.removeItem("isNewObjectifs");
       this.subscribeToSaveResponse(this.objectifsService.update(objectifs));
     } else {
+      localStorage.removeItem("isNewObjectifs");
       this.subscribeToSaveResponse(this.objectifsService.create(objectifs));
     }
   }

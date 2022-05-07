@@ -2,6 +2,7 @@ import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { JhiLanguageService } from 'ng-jhipster';
+import { Location } from '@angular/common';
 
 import { EMAIL_ALREADY_USED_TYPE, LOGIN_ALREADY_USED_TYPE } from 'app/shared/constants/error.constants';
 import { LoginModalService } from 'app/core/login/login-modal.service';
@@ -9,7 +10,8 @@ import { RegisterService } from './register.service';
 
 @Component({
   selector: 'jhi-register',
-  templateUrl: './register.component.html'
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.scss']
 })
 export class RegisterComponent implements AfterViewInit {
   @ViewChild('login', { static: false })
@@ -31,6 +33,7 @@ export class RegisterComponent implements AfterViewInit {
   constructor(
     private languageService: JhiLanguageService,
     private loginModalService: LoginModalService,
+    private location: Location,  
     private registerService: RegisterService,
     private fb: FormBuilder
   ) {}
@@ -39,6 +42,11 @@ export class RegisterComponent implements AfterViewInit {
     if (this.login) {
       this.login.nativeElement.focus();
     }
+  }
+
+
+  back(): void {
+    this.location.back()
   }
 
   register(): void {

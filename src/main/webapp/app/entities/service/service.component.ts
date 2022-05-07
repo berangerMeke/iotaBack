@@ -3,6 +3,8 @@ import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiParseLinks, JhiDataUtils } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { JhiLanguageService } from 'ng-jhipster';
+import { Location } from '@angular/common';
 import {TransfertDataService} from '../../core/services/transfert-data.service';
 
 import { IService } from 'app/shared/model/service.model';
@@ -25,11 +27,15 @@ export class ServiceComponent implements OnInit, OnDestroy {
   predicate: string;
   ascending: boolean;
 
+  lg: any;
+
   constructor(
     protected serviceService: ServiceService,
     protected dataUtils: JhiDataUtils,
     protected eventManager: JhiEventManager,
     protected modalService: NgbModal,
+    public languageService: JhiLanguageService,
+    private location: Location,
     public transfertDataService: TransfertDataService,
     protected parseLinks: JhiParseLinks
   ) {
@@ -65,9 +71,24 @@ export class ServiceComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.lg = this.languageService.currentLang;
     this.loadAll();
     this.registerChangeInServices();
   }
+
+  back(): void {
+    this.location.back()
+  }
+
+  createApropos(): void {
+    localStorage.setItem("isNewService", "true");
+  }
+
+
+  createService(): void {
+    localStorage.setItem("isNewService", "true");
+  }
+
 
   ngOnDestroy(): void {
     if (this.eventSubscriber) {

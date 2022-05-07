@@ -2,10 +2,12 @@
   "iotaOrignAdminApp": {
     "accueil": {
       "home": {
-        "title": "Accueils",
-        "createLabel": "Accueil erstellen",
-        "createOrEditLabel": "Accueil erstellen oder bearbeiten",
-        "notFound": "No Accueils found"
+        "title": "Einführungsabschnitt",
+        "createLabel": "Abschnitt erstellen",
+        "EditLabel": "Abschnitt aktualisieren",
+        "consigne": "Klicken Sie auf das Element, das Sie aktualisieren möchten",
+        "notFound": "Leerer Abschnitt",
+        "backButton": "Rückfahrt"
       },
       "created": "Accueil erstellt mit ID {{ param }}",
       "updated": "Accueil aktualisiert mit ID {{ param }}",
@@ -14,17 +16,19 @@
         "question": "Soll Accueil {{ id }} wirklich dauerhaft gelöscht werden?"
       },
       "detail": {
-        "title": "Accueil"
+        "title": "Einleitung"
       },
-      "titreFr": "Titre Fr",
-      "titreEn": "Titre En",
-      "titreGer": "Titre Ger",
-      "titreSw": "Titre Sw",
-      "sousTitreFr": "Sous Titre Fr",
-      "sousTitreEn": "Sous Titre En",
-      "sousTitreGer": "Sous Titre Ger",
-      "sousTitreSw": "Sous Titre Sw",
-      "image": "Image"
+      "titreFr": "Titel auf Französisch",
+      "titreEn": "Titel auf englisch",
+      "titreGer": "Titel auf Deutsch",
+      "titreSw": "Titel in Suaheli",
+      "sousTitreFr": "Untertitel auf Französisch",
+      "sousTitreEn": "englischer Untertitel",
+      "sousTitreGer": "Deutscher Untertitel",
+      "sousTitreSw": "Untertitel in Suaheli",
+      "image": "Bild",
+      "logoText": "Logo",
+      "textButton": "Kontaktiere uns"
     }
   }
 }

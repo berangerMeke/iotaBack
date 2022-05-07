@@ -3,6 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import { JhiDataUtils, JhiFileLoadError, JhiEventManager, JhiEventWithContent } from 'ng-jhipster';
 import {TransfertDataService} from '../../core/services/transfert-data.service';
@@ -10,29 +11,36 @@ import {TransfertDataService} from '../../core/services/transfert-data.service';
 import { IService, Service } from 'app/shared/model/service.model';
 import { ServiceService } from './service.service';
 import { AlertError } from 'app/shared/alert/alert-error.model';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 
 @Component({
   selector: 'jhi-service-update',
-  templateUrl: './service-update.component.html'
+  templateUrl: './service-update.component.html',
+  styleUrls: ['./service-update.scss']
 })
 export class ServiceUpdateComponent implements OnInit {
   isSaving = false;
   eltChoisi : any;
 
+  isServiceNoExist: any;
+
+  public Editor = ClassicEditor;
+
   editForm = this.fb.group({
     id: [],
-    titreFr: [],
-    titreEn: [],
-    titreGer: [],
-    titreSw: [],
-    sousTitreFr: [],
-    sousTitreEn: [],
-    sousTitreGer: [],
-    sousTitreSw: [],
-    textParagraphe1Fr: [],
-    textParagraphe1En: [],
-    textParagraphe1Ger: [],
-    textParagraphe1Sw: [],
+    titreFr: ['', Validators.required],
+    titreEn: ['', Validators.required],
+    titreGer: ['', Validators.required],
+    titreSw: ['', Validators.required],
+    sousTitreFr: ['', Validators.required],
+    sousTitreEn: ['', Validators.required],
+    sousTitreGer: ['', Validators.required],
+    sousTitreSw: ['', Validators.required],
+    textParagraphe1Fr: ['', Validators.required],
+    textParagraphe1En: ['', Validators.required],
+    textParagraphe1Ger: ['', Validators.required],
+    textParagraphe1Sw: ['', Validators.required],
     textParagraphe2Fr: [],
     textParagraphe2En: [],
     textParagraphe2Ger: [],
@@ -49,8 +57,8 @@ export class ServiceUpdateComponent implements OnInit {
     textParagraphe5En: [],
     textParagraphe5Ger: [],
     textParagraphe5Sw: [],
-    image: [],
-    imageContentType: []
+    image: ['', Validators.required],
+    imageContentType: ['', Validators.required]
   });
 
   constructor(
@@ -58,12 +66,43 @@ export class ServiceUpdateComponent implements OnInit {
     protected eventManager: JhiEventManager,
     protected serviceService: ServiceService,
     protected elementRef: ElementRef,
+    private location: Location,
     public transfertDataService: TransfertDataService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
-  ) {}
+  ) {        
+      ClassicEditor.defaultConfig = {
+        toolbar: {
+            items: [
+                'heading',
+                '|',
+                'bold',
+                'italic',
+                'link',
+                'bulletedList',
+                'numberedList',
+              //  'uploadImage',
+              // 'blockQuote',
+                'undo',
+                'redo'
+            ]
+        },
+        image: {
+            toolbar: [
+                'imageStyle:inline',
+                'imageStyle:block',
+                'imageStyle:side',
+                '|',
+                'toggleImageCaption',
+                'imageTextAlternative'
+            ]
+        },
+        language: 'en'
+      };
+  }
 
   ngOnInit(): void {
+    this.isServiceNoExist = localStorage.getItem('isNewService'); 
     this.eltChoisi = this.transfertDataService.getData();
     this.activatedRoute.data.subscribe(({ service }) => {
       this.updateForm(service);
@@ -133,16 +172,27 @@ export class ServiceUpdateComponent implements OnInit {
   }
 
   previousState(): void {
+    localStorage.removeItem("isNewService");
     window.history.back();
   }
+
+
+
+  back(): void {
+    this.location.back()
+    localStorage.removeItem("isNewService");
+  }
+
 
   save(): void {
     this.isSaving = true;
     const service = this.createFromForm();
     if (service.id !== undefined) {
       this.subscribeToSaveResponse(this.serviceService.update(service));
+      localStorage.removeItem("isNewService");
     } else {
       this.subscribeToSaveResponse(this.serviceService.create(service));
+      localStorage.removeItem("isNewService");
     }
   }
 

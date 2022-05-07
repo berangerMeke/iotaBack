@@ -5,7 +5,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { JhiDataUtils, JhiFileLoadError, JhiEventManager, JhiEventWithContent } from 'ng-jhipster';
-import {TransfertDataService} from '../../core/services/transfert-data.service'
+import {TransfertDataService} from '../../core/services/transfert-data.service';
 
 
 import { IEquipe, Equipe } from 'app/shared/model/equipe.model';

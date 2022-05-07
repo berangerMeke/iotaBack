@@ -2,10 +2,12 @@
   "iotaOrignAdminApp": {
     "aPropos": {
       "home": {
-        "title": "A Propos",
-        "createLabel": "Create a new A Propos",
-        "createOrEditLabel": "Create or edit a A Propos",
-        "notFound": "No A Propos found"
+        "title": "About us section",
+        "createLabel": "Create section",
+        "EditLabel": "Update Section",
+        "consigne": "Click on the item you want to update",
+        "notFound": "Empty section",
+        "backButton": "Back"
       },
       "created": "A new A Propos is created with identifier {{ param }}",
       "updated": "A A Propos is updated with identifier {{ param }}",
@@ -14,20 +16,20 @@
         "question": "Are you sure you want to delete A Propos {{ id }}?"
       },
       "detail": {
-        "title": "A Propos"
+        "title": "ABOUT"
       },
-      "titreFr": "Titre Fr",
-      "titreEn": "Titre En",
-      "titreGer": "Titre Ger",
-      "titreSw": "Titre Sw",
+      "titreFr": "Title in French",
+      "titreEn": "Title in English",
+      "titreGer": "Title in German",
+      "titreSw": "Title in Swahili",
       "sousTitreFr": "Sous Titre Fr",
       "sousTitreEn": "Sous Titre En",
       "sousTitreGer": "Sous Titre Ger",
       "sousTitreSw": "Sous Titre Sw",
-      "textParagraphe1Fr": "Text Paragraphe 1 Fr",
-      "textParagraphe1En": "Text Paragraphe 1 En",
-      "textParagraphe1Ger": "Text Paragraphe 1 Ger",
-      "textParagraphe1Sw": "Text Paragraphe 1 Sw",
+      "textParagraphe1Fr": "Content in French",
+      "textParagraphe1En": "Content in English",
+      "textParagraphe1Ger": "Content in German",
+      "textParagraphe1Sw": "Content in Swahili",
       "textParagraphe2Fr": "Text Paragraphe 2 Fr",
       "textParagraphe2En": "Text Paragraphe 2 En",
       "textParagraphe2Ger": "Text Paragraphe 2 Ger",

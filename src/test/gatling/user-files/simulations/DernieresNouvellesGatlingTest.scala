@@ -154,6 +154,42 @@ class DernieresNouvellesGatlingTest extends Simulation {
                 , "textSlide8Sw":"SAMPLE_TEXT"
                 , "textSlide9Fr":"SAMPLE_TEXT"
                 , "textSlide9En":"SAMPLE_TEXT"
+                , "textSlide9Ger":"SAMPLE_TEXT"
+                , "textSlide9Sw":"SAMPLE_TEXT"
+                , "textSlide10Fr":"SAMPLE_TEXT"
+                , "textSlide10En":"SAMPLE_TEXT"
+                , "textSlide10Ger":"SAMPLE_TEXT"
+                , "textSlide10Sw":"SAMPLE_TEXT"
+                , "imageSlide1":null
+                , "imageSlide2":null
+                , "imageSlide3":null
+                , "imageSlide4":null
+                , "imageSlide5":null
+                , "imageSlide6":null
+                , "imageSlide7":null
+                , "imageSlide8":null
+                , "imageSlide9":null
+                , "imageSlide10":null
+                , "readMore1":"SAMPLE_TEXT"
+                , "readMore2":"SAMPLE_TEXT"
+                , "readMore3":"SAMPLE_TEXT"
+                , "readMore4":"SAMPLE_TEXT"
+                , "readMore5":"SAMPLE_TEXT"
+                , "readMore6":"SAMPLE_TEXT"
+                , "readMore7":"SAMPLE_TEXT"
+                , "readMore8":"SAMPLE_TEXT"
+                , "readMore9":"SAMPLE_TEXT"
+                , "readMore10":"SAMPLE_TEXT"
+                , "date1":"SAMPLE_TEXT"
+                , "date2":"SAMPLE_TEXT"
+                , "date3":"SAMPLE_TEXT"
+                , "date4":"SAMPLE_TEXT"
+                , "date5":"SAMPLE_TEXT"
+                , "date6":"SAMPLE_TEXT"
+                , "date7":"SAMPLE_TEXT"
+                , "date8":"SAMPLE_TEXT"
+                , "date9":"SAMPLE_TEXT"
+                , "date10":"SAMPLE_TEXT"
                 }""")).asJson
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_dernieresNouvelles_url"))).exitHereIfFailed

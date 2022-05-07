@@ -1,13 +1,15 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { LoginModalService } from 'app/core/login/login-modal.service';
 import { PasswordResetFinishService } from './password-reset-finish.service';
 
 @Component({
   selector: 'jhi-password-reset-finish',
-  templateUrl: './password-reset-finish.component.html'
+  templateUrl: './password-reset-finish.component.html',
+  styleUrls: ['./finish.scss']
 })
 export class PasswordResetFinishComponent implements OnInit, AfterViewInit {
   @ViewChild('newPassword', { static: false })
@@ -27,6 +29,8 @@ export class PasswordResetFinishComponent implements OnInit, AfterViewInit {
   constructor(
     private passwordResetFinishService: PasswordResetFinishService,
     private loginModalService: LoginModalService,
+    private location: Location, 
+    private router: Router,
     private route: ActivatedRoute,
     private fb: FormBuilder
   ) {}
@@ -38,6 +42,10 @@ export class PasswordResetFinishComponent implements OnInit, AfterViewInit {
       }
       this.initialized = true;
     });
+  }
+
+  back(): void {
+    this.location.back()
   }
 
   ngAfterViewInit(): void {
@@ -64,6 +72,7 @@ export class PasswordResetFinishComponent implements OnInit, AfterViewInit {
   }
 
   login(): void {
-    this.loginModalService.open();
+    this.router.navigate(['/account']);
+    // this.loginModalService.open(); 
   }
 }

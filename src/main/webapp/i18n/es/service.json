@@ -2,10 +2,12 @@
   "iotaOrignAdminApp": {
     "service": {
       "home": {
-        "title": "Services",
-        "createLabel": "Crear nuevo Service",
-        "createOrEditLabel": "Crear o editar Service",
-        "notFound": "Ningún Services encontrado"
+        "title": "Sehemu ya Huduma",
+        "createLabel": "Unda sehemu",
+        "EditLabel": "Sehemu ya sasisho",
+        "consigne": "Bofya kwenye kipengee unachotaka kusasisha",
+        "notFound": "Sehemu tupu",
+        "backButton": "Rudi"
       },
       "created": "Un nuevo Service ha sido creado con el identificador {{ param }}",
       "updated": "Un Service ha sido actualizado con el identificador {{ param }}",
@@ -14,20 +16,20 @@
         "question": "¿Seguro que quiere eliminar Service {{ id }}?"
       },
       "detail": {
-        "title": "Service"
+        "title": "HUDUMA"
       },
-      "titreFr": "Titre Fr",
-      "titreEn": "Titre En",
-      "titreGer": "Titre Ger",
-      "titreSw": "Titre Sw",
-      "sousTitreFr": "Sous Titre Fr",
-      "sousTitreEn": "Sous Titre En",
-      "sousTitreGer": "Sous Titre Ger",
-      "sousTitreSw": "Sous Titre Sw",
-      "textParagraphe1Fr": "Text Paragraphe 1 Fr",
-      "textParagraphe1En": "Text Paragraphe 1 En",
-      "textParagraphe1Ger": "Text Paragraphe 1 Ger",
-      "textParagraphe1Sw": "Text Paragraphe 1 Sw",
+      "titreFr": "Kichwa kwa Kifaransa",
+      "titreEn": "Kichwa kwa Kiingereza",
+      "titreGer": "Kichwa kwa Kijerumani",
+      "titreSw": "Title kwa Kiswahili",
+      "sousTitreFr": "Manukuu ya Kifaransa",
+      "sousTitreEn": "Manukuu ya Kiingereza",
+      "sousTitreGer": "Manukuu ya Kijerumani",
+      "sousTitreSw": "Manukuu ya Kiswahili",
+      "textParagraphe1Fr": "Maudhui katika Kifaransa",
+      "textParagraphe1En": "Maudhui kwa Kiingereza",
+      "textParagraphe1Ger": "Yaliyomo kwa Kijerumani",
+      "textParagraphe1Sw": "Maudhui katika Kiswahili",
       "textParagraphe2Fr": "Text Paragraphe 2 Fr",
       "textParagraphe2En": "Text Paragraphe 2 En",
       "textParagraphe2Ger": "Text Paragraphe 2 Ger",
@@ -44,7 +46,7 @@
       "textParagraphe5En": "Text Paragraphe 5 En",
       "textParagraphe5Ger": "Text Paragraphe 5 Ger",
       "textParagraphe5Sw": "Text Paragraphe 5 Sw",
-      "image": "Image"
+      "image": "Picha"
     }
   }
 }

@@ -125,7 +125,7 @@ server:
 # Properties to be exposed on the /info management endpoint
 info:
   # Comma separated list of profiles that will trigger the ribbon to show
-   display-ribbon-on-profiles: 'dev'
+  # display-ribbon-on-profiles: 'dev'
 
 # ===================================================================
 # JHipster specific properties
@@ -145,7 +145,7 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: iotaOrignAdmin@localhost
+    from: meke.branger@gmail.com
   swagger:
     default-include-pattern: /api/.*
     title: iotaOrignAdmin API

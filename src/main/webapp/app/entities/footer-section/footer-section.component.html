@@ -1,0 +1,168 @@
+<!--Start header to footer section  -->
+<div>
+    <h3>
+        <a> 
+            <span (click)="back()">
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="3%" alt="back">
+                <span class="arrow-back" jhiTranslate="iotaOrignAdminApp.footerSection.home.backButton">Back</span>    
+            </span>
+        </a>
+        &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span jhiTranslate="iotaOrignAdminApp.footerSection.home.title">footerSection us Section</span>
+        &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span *ngIf="footerSections.length > 0" style="color: rgb(82, 82, 82); font-size:60%" jhiTranslate="iotaOrignAdminApp.footerSection.home.consigne">
+            Cliquez sur l'élément que vous souhaitez mettre à jour. 
+        </span>    
+    
+        <button *ngIf="footerSections.length < 1" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-footerSection" 
+            [routerLink]="['/footer-section/new']"
+            (click)="createFooter()">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.footerSection.home.createLabel">Create a new A Propos</span>
+        </button>
+        &nbsp;&nbsp;&nbsp;
+        <button *ngIf="footerSections.length >= 1" type="submit" (click)="delete(footerSections[0])"
+                class="btn btn-danger btn-sm">
+            <fa-icon icon="times"></fa-icon>
+            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+        </button>
+    </h3>
+    <hr>
+    <jhi-alert></jhi-alert>
+</div>
+<!--End header to footer section  -->
+
+
+<!-- START THE SECTION : THE FOOTER  -->
+<section *ngIf="footerSections[0]"  class="footer text-white">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,32L26.7,64C53.3,96,107,160,160,176C213.3,192,267,160,320,144C373.3,128,427,128,480,154.7C533.3,181,587,235,640,229.3C693.3,224,747,160,800,138.7C853.3,117,907,139,960,138.7C1013.3,139,1067,117,1120,138.7C1173.3,160,1227,224,1280,208C1333.3,192,1387,96,1413,48L1440,0L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            
+            <div class="col-12 col-md-6 get-in-touch text-center">
+                <h3 *ngIf="footerSections[0]"  class="get-in-touch--title fw-bold anim-elt-37 footer-style" 
+                 [routerLink]="['/footer-section', footerSections[0].id, 'edit']">
+                    <a> 
+                        <span class="display-2--intro" (click)="update('titre')">
+                            <span *ngIf="languageService.currentLang === 'fr'">{{footerSections[0].titreFr}}</span>
+                            <span *ngIf="languageService.currentLang === 'en'">{{footerSections[0].titreEn}}</span>
+                            <span *ngIf="languageService.currentLang === 'es'">{{footerSections[0].titreSw}}</span>
+                            <span *ngIf="languageService.currentLang === 'de'">{{footerSections[0].titreGer}}</span>
+                         </span>
+                     </a>
+                </h3>
+ 
+                <div *ngIf="footerSections[0]" class="lead get-in-touch--subtitle anim-elt-38 footer-style" 
+                        [routerLink]="['/footer-section', footerSections[0].id, 'edit']" 
+                        (click)="update('soustitre')"> 
+                     <a>
+                         <span class="mov-deco">
+                            <span *ngIf="languageService.currentLang === 'fr'">{{footerSections[0].sousTitreFr}}</span>
+                            <span *ngIf="languageService.currentLang === 'en'">{{footerSections[0].sousTitreEn}}</span>
+                            <span *ngIf="languageService.currentLang === 'es'">{{footerSections[0].sousTitreSw}}</span>
+                            <span *ngIf="languageService.currentLang === 'de'">{{footerSections[0].sousTitreGer}}</span>
+                         </span>                    
+                     </a>
+                 </div>                 
+           
+            </div>
+          
+            <div class="col-12 col-md-6">   
+                <div>
+                    <img src="../../../content/images/iotaOrign-images/footer-form.png" alt="footer image" style="width: 100%;">
+                </div>
+                <div style="margin-top: 5%; margin-bottom: 5%;">
+                    <a class="cta-btn btn rounded-pill btn-rounded text-sm-center btn-send "
+                    jhiTranslate="iotaOrignAdminApp.footerSection.texteBouton">
+                    <span><i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+
+        <div class="row pt-3 pb-3 d-flex align-items-center">
+            <div class="col-12 col-md-4 align-items-center text-center">             
+                <a *ngIf="footerSections[0]" class="brand"
+                (click)="update('logo')"
+                [routerLink]="['/footer-section', footerSections[0].id, 'edit']" 
+                >
+                    <a *ngIf="footerSections[0].logo">
+                        <img [src]="'data:' + footerSections[0].logoContentType + ';base64,' + footerSections[0].logo" style="width: 100%;" alt="accueil logo"/>
+                    </a>
+                </a> 
+            </div>
+            <div class="col-12 col-md-8">
+                <ul class="nav footer-menu align-middle">
+                    <li class="nav-item anim-elt-40">
+                        <a class="nav-link active" aria-current="page" href="#about-us" 
+                        [routerLink]="['/a-propos']">
+                            <span jhiTranslate="iotaOrignAdminApp.aPropos.detail.title">A Propos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item anim-elt-41">
+                        <a class="nav-link" href="#service" 
+                         [routerLink]="['/service']">
+                            <span jhiTranslate="iotaOrignAdminApp.service.detail.title">SERVICE</span> 
+                        </a>
+                    </li>
+                    <li class="nav-item anim-elt-42">
+                        <a class="nav-link" href="#benefits" 
+                        [routerLink]="['/avantages']">
+                            <span jhiTranslate="iotaOrignAdminApp.avantages.detail.title">BENEFITS</span>  
+                        </a>
+                    </li>
+                    <li class="nav-item anim-elt-43">
+                        <a class="nav-link" href="#goals" 
+                         [routerLink]="['/objectifs']">
+                          <span jhiTranslate="iotaOrignAdminApp.objectifs.detail.title">GOALS</span> 
+                        </a>
+                    </li>
+                    <li class="nav-item anim-elt-44 centre">
+                        <a class="nav-link" href="#newsroom" 
+                        [routerLink]="['/dernieres-nouvelles']"> 
+                          <span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.detail.title">NEWSROOM</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row pb-2 pt-2 d-flex align-items-center">
+            <div class="col-sm-12 col-md-4"></div>
+            <div class="col-sm-12 col-md-8">
+                <ul class="social-media-links justify-content-center">
+                    <li class="social-item">
+                        <a href="" class="discord anim-elt-45" [routerLink]="['/footer-section', footerSections[0].id, 'edit']" 
+                        (click)="update('discord')"> 
+                            <img src="../../../content/images/iotaOrign-images/discord2.jpg" alt="footer image" style="width: 100%;">
+                        </a>
+                        <a href="" class="twitter anim-elt-46" [routerLink]="['/footer-section', footerSections[0].id, 'edit']" 
+                        (click)="update('twitter')">
+                            <img src="../../../content/images/iotaOrign-images/twitter2.png" alt="footer image" style="width: 100%;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row pb-5 pt-2 d-flex align-items-center">
+            <div class="col-sm-12 col-md-4 text-center copyright">
+                <p class="lead copyright--content footer-style">
+                    <span jhiTranslate="footer">© 2022 IotaOrigin UG. All rights reserved.</span>
+                </p>
+            </div>
+            <div class="col-sm-12 col-md-8 text-center text-white terms-menu">
+                <ul class="nav footer-menu terms-menu--content align-middle">
+                    <li class="nav-item">
+                      <a class="nav-link" [routerLink]="['/imprint']" >
+                        <span jhiTranslate="iotaOrignAdminApp.imprint.home.title">Imprint</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link"  [routerLink]="['/privacy-policy']">
+                        <span jhiTranslate="iotaOrignAdminApp.privacyPolicy.home.title">privacy policy</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END THE SECTION : THE FOOTER  -->

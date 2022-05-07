@@ -2,10 +2,12 @@
   "iotaOrignAdminApp": {
     "accueil": {
       "home": {
-        "title": "Accueils",
-        "createLabel": "Create a new Accueil",
-        "createOrEditLabel": "Create or edit a Accueil",
-        "notFound": "No Accueils found"
+        "title": "Intro section",
+        "createLabel": "Create section",
+        "EditLabel": "Update Section",
+        "consigne": "Click on the item you want to update",
+        "notFound": "Empty section",
+        "backButton": "Back"
       },
       "created": "A new Accueil is created with identifier {{ param }}",
       "updated": "A Accueil is updated with identifier {{ param }}",
@@ -14,17 +16,19 @@
         "question": "Are you sure you want to delete Accueil {{ id }}?"
       },
       "detail": {
-        "title": "Accueil"
+        "title": "Intro"
       },
-      "titreFr": "Titre Fr",
-      "titreEn": "Titre En",
-      "titreGer": "Titre Ger",
-      "titreSw": "Titre Sw",
-      "sousTitreFr": "Sous Titre Fr",
-      "sousTitreEn": "Sous Titre En",
-      "sousTitreGer": "Sous Titre Ger",
-      "sousTitreSw": "Sous Titre Sw",
-      "image": "Image"
+      "titreFr": "Title in French",
+      "titreEn": "Title in English",
+      "titreGer": "Title in German",
+      "titreSw": "Title in Swahili",
+      "sousTitreFr": "Subtitle in French",
+      "sousTitreEn": "English subtitle",
+      "sousTitreGer": "German subtitle",
+      "sousTitreSw": "Subtitle in Swahili",
+      "image": "Image",
+      "logoText": "Logo",
+      "textButton": "Contact us"
     }
   }
 }

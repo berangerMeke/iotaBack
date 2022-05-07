@@ -13,6 +13,19 @@
   text-align: center;
 }
 
+
+.intro-button {
+  position: relative;
+  z-index: 10;
+}
+
+
+.arrow-back {
+  color: #3e8acc;
+  font-size: 70%;
+}
+
+
 .espace {
   margin-top: 3%;
 }
@@ -26,4 +39,8 @@
   font-weight: 200;
   text-decoration: none;
   color: rgb(29, 29, 29);
+}
+
+.accordion-title-update {
+  font-weight: bold !important;
 }

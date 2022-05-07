@@ -1,0 +1,24 @@
+{
+  "iotaOrignAdminApp": {
+    "googleAnalitcs": {
+      "home": {
+        "title": "Google Analytics ID",
+        "createLabel": "ID zuweisen",
+        "EditLabel": "ID aktualisieren",
+        "consigne": "Click the following button to update",
+        "notFound": "Kein Ausweis",
+        "backButton": "Zurückkehren"
+      },
+      "created": "Google Analitcs erstellt mit ID {{ param }}",
+      "updated": "Google Analitcs aktualisiert mit ID {{ param }}",
+      "deleted": "Google Analitcs gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Google Analitcs {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Google Analitcs"
+      },
+      "googleAnalyticsID": "Google Analytics ID"
+    }
+  }
+}

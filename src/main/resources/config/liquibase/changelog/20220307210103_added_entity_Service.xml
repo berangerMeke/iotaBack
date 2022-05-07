@@ -12,6 +12,13 @@
         Added the entity Service.
     -->
     <changeSet id="20220307210103-1" author="jhipster">
+
+         <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="service"/>
+            </not>
+        </preConditions>
+
         <createTable tableName="service">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>

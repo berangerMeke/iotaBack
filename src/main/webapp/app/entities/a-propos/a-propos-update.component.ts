@@ -4,35 +4,42 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Location } from '@angular/common';
 import { JhiDataUtils, JhiFileLoadError, JhiEventManager, JhiEventWithContent } from 'ng-jhipster';
 import {TransfertDataService} from '../../core/services/transfert-data.service';
 
 import { IAPropos, APropos } from 'app/shared/model/a-propos.model';
 import { AProposService } from './a-propos.service';
 import { AlertError } from 'app/shared/alert/alert-error.model';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'; 
+
 
 @Component({
   selector: 'jhi-a-propos-update',
-  templateUrl: './a-propos-update.component.html'
+  templateUrl: './a-propos-update.component.html',
+  styleUrls: ['./a-propos-update.scss']
 })
 export class AProposUpdateComponent implements OnInit {
   isSaving = false;
   eltChoisi : any;
+  isAproposNoExist: any;
+
+  public Editor = ClassicEditor;
 
   editForm = this.fb.group({
     id: [],
-    titreFr: [],
-    titreEn: [],
-    titreGer: [],
-    titreSw: [],
+    titreFr: ['', Validators.required],
+    titreEn: ['', Validators.required],
+    titreGer: ['', Validators.required],
+    titreSw: ['', Validators.required],
     sousTitreFr: [],
     sousTitreEn: [],
     sousTitreGer: [],
     sousTitreSw: [],
-    textParagraphe1Fr: [],
-    textParagraphe1En: [],
-    textParagraphe1Ger: [],
-    textParagraphe1Sw: [],
+    textParagraphe1Fr: ['', Validators.required],
+    textParagraphe1En: ['', Validators.required],
+    textParagraphe1Ger: ['', Validators.required],
+    textParagraphe1Sw: ['', Validators.required],
     textParagraphe2Fr: [],
     textParagraphe2En: [],
     textParagraphe2Ger: [],
@@ -58,12 +65,46 @@ export class AProposUpdateComponent implements OnInit {
     protected eventManager: JhiEventManager,
     protected aProposService: AProposService,
     protected elementRef: ElementRef,
+    private location: Location,
     public transfertDataService: TransfertDataService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
-  ) {}
+  ) {
+    
+
+ClassicEditor.defaultConfig = {
+  toolbar: {
+      items: [
+          'heading',
+          '|',
+          'bold',
+          'italic',
+          'link',
+          'bulletedList',
+          'numberedList',
+        //  'uploadImage',
+        // 'blockQuote',
+          'undo',
+          'redo'
+      ]
+  },
+  image: {
+      toolbar: [
+          'imageStyle:inline',
+          'imageStyle:block',
+          'imageStyle:side',
+          '|',
+          'toggleImageCaption',
+          'imageTextAlternative'
+      ]
+  },
+  language: 'en'
+};
+
+  }
 
   ngOnInit(): void {
+    this.isAproposNoExist = localStorage.getItem('isNewApropos'); 
     this.eltChoisi = this.transfertDataService.getData();
     this.activatedRoute.data.subscribe(({ aPropos }) => {
       this.updateForm(aPropos);
@@ -134,15 +175,26 @@ export class AProposUpdateComponent implements OnInit {
 
   previousState(): void {
     window.history.back();
+    localStorage.removeItem("isNewApropos");
   }
+
+
+  back(): void {
+    this.location.back()
+    localStorage.removeItem("isNewApropos");
+  }
+
+
 
   save(): void {
     this.isSaving = true;
     const aPropos = this.createFromForm();
     if (aPropos.id !== undefined) {
       this.subscribeToSaveResponse(this.aProposService.update(aPropos));
+      localStorage.removeItem("isNewApropos");
     } else {
       this.subscribeToSaveResponse(this.aProposService.create(aPropos));
+      localStorage.removeItem("isNewApropos");
     }
   }
 

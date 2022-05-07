@@ -268,6 +268,154 @@ public class DernieresNouvelles implements Serializable {
     @Column(name = "text_slide_9_en")
     private String textSlide9En;
 
+    @Column(name = "text_slide_9_ger")
+    private String textSlide9Ger;
+
+    @Column(name = "text_slide_9_sw")
+    private String textSlide9Sw;
+
+    @Column(name = "text_slide_10_fr")
+    private String textSlide10Fr;
+
+    @Column(name = "text_slide_10_en")
+    private String textSlide10En;
+
+    @Column(name = "text_slide_10_ger")
+    private String textSlide10Ger;
+
+    @Column(name = "text_slide_10_sw")
+    private String textSlide10Sw;
+
+    @Lob
+    @Column(name = "image_slide_1")
+    private byte[] imageSlide1;
+
+    @Column(name = "image_slide_1_content_type")
+    private String imageSlide1ContentType;
+
+    @Lob
+    @Column(name = "image_slide_2")
+    private byte[] imageSlide2;
+
+    @Column(name = "image_slide_2_content_type")
+    private String imageSlide2ContentType;
+
+    @Lob
+    @Column(name = "image_slide_3")
+    private byte[] imageSlide3;
+
+    @Column(name = "image_slide_3_content_type")
+    private String imageSlide3ContentType;
+
+    @Lob
+    @Column(name = "image_slide_4")
+    private byte[] imageSlide4;
+
+    @Column(name = "image_slide_4_content_type")
+    private String imageSlide4ContentType;
+
+    @Lob
+    @Column(name = "image_slide_5")
+    private byte[] imageSlide5;
+
+    @Column(name = "image_slide_5_content_type")
+    private String imageSlide5ContentType;
+
+    @Lob
+    @Column(name = "image_slide_6")
+    private byte[] imageSlide6;
+
+    @Column(name = "image_slide_6_content_type")
+    private String imageSlide6ContentType;
+
+    @Lob
+    @Column(name = "image_slide_7")
+    private byte[] imageSlide7;
+
+    @Column(name = "image_slide_7_content_type")
+    private String imageSlide7ContentType;
+
+    @Lob
+    @Column(name = "image_slide_8")
+    private byte[] imageSlide8;
+
+    @Column(name = "image_slide_8_content_type")
+    private String imageSlide8ContentType;
+
+    @Lob
+    @Column(name = "image_slide_9")
+    private byte[] imageSlide9;
+
+    @Column(name = "image_slide_9_content_type")
+    private String imageSlide9ContentType;
+
+    @Lob
+    @Column(name = "image_slide_10")
+    private byte[] imageSlide10;
+
+    @Column(name = "image_slide_10_content_type")
+    private String imageSlide10ContentType;
+
+    @Column(name = "read_more_1")
+    private String readMore1;
+
+    @Column(name = "read_more_2")
+    private String readMore2;
+
+    @Column(name = "read_more_3")
+    private String readMore3;
+
+    @Column(name = "read_more_4")
+    private String readMore4;
+
+    @Column(name = "read_more_5")
+    private String readMore5;
+
+    @Column(name = "read_more_6")
+    private String readMore6;
+
+    @Column(name = "read_more_7")
+    private String readMore7;
+
+    @Column(name = "read_more_8")
+    private String readMore8;
+
+    @Column(name = "read_more_9")
+    private String readMore9;
+
+    @Column(name = "read_more_10")
+    private String readMore10;
+
+    @Column(name = "date_1")
+    private String date1;
+
+    @Column(name = "date_2")
+    private String date2;
+
+    @Column(name = "date_3")
+    private String date3;
+
+    @Column(name = "date_4")
+    private String date4;
+
+    @Column(name = "date_5")
+    private String date5;
+
+    @Column(name = "date_6")
+    private String date6;
+
+    @Column(name = "date_7")
+    private String date7;
+
+    @Column(name = "date_8")
+    private String date8;
+
+    @Column(name = "date_9")
+    private String date9;
+
+    @Column(name = "date_10")
+    private String date10;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -1342,6 +1490,604 @@ public class DernieresNouvelles implements Serializable {
     public void setTextSlide9En(String textSlide9En) {
         this.textSlide9En = textSlide9En;
     }
+
+    public String getTextSlide9Ger() {
+        return textSlide9Ger;
+    }
+
+    public DernieresNouvelles textSlide9Ger(String textSlide9Ger) {
+        this.textSlide9Ger = textSlide9Ger;
+        return this;
+    }
+
+    public void setTextSlide9Ger(String textSlide9Ger) {
+        this.textSlide9Ger = textSlide9Ger;
+    }
+
+    public String getTextSlide9Sw() {
+        return textSlide9Sw;
+    }
+
+    public DernieresNouvelles textSlide9Sw(String textSlide9Sw) {
+        this.textSlide9Sw = textSlide9Sw;
+        return this;
+    }
+
+    public void setTextSlide9Sw(String textSlide9Sw) {
+        this.textSlide9Sw = textSlide9Sw;
+    }
+
+    public String getTextSlide10Fr() {
+        return textSlide10Fr;
+    }
+
+    public DernieresNouvelles textSlide10Fr(String textSlide10Fr) {
+        this.textSlide10Fr = textSlide10Fr;
+        return this;
+    }
+
+    public void setTextSlide10Fr(String textSlide10Fr) {
+        this.textSlide10Fr = textSlide10Fr;
+    }
+
+    public String getTextSlide10En() {
+        return textSlide10En;
+    }
+
+    public DernieresNouvelles textSlide10En(String textSlide10En) {
+        this.textSlide10En = textSlide10En;
+        return this;
+    }
+
+    public void setTextSlide10En(String textSlide10En) {
+        this.textSlide10En = textSlide10En;
+    }
+
+    public String getTextSlide10Ger() {
+        return textSlide10Ger;
+    }
+
+    public DernieresNouvelles textSlide10Ger(String textSlide10Ger) {
+        this.textSlide10Ger = textSlide10Ger;
+        return this;
+    }
+
+    public void setTextSlide10Ger(String textSlide10Ger) {
+        this.textSlide10Ger = textSlide10Ger;
+    }
+
+    public String getTextSlide10Sw() {
+        return textSlide10Sw;
+    }
+
+    public DernieresNouvelles textSlide10Sw(String textSlide10Sw) {
+        this.textSlide10Sw = textSlide10Sw;
+        return this;
+    }
+
+    public void setTextSlide10Sw(String textSlide10Sw) {
+        this.textSlide10Sw = textSlide10Sw;
+    }
+
+    public byte[] getImageSlide1() {
+        return imageSlide1;
+    }
+
+    public DernieresNouvelles imageSlide1(byte[] imageSlide1) {
+        this.imageSlide1 = imageSlide1;
+        return this;
+    }
+
+    public void setImageSlide1(byte[] imageSlide1) {
+        this.imageSlide1 = imageSlide1;
+    }
+
+    public String getImageSlide1ContentType() {
+        return imageSlide1ContentType;
+    }
+
+    public DernieresNouvelles imageSlide1ContentType(String imageSlide1ContentType) {
+        this.imageSlide1ContentType = imageSlide1ContentType;
+        return this;
+    }
+
+    public void setImageSlide1ContentType(String imageSlide1ContentType) {
+        this.imageSlide1ContentType = imageSlide1ContentType;
+    }
+
+    public byte[] getImageSlide2() {
+        return imageSlide2;
+    }
+
+    public DernieresNouvelles imageSlide2(byte[] imageSlide2) {
+        this.imageSlide2 = imageSlide2;
+        return this;
+    }
+
+    public void setImageSlide2(byte[] imageSlide2) {
+        this.imageSlide2 = imageSlide2;
+    }
+
+    public String getImageSlide2ContentType() {
+        return imageSlide2ContentType;
+    }
+
+    public DernieresNouvelles imageSlide2ContentType(String imageSlide2ContentType) {
+        this.imageSlide2ContentType = imageSlide2ContentType;
+        return this;
+    }
+
+    public void setImageSlide2ContentType(String imageSlide2ContentType) {
+        this.imageSlide2ContentType = imageSlide2ContentType;
+    }
+
+    public byte[] getImageSlide3() {
+        return imageSlide3;
+    }
+
+    public DernieresNouvelles imageSlide3(byte[] imageSlide3) {
+        this.imageSlide3 = imageSlide3;
+        return this;
+    }
+
+    public void setImageSlide3(byte[] imageSlide3) {
+        this.imageSlide3 = imageSlide3;
+    }
+
+    public String getImageSlide3ContentType() {
+        return imageSlide3ContentType;
+    }
+
+    public DernieresNouvelles imageSlide3ContentType(String imageSlide3ContentType) {
+        this.imageSlide3ContentType = imageSlide3ContentType;
+        return this;
+    }
+
+    public void setImageSlide3ContentType(String imageSlide3ContentType) {
+        this.imageSlide3ContentType = imageSlide3ContentType;
+    }
+
+    public byte[] getImageSlide4() {
+        return imageSlide4;
+    }
+
+    public DernieresNouvelles imageSlide4(byte[] imageSlide4) {
+        this.imageSlide4 = imageSlide4;
+        return this;
+    }
+
+    public void setImageSlide4(byte[] imageSlide4) {
+        this.imageSlide4 = imageSlide4;
+    }
+
+    public String getImageSlide4ContentType() {
+        return imageSlide4ContentType;
+    }
+
+    public DernieresNouvelles imageSlide4ContentType(String imageSlide4ContentType) {
+        this.imageSlide4ContentType = imageSlide4ContentType;
+        return this;
+    }
+
+    public void setImageSlide4ContentType(String imageSlide4ContentType) {
+        this.imageSlide4ContentType = imageSlide4ContentType;
+    }
+
+    public byte[] getImageSlide5() {
+        return imageSlide5;
+    }
+
+    public DernieresNouvelles imageSlide5(byte[] imageSlide5) {
+        this.imageSlide5 = imageSlide5;
+        return this;
+    }
+
+    public void setImageSlide5(byte[] imageSlide5) {
+        this.imageSlide5 = imageSlide5;
+    }
+
+    public String getImageSlide5ContentType() {
+        return imageSlide5ContentType;
+    }
+
+    public DernieresNouvelles imageSlide5ContentType(String imageSlide5ContentType) {
+        this.imageSlide5ContentType = imageSlide5ContentType;
+        return this;
+    }
+
+    public void setImageSlide5ContentType(String imageSlide5ContentType) {
+        this.imageSlide5ContentType = imageSlide5ContentType;
+    }
+
+    public byte[] getImageSlide6() {
+        return imageSlide6;
+    }
+
+    public DernieresNouvelles imageSlide6(byte[] imageSlide6) {
+        this.imageSlide6 = imageSlide6;
+        return this;
+    }
+
+    public void setImageSlide6(byte[] imageSlide6) {
+        this.imageSlide6 = imageSlide6;
+    }
+
+    public String getImageSlide6ContentType() {
+        return imageSlide6ContentType;
+    }
+
+    public DernieresNouvelles imageSlide6ContentType(String imageSlide6ContentType) {
+        this.imageSlide6ContentType = imageSlide6ContentType;
+        return this;
+    }
+
+    public void setImageSlide6ContentType(String imageSlide6ContentType) {
+        this.imageSlide6ContentType = imageSlide6ContentType;
+    }
+
+    public byte[] getImageSlide7() {
+        return imageSlide7;
+    }
+
+    public DernieresNouvelles imageSlide7(byte[] imageSlide7) {
+        this.imageSlide7 = imageSlide7;
+        return this;
+    }
+
+    public void setImageSlide7(byte[] imageSlide7) {
+        this.imageSlide7 = imageSlide7;
+    }
+
+    public String getImageSlide7ContentType() {
+        return imageSlide7ContentType;
+    }
+
+    public DernieresNouvelles imageSlide7ContentType(String imageSlide7ContentType) {
+        this.imageSlide7ContentType = imageSlide7ContentType;
+        return this;
+    }
+
+    public void setImageSlide7ContentType(String imageSlide7ContentType) {
+        this.imageSlide7ContentType = imageSlide7ContentType;
+    }
+
+    public byte[] getImageSlide8() {
+        return imageSlide8;
+    }
+
+    public DernieresNouvelles imageSlide8(byte[] imageSlide8) {
+        this.imageSlide8 = imageSlide8;
+        return this;
+    }
+
+    public void setImageSlide8(byte[] imageSlide8) {
+        this.imageSlide8 = imageSlide8;
+    }
+
+    public String getImageSlide8ContentType() {
+        return imageSlide8ContentType;
+    }
+
+    public DernieresNouvelles imageSlide8ContentType(String imageSlide8ContentType) {
+        this.imageSlide8ContentType = imageSlide8ContentType;
+        return this;
+    }
+
+    public void setImageSlide8ContentType(String imageSlide8ContentType) {
+        this.imageSlide8ContentType = imageSlide8ContentType;
+    }
+
+    public byte[] getImageSlide9() {
+        return imageSlide9;
+    }
+
+    public DernieresNouvelles imageSlide9(byte[] imageSlide9) {
+        this.imageSlide9 = imageSlide9;
+        return this;
+    }
+
+    public void setImageSlide9(byte[] imageSlide9) {
+        this.imageSlide9 = imageSlide9;
+    }
+
+    public String getImageSlide9ContentType() {
+        return imageSlide9ContentType;
+    }
+
+    public DernieresNouvelles imageSlide9ContentType(String imageSlide9ContentType) {
+        this.imageSlide9ContentType = imageSlide9ContentType;
+        return this;
+    }
+
+    public void setImageSlide9ContentType(String imageSlide9ContentType) {
+        this.imageSlide9ContentType = imageSlide9ContentType;
+    }
+
+    public byte[] getImageSlide10() {
+        return imageSlide10;
+    }
+
+    public DernieresNouvelles imageSlide10(byte[] imageSlide10) {
+        this.imageSlide10 = imageSlide10;
+        return this;
+    }
+
+    public void setImageSlide10(byte[] imageSlide10) {
+        this.imageSlide10 = imageSlide10;
+    }
+
+    public String getImageSlide10ContentType() {
+        return imageSlide10ContentType;
+    }
+
+    public DernieresNouvelles imageSlide10ContentType(String imageSlide10ContentType) {
+        this.imageSlide10ContentType = imageSlide10ContentType;
+        return this;
+    }
+
+    public void setImageSlide10ContentType(String imageSlide10ContentType) {
+        this.imageSlide10ContentType = imageSlide10ContentType;
+    }
+
+    public String getReadMore1() {
+        return readMore1;
+    }
+
+    public DernieresNouvelles readMore1(String readMore1) {
+        this.readMore1 = readMore1;
+        return this;
+    }
+
+    public void setReadMore1(String readMore1) {
+        this.readMore1 = readMore1;
+    }
+
+    public String getReadMore2() {
+        return readMore2;
+    }
+
+    public DernieresNouvelles readMore2(String readMore2) {
+        this.readMore2 = readMore2;
+        return this;
+    }
+
+    public void setReadMore2(String readMore2) {
+        this.readMore2 = readMore2;
+    }
+
+    public String getReadMore3() {
+        return readMore3;
+    }
+
+    public DernieresNouvelles readMore3(String readMore3) {
+        this.readMore3 = readMore3;
+        return this;
+    }
+
+    public void setReadMore3(String readMore3) {
+        this.readMore3 = readMore3;
+    }
+
+    public String getReadMore4() {
+        return readMore4;
+    }
+
+    public DernieresNouvelles readMore4(String readMore4) {
+        this.readMore4 = readMore4;
+        return this;
+    }
+
+    public void setReadMore4(String readMore4) {
+        this.readMore4 = readMore4;
+    }
+
+    public String getReadMore5() {
+        return readMore5;
+    }
+
+    public DernieresNouvelles readMore5(String readMore5) {
+        this.readMore5 = readMore5;
+        return this;
+    }
+
+    public void setReadMore5(String readMore5) {
+        this.readMore5 = readMore5;
+    }
+
+    public String getReadMore6() {
+        return readMore6;
+    }
+
+    public DernieresNouvelles readMore6(String readMore6) {
+        this.readMore6 = readMore6;
+        return this;
+    }
+
+    public void setReadMore6(String readMore6) {
+        this.readMore6 = readMore6;
+    }
+
+    public String getReadMore7() {
+        return readMore7;
+    }
+
+    public DernieresNouvelles readMore7(String readMore7) {
+        this.readMore7 = readMore7;
+        return this;
+    }
+
+    public void setReadMore7(String readMore7) {
+        this.readMore7 = readMore7;
+    }
+
+    public String getReadMore8() {
+        return readMore8;
+    }
+
+    public DernieresNouvelles readMore8(String readMore8) {
+        this.readMore8 = readMore8;
+        return this;
+    }
+
+    public void setReadMore8(String readMore8) {
+        this.readMore8 = readMore8;
+    }
+
+    public String getReadMore9() {
+        return readMore9;
+    }
+
+    public DernieresNouvelles readMore9(String readMore9) {
+        this.readMore9 = readMore9;
+        return this;
+    }
+
+    public void setReadMore9(String readMore9) {
+        this.readMore9 = readMore9;
+    }
+
+    public String getReadMore10() {
+        return readMore10;
+    }
+
+    public DernieresNouvelles readMore10(String readMore10) {
+        this.readMore10 = readMore10;
+        return this;
+    }
+
+    public void setReadMore10(String readMore10) {
+        this.readMore10 = readMore10;
+    }
+
+    public String getDate1() {
+        return date1;
+    }
+
+    public DernieresNouvelles date1(String date1) {
+        this.date1 = date1;
+        return this;
+    }
+
+    public void setDate1(String date1) {
+        this.date1 = date1;
+    }
+
+    public String getDate2() {
+        return date2;
+    }
+
+    public DernieresNouvelles date2(String date2) {
+        this.date2 = date2;
+        return this;
+    }
+
+    public void setDate2(String date2) {
+        this.date2 = date2;
+    }
+
+    public String getDate3() {
+        return date3;
+    }
+
+    public DernieresNouvelles date3(String date3) {
+        this.date3 = date3;
+        return this;
+    }
+
+    public void setDate3(String date3) {
+        this.date3 = date3;
+    }
+
+    public String getDate4() {
+        return date4;
+    }
+
+    public DernieresNouvelles date4(String date4) {
+        this.date4 = date4;
+        return this;
+    }
+
+    public void setDate4(String date4) {
+        this.date4 = date4;
+    }
+
+    public String getDate5() {
+        return date5;
+    }
+
+    public DernieresNouvelles date5(String date5) {
+        this.date5 = date5;
+        return this;
+    }
+
+    public void setDate5(String date5) {
+        this.date5 = date5;
+    }
+
+    public String getDate6() {
+        return date6;
+    }
+
+    public DernieresNouvelles date6(String date6) {
+        this.date6 = date6;
+        return this;
+    }
+
+    public void setDate6(String date6) {
+        this.date6 = date6;
+    }
+
+    public String getDate7() {
+        return date7;
+    }
+
+    public DernieresNouvelles date7(String date7) {
+        this.date7 = date7;
+        return this;
+    }
+
+    public void setDate7(String date7) {
+        this.date7 = date7;
+    }
+
+    public String getDate8() {
+        return date8;
+    }
+
+    public DernieresNouvelles date8(String date8) {
+        this.date8 = date8;
+        return this;
+    }
+
+    public void setDate8(String date8) {
+        this.date8 = date8;
+    }
+
+    public String getDate9() {
+        return date9;
+    }
+
+    public DernieresNouvelles date9(String date9) {
+        this.date9 = date9;
+        return this;
+    }
+
+    public void setDate9(String date9) {
+        this.date9 = date9;
+    }
+
+    public String getDate10() {
+        return date10;
+    }
+
+    public DernieresNouvelles date10(String date10) {
+        this.date10 = date10;
+        return this;
+    }
+
+    public void setDate10(String date10) {
+        this.date10 = date10;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -1446,6 +2192,52 @@ public class DernieresNouvelles implements Serializable {
             ", textSlide8Sw='" + getTextSlide8Sw() + "'" +
             ", textSlide9Fr='" + getTextSlide9Fr() + "'" +
             ", textSlide9En='" + getTextSlide9En() + "'" +
+            ", textSlide9Ger='" + getTextSlide9Ger() + "'" +
+            ", textSlide9Sw='" + getTextSlide9Sw() + "'" +
+            ", textSlide10Fr='" + getTextSlide10Fr() + "'" +
+            ", textSlide10En='" + getTextSlide10En() + "'" +
+            ", textSlide10Ger='" + getTextSlide10Ger() + "'" +
+            ", textSlide10Sw='" + getTextSlide10Sw() + "'" +
+            ", imageSlide1='" + getImageSlide1() + "'" +
+            ", imageSlide1ContentType='" + getImageSlide1ContentType() + "'" +
+            ", imageSlide2='" + getImageSlide2() + "'" +
+            ", imageSlide2ContentType='" + getImageSlide2ContentType() + "'" +
+            ", imageSlide3='" + getImageSlide3() + "'" +
+            ", imageSlide3ContentType='" + getImageSlide3ContentType() + "'" +
+            ", imageSlide4='" + getImageSlide4() + "'" +
+            ", imageSlide4ContentType='" + getImageSlide4ContentType() + "'" +
+            ", imageSlide5='" + getImageSlide5() + "'" +
+            ", imageSlide5ContentType='" + getImageSlide5ContentType() + "'" +
+            ", imageSlide6='" + getImageSlide6() + "'" +
+            ", imageSlide6ContentType='" + getImageSlide6ContentType() + "'" +
+            ", imageSlide7='" + getImageSlide7() + "'" +
+            ", imageSlide7ContentType='" + getImageSlide7ContentType() + "'" +
+            ", imageSlide8='" + getImageSlide8() + "'" +
+            ", imageSlide8ContentType='" + getImageSlide8ContentType() + "'" +
+            ", imageSlide9='" + getImageSlide9() + "'" +
+            ", imageSlide9ContentType='" + getImageSlide9ContentType() + "'" +
+            ", imageSlide10='" + getImageSlide10() + "'" +
+            ", imageSlide10ContentType='" + getImageSlide10ContentType() + "'" +
+            ", readMore1='" + getReadMore1() + "'" +
+            ", readMore2='" + getReadMore2() + "'" +
+            ", readMore3='" + getReadMore3() + "'" +
+            ", readMore4='" + getReadMore4() + "'" +
+            ", readMore5='" + getReadMore5() + "'" +
+            ", readMore6='" + getReadMore6() + "'" +
+            ", readMore7='" + getReadMore7() + "'" +
+            ", readMore8='" + getReadMore8() + "'" +
+            ", readMore9='" + getReadMore9() + "'" +
+            ", readMore10='" + getReadMore10() + "'" +
+            ", date1='" + getDate1() + "'" +
+            ", date2='" + getDate2() + "'" +
+            ", date3='" + getDate3() + "'" +
+            ", date4='" + getDate4() + "'" +
+            ", date5='" + getDate5() + "'" +
+            ", date6='" + getDate6() + "'" +
+            ", date7='" + getDate7() + "'" +
+            ", date8='" + getDate8() + "'" +
+            ", date9='" + getDate9() + "'" +
+            ", date10='" + getDate10() + "'" +
             "}";
     }
 }

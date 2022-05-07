@@ -2,10 +2,12 @@
   "iotaOrignAdminApp": {
     "avantages": {
       "home": {
-        "title": "Avantages",
-        "createLabel": "Avantages erstellen",
-        "createOrEditLabel": "Avantages erstellen oder bearbeiten",
-        "notFound": "No Avantages found"
+        "title": "Abschnitt Vorteile",
+        "createLabel": "Abschnitt erstellen",
+        "EditLabel": "Abschnitt aktualisieren",
+        "consigne": "Klicken Sie auf das Element, das Sie aktualisieren möchten",
+        "notFound": "Leerer Abschnitt",
+        "backButton": "Rückfahrt"
       },
       "created": "Avantages erstellt mit ID {{ param }}",
       "updated": "Avantages aktualisiert mit ID {{ param }}",
@@ -14,20 +16,20 @@
         "question": "Soll Avantages {{ id }} wirklich dauerhaft gelöscht werden?"
       },
       "detail": {
-        "title": "Avantages"
+        "title": "VORTEILE"
       },
-      "titreFr": "Titre Fr",
-      "titreEn": "Titre En",
-      "titreGer": "Titre Ger",
-      "titreSw": "Titre Sw",
-      "sousTitreFr": "Sous Titre Fr",
-      "sousTitreEn": "Sous Titre En",
-      "sousTitreGer": "Sous Titre Ger",
-      "sousTitreSw": "Sous Titre Sw",
-      "textParagraphe1FR": "Text Paragraphe 1 FR",
-      "textParagraphe1En": "Text Paragraphe 1 En",
-      "textParagraphe1Ger": "Text Paragraphe 1 Ger",
-      "textParagraphe1Sw": "Text Paragraphe 1 Sw",
+      "titreFr": "Titel auf Französisch",
+      "titreEn": "Titel auf englisch",
+      "titreGer": "Titel auf Deutsch",
+      "titreSw": "Titel auf Suaheli",
+      "sousTitreFr": "Untertitel auf Französisch",
+      "sousTitreEn": "englischer Untertitel",
+      "sousTitreGer": "Deutscher Untertitel",
+      "sousTitreSw": "Untertitel in Suaheli",
+      "textParagraphe1Fr": "Inhalt auf Französisch",
+      "textParagraphe1En": "Inhalt auf Englisch",
+      "textParagraphe1Ger": "Inhalt auf Deutsch",
+      "textParagraphe1Sw": "Inhalt auf Suaheli",
       "textParagraphe2Fr": "Text Paragraphe 2 Fr",
       "textParagraphe2En": "Text Paragraphe 2 En",
       "textParagraphe2Ger": "Text Paragraphe 2 Ger",

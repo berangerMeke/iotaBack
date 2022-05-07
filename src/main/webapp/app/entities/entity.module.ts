@@ -35,6 +35,22 @@ import { RouterModule } from '@angular/router';
       {
         path: 'dernieres-nouvelles',
         loadChildren: () => import('./dernieres-nouvelles/dernieres-nouvelles.module').then(m => m.IotaOrignAdminDernieresNouvellesModule)
+      },
+      {
+        path: 'imprint',
+        loadChildren: () => import('./imprint/imprint.module').then(m => m.IotaOrignAdminImprintModule)
+      },
+      {
+        path: 'privacy-policy',
+        loadChildren: () => import('./privacy-policy/privacy-policy.module').then(m => m.IotaOrignAdminPrivacyPolicyModule)
+      },
+      {
+        path: 'footer-section',
+        loadChildren: () => import('./footer-section/footer-section.module').then(m => m.IotaOrignAdminFooterSectionModule)
+      },
+      {
+        path: 'google-analitcs',
+        loadChildren: () => import('./google-analitcs/google-analitcs.module').then(m => m.IotaOrignAdminGoogleAnalitcsModule)
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

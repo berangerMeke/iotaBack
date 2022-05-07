@@ -2,10 +2,12 @@
   "iotaOrignAdminApp": {
     "avantages": {
       "home": {
-        "title": "Avantages",
-        "createLabel": "Crear nuevo Avantages",
-        "createOrEditLabel": "Crear o editar Avantages",
-        "notFound": "Ningún Avantages encontrado"
+        "title": "sehemu Faida",
+        "createLabel": "Unda sehemu",
+        "EditLabel": "Sehemu ya sasisho",
+        "consigne": "Bofya kwenye kipengee unachotaka kusasisha",
+        "notFound": "Sehemu tupu",
+        "backButton": "Rudi"
       },
       "created": "Un nuevo Avantages ha sido creado con el identificador {{ param }}",
       "updated": "Un Avantages ha sido actualizado con el identificador {{ param }}",
@@ -14,20 +16,20 @@
         "question": "¿Seguro que quiere eliminar Avantages {{ id }}?"
       },
       "detail": {
-        "title": "Avantages"
+        "title": "FAIDA"
       },
-      "titreFr": "Titre Fr",
-      "titreEn": "Titre En",
-      "titreGer": "Titre Ger",
-      "titreSw": "Titre Sw",
-      "sousTitreFr": "Sous Titre Fr",
-      "sousTitreEn": "Sous Titre En",
-      "sousTitreGer": "Sous Titre Ger",
-      "sousTitreSw": "Sous Titre Sw",
-      "textParagraphe1FR": "Text Paragraphe 1 FR",
-      "textParagraphe1En": "Text Paragraphe 1 En",
-      "textParagraphe1Ger": "Text Paragraphe 1 Ger",
-      "textParagraphe1Sw": "Text Paragraphe 1 Sw",
+      "titreFr": "Kichwa kwa Kifaransa",
+      "titreEn": "Kichwa kwa Kiingereza",
+      "titreGer": "Kichwa kwa Kijerumani",
+      "titreSw": "Kichwa kwa Kiswahili",
+      "sousTitreFr": "Manukuu ya Kifaransa",
+      "sousTitreEn": "Manukuu ya Kiingereza",
+      "sousTitreGer": "Manukuu ya Kijerumani",
+      "sousTitreSw": "Manukuu ya Kiswahili",
+      "textParagraphe1Fr": "Maudhui katika Kifaransa",
+      "textParagraphe1En": "Maudhui kwa Kiingereza",
+      "textParagraphe1Ger": "Yaliyomo kwa Kijerumani",
+      "textParagraphe1Sw": "Maudhui katika Kiswahili",
       "textParagraphe2Fr": "Text Paragraphe 2 Fr",
       "textParagraphe2En": "Text Paragraphe 2 En",
       "textParagraphe2Ger": "Text Paragraphe 2 Ger",

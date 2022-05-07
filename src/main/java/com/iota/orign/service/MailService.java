@@ -42,6 +42,8 @@ public class MailService {
 
     private final SpringTemplateEngine templateEngine;
 
+    private String senderName;
+
     public MailService(JHipsterProperties jHipsterProperties, JavaMailSender javaMailSender,
             MessageSource messageSource, SpringTemplateEngine templateEngine) {
 
@@ -70,6 +72,13 @@ public class MailService {
             log.warn("Email could not be sent to user '{}'", to, e);
         }
     }
+
+
+    // @Async
+    // public void sender(String nom){  
+    //     this.senderName = nom;    
+    // }
+
 
     @Async
     public void sendEmailFromTemplate(User user, String templateName, String titleKey) {

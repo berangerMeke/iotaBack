@@ -1,19 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import {TransfertDataService} from '../../core/services/transfert-data.service'
 import { Observable } from 'rxjs';
+import { JhiDataUtils, JhiFileLoadError, JhiEventManager, JhiEventWithContent } from 'ng-jhipster';
 
 import { IDernieresNouvelles, DernieresNouvelles } from 'app/shared/model/dernieres-nouvelles.model';
 import { DernieresNouvellesService } from './dernieres-nouvelles.service';
+import { AlertError } from 'app/shared/alert/alert-error.model';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'jhi-dernieres-nouvelles-update',
-  templateUrl: './dernieres-nouvelles-update.component.html'
+  templateUrl: './dernieres-nouvelles-update.component.html',
+  styleUrls: ['./dernieres-nouvelles-update.scss']
 })
 export class DernieresNouvellesUpdateComponent implements OnInit {
   isSaving = false;
+
+
+  isDernieresNouvellesNoExist: any;
+  public Editor = ClassicEditor;
+
+  eltChoisi: any;
 
   editForm = this.fb.group({
     id: [],
@@ -98,16 +110,108 @@ export class DernieresNouvellesUpdateComponent implements OnInit {
     textSlide8Ger: [],
     textSlide8Sw: [],
     textSlide9Fr: [],
-    textSlide9En: []
+    textSlide9En: [],
+    textSlide9Ger: [],
+    textSlide9Sw: [],
+    textSlide10Fr: [],
+    textSlide10En: [],
+    textSlide10Ger: [],
+    textSlide10Sw: [],
+    imageSlide1: [],
+    imageSlide1ContentType: [],
+    imageSlide2: [],
+    imageSlide2ContentType: [],
+    imageSlide3: [],
+    imageSlide3ContentType: [],
+    imageSlide4: [],
+    imageSlide4ContentType: [],
+    imageSlide5: [],
+    imageSlide5ContentType: [],
+    imageSlide6: [],
+    imageSlide6ContentType: [],
+    imageSlide7: [],
+    imageSlide7ContentType: [],
+    imageSlide8: [],
+    imageSlide8ContentType: [],
+    imageSlide9: [],
+    imageSlide9ContentType: [],
+    imageSlide10: [],
+    imageSlide10ContentType: [],
+    readMore1: [],
+    readMore2: [],
+    readMore3: [],
+    readMore4: [],
+    readMore5: [],
+    readMore6: [],
+    readMore7: [],
+    readMore8: [],
+    readMore9: [],
+    readMore10: [],
+    date1: [],
+    date2: [],
+    date3: [],
+    date4: [],
+    date5: [],
+    date6: [],
+    date7: [],
+    date8: [],
+    date9: [],
+    date10: []
   });
 
   constructor(
+    protected dataUtils: JhiDataUtils,
+    protected eventManager: JhiEventManager,
+    private location: Location,
+    public transfertDataService: TransfertDataService, 
     protected dernieresNouvellesService: DernieresNouvellesService,
+    protected elementRef: ElementRef,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
-  ) {}
+  ) {
+
+    ClassicEditor.defaultConfig = {
+      toolbar: {
+          items: [
+              'heading',
+              '|',
+              'bold',
+              'italic',
+              'link',
+              'fontFamily',
+              'bulletedList',
+              'numberedList',
+            //  'uploadImage',
+            // 'blockQuote',
+              'undo',
+              'redo'
+          ]
+      },
+      fontFamily: {
+        options: [
+          'default',
+          'Ubuntu, Arial, sans-serif',
+          'Ubuntu Mono, Courier New, Courier, monospace'
+        ]
+      },
+      image: {
+          toolbar: [
+              'imageStyle:inline',
+              'imageStyle:block',
+              'imageStyle:side',
+              '|',
+              'toggleImageCaption',
+              'imageTextAlternative'
+          ]
+      },
+      language: 'en'
+    };
+
+  }
 
   ngOnInit(): void {
+    this.isDernieresNouvellesNoExist = localStorage.getItem('isNewDernieresNouvelles'); 
+    this.eltChoisi = this.transfertDataService.getData();
     this.activatedRoute.data.subscribe(({ dernieresNouvelles }) => {
       this.updateForm(dernieresNouvelles);
     });
@@ -197,23 +301,110 @@ export class DernieresNouvellesUpdateComponent implements OnInit {
       textSlide8Ger: dernieresNouvelles.textSlide8Ger,
       textSlide8Sw: dernieresNouvelles.textSlide8Sw,
       textSlide9Fr: dernieresNouvelles.textSlide9Fr,
-      textSlide9En: dernieresNouvelles.textSlide9En
+      textSlide9En: dernieresNouvelles.textSlide9En,
+      textSlide9Ger: dernieresNouvelles.textSlide9Ger,
+      textSlide9Sw: dernieresNouvelles.textSlide9Sw,
+      textSlide10Fr: dernieresNouvelles.textSlide10Fr,
+      textSlide10En: dernieresNouvelles.textSlide10En,
+      textSlide10Ger: dernieresNouvelles.textSlide10Ger,
+      textSlide10Sw: dernieresNouvelles.textSlide10Sw,
+      imageSlide1: dernieresNouvelles.imageSlide1,
+      imageSlide1ContentType: dernieresNouvelles.imageSlide1ContentType,
+      imageSlide2: dernieresNouvelles.imageSlide2,
+      imageSlide2ContentType: dernieresNouvelles.imageSlide2ContentType,
+      imageSlide3: dernieresNouvelles.imageSlide3,
+      imageSlide3ContentType: dernieresNouvelles.imageSlide3ContentType,
+      imageSlide4: dernieresNouvelles.imageSlide4,
+      imageSlide4ContentType: dernieresNouvelles.imageSlide4ContentType,
+      imageSlide5: dernieresNouvelles.imageSlide5,
+      imageSlide5ContentType: dernieresNouvelles.imageSlide5ContentType,
+      imageSlide6: dernieresNouvelles.imageSlide6,
+      imageSlide6ContentType: dernieresNouvelles.imageSlide6ContentType,
+      imageSlide7: dernieresNouvelles.imageSlide7,
+      imageSlide7ContentType: dernieresNouvelles.imageSlide7ContentType,
+      imageSlide8: dernieresNouvelles.imageSlide8,
+      imageSlide8ContentType: dernieresNouvelles.imageSlide8ContentType,
+      imageSlide9: dernieresNouvelles.imageSlide9,
+      imageSlide9ContentType: dernieresNouvelles.imageSlide9ContentType,
+      imageSlide10: dernieresNouvelles.imageSlide10,
+      imageSlide10ContentType: dernieresNouvelles.imageSlide10ContentType,
+      readMore1: dernieresNouvelles.readMore1,
+      readMore2: dernieresNouvelles.readMore2,
+      readMore3: dernieresNouvelles.readMore3,
+      readMore4: dernieresNouvelles.readMore4,
+      readMore5: dernieresNouvelles.readMore5,
+      readMore6: dernieresNouvelles.readMore6,
+      readMore7: dernieresNouvelles.readMore7,
+      readMore8: dernieresNouvelles.readMore8,
+      readMore9: dernieresNouvelles.readMore9,
+      readMore10: dernieresNouvelles.readMore10,
+      date1: dernieresNouvelles.date1,
+      date2: dernieresNouvelles.date2,
+      date3: dernieresNouvelles.date3,
+      date4: dernieresNouvelles.date4,
+      date5: dernieresNouvelles.date5,
+      date6: dernieresNouvelles.date6,
+      date7: dernieresNouvelles.date7,
+      date8: dernieresNouvelles.date8,
+      date9: dernieresNouvelles.date9,
+      date10: dernieresNouvelles.date10
     });
   }
 
+ 
+  byteSize(base64String: string): string {
+    return this.dataUtils.byteSize(base64String);
+  }
+
+  openFile(contentType: string, base64String: string): void {
+    this.dataUtils.openFile(contentType, base64String);
+  }
+
+  setFileData(event: Event, field: string, isImage: boolean): void {
+    this.dataUtils.loadFileToForm(event, this.editForm, field, isImage).subscribe(null, (err: JhiFileLoadError) => {
+      this.eventManager.broadcast(
+        new JhiEventWithContent<AlertError>('iotaOrignAdminApp.error', { ...err, key: 'error.file.' + err.key })
+      );
+    });
+  }
+
+  clearInputImage(field: string, fieldContentType: string, idInput: string): void {
+    this.editForm.patchValue({
+      [field]: null,
+      [fieldContentType]: null
+    });
+    if (this.elementRef && idInput && this.elementRef.nativeElement.querySelector('#' + idInput)) {
+      this.elementRef.nativeElement.querySelector('#' + idInput).value = null;
+    }
+  }
+
   previousState(): void {
+    localStorage.removeItem("isNewDernieresNouvelles");
     window.history.back();
+  }
+
+  back(): void {
+    this.location.back()
+    localStorage.removeItem("isNewDernieresNouvelles");
+  }
+
+
+  update(elt: any): void {
+    this.transfertDataService.setData(elt);
   }
 
   save(): void {
     this.isSaving = true;
     const dernieresNouvelles = this.createFromForm();
     if (dernieresNouvelles.id !== undefined) {
+      localStorage.removeItem("isNewDernieresNouvelles");
       this.subscribeToSaveResponse(this.dernieresNouvellesService.update(dernieresNouvelles));
     } else {
+      localStorage.removeItem("isNewDernieresNouvelles");
       this.subscribeToSaveResponse(this.dernieresNouvellesService.create(dernieresNouvelles));
     }
   }
+
 
   private createFromForm(): IDernieresNouvelles {
     return {
@@ -300,7 +491,53 @@ export class DernieresNouvellesUpdateComponent implements OnInit {
       textSlide8Ger: this.editForm.get(['textSlide8Ger'])!.value,
       textSlide8Sw: this.editForm.get(['textSlide8Sw'])!.value,
       textSlide9Fr: this.editForm.get(['textSlide9Fr'])!.value,
-      textSlide9En: this.editForm.get(['textSlide9En'])!.value
+      textSlide9En: this.editForm.get(['textSlide9En'])!.value,
+      textSlide9Ger: this.editForm.get(['textSlide9Ger'])!.value,
+      textSlide9Sw: this.editForm.get(['textSlide9Sw'])!.value,
+      textSlide10Fr: this.editForm.get(['textSlide10Fr'])!.value,
+      textSlide10En: this.editForm.get(['textSlide10En'])!.value,
+      textSlide10Ger: this.editForm.get(['textSlide10Ger'])!.value,
+      textSlide10Sw: this.editForm.get(['textSlide10Sw'])!.value,
+      imageSlide1ContentType: this.editForm.get(['imageSlide1ContentType'])!.value,
+      imageSlide1: this.editForm.get(['imageSlide1'])!.value,
+      imageSlide2ContentType: this.editForm.get(['imageSlide2ContentType'])!.value,
+      imageSlide2: this.editForm.get(['imageSlide2'])!.value,
+      imageSlide3ContentType: this.editForm.get(['imageSlide3ContentType'])!.value,
+      imageSlide3: this.editForm.get(['imageSlide3'])!.value,
+      imageSlide4ContentType: this.editForm.get(['imageSlide4ContentType'])!.value,
+      imageSlide4: this.editForm.get(['imageSlide4'])!.value,
+      imageSlide5ContentType: this.editForm.get(['imageSlide5ContentType'])!.value,
+      imageSlide5: this.editForm.get(['imageSlide5'])!.value,
+      imageSlide6ContentType: this.editForm.get(['imageSlide6ContentType'])!.value,
+      imageSlide6: this.editForm.get(['imageSlide6'])!.value,
+      imageSlide7ContentType: this.editForm.get(['imageSlide7ContentType'])!.value,
+      imageSlide7: this.editForm.get(['imageSlide7'])!.value,
+      imageSlide8ContentType: this.editForm.get(['imageSlide8ContentType'])!.value,
+      imageSlide8: this.editForm.get(['imageSlide8'])!.value,
+      imageSlide9ContentType: this.editForm.get(['imageSlide9ContentType'])!.value,
+      imageSlide9: this.editForm.get(['imageSlide9'])!.value,
+      imageSlide10ContentType: this.editForm.get(['imageSlide10ContentType'])!.value,
+      imageSlide10: this.editForm.get(['imageSlide10'])!.value,
+      readMore1: this.editForm.get(['readMore1'])!.value,
+      readMore2: this.editForm.get(['readMore2'])!.value,
+      readMore3: this.editForm.get(['readMore3'])!.value,
+      readMore4: this.editForm.get(['readMore4'])!.value,
+      readMore5: this.editForm.get(['readMore5'])!.value,
+      readMore6: this.editForm.get(['readMore6'])!.value,
+      readMore7: this.editForm.get(['readMore7'])!.value,
+      readMore8: this.editForm.get(['readMore8'])!.value,
+      readMore9: this.editForm.get(['readMore9'])!.value,
+      readMore10: this.editForm.get(['readMore10'])!.value,
+      date1: this.editForm.get(['date1'])!.value,
+      date2: this.editForm.get(['date2'])!.value,
+      date3: this.editForm.get(['date3'])!.value,
+      date4: this.editForm.get(['date4'])!.value,
+      date5: this.editForm.get(['date5'])!.value,
+      date6: this.editForm.get(['date6'])!.value,
+      date7: this.editForm.get(['date7'])!.value,
+      date8: this.editForm.get(['date8'])!.value,
+      date9: this.editForm.get(['date9'])!.value,
+      date10: this.editForm.get(['date10'])!.value
     };
   }
 

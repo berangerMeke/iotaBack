@@ -3,62 +3,71 @@ import { HttpResponse } from '@angular/common/http';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import {TransfertDataService} from '../../core/services/transfert-data.service'
 
 import { IFAQs, FAQs } from 'app/shared/model/fa-qs.model';
 import { FAQsService } from './fa-qs.service';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'jhi-fa-qs-update',
-  templateUrl: './fa-qs-update.component.html'
+  templateUrl: './fa-qs-update.component.html',
+  styleUrls: ['./fa-qs-update.scss']
 })
 export class FAQsUpdateComponent implements OnInit {
   isSaving = false;
   eltChoisi : any;
 
+  fAQs :any = [];
+
+  isFAQsNoExist: any;
+
+  public Editor = ClassicEditor;
+
   editForm = this.fb.group({
     id: [],
-    titreFr: [],
-    titreEn: [],
-    titreGer: [],
-    titreSw: [],
+    titreFr: ['', Validators.required],
+    titreEn: ['', Validators.required],
+    titreGer: ['', Validators.required],
+    titreSw: ['', Validators.required],
     sousTitreFr: [],
     sousTitreEn: [],
     sousTitreGer: [],
     sousTitreSw: [],
-    titreAccordion1Fr: [],
-    titreAccordion1En: [],
-    titreAccordion1Gr: [],
-    titreAccordion1Sw: [],
-    titreAccordion2Fr: [],
-    titreAccordion2En: [],
-    titreAccordion2Ger: [],
-    titreAccordion2Sw: [],
-    titreAccordion3Fr: [],
-    titreAccordion3En: [],
-    titreAccordion3Ger: [],
-    titreAccordion3Sw: [],
-    titreAccordion4Fr: [],
-    titreAccordion4En: [],
-    titreAccordion4Ger: [],
-    titreAccordion4Sw: [],
-    titreAccordion5Fr: [],
-    titreAccordion5En: [],
-    titreAccordion5Ger: [],
-    titreAccordion5Sw: [],
-    titreAccordion6Fr: [],
-    titreAccordion6En: [],
-    titreAccordion6Ger: [],
-    titreAccordion6Sw: [],
-    titreAccordion7Fr: [],
-    titreAccordion7En: [],
-    titreAccordion7Ger: [],
-    titreAccordion7Sw: [],
-    titreAccordion8Fr: [],
-    titreAccordion8En: [],
-    titreAccordion8Ger: [],
-    titreAccordion8Sw: [],
+    titreAccordion1Fr: ['', Validators.required],
+    titreAccordion1En: ['', Validators.required],
+    titreAccordion1Gr: ['', Validators.required],
+    titreAccordion1Sw: ['', Validators.required],
+    titreAccordion2Fr: ['', Validators.required],
+    titreAccordion2En: ['', Validators.required],
+    titreAccordion2Ger: ['', Validators.required],
+    titreAccordion2Sw: ['', Validators.required],
+    titreAccordion3Fr: ['', Validators.required],
+    titreAccordion3En: ['', Validators.required],
+    titreAccordion3Ger: ['', Validators.required],
+    titreAccordion3Sw: ['', Validators.required],
+    titreAccordion4Fr: ['', Validators.required],
+    titreAccordion4En: ['', Validators.required],
+    titreAccordion4Ger: ['', Validators.required],
+    titreAccordion4Sw: ['', Validators.required],
+    titreAccordion5Fr: ['', Validators.required],
+    titreAccordion5En: ['', Validators.required],
+    titreAccordion5Ger: ['', Validators.required],
+    titreAccordion5Sw: ['', Validators.required],
+    titreAccordion6Fr: ['', Validators.required],
+    titreAccordion6En: ['', Validators.required],
+    titreAccordion6Ger: ['', Validators.required],
+    titreAccordion6Sw: ['', Validators.required],
+    titreAccordion7Fr: ['', Validators.required],
+    titreAccordion7En: ['', Validators.required],
+    titreAccordion7Ger: ['', Validators.required],
+    titreAccordion7Sw: ['', Validators.required],
+    titreAccordion8Fr: ['', Validators.required],
+    titreAccordion8En: ['', Validators.required],
+    titreAccordion8Ger: ['', Validators.required],
+    titreAccordion8Sw: ['', Validators.required],
     titreAccordion9Fr: [],
     titreAccordion9En: [],
     titreAccordion9Ger: [],
@@ -109,12 +118,50 @@ export class FAQsUpdateComponent implements OnInit {
     textAccordion10Sw: []
   });
 
-  constructor(protected fAQsService: FAQsService, public transfertDataService: TransfertDataService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
+  constructor(protected fAQsService: FAQsService, 
+    public transfertDataService: TransfertDataService, 
+    private location: Location,
+    protected activatedRoute: ActivatedRoute, 
+    private fb: FormBuilder) 
+    {
+      ClassicEditor.defaultConfig = {
+        toolbar: {
+            items: [
+                'heading',
+                '|',
+                'bold',
+                'italic',
+                'link',
+                'bulletedList',
+                'numberedList',
+              //  'uploadImage',
+              // 'blockQuote',
+                'undo',
+                'redo'
+            ]
+        },
+        image: {
+            toolbar: [
+                'imageStyle:inline',
+                'imageStyle:block',
+                'imageStyle:side',
+                '|',
+                'toggleImageCaption',
+                'imageTextAlternative'
+            ]
+        },
+        language: 'en'
+      };
+  
+    }
 
   ngOnInit(): void {
+    this.isFAQsNoExist = localStorage.getItem('isNewFAQs'); 
     this.eltChoisi = this.transfertDataService.getData();
     this.activatedRoute.data.subscribe(({ fAQs }) => {
       this.updateForm(fAQs);
+      this.fAQs.push(fAQs);
+     // console.log(this.fAQs);
     });
   }
 
@@ -213,8 +260,15 @@ export class FAQsUpdateComponent implements OnInit {
   }
 
   previousState(): void {
+    localStorage.removeItem("isNewFAQs");
     window.history.back();
   }
+
+  back(): void {
+    this.location.back()
+    localStorage.removeItem("isNewFAQs");
+  }
+
 
   update(elt: any): void {
     this.transfertDataService.setData(elt);
@@ -224,8 +278,10 @@ export class FAQsUpdateComponent implements OnInit {
     this.isSaving = true;
     const fAQs = this.createFromForm();
     if (fAQs.id !== undefined) {
+      localStorage.removeItem("isNewFAQs");
       this.subscribeToSaveResponse(this.fAQsService.update(fAQs));
     } else {
+      localStorage.removeItem("isNewFAQs");
       this.subscribeToSaveResponse(this.fAQsService.create(fAQs));
     }
   }

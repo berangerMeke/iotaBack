@@ -2,19 +2,31 @@
   "global": {
     "title": "Panneau d'Administration",
     "browsehappy": "Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=\"http://browsehappy.com/?locale=fr\">mettre à jour votre navigateur</a> pour une meilleure expérience.",
+
+    "titrePanneauSection": "Page : Accueil - Sections",
+    "titrePanneauImprint": "Page : Mentions légales",
+    "titrePanneauPrivacyPolicy": "Page : Déclaration de confidentialité",
+    "titrePanneauText": "Créer ou Mettre à jour cette section",
+    "titrePanneauTextButton": "Ouvrir",
+
     "menu": {
       "home": "Accueil",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
-        "main": "Entités",
-        "accueil": "Accueil",
+        "main": "Sections/Pages",
+        "accueil": "Intro",
         "aPropos": "A Propos",
         "service": "Service",
         "avantages": "Avantages",
         "objectifs": "Objectifs",
-        "faQs": "FA Qs",
+        "faQs": "FAQs",
         "equipe": "Equipe",
         "dernieresNouvelles": "Dernieres Nouvelles",
+        "imprint": "Mentions légales",
+        "privacyPolicy": "Déclaration de confidentialité",
+        "piedPage": "Pied de page",
+        "footerSection": "Footer Section",
+        "googleAnalitcs": "Google Analitcs",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -144,5 +156,5 @@
       "not.image": "Le fichier doit être une image et non du type \"{{ fileType }}\""
     }
   },
-  "footer": "Ceci est votre pied de page"
+  "footer": "© 2022 IotaOrigin UG. Tous droits réservés."
 }

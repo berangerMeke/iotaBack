@@ -1,0 +1,35 @@
+{
+  "iotaOrignAdminApp": {
+    "footerSection": {
+      "home": {
+        "title": "kijachini",
+        "createLabel": "Unda sehemu",
+        "EditLabel": "Sehemu ya sasisho",
+        "consigne": "Bofya kwenye kipengee unachotaka kusasisha",
+        "notFound": "Sehemu tupu",
+        "backButton": "Rudi"
+      },
+      "created": "Un nuevo Footer Section ha sido creado con el identificador {{ param }}",
+      "updated": "Un Footer Section ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Footer Section ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Footer Section {{ id }}?"
+      },
+      "detail": {
+        "title": "kijachini"
+      },
+      "titreFr": "Kichwa kwa Kifaransa",
+      "titreEn": "Kichwa kwa Kiingereza",
+      "titreGer": "Kichwa kwa Kijerumani",
+      "titreSw": "Title kwa Kiswahili",
+      "sousTitreFr": "Manukuu ya Kifaransa",
+      "sousTitreEn": "Manukuu ya Kiingereza",
+      "sousTitreGer": "Manukuu ya Kijerumani",
+      "sousTitreSw": "Manukuu ya Kiswahili",
+      "logo": "Picha",
+      "texteBouton": "Tuma",
+      "twitterlink": "kiungo Twitter",
+      "discordLink": "kiungo Discord"
+    }
+  }
+}

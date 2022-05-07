@@ -331,6 +331,161 @@
         {
             "fieldName": "textSlide9En",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide9Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide9Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide10Fr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide10En",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide10Ger",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textSlide10Sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imageSlide1",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "imageSlide2",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "imageSlide3",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "imageSlide4",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "imageSlide5",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "imageSlide6",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "imageSlide7",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "imageSlide8",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "imageSlide9",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "imageSlide10",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "readMore1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "readMore2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "readMore3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "readMore4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "readMore5",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "readMore6",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "readMore7",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "readMore8",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "readMore9",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "readMore10",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date3",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "date4",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date5",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date6",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date7",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date8",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date9",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date10",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20220311125928",

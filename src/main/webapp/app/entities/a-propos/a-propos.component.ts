@@ -1,9 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
+import { JhiLanguageService } from 'ng-jhipster';
 import { JhiEventManager, JhiParseLinks, JhiDataUtils } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {TransfertDataService} from '../../core/services/transfert-data.service';
+import { Location } from '@angular/common';
 
 import { IAPropos } from 'app/shared/model/a-propos.model';
 
@@ -26,10 +28,14 @@ export class AProposComponent implements OnInit, OnDestroy {
   predicate: string;
   ascending: boolean;
 
+  lg: any;
+
   constructor(
     protected aProposService: AProposService,
     protected dataUtils: JhiDataUtils,
     protected eventManager: JhiEventManager,
+    private location: Location,
+    public languageService: JhiLanguageService,
     public transfertDataService: TransfertDataService,
     protected modalService: NgbModal,
     protected parseLinks: JhiParseLinks
@@ -66,8 +72,18 @@ export class AProposComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.lg = this.languageService.currentLang;
     this.loadAll();
     this.registerChangeInAPropos();
+   // localStorage.setItem('aPropos', JSON.stringify(this.aPropos));
+  }
+
+  back(): void {
+    this.location.back()
+  }
+
+  createApropos(): void {
+    localStorage.setItem("isNewApropos", "true");
   }
 
   ngOnDestroy(): void {

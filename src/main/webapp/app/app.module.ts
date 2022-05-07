@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import './vendor';
 import { IotaOrignAdminSharedModule } from 'app/shared/shared.module';
@@ -23,6 +24,7 @@ import { PanelComponent } from './app/panel/panel.component';
     IotaOrignAdminSharedModule,
     IotaOrignAdminCoreModule,
     IotaOrignAdminHomeModule,
+    CKEditorModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     IotaOrignAdminEntityModule,
     IotaOrignAdminAppRoutingModule

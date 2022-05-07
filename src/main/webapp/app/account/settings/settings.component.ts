@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { JhiLanguageService } from 'ng-jhipster';
+import { Location } from '@angular/common';
 
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/user/account.model';
@@ -8,7 +9,8 @@ import { LANGUAGES } from 'app/core/language/language.constants';
 
 @Component({
   selector: 'jhi-settings',
-  templateUrl: './settings.component.html'
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.scss']
 })
 export class SettingsComponent implements OnInit {
   account!: Account;
@@ -21,7 +23,10 @@ export class SettingsComponent implements OnInit {
     langKey: [undefined]
   });
 
-  constructor(private accountService: AccountService, private fb: FormBuilder, private languageService: JhiLanguageService) {}
+  constructor(private accountService: AccountService, 
+              private fb: FormBuilder, 
+              private location: Location,
+              private languageService: JhiLanguageService) {}
 
   ngOnInit(): void {
     this.accountService.identity().subscribe(account => {
@@ -37,6 +42,12 @@ export class SettingsComponent implements OnInit {
       }
     });
   }
+
+
+  back(): void {
+    this.location.back()
+  }
+
 
   save(): void {
     this.success = false;

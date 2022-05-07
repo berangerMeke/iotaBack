@@ -1,23 +1,23 @@
 {
   "register": {
-    "title": "Registro",
+    "title": "Uundaji wa akaunti ya mtumiaji",
     "form": {
-      "button": "Crear la cuenta"
+      "button": "Usajili"
     },
     "messages": {
       "validate": {
         "login": {
-          "required": "Su nombre de usuario es obligatorio.",
-          "minlength": "Su nombre de usuario debe tener al menos 1 caracter.",
-          "maxlength": "Su nombre de usuario no puede tener más de 50 caracteres.",
-          "pattern": "Su nombre de usuario sólo puede contener letras minúsculas y dígitos."
+          "required": "VJina lako la mtumiaji linahitajika.",
+          "minlength": "Jina lako la mtumiaji lazima liwe na zaidi ya herufi moja.",
+          "maxlength": "Jina lako la mtumiaji haliwezi kuwa na zaidi ya vibambo 50.",
+          "pattern": "Jina lako la mtumiaji linaweza tu kuwa na herufi ndogo au nambari."
         }
       },
-      "success": "<strong>¡Registro guardado!</strong> Por favor, revise su correo electrónico para confirmar.",
+      "success": "<strong>Akaunti iliyosajiliwa!</strong> Tafadhali angalia barua pepe yako ya uthibitishaji.",
       "error": {
-        "fail": "<strong>¡El registro ha fallado!</strong> Por favor, inténtelo de nuevo más tarde.",
-        "userexists": "<strong>¡El nombre de usuario ya está registrado!</strong> Por favor, escoja otro usuario.",
-        "emailexists": "<strong>¡El correo electrónico ya está en uso!</strong> Por favor, escoja otro email."
+        "fail": "<strong>Akaunti haijaundwa!</strong> Tafadhali jaribu tena baadae.",
+        "userexists": "<strong>Akaunti hii ya mtumiaji tayari ipo!</strong> Tafadhali chagua nyingine.",
+        "emailexists": "<strong>Cna barua pepe tayari imetumika!</strong> Tafadhali chagua nyingine."
       }
     }
   }

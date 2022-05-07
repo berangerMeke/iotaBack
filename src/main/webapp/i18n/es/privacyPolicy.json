@@ -1,0 +1,31 @@
+{
+  "iotaOrignAdminApp": {
+    "privacyPolicy": {
+      "home": {
+        "title": "Ukurasa  Tangazo la kisiri",
+        "createLabel": "Unda sehemu",
+        "EditLabel": "Sehemu ya sasisho",
+        "consigne": "Bofya kwenye kipengee unachotaka kusasisha",
+        "notFound": "Sehemu tupu",
+        "backButton": "Rudi"
+      },
+      "created": "Un nuevo Privacy Policy ha sido creado con el identificador {{ param }}",
+      "updated": "Un Privacy Policy ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Privacy Policy ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Privacy Policy {{ id }}?"
+      },
+      "detail": {
+        "title": "Tangazo la kisiri"
+      },
+      "titrePrivacyPolicyEn": "Kichwa kwa Kiingereza",
+      "titrePrivacyPolicyGer": "Kichwa kwa Kijerumani",
+      "titrePrivacyPolicyFr": "Kichwa kwa Kifaransa",
+      "titrePrivacyPolicySw": "Kichwa kwa Kiswahili",
+      "contenuPrivacyPolicyEn": "Maudhui kwa Kiingereza",
+      "contenuPrivacyPolicyGer": "Yaliyomo kwa Kijerumani",
+      "contenuPrivacyPolicyFr": "Maudhui katika Kifaransa",
+      "contenuPrivacyPolicySw": "Maudhui katika Kiswahili"
+    }
+  }
+}

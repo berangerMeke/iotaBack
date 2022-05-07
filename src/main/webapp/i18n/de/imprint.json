@@ -1,0 +1,31 @@
+{
+  "iotaOrignAdminApp": {
+    "imprint": {
+      "home": {
+        "title": "Seite Impressum",
+        "createLabel": "Abschnitt erstellen",
+        "EditLabel": "Abschnitt aktualisieren",
+        "consigne": "Klicken Sie auf das Element, das Sie aktualisieren möchten",
+        "notFound": "Leerer Abschnitt",
+        "backButton": "Rückfahrt"
+      },
+      "created": "Imprint erstellt mit ID {{ param }}",
+      "updated": "Imprint aktualisiert mit ID {{ param }}",
+      "deleted": "Imprint gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Imprint {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Impressum"
+      },
+      "titreImprintEn": "Titel auf englisch",
+      "titreImprintFr": "Titel auf Französisch",
+      "titreImprintGer": "Titel auf Deutsch",
+      "titreImprintSw": "Titel in Suaheli",
+      "contenuImprintEn": "Inhalt auf Englisch",
+      "contenuImprintGer": "Inhalt auf Deutsch",
+      "contenuImprintFr": "Inhalt auf Französisch",
+      "contenuImprintSw": "Inhalt auf Suaheli"
+    }
+  }
+}

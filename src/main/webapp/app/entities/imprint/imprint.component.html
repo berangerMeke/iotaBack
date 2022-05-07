@@ -1,0 +1,129 @@
+<div>
+    <h3 id="page-heading" class="intro-button">
+        <a> 
+           <span (click)="back()">
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="3%" alt="back">
+                <span class="arrow-back" jhiTranslate="iotaOrignAdminApp.imprint.home.backButton">Back</span>    
+            </span>
+        </a>
+        &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span jhiTranslate="iotaOrignAdminApp.imprint.home.title">Imprint us Section</span>
+         &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span *ngIf="imprints.length > 0" style="color: rgb(82, 82, 82); font-size:60%" jhiTranslate="iotaOrignAdminApp.imprint.home.consigne">
+            Cliquez sur l'élément que vous souhaitez mettre à jour.
+        </span>    
+    
+        <button *ngIf="imprints.length < 1" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-imprint" 
+            [routerLink]="['/imprint/new']"
+            (click)="createImprint()">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.imprint.home.createLabel">Create a new A Propos</span>
+        </button>
+        &nbsp;&nbsp;&nbsp;
+        <button *ngIf="imprints.length >= 1" type="submit" (click)="delete(imprints[0])"
+        class="btn btn-danger btn-sm">
+        <fa-icon icon="times"></fa-icon>
+        <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+        </button>
+
+
+    </h3>
+    
+    <hr>
+
+    <!-- <jhi-alert-error></jhi-alert-error> -->
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="imprints?.length === 0">
+        <span jhiTranslate="iotaOrignAdminApp.imprint.home.notFound">No imprints found</span>
+    </div>
+
+    <!-- <div class="table-responsive" id="entities" *ngIf="imprints?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreImprintEn"><span jhiTranslate="iotaOrignAdminApp.imprint.titreImprintEn">Titre Imprint En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreImprintFr"><span jhiTranslate="iotaOrignAdminApp.imprint.titreImprintFr">Titre Imprint Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreImprintGer"><span jhiTranslate="iotaOrignAdminApp.imprint.titreImprintGer">Titre Imprint Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titreImprintSw"><span jhiTranslate="iotaOrignAdminApp.imprint.titreImprintSw">Titre Imprint Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="contenuImprintEn"><span jhiTranslate="iotaOrignAdminApp.imprint.contenuImprintEn">Contenu Imprint En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="contenuImprintGer"><span jhiTranslate="iotaOrignAdminApp.imprint.contenuImprintGer">Contenu Imprint Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="contenuImprintFr"><span jhiTranslate="iotaOrignAdminApp.imprint.contenuImprintFr">Contenu Imprint Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="contenuImprintSw"><span jhiTranslate="iotaOrignAdminApp.imprint.contenuImprintSw">Contenu Imprint Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let imprint of imprints ;trackBy: trackId">
+                    <td><a [routerLink]="['/imprint', imprint.id, 'view']">{{ imprint.id }}</a></td>
+                    <td>{{ imprint.titreImprintEn }}</td>
+                    <td>{{ imprint.titreImprintFr }}</td>
+                    <td>{{ imprint.titreImprintGer }}</td>
+                    <td>{{ imprint.titreImprintSw }}</td>
+                    <td>{{ imprint.contenuImprintEn }}</td>
+                    <td>{{ imprint.contenuImprintGer }}</td>
+                    <td>{{ imprint.contenuImprintFr }}</td>
+                    <td>{{ imprint.contenuImprintSw }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/imprint', imprint.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/imprint', imprint.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(imprint)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+
+
+</div>
+
+
+  <!-- START THE SECTION 1 : THE IMPRINT -->
+  <section *ngIf="imprints[0]" id="imprint" class="imprint">
+    <div class="container">
+        <div class="row">
+            <div class="imprint-box">
+                <h1 class="imprint-box--title display-3 display-3-grandient fw-bold anim-elt-1">
+                    <a [routerLink]="['/imprint', imprints[0].id, 'edit']" 
+                    (click)="update('titre')"
+                    class="paragraphe-style ">
+                        <span *ngIf="languageService.currentLang === 'fr'">{{imprints[0].titreImprintFr}}</span>
+                        <span *ngIf="languageService.currentLang === 'en'">{{imprints[0].titreImprintEn}}</span>
+                        <span *ngIf="languageService.currentLang === 'es'">{{imprints[0].titreImprintSw}}</span>
+                        <span *ngIf="languageService.currentLang === 'de'">{{imprints[0].titreImprintGer}}</span>
+                    </a>
+                </h1>
+                <div>
+                    <a [routerLink]="['/imprint', imprints[0].id, 'edit']" 
+                    (click)="update('contenu')"
+                    class="paragraphe-style ">
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="imprints[0].contenuImprintFr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="imprints[0].contenuImprintEn"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="imprints[0].contenuImprintGer"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="imprints[0].contenuImprintSw"></div>
+                    </a>               
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+{
+  "iotaOrignAdminApp": {
+    "imprint": {
+      "home": {
+        "title": "Ukurasa  Notisi ya kisheria",
+        "createLabel": "Unda sehemu",
+        "EditLabel": "Sehemu ya sasisho",
+        "consigne": "Bofya kwenye kipengee unachotaka kusasisha",
+        "notFound": "Sehemu tupu",
+        "backButton": "Rudi"
+      },
+      "created": "Un nuevo Imprint ha sido creado con el identificador {{ param }}",
+      "updated": "Un Imprint ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Imprint ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Imprint {{ id }}?"
+      },
+      "detail": {
+        "title": "Notisi ya kisheria"
+      },
+      "titreImprintEn": "Kichwa kwa Kiingereza",
+      "titreImprintFr": "Kichwa kwa Kifaransa",
+      "titreImprintGer": "Kichwa kwa Kijerumani",
+      "titreImprintSw": "Kichwa kwa Kiswahili",
+      "contenuImprintEn": "Maudhui kwa Kiingereza",
+      "contenuImprintGer": "Yaliyomo kwa Kijerumani",
+      "contenuImprintFr": "Maudhui katika Kifaransa",
+      "contenuImprintSw": "Maudhui katika Kiswahili"
+    }
+  }
+}

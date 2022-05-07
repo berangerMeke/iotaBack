@@ -1,0 +1,35 @@
+{
+  "iotaOrignAdminApp": {
+    "footerSection": {
+      "home": {
+        "title": "Footer",
+        "createLabel": "Create section",
+        "EditLabel": "Update Section",
+        "consigne": "Click on the item you want to update",
+        "notFound": "Empty section",
+        "backButton": "Back"
+      },
+      "created": "A new Footer Section is created with identifier {{ param }}",
+      "updated": "A Footer Section is updated with identifier {{ param }}",
+      "deleted": "A Footer Section is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Footer Section {{ id }}?"
+      },
+      "detail": {
+        "title": "Footer Section"
+      },
+      "titreFr": "Title in French",
+      "titreEn": "Title in English",
+      "titreGer": "Title in German",
+      "titreSw": "Title in Swahili",
+      "sousTitreFr": "Subtitle in French",
+      "sousTitreEn": "English in subtitle",
+      "sousTitreGer": "German in subtitle",
+      "sousTitreSw": "Subtitle in Swahili",
+      "logo": "Logo",
+      "texteBouton": "SEND",
+      "twitterlink": "Twitter link",
+      "discordLink": "Discord link"
+    }
+  }
+}

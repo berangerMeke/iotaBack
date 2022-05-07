@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
+import { Location } from '@angular/common';
+import { JhiLanguageService } from 'ng-jhipster';
 import { JhiEventManager, JhiParseLinks, JhiDataUtils } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {TransfertDataService} from '../../core/services/transfert-data.service';
@@ -24,6 +26,8 @@ export class AvantagesComponent implements OnInit, OnDestroy {
   page: number;
   predicate: string;
   ascending: boolean;
+
+  lg: any;
   
 
   constructor(
@@ -31,6 +35,8 @@ export class AvantagesComponent implements OnInit, OnDestroy {
     protected dataUtils: JhiDataUtils,
     protected eventManager: JhiEventManager,
     protected modalService: NgbModal,
+    public languageService: JhiLanguageService,
+    private location: Location,
     public transfertDataService: TransfertDataService,
     protected parseLinks: JhiParseLinks
   ) {
@@ -66,9 +72,20 @@ export class AvantagesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.lg = this.languageService.currentLang;
     this.loadAll();
     this.registerChangeInAvantages();
   }
+
+
+  back(): void {
+    this.location.back()
+  }
+
+  createAvantages(): void {
+    localStorage.setItem("isNewAvantages", "true");
+  }
+
 
   ngOnDestroy(): void {
     if (this.eventSubscriber) {

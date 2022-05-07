@@ -3,6 +3,8 @@ import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { JhiEventManager, JhiParseLinks, JhiDataUtils } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Location } from '@angular/common';
+import { JhiLanguageService } from 'ng-jhipster';
 import {TransfertDataService} from '../../core/services/transfert-data.service';
 
 import { IObjectifs } from 'app/shared/model/objectifs.model';
@@ -25,10 +27,14 @@ export class ObjectifsComponent implements OnInit, OnDestroy {
   predicate: string;
   ascending: boolean;
 
+  lg: any;
+
   constructor(
     protected objectifsService: ObjectifsService,
     protected dataUtils: JhiDataUtils,
     protected eventManager: JhiEventManager,
+    public languageService: JhiLanguageService,
+    private location: Location,
     public transfertDataService: TransfertDataService,
     protected modalService: NgbModal,
     protected parseLinks: JhiParseLinks
@@ -65,9 +71,20 @@ export class ObjectifsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.lg = this.languageService.currentLang;
     this.loadAll();
     this.registerChangeInObjectifs();
   }
+
+
+  back(): void {
+    this.location.back()
+  }
+
+  createObjectifs(): void {
+    localStorage.setItem("isNewObjectifs", "true");
+  }
+
 
   ngOnDestroy(): void {
     if (this.eventSubscriber) {

@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { flatMap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JhiEventManager } from 'ng-jhipster';
+import { Location } from '@angular/common';
 
 import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
 import { AccountService } from 'app/core/auth/account.service';
@@ -15,7 +16,8 @@ import { UserManagementDeleteDialogComponent } from './user-management-delete-di
 
 @Component({
   selector: 'jhi-user-mgmt',
-  templateUrl: './user-management.component.html'
+  templateUrl: './user-management.component.html',
+  styleUrls: ['./user-management.scss']
 })
 export class UserManagementComponent implements OnInit, OnDestroy {
   currentAccount: Account | null = null;
@@ -33,6 +35,7 @@ export class UserManagementComponent implements OnInit, OnDestroy {
     private accountService: AccountService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
+    private location: Location, 
     private eventManager: JhiEventManager,
     private modalService: NgbModal
   ) {}
@@ -54,6 +57,10 @@ export class UserManagementComponent implements OnInit, OnDestroy {
         )
       )
       .subscribe();
+  }
+
+  back(): void {
+    this.location.back()
   }
 
   ngOnDestroy(): void {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { LANGUAGES } from 'app/core/language/language.constants';
 import { User } from 'app/core/user/user.model';
@@ -8,7 +9,8 @@ import { UserService } from 'app/core/user/user.service';
 
 @Component({
   selector: 'jhi-user-mgmt-update',
-  templateUrl: './user-management-update.component.html'
+  templateUrl: './user-management-update.component.html',
+  styleUrls: ['./user-management.scss']
 })
 export class UserManagementUpdateComponent implements OnInit {
   user!: User;
@@ -27,7 +29,10 @@ export class UserManagementUpdateComponent implements OnInit {
     authorities: []
   });
 
-  constructor(private userService: UserService, private route: ActivatedRoute, private fb: FormBuilder) {}
+  constructor(private userService: UserService, 
+              private route: ActivatedRoute, 
+              private location: Location, 
+              private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.route.data.subscribe(({ user }) => {
@@ -42,6 +47,10 @@ export class UserManagementUpdateComponent implements OnInit {
     this.userService.authorities().subscribe(authorities => {
       this.authorities = authorities;
     });
+  }
+
+  back(): void {
+    this.location.back()
   }
 
   previousState(): void {

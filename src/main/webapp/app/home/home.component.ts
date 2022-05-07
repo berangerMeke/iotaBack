@@ -4,7 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { LoginService } from 'app/core/login/login.service';
-import { LoginModalService } from 'app/core/login/login-modal.service';
+// import { LoginModalService } from 'app/core/login/login-modal.service';
 import { AccountService } from 'app/core/auth/account.service';
 import { Account } from 'app/core/user/account.model';
 
@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
 
-  constructor(private accountService: AccountService, private loginModalService: LoginModalService,
+  constructor(private accountService: AccountService,
               private loginService: LoginService, private router: Router, private fb: FormBuilder) {}
 
   ngOnInit(): void {

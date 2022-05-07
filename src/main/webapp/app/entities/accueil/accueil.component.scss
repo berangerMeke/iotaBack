@@ -1,3 +1,24 @@
+
+.arrow-back {
+  color: #3e8acc;
+  font-size: 70%;
+}
+
+.intro-button {
+  position: relative;
+  z-index: 10;
+}
+
+.section-title {
+  font-size: 140%;
+  font-weight: bold;
+}
+
+.arrow-back-update {
+  color: #3e8acc;
+  font-size: 100%;
+}
+
 .couleur-texte {
   color: white;
 }
@@ -10854,6 +10875,7 @@ textarea.form-control-lg {
 .display-2--intro {
   display: inline-block;
   font-weight: 900;
+  font-size: 80% !important;
 }
 .display-2--description {
   font-size: 1rem;

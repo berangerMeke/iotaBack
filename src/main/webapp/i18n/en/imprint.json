@@ -1,0 +1,31 @@
+{
+  "iotaOrignAdminApp": {
+    "imprint": {
+      "home": {
+        "title": "Imprint Page",
+        "createLabel": "Create section",
+        "EditLabel": "Update Section",
+        "consigne": "Click on the item you want to update",
+        "notFound": "Empty section",
+        "backButton": "Back"
+      },
+      "created": "A new Imprint is created with identifier {{ param }}",
+      "updated": "A Imprint is updated with identifier {{ param }}",
+      "deleted": "A Imprint is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Imprint {{ id }}?"
+      },
+      "detail": {
+        "title": "Imprint"
+      },
+      "titreImprintEn": "Title in English",
+      "titreImprintFr": "Title in French",
+      "titreImprintGer": "Title in German ",
+      "titreImprintSw": "Title in Swahili",
+      "contenuImprintEn": "Content in English",
+      "contenuImprintGer": "Content in German",
+      "contenuImprintFr": "Content in French",
+      "contenuImprintSw": "Content in Swahili"
+    }
+  }
+}

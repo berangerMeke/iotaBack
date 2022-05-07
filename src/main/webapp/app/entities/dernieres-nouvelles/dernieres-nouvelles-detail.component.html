@@ -336,6 +336,200 @@
                 <dd>
                     <span>{{ dernieresNouvelles.textSlide9En }}</span>
                 </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9Ger">Text Slide 9 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide9Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9Sw">Text Slide 9 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide9Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide10Fr">Text Slide 10 Fr</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide10Fr }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide10En">Text Slide 10 En</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide10En }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide10Ger">Text Slide 10 Ger</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide10Ger }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide10Sw">Text Slide 10 Sw</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.textSlide10Sw }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide1">Image Slide 1</span></dt>
+                <dd>
+                    <div *ngIf="dernieresNouvelles.imageSlide1">
+                        <a (click)="openFile(dernieresNouvelles?.imageSlide1ContentType!, dernieresNouvelles?.imageSlide1)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide1ContentType + ';base64,' + dernieresNouvelles.imageSlide1" style="max-width: 100%;" alt="dernieresNouvelles image"/>
+                        </a>
+                        {{ dernieresNouvelles.imageSlide1ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide1) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide2">Image Slide 2</span></dt>
+                <dd>
+                    <div *ngIf="dernieresNouvelles.imageSlide2">
+                        <a (click)="openFile(dernieresNouvelles?.imageSlide2ContentType!, dernieresNouvelles?.imageSlide2)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide2ContentType + ';base64,' + dernieresNouvelles.imageSlide2" style="max-width: 100%;" alt="dernieresNouvelles image"/>
+                        </a>
+                        {{ dernieresNouvelles.imageSlide2ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide2) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide3">Image Slide 3</span></dt>
+                <dd>
+                    <div *ngIf="dernieresNouvelles.imageSlide3">
+                        <a (click)="openFile(dernieresNouvelles?.imageSlide3ContentType!, dernieresNouvelles?.imageSlide3)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide3ContentType + ';base64,' + dernieresNouvelles.imageSlide3" style="max-width: 100%;" alt="dernieresNouvelles image"/>
+                        </a>
+                        {{ dernieresNouvelles.imageSlide3ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide3) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide4">Image Slide 4</span></dt>
+                <dd>
+                    <div *ngIf="dernieresNouvelles.imageSlide4">
+                        <a (click)="openFile(dernieresNouvelles?.imageSlide4ContentType!, dernieresNouvelles?.imageSlide4)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide4ContentType + ';base64,' + dernieresNouvelles.imageSlide4" style="max-width: 100%;" alt="dernieresNouvelles image"/>
+                        </a>
+                        {{ dernieresNouvelles.imageSlide4ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide4) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide5">Image Slide 5</span></dt>
+                <dd>
+                    <div *ngIf="dernieresNouvelles.imageSlide5">
+                        <a (click)="openFile(dernieresNouvelles?.imageSlide5ContentType!, dernieresNouvelles?.imageSlide5)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide5ContentType + ';base64,' + dernieresNouvelles.imageSlide5" style="max-width: 100%;" alt="dernieresNouvelles image"/>
+                        </a>
+                        {{ dernieresNouvelles.imageSlide5ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide5) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide6">Image Slide 6</span></dt>
+                <dd>
+                    <div *ngIf="dernieresNouvelles.imageSlide6">
+                        <a (click)="openFile(dernieresNouvelles?.imageSlide6ContentType!, dernieresNouvelles?.imageSlide6)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide6ContentType + ';base64,' + dernieresNouvelles.imageSlide6" style="max-width: 100%;" alt="dernieresNouvelles image"/>
+                        </a>
+                        {{ dernieresNouvelles.imageSlide6ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide6) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide7">Image Slide 7</span></dt>
+                <dd>
+                    <div *ngIf="dernieresNouvelles.imageSlide7">
+                        <a (click)="openFile(dernieresNouvelles?.imageSlide7ContentType!, dernieresNouvelles?.imageSlide7)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide7ContentType + ';base64,' + dernieresNouvelles.imageSlide7" style="max-width: 100%;" alt="dernieresNouvelles image"/>
+                        </a>
+                        {{ dernieresNouvelles.imageSlide7ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide7) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide8">Image Slide 8</span></dt>
+                <dd>
+                    <div *ngIf="dernieresNouvelles.imageSlide8">
+                        <a (click)="openFile(dernieresNouvelles?.imageSlide8ContentType!, dernieresNouvelles?.imageSlide8)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide8ContentType + ';base64,' + dernieresNouvelles.imageSlide8" style="max-width: 100%;" alt="dernieresNouvelles image"/>
+                        </a>
+                        {{ dernieresNouvelles.imageSlide8ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide8) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide9">Image Slide 9</span></dt>
+                <dd>
+                    <div *ngIf="dernieresNouvelles.imageSlide9">
+                        <a (click)="openFile(dernieresNouvelles?.imageSlide9ContentType!, dernieresNouvelles?.imageSlide9)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide9ContentType + ';base64,' + dernieresNouvelles.imageSlide9" style="max-width: 100%;" alt="dernieresNouvelles image"/>
+                        </a>
+                        {{ dernieresNouvelles.imageSlide9ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide9) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide10">Image Slide 10</span></dt>
+                <dd>
+                    <div *ngIf="dernieresNouvelles.imageSlide10">
+                        <a (click)="openFile(dernieresNouvelles?.imageSlide10ContentType!, dernieresNouvelles?.imageSlide10)">
+                            <img [src]="'data:' + dernieresNouvelles.imageSlide10ContentType + ';base64,' + dernieresNouvelles.imageSlide10" style="max-width: 100%;" alt="dernieresNouvelles image"/>
+                        </a>
+                        {{ dernieresNouvelles.imageSlide10ContentType }}, {{ byteSize(dernieresNouvelles.imageSlide10) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore1">Read More 1</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.readMore1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore2">Read More 2</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.readMore2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore3">Read More 3</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.readMore3 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore4">Read More 4</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.readMore4 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore5">Read More 5</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.readMore5 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore6">Read More 6</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.readMore6 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore7">Read More 7</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.readMore7 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore8">Read More 8</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.readMore8 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore9">Read More 9</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.readMore9 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore10">Read More 10</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.readMore10 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date1">Date 1</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.date1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date2">Date 2</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.date2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date3">Date 3</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.date3 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date4">Date 4</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.date4 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date5">Date 5</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.date5 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date6">Date 6</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.date6 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date7">Date 7</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.date7 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date8">Date 8</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.date8 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date9">Date 9</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.date9 }}</span>
+                </dd>
+                <dt><span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date10">Date 10</span></dt>
+                <dd>
+                    <span>{{ dernieresNouvelles.date10 }}</span>
+                </dd>
             </dl>
 
             <button type="submit"

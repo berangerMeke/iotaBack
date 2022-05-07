@@ -1,11 +1,27 @@
 <div>
-    <h2>
+    <!-- <h2>
         <span id="user-management-page-heading" jhiTranslate="userManagement.home.title">Users</span>
 
         <button class="btn btn-primary float-right jh-create-entity" [routerLink]="['./new']">
             <fa-icon icon="plus"></fa-icon> <span jhiTranslate="userManagement.home.createLabel">Create a new User</span>
         </button>
-    </h2>
+    </h2> -->
+
+    <a> 
+        <span (click)="back()" >
+        <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="4%" alt="back">
+         <span class="arrow-back-update" jhiTranslate="iotaOrignAdminApp.aPropos.home.backButton">Back</span>    
+        </span>
+    </a>
+    &nbsp;&nbsp; | &nbsp;&nbsp;
+    <span id="user-management-page-heading" jhiTranslate="userManagement.home.title" class="section-title"></span>           
+    </span>
+
+    <button class="btn btn-primary float-right jh-create-entity" [routerLink]="['./new']">
+        <fa-icon icon="plus"></fa-icon> <span jhiTranslate="userManagement.home.title">Create a new User</span>
+    </button>
+    
+    <hr>
 
     <jhi-alert-error></jhi-alert-error>
 

@@ -1,6 +1,7 @@
 package com.iota.orign.web.rest;
 
 import com.iota.orign.domain.User;
+import com.iota.orign.domain.EmailModel;
 import com.iota.orign.repository.UserRepository;
 import com.iota.orign.security.SecurityUtils;
 import com.iota.orign.service.MailService;
@@ -42,11 +43,14 @@ public class AccountResource {
 
     private final MailService mailService;
 
-    public AccountResource(UserRepository userRepository, UserService userService, MailService mailService) {
+    private final EmailModel emailModel;
+
+    public AccountResource(UserRepository userRepository, UserService userService, MailService mailService, EmailModel emailModel) {
 
         this.userRepository = userRepository;
         this.userService = userService;
         this.mailService = mailService;
+        this.emailModel = emailModel;
     }
 
     /**
@@ -158,6 +162,28 @@ public class AccountResource {
             log.warn("Password reset requested for non existing mail '{}'", mail);
         }
     }
+
+
+
+    /**
+     * {@code POST   /account/reset-password/send-email} : Send an email from contact user to iotaOrign.
+     *
+     * @param mail the mail of the user.
+     */
+    @PostMapping(path = "/account/send-email")
+    public void sendEmail(@RequestBody EmailModel emailModel) {
+        int test;
+        test = 0;
+        if (test == 0) {
+            mailService.sendEmail(emailModel.destinaire, emailModel.object, emailModel.message , true, true);
+        } else {
+            // Pretend the request has been successful to prevent checking which emails really exist
+            // but log that an invalid attempt has been made
+            log.warn("Tentative echouee '{}'", emailModel);
+        }
+    }
+
+
 
     /**
      * {@code POST   /account/reset-password/finish} : Finish to reset the password of the user.

@@ -1,0 +1,64 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "titreImprintEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreImprintFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreImprintGer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titreImprintSw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contenuImprintEn",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "7000"
+        },
+        {
+            "fieldName": "contenuImprintGer",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "7000"
+        },
+        {
+            "fieldName": "contenuImprintFr",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "7000"
+        },
+        {
+            "fieldName": "contenuImprintSw",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "7000"
+        }
+    ],
+    "changelogDate": "20220327165238",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "imprint",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "infinite-scroll"
+}

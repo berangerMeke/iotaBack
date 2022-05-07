@@ -1,0 +1,24 @@
+{
+  "iotaOrignAdminApp": {
+    "googleAnalitcs": {
+      "home": {
+        "title": "Kitambulisho cha Google Analytics",
+        "createLabel": "Weka kitambulisho",
+        "EditLabel": "Kitambulisho cha sasisho",
+        "consigne": "Bofya kitufe kifuatacho ili kusasisha",
+        "notFound": "Hakuna kitambulisho",
+        "backButton": "Rudi"
+      },
+      "created": "Google Analitcs mpya imeundwa kwa kitambulisho{{ param }}",
+      "updated": "Google Analitcs yenye kitambulisho {{ param }} imesasishwa",
+      "deleted": "Google Analitcs yenye kitambulisho{{ param }} imefutwa",
+      "delete": {
+        "question": "Je, una uhakika unataka kufuta Google Analitcs {{ id }} ?"
+      },
+      "detail": {
+        "title": "Google Analitcs"
+      },
+      "googleAnalyticsID": "Google Analytics ID"
+    }
+  }
+}

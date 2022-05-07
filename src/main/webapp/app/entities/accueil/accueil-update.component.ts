@@ -3,6 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import { JhiDataUtils, JhiFileLoadError, JhiEventManager, JhiEventWithContent } from 'ng-jhipster';
 import {TransfertDataService} from '../../core/services/transfert-data.service'
@@ -11,28 +12,31 @@ import { IAccueil, Accueil } from 'app/shared/model/accueil.model';
 import { AccueilService } from './accueil.service';
 import { AlertError } from 'app/shared/alert/alert-error.model';
 
-
 @Component({
   selector: 'jhi-accueil-update',
-  templateUrl: './accueil-update.component.html'
+  templateUrl: './accueil-update.component.html',
+  styleUrls: ['./accueil-update.scss']
 })
 export class AccueilUpdateComponent implements OnInit {
   isSaving = false;
+  
 
   eltChoisi : any;
+  isIntroNoExist: any;
+  submitted = false;
 
   editForm = this.fb.group({
     id: [],
-    titreFr: [],
-    titreEn: [],
-    titreGer: [],
-    titreSw: [],
-    sousTitreFr: [],
-    sousTitreEn: [],
-    sousTitreGer: [],
-    sousTitreSw: [],
-    image: [],
-    imageContentType: []
+    titreFr: ['', Validators.required],
+    titreEn: ['', Validators.required],
+    titreGer: ['', Validators.required],
+    titreSw: ['', Validators.required],
+    sousTitreFr: ['', Validators.required],
+    sousTitreEn: ['', Validators.required],
+    sousTitreGer: ['', Validators.required],
+    sousTitreSw: ['', Validators.required],
+    image: ['', Validators.required],
+    imageContentType: ['', Validators.required]
   });
 
 
@@ -41,12 +45,14 @@ export class AccueilUpdateComponent implements OnInit {
     protected eventManager: JhiEventManager,
     protected accueilService: AccueilService,
     protected elementRef: ElementRef,
+    private location: Location,
     public transfertDataService: TransfertDataService,
     protected activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {}
 
   ngOnInit(): void {
+    this.isIntroNoExist = localStorage.getItem('isNew'); 
     this.eltChoisi = this.transfertDataService.getData();
     this.activatedRoute.data.subscribe(({ accueil }) => {
       this.updateForm(accueil);
@@ -99,6 +105,11 @@ export class AccueilUpdateComponent implements OnInit {
   previousState(): void {
     window.history.back();
   }
+
+  back(): void {
+    this.location.back()
+  }
+
 
   save(): void {
     this.isSaving = true;

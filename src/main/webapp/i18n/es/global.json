@@ -2,56 +2,69 @@
   "global": {
     "title": "jopo la utawala",
     "browsehappy": "Está usando un navegador <strong>no actualizado</strong>. Por favor, <a href=\"http://browsehappy.com/?locale=es\">actualice su navegador</a> para mejorar su experiencia.",
+
+    "titrePanneauSection": "Ukurasa: Nyumbani - Sehemu",
+    "titrePanneauImprint": "Ukurasa: Notisi ya Kisheria",
+    "titrePanneauPrivacyPolicy": "Tangazo la kisiri",
+    "titrePanneauText": "Unda au Sasisha sehemu hii",
+    "titrePanneauTextButton": "Fungua",
+
     "menu": {
       "home": "Inicio",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
-        "main": "Entidades",
-        "accueil": "Accueil",
-        "aPropos": "A Propos",
-        "service": "Service",
-        "avantages": "Avantages",
-        "objectifs": "Objectifs",
-        "faQs": "FA Qs",
-        "equipe": "Equipe",
+        "main": "Sehemu/Kurasa",
+        "accueil": "Nyumbani",
+        "aPropos": "Kuhusu",
+        "service": "Huduma",
+        "avantages": "Faida",
+        "objectifs": "Malengo",
+        "faQs": "FAQs",
+        "equipe": "Timu",
+        "dernieresNouvelles": "Habari za hivi punde",
+        "imprint": "Notisi ya Kisheria",
+        "privacyPolicy": "Tangazo la usiri",
+        "piedPage": "Kijachini",
+        "footerSection": "Footer Section",
         "dernieresNouvelles": "Dernieres Nouvelles",
+        "googleAnalitcs": "Google Analitcs",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
-        "main": "Cuenta",
-        "settings": "Ajustes",
-        "password": "Contraseña",
-        "sessions": "Sesiones",
-        "login": "Iniciar sesión",
-        "logout": "Cerrar la sesión",
-        "register": "Crear una cuenta"
+        "main": "Akaunti",
+        "settings": "Wasifu",
+        "password": "Nenosiri",
+        "sessions": "Vikao",
+        "login": "Thibitisha",
+        "logout": "Ondoka",
+        "register": "Fungua akaunti"
       },
       "admin": {
-        "main": "Administración",
-        "userManagement": "Gestión de usuarios",
-        "tracker": "Registro de usuarios",
-        "metrics": "Métricas",
-        "health": "Salud",
-        "configuration": "Configuración",
+        "main": "Utawala",
+        "userManagement": "Gestion des utilisateurs",
+        "tracker": "Suivi des utilisateurs",
+        "metrics": "Métriques",
+        "health": "Diagnostics",
+        "configuration": "Configuration",
         "logs": "Logs",
-        "audits": "Auditorías",
+        "audits": "Audits",
         "apidocs": "API",
-        "database": "Base de datos",
+        "database": "Base de données",
         "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
       },
-      "language": "Idioma"
+      "language": "lugha"
     },
     "form": {
-      "username.label": "Usuario",
-      "username.placeholder": "Nombre de usuario",
-      "currentpassword.label": "Contraseña actual",
-      "currentpassword.placeholder": "Contraseña actual",
-      "newpassword.label": "Nueva contraseña",
-      "newpassword.placeholder": "Nueva contraseña",
-      "confirmpassword.label": "Confirmación de la nueva contraseña",
-      "confirmpassword.placeholder": "Confirmación de la nueva contraseña",
-      "email.label": "Correo electrónico",
-      "email.placeholder": "Su correo electrónico"
+      "username.label": "jina la mtumiaji",
+      "username.placeholder": "Jina lako la mtumiaji",
+      "currentpassword.label": "Nenosiri la sasa",
+      "currentpassword.placeholder": "Nenosiri la sasa",
+      "newpassword.label": "Nenosiri mpya",
+      "newpassword.placeholder": "Nenosiri Mpya",
+      "confirmpassword.label": "Uthibitishaji wa nenosiri mpya",
+      "confirmpassword.placeholder": "Uthibitishaji wa nenosiri mpya",
+      "email.label": "Email",
+      "email.placeholder": "Wako email"
     },
     "messages": {
       "info": {
@@ -98,15 +111,15 @@
   },
   "entity": {
     "action": {
-      "addblob": "Añadir fichero",
-      "addimage": "Añadir imagen",
-      "back": "Volver",
-      "cancel": "Cancelar",
-      "delete": "Eliminar",
-      "edit": "Editar",
-      "open": "Abrir",
-      "save": "Guardar",
-      "view": "Vista"
+      "addblob": "ongeza blob",
+      "addimage": "Ongeza picha",
+      "back": "Rudi",
+      "cancel": "kughairi",
+      "edit": "Hariri",
+      "delete": "Ondoa",
+      "open": "Fungua",
+      "save": "Ili kulinda",
+      "view": "Kuona"
     },
     "detail": {
       "field": "Campo",
@@ -143,5 +156,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "Pie de página"
+  "footer": "© 2022 IotaOrigin UG. Haki zote zimehifadhiwa."
 }

@@ -1,0 +1,130 @@
+<div>
+
+    <h3>
+        <a> 
+            <span (click)="back()">
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="3%" alt="back">
+                <span class="arrow-back" jhiTranslate="iotaOrignAdminApp.privacyPolicy.home.backButton">Back</span>    
+            </span>
+        </a>
+        &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span jhiTranslate="iotaOrignAdminApp.privacyPolicy.home.title">privacyPolicy us Section</span>
+        &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span *ngIf="privacyPolicies.length > 0" style="color: rgb(82, 82, 82); font-size:60%" jhiTranslate="iotaOrignAdminApp.privacyPolicy.home.consigne">
+            Cliquez sur l'élément que vous souhaitez mettre à jour.
+        </span>    
+    
+        <button *ngIf="privacyPolicies.length < 1" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-privacyPolicy" 
+            [routerLink]="['/privacy-policy/new']"
+            (click)="createPrivacyPolicy()">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.privacyPolicy.home.createLabel">Create a new A Propos</span>
+        </button>
+        &nbsp;&nbsp;&nbsp;
+        <button *ngIf="privacyPolicies.length >= 1" type="submit" (click)="delete(privacyPolicies[0])"
+                class="btn btn-danger btn-sm">
+            <fa-icon icon="times"></fa-icon>
+            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+        </button>
+    </h3>
+ 
+ <hr>
+
+
+    <!-- <jhi-alert-error></jhi-alert-error> -->
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="privacyPolicies?.length === 0">
+        <span jhiTranslate="iotaOrignAdminApp.privacyPolicy.home.notFound">No privacyPolicies found</span>
+    </div>
+
+    <!-- <div class="table-responsive" id="entities" *ngIf="privacyPolicies?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titrePrivacyPolicyEn"><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.titrePrivacyPolicyEn">Titre Privacy Policy En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titrePrivacyPolicyGer"><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.titrePrivacyPolicyGer">Titre Privacy Policy Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titrePrivacyPolicyFr"><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.titrePrivacyPolicyFr">Titre Privacy Policy Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titrePrivacyPolicySw"><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.titrePrivacyPolicySw">Titre Privacy Policy Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="contenuPrivacyPolicyEn"><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.contenuPrivacyPolicyEn">Contenu Privacy Policy En</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="contenuPrivacyPolicyGer"><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.contenuPrivacyPolicyGer">Contenu Privacy Policy Ger</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="contenuPrivacyPolicyFr"><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.contenuPrivacyPolicyFr">Contenu Privacy Policy Fr</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="contenuPrivacyPolicySw"><span jhiTranslate="iotaOrignAdminApp.privacyPolicy.contenuPrivacyPolicySw">Contenu Privacy Policy Sw</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let privacyPolicy of privacyPolicies ;trackBy: trackId">
+                    <td><a [routerLink]="['/privacy-policy', privacyPolicy.id, 'view']">{{ privacyPolicy.id }}</a></td>
+                    <td>{{ privacyPolicy.titrePrivacyPolicyEn }}</td>
+                    <td>{{ privacyPolicy.titrePrivacyPolicyGer }}</td>
+                    <td>{{ privacyPolicy.titrePrivacyPolicyFr }}</td>
+                    <td>{{ privacyPolicy.titrePrivacyPolicySw }}</td>
+                    <td>{{ privacyPolicy.contenuPrivacyPolicyEn }}</td>
+                    <td>{{ privacyPolicy.contenuPrivacyPolicyGer }}</td>
+                    <td>{{ privacyPolicy.contenuPrivacyPolicyFr }}</td>
+                    <td>{{ privacyPolicy.contenuPrivacyPolicySw }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/privacy-policy', privacyPolicy.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/privacy-policy', privacyPolicy.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(privacyPolicy)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
+
+</div>
+
+
+ <!-- START THE SECTION 1 : THE PRIVACY POLICY -->
+ <section *ngIf="privacyPolicies[0]" id="privacy-policy" class="privacy-policy">
+    <div class="container">
+        <div class="row">
+            <div class="privacy-policy-box">
+                <h1 class="privacy-policy-box--title display-3 display-3-grandient fw-bold mb-4 anim-elt-1">
+                    <a [routerLink]="['/privacy-policy', privacyPolicies[0].id, 'edit']" 
+                    (click)="update('titre')"
+                    class="paragraphe-style ">
+                        <span *ngIf="languageService.currentLang === 'fr'">{{privacyPolicies[0].titrePrivacyPolicyFr}}</span>
+                        <span *ngIf="languageService.currentLang === 'en'">{{privacyPolicies[0].titrePrivacyPolicyEn}}</span>
+                        <span *ngIf="languageService.currentLang === 'es'">{{privacyPolicies[0].titrePrivacyPolicySw}}</span>
+                        <span *ngIf="languageService.currentLang === 'de'">{{privacyPolicies[0].titrePrivacyPolicyGer}}</span>
+                    </a>
+                </h1>
+
+                <div>
+                    <a [routerLink]="['/privacy-policy', privacyPolicies[0].id, 'edit']" 
+                    (click)="update('contenu')"
+                    class="paragraphe-style ">
+                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="privacyPolicies[0].contenuPrivacyPolicyFr"></div>
+                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="privacyPolicies[0].contenuPrivacyPolicyEn"></div>
+                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="privacyPolicies[0].contenuPrivacyPolicyGer"></div>
+                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="privacyPolicies[0].contenuPrivacyPolicySw"></div>
+                    </a>               
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

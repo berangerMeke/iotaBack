@@ -1,30 +1,30 @@
 {
   "settings": {
-    "title": "Ajustes del usuario [<strong>{{username}}</strong>]",
+    "title": "Wasifu wa Mtumiaji [<strong>{{username}}</strong>]",
     "form": {
-      "firstname": "Nombre",
-      "firstname.placeholder": "Su nombre",
-      "lastname": "Apellidos",
-      "lastname.placeholder": "Sus apellidos",
-      "language": "Idioma",
-      "button": "Guardar"
+      "firstname": "Jina la kwanza",
+      "firstname.placeholder": "Jina lako la kwanza",
+      "lastname": "jina",
+      "lastname.placeholder": "Jina lako",
+      "language": "Lugha",
+      "button": "Ili kulinda"
     },
     "messages": {
       "error": {
-        "fail": "<strong>¡Ha ocurrido un error!</strong> Los ajustes no se han podido guardar.",
-        "emailexists": "<strong>¡La dirección de correo ya existe!</strong> Por favor, escoja otra."
+        "fail": "<strong>Kosa limetokea !</strong> Wasifu wako haujahifadhiwa.",
+        "emailexists": "<strong>Barua pepe hii tayari inatumika!</strong> Tafadhali chagua nyingine."
       },
-      "success": "<strong>¡Ajustes guardados!</strong>",
+      "success": "<strong>Wasifu wako umehifadhiwa!</strong>",
       "validate": {
         "firstname": {
-          "required": "Se requiere que ingrese su nombre.",
-          "minlength": "Se requiere que su nombre tenga por lo menos 1 caracter",
-          "maxlength": "Su nombre no puede tener más de 50 caracteres"
+          "required": "Jina lako la kwanza linahitajika.",
+          "minlength": "Jina lako la kwanza lazima liwe na angalau herufi moja.",
+          "maxlength": "Jina lako la kwanza lazima lisiwe na vibambo 50."
         },
         "lastname": {
-          "required": "Se requiere que ingrese sus apellidos.",
-          "minlength": "Se requiere que sus apellidos tengan por lo menos 1 caracter",
-          "maxlength": "Sus apellidos no pueden tener más de 50 caracteres"
+          "required": "Jina lako linahitajika.",
+          "minlength": "VJina lako lazima liwe na angalau herufi moja.",
+          "maxlength": "Jina lako lisizidi herufi 50."
         }
       }
     }

@@ -1,0 +1,35 @@
+{
+  "iotaOrignAdminApp": {
+    "footerSection": {
+      "home": {
+        "title": "Pied de page",
+        "createLabel": "Créer la section",
+        "EditLabel": "Mettre à jour la section",
+        "consigne": "Cliquez sur l'élément que vous souhaitez mettre à jour",
+        "notFound": "Section vide",
+        "backButton": "Retour"
+      },
+      "created": "Un nouveau Footer Section a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Footer Section avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Footer Section avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Footer Section {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pied de page"
+      },
+      "titreFr": "Titre en Français",
+      "titreEn": "Titre en Anglais",
+      "titreGer": "Titre en Allemand",
+      "titreSw": "Titre en Swahili",
+      "sousTitreFr": "Sous-titre en Français",
+      "sousTitreEn": "Sous-titre en Englais",
+      "sousTitreGer": "Sous-titre en Allemand",
+      "sousTitreSw": "Sous-titre en Swahili",
+      "logo": "Logo",
+      "texteBouton": "Envoyer",
+      "twitterlink": "Lien twitter",
+      "discordLink": "Lien discord"
+    }
+  }
+}

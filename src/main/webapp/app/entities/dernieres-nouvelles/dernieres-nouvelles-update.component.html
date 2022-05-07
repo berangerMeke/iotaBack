@@ -1,507 +1,728 @@
 <div class="row justify-content-center">
-    <div class="col-8">
+    <div class="col-11">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-dernieres-nouvelles-heading" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.createOrEditLabel">Create or edit a Dernieres Nouvelles</h2>
+            <a> 
+                <span (click)="back()" >
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="4%" alt="back">
+                 <span class="arrow-back-update" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.backButton">Back</span>    
+                </span>
+            </a>
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            <span jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.title" class="section-title">Intro Section</span>
+             &nbsp;&nbsp; | &nbsp;&nbsp;  
+            <span *ngIf="isDernieresNouvellesNoExist === 'true'" id="jhi-dernieresNouvelles-heading" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.createLabel" 
+            class="section-title2"> 
+                Create dernieresNouvelles Section
+            </span> 
+            <span *ngIf="isDernieresNouvellesNoExist != 'true'" id="jhi-dernieresNouvelles-heading" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.home.EditLabel" 
+            class="section-title2">
+                Update dernieresNouvelles Section
+            </span>
+            
+            <hr>
 
             <div>
-                <jhi-alert-error></jhi-alert-error>
+                <!-- <jhi-alert-error></jhi-alert-error> -->
 
-                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                <!-- <div class="form-group" [hidden]="!editForm.get('id')!.value">
                     <label for="id" jhiTranslate="global.field.id">ID</label>
                     <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreFr" for="field_titreFr">Titre Fr</label>
-                    <input type="text" class="form-control" name="titreFr" id="field_titreFr"
-                           formControlName="titreFr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreEn" for="field_titreEn">Titre En</label>
-                    <input type="text" class="form-control" name="titreEn" id="field_titreEn"
-                           formControlName="titreEn"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreGer" for="field_titreGer">Titre Ger</label>
-                    <input type="text" class="form-control" name="titreGer" id="field_titreGer"
-                           formControlName="titreGer"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSw" for="field_titreSw">Titre Sw</label>
-                    <input type="text" class="form-control" name="titreSw" id="field_titreSw"
-                           formControlName="titreSw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.sousTitreFr" for="field_sousTitreFr">Sous Titre Fr</label>
-                    <input type="text" class="form-control" name="sousTitreFr" id="field_sousTitreFr"
-                           formControlName="sousTitreFr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.sousTitreEn" for="field_sousTitreEn">Sous Titre En</label>
-                    <input type="text" class="form-control" name="sousTitreEn" id="field_sousTitreEn"
-                           formControlName="sousTitreEn"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.sousTitreGer" for="field_sousTitreGer">Sous Titre Ger</label>
-                    <input type="text" class="form-control" name="sousTitreGer" id="field_sousTitreGer"
-                           formControlName="sousTitreGer"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.sousTitreSw" for="field_sousTitreSw">Sous Titre Sw</label>
-                    <input type="text" class="form-control" name="sousTitreSw" id="field_sousTitreSw"
-                           formControlName="sousTitreSw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1Fr" for="field_titreSlide1Fr">Titre Slide 1 Fr</label>
-                    <input type="text" class="form-control" name="titreSlide1Fr" id="field_titreSlide1Fr"
-                           formControlName="titreSlide1Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1En" for="field_titreSlide1En">Titre Slide 1 En</label>
-                    <input type="text" class="form-control" name="titreSlide1En" id="field_titreSlide1En"
-                           formControlName="titreSlide1En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1Ger" for="field_titreSlide1Ger">Titre Slide 1 Ger</label>
-                    <input type="text" class="form-control" name="titreSlide1Ger" id="field_titreSlide1Ger"
-                           formControlName="titreSlide1Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1Sw" for="field_titreSlide1Sw">Titre Slide 1 Sw</label>
-                    <input type="text" class="form-control" name="titreSlide1Sw" id="field_titreSlide1Sw"
-                           formControlName="titreSlide1Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide2Fr" for="field_titreSlide2Fr">Titre Slide 2 Fr</label>
-                    <input type="text" class="form-control" name="titreSlide2Fr" id="field_titreSlide2Fr"
-                           formControlName="titreSlide2Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide2En" for="field_titreSlide2En">Titre Slide 2 En</label>
-                    <input type="text" class="form-control" name="titreSlide2En" id="field_titreSlide2En"
-                           formControlName="titreSlide2En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide2Ger" for="field_titreSlide2Ger">Titre Slide 2 Ger</label>
-                    <input type="text" class="form-control" name="titreSlide2Ger" id="field_titreSlide2Ger"
-                           formControlName="titreSlide2Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide2Sw" for="field_titreSlide2Sw">Titre Slide 2 Sw</label>
-                    <input type="text" class="form-control" name="titreSlide2Sw" id="field_titreSlide2Sw"
-                           formControlName="titreSlide2Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide3Fr" for="field_titreSlide3Fr">Titre Slide 3 Fr</label>
-                    <input type="text" class="form-control" name="titreSlide3Fr" id="field_titreSlide3Fr"
-                           formControlName="titreSlide3Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide3En" for="field_titreSlide3En">Titre Slide 3 En</label>
-                    <input type="text" class="form-control" name="titreSlide3En" id="field_titreSlide3En"
-                           formControlName="titreSlide3En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide3Ger" for="field_titreSlide3Ger">Titre Slide 3 Ger</label>
-                    <input type="text" class="form-control" name="titreSlide3Ger" id="field_titreSlide3Ger"
-                           formControlName="titreSlide3Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide3Sw" for="field_titreSlide3Sw">Titre Slide 3 Sw</label>
-                    <input type="text" class="form-control" name="titreSlide3Sw" id="field_titreSlide3Sw"
-                           formControlName="titreSlide3Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide4Fr" for="field_titreSlide4Fr">Titre Slide 4 Fr</label>
-                    <input type="text" class="form-control" name="titreSlide4Fr" id="field_titreSlide4Fr"
-                           formControlName="titreSlide4Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide4En" for="field_titreSlide4En">Titre Slide 4 En</label>
-                    <input type="text" class="form-control" name="titreSlide4En" id="field_titreSlide4En"
-                           formControlName="titreSlide4En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide4Ger" for="field_titreSlide4Ger">Titre Slide 4 Ger</label>
-                    <input type="text" class="form-control" name="titreSlide4Ger" id="field_titreSlide4Ger"
-                           formControlName="titreSlide4Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide4Sw" for="field_titreSlide4Sw">Titre Slide 4 Sw</label>
-                    <input type="text" class="form-control" name="titreSlide4Sw" id="field_titreSlide4Sw"
-                           formControlName="titreSlide4Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide5Fr" for="field_titreSlide5Fr">Titre Slide 5 Fr</label>
-                    <input type="text" class="form-control" name="titreSlide5Fr" id="field_titreSlide5Fr"
-                           formControlName="titreSlide5Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide5En" for="field_titreSlide5En">Titre Slide 5 En</label>
-                    <input type="text" class="form-control" name="titreSlide5En" id="field_titreSlide5En"
-                           formControlName="titreSlide5En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide5Ger" for="field_titreSlide5Ger">Titre Slide 5 Ger</label>
-                    <input type="text" class="form-control" name="titreSlide5Ger" id="field_titreSlide5Ger"
-                           formControlName="titreSlide5Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide5Sw" for="field_titreSlide5Sw">Titre Slide 5 Sw</label>
-                    <input type="text" class="form-control" name="titreSlide5Sw" id="field_titreSlide5Sw"
-                           formControlName="titreSlide5Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide6Fr" for="field_titreSlide6Fr">Titre Slide 6 Fr</label>
-                    <input type="text" class="form-control" name="titreSlide6Fr" id="field_titreSlide6Fr"
-                           formControlName="titreSlide6Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide6En" for="field_titreSlide6En">Titre Slide 6 En</label>
-                    <input type="text" class="form-control" name="titreSlide6En" id="field_titreSlide6En"
-                           formControlName="titreSlide6En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide6Ger" for="field_titreSlide6Ger">Titre Slide 6 Ger</label>
-                    <input type="text" class="form-control" name="titreSlide6Ger" id="field_titreSlide6Ger"
-                           formControlName="titreSlide6Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide6Sw" for="field_titreSlide6Sw">Titre Slide 6 Sw</label>
-                    <input type="text" class="form-control" name="titreSlide6Sw" id="field_titreSlide6Sw"
-                           formControlName="titreSlide6Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide7Fr" for="field_titreSlide7Fr">Titre Slide 7 Fr</label>
-                    <input type="text" class="form-control" name="titreSlide7Fr" id="field_titreSlide7Fr"
-                           formControlName="titreSlide7Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide7En" for="field_titreSlide7En">Titre Slide 7 En</label>
-                    <input type="text" class="form-control" name="titreSlide7En" id="field_titreSlide7En"
-                           formControlName="titreSlide7En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide7Ger" for="field_titreSlide7Ger">Titre Slide 7 Ger</label>
-                    <input type="text" class="form-control" name="titreSlide7Ger" id="field_titreSlide7Ger"
-                           formControlName="titreSlide7Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide7Sw" for="field_titreSlide7Sw">Titre Slide 7 Sw</label>
-                    <input type="text" class="form-control" name="titreSlide7Sw" id="field_titreSlide7Sw"
-                           formControlName="titreSlide7Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide8Fr" for="field_titreSlide8Fr">Titre Slide 8 Fr</label>
-                    <input type="text" class="form-control" name="titreSlide8Fr" id="field_titreSlide8Fr"
-                           formControlName="titreSlide8Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide8En" for="field_titreSlide8En">Titre Slide 8 En</label>
-                    <input type="text" class="form-control" name="titreSlide8En" id="field_titreSlide8En"
-                           formControlName="titreSlide8En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide8Ger" for="field_titreSlide8Ger">Titre Slide 8 Ger</label>
-                    <input type="text" class="form-control" name="titreSlide8Ger" id="field_titreSlide8Ger"
-                           formControlName="titreSlide8Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide8Sw" for="field_titreSlide8Sw">Titre Slide 8 Sw</label>
-                    <input type="text" class="form-control" name="titreSlide8Sw" id="field_titreSlide8Sw"
-                           formControlName="titreSlide8Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide9Fr" for="field_titreSlide9Fr">Titre Slide 9 Fr</label>
-                    <input type="text" class="form-control" name="titreSlide9Fr" id="field_titreSlide9Fr"
-                           formControlName="titreSlide9Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide9En" for="field_titreSlide9En">Titre Slide 9 En</label>
-                    <input type="text" class="form-control" name="titreSlide9En" id="field_titreSlide9En"
-                           formControlName="titreSlide9En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide9Ger" for="field_titreSlide9Ger">Titre Slide 9 Ger</label>
-                    <input type="text" class="form-control" name="titreSlide9Ger" id="field_titreSlide9Ger"
-                           formControlName="titreSlide9Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide9Sw" for="field_titreSlide9Sw">Titre Slide 9 Sw</label>
-                    <input type="text" class="form-control" name="titreSlide9Sw" id="field_titreSlide9Sw"
-                           formControlName="titreSlide9Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1OFr" for="field_titreSlide1OFr">Titre Slide 1 O Fr</label>
-                    <input type="text" class="form-control" name="titreSlide1OFr" id="field_titreSlide1OFr"
-                           formControlName="titreSlide1OFr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1OEn" for="field_titreSlide1OEn">Titre Slide 1 O En</label>
-                    <input type="text" class="form-control" name="titreSlide1OEn" id="field_titreSlide1OEn"
-                           formControlName="titreSlide1OEn"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1OGer" for="field_titreSlide1OGer">Titre Slide 1 O Ger</label>
-                    <input type="text" class="form-control" name="titreSlide1OGer" id="field_titreSlide1OGer"
-                           formControlName="titreSlide1OGer"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSlide1OSw" for="field_titreSlide1OSw">Titre Slide 1 O Sw</label>
-                    <input type="text" class="form-control" name="titreSlide1OSw" id="field_titreSlide1OSw"
-                           formControlName="titreSlide1OSw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1Fr" for="field_textSlide1Fr">Text Slide 1 Fr</label>
-                    <input type="text" class="form-control" name="textSlide1Fr" id="field_textSlide1Fr"
-                           formControlName="textSlide1Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1En" for="field_textSlide1En">Text Slide 1 En</label>
-                    <input type="text" class="form-control" name="textSlide1En" id="field_textSlide1En"
-                           formControlName="textSlide1En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1Ger" for="field_textSlide1Ger">Text Slide 1 Ger</label>
-                    <input type="text" class="form-control" name="textSlide1Ger" id="field_textSlide1Ger"
-                           formControlName="textSlide1Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1Sw" for="field_textSlide1Sw">Text Slide 1 Sw</label>
-                    <input type="text" class="form-control" name="textSlide1Sw" id="field_textSlide1Sw"
-                           formControlName="textSlide1Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2Fr" for="field_textSlide2Fr">Text Slide 2 Fr</label>
-                    <input type="text" class="form-control" name="textSlide2Fr" id="field_textSlide2Fr"
-                           formControlName="textSlide2Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2En" for="field_textSlide2En">Text Slide 2 En</label>
-                    <input type="text" class="form-control" name="textSlide2En" id="field_textSlide2En"
-                           formControlName="textSlide2En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2Ger" for="field_textSlide2Ger">Text Slide 2 Ger</label>
-                    <input type="text" class="form-control" name="textSlide2Ger" id="field_textSlide2Ger"
-                           formControlName="textSlide2Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2Sw" for="field_textSlide2Sw">Text Slide 2 Sw</label>
-                    <input type="text" class="form-control" name="textSlide2Sw" id="field_textSlide2Sw"
-                           formControlName="textSlide2Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3Fr" for="field_textSlide3Fr">Text Slide 3 Fr</label>
-                    <input type="text" class="form-control" name="textSlide3Fr" id="field_textSlide3Fr"
-                           formControlName="textSlide3Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3En" for="field_textSlide3En">Text Slide 3 En</label>
-                    <input type="text" class="form-control" name="textSlide3En" id="field_textSlide3En"
-                           formControlName="textSlide3En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3Ger" for="field_textSlide3Ger">Text Slide 3 Ger</label>
-                    <input type="text" class="form-control" name="textSlide3Ger" id="field_textSlide3Ger"
-                           formControlName="textSlide3Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3Sw" for="field_textSlide3Sw">Text Slide 3 Sw</label>
-                    <input type="text" class="form-control" name="textSlide3Sw" id="field_textSlide3Sw"
-                           formControlName="textSlide3Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4Fr" for="field_textSlide4Fr">Text Slide 4 Fr</label>
-                    <input type="text" class="form-control" name="textSlide4Fr" id="field_textSlide4Fr"
-                           formControlName="textSlide4Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4En" for="field_textSlide4En">Text Slide 4 En</label>
-                    <input type="text" class="form-control" name="textSlide4En" id="field_textSlide4En"
-                           formControlName="textSlide4En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4Ger" for="field_textSlide4Ger">Text Slide 4 Ger</label>
-                    <input type="text" class="form-control" name="textSlide4Ger" id="field_textSlide4Ger"
-                           formControlName="textSlide4Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4Sw" for="field_textSlide4Sw">Text Slide 4 Sw</label>
-                    <input type="text" class="form-control" name="textSlide4Sw" id="field_textSlide4Sw"
-                           formControlName="textSlide4Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5Fr" for="field_textSlide5Fr">Text Slide 5 Fr</label>
-                    <input type="text" class="form-control" name="textSlide5Fr" id="field_textSlide5Fr"
-                           formControlName="textSlide5Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5En" for="field_textSlide5En">Text Slide 5 En</label>
-                    <input type="text" class="form-control" name="textSlide5En" id="field_textSlide5En"
-                           formControlName="textSlide5En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5Ger" for="field_textSlide5Ger">Text Slide 5 Ger</label>
-                    <input type="text" class="form-control" name="textSlide5Ger" id="field_textSlide5Ger"
-                           formControlName="textSlide5Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5Sw" for="field_textSlide5Sw">Text Slide 5 Sw</label>
-                    <input type="text" class="form-control" name="textSlide5Sw" id="field_textSlide5Sw"
-                           formControlName="textSlide5Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6Fr" for="field_textSlide6Fr">Text Slide 6 Fr</label>
-                    <input type="text" class="form-control" name="textSlide6Fr" id="field_textSlide6Fr"
-                           formControlName="textSlide6Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6En" for="field_textSlide6En">Text Slide 6 En</label>
-                    <input type="text" class="form-control" name="textSlide6En" id="field_textSlide6En"
-                           formControlName="textSlide6En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6Ger" for="field_textSlide6Ger">Text Slide 6 Ger</label>
-                    <input type="text" class="form-control" name="textSlide6Ger" id="field_textSlide6Ger"
-                           formControlName="textSlide6Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6Sw" for="field_textSlide6Sw">Text Slide 6 Sw</label>
-                    <input type="text" class="form-control" name="textSlide6Sw" id="field_textSlide6Sw"
-                           formControlName="textSlide6Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Fr" for="field_textSlide7Fr">Text Slide 7 Fr</label>
-                    <input type="text" class="form-control" name="textSlide7Fr" id="field_textSlide7Fr"
-                           formControlName="textSlide7Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7En" for="field_textSlide7En">Text Slide 7 En</label>
-                    <input type="text" class="form-control" name="textSlide7En" id="field_textSlide7En"
-                           formControlName="textSlide7En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Ger" for="field_textSlide7Ger">Text Slide 7 Ger</label>
-                    <input type="text" class="form-control" name="textSlide7Ger" id="field_textSlide7Ger"
-                           formControlName="textSlide7Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Sw" for="field_textSlide7Sw">Text Slide 7 Sw</label>
-                    <input type="text" class="form-control" name="textSlide7Sw" id="field_textSlide7Sw"
-                           formControlName="textSlide7Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Fr" for="field_textSlide8Fr">Text Slide 8 Fr</label>
-                    <input type="text" class="form-control" name="textSlide8Fr" id="field_textSlide8Fr"
-                           formControlName="textSlide8Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8En" for="field_textSlide8En">Text Slide 8 En</label>
-                    <input type="text" class="form-control" name="textSlide8En" id="field_textSlide8En"
-                           formControlName="textSlide8En"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Ger" for="field_textSlide8Ger">Text Slide 8 Ger</label>
-                    <input type="text" class="form-control" name="textSlide8Ger" id="field_textSlide8Ger"
-                           formControlName="textSlide8Ger"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Sw" for="field_textSlide8Sw">Text Slide 8 Sw</label>
-                    <input type="text" class="form-control" name="textSlide8Sw" id="field_textSlide8Sw"
-                           formControlName="textSlide8Sw"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9Fr" for="field_textSlide9Fr">Text Slide 9 Fr</label>
-                    <input type="text" class="form-control" name="textSlide9Fr" id="field_textSlide9Fr"
-                           formControlName="textSlide9Fr"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9En" for="field_textSlide9En">Text Slide 9 En</label>
-                    <input type="text" class="form-control" name="textSlide9En" id="field_textSlide9En"
-                           formControlName="textSlide9En"/>
-                </div>
+                </div> -->
+
+                <div *ngIf="eltChoisi === 'titre' || isDernieresNouvellesNoExist === 'true'">                      
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreEn" 
+                        for="field_titreEn">English Title
+                        </label>
+                        <input type="text" class="form-control" name="titreEn" id="field_titreEn"
+                            formControlName="titreEn"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreGer" 
+                        for="field_titreGer">German Title
+                        </label>
+                        <input type="text" class="form-control" name="titreGer" id="field_titreGer"
+                            formControlName="titreGer"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreFr" 
+                        for="field_titreFr">French Title
+                        </label>
+                        <input type="text" class="form-control" name="titreFr" id="field_titreFr"
+                            formControlName="titreFr"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.titreSw" 
+                        for="field_titreSw">Swahili Title
+                        </label>
+                        <input type="text" class="form-control" name="titreSw" id="field_titreSw"
+                            formControlName="titreSw"/>
+                    </div>
+                </div> 
+
+
+                <div *ngIf="eltChoisi === 'contenuSlide1' || isDernieresNouvellesNoExist === 'true'"> 
+                    
+                    <div class="form-group">                       
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1En" 
+                        for="field_titreAccordion1En">Title Slide 1 En
+                        </label>
+                        <ckeditor [editor]="Editor" name="textSlide1En" 
+                        id="field_textSlide1En" formControlName="textSlide1En" 
+                        data="textSlide1En">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1Ger" for="field_textSlide1Ger">Text Slide 1 Ger</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide1Ger" 
+                        id="field_textSlide1Ger" formControlName="textSlide1Ger" 
+                        data="textSlide1Ger">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1Fr" for="field_textSlide1Fr">Text Slide 1 Fr</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide1Fr" 
+                        id="field_textSlide1Fr" formControlName="textSlide1Fr" 
+                        data="textSlide1Fr">
+                        </ckeditor> 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide1Sw" for="field_textSlide1Sw">Text Slide 1 Sw</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide1Sw" 
+                        id="field_textSlide1Sw" formControlName="textSlide1Sw" 
+                        data="textSlide1Sw">
+                        </ckeditor>
+                    </div>
+
+                    <div>
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date1" for="field_date1">Date 1</label>
+                        <input type="text" class="form-control" name="date1" id="field_date1"
+                               formControlName="date1"/>
+                    </div>
+
+                    <div class="form-group image-style" >
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide1" for="field_imageSlide1">Image Slide 1</label>
+                        <div>
+                            <img [src]="'data:' + editForm.get('imageSlide1ContentType')!.value + ';base64,' + editForm.get('imageSlide1')!.value" style="width: 54%;" *ngIf="editForm.get('imageSlide1')!.value" alt="dernieresNouvelles image"/>
+                            <div *ngIf="editForm.get('imageSlide1')!.value" class="form-text text-danger clearfix">
+                                <span class="pull-left">{{ editForm.get('imageSlide1ContentType')!.value }}, {{ byteSize(editForm.get('imageSlide1')!.value) }}</span>
+                                <button type="button" (click)="clearInputImage('imageSlide1', 'imageSlide1ContentType', 'file_imageSlide1')" class="btn btn-secondary btn-xs pull-right">
+                                    <fa-icon icon="times"></fa-icon>
+                                </button>
+                            </div>
+                            <input type="file" id="file_imageSlide1" (change)="setFileData($event, 'imageSlide1', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                        </div>
+                        <input type="hidden" class="form-control" name="imageSlide1" id="field_imageSlide1"
+                               formControlName="imageSlide1"/>
+                        <input type="hidden" class="form-control" name="imageSlide1ContentType" id="field_imageSlide1ContentType"
+                               formControlName="imageSlide1ContentType" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore1" for="field_readMore1">Read More 1</label>
+                        <input type="text" class="form-control" name="readMore1" id="field_readMore1"
+                               formControlName="readMore1"/>
+                    </div>
+                </div>
+
+
+
+                <div *ngIf="eltChoisi === 'contenuSlide2' || isDernieresNouvellesNoExist === 'true'">     
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2En" for="field_textSlide2En">Text Slide 2 En</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide2En" 
+                        id="field_textSlide2En" formControlName="textSlide2En" 
+                        data="textSlide2En">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2Ger" for="field_textSlide2Ger">Text Slide 2 Ger</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide2Ger" 
+                        id="field_textSlide2Ger" formControlName="textSlide2Ger" 
+                        data="textSlide2Ger">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2Fr" for="field_textSlide2Fr">Text Slide 2 Fr</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide2Fr" 
+                        id="field_textSlide2Fr" formControlName="textSlide2Fr" 
+                        data="textSlide2Fr">
+                        </ckeditor> 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide2Sw" for="field_textSlideSw">Text Slide 2 Sw</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide2Sw" 
+                        id="field_textSlide2Sw" formControlName="textSlide2Sw" 
+                        data="textSlide2Sw">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date2" for="field_date2">Date 2</label>
+                        <input type="text" class="form-control" name="date2" id="field_date2"
+                               formControlName="date2"/>
+                    </div>
+
+                    <div class="form-group image-style">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide2" for="field_imageSlide2">Image Slide 2</label>
+                        <div>
+                            <img [src]="'data:' + editForm.get('imageSlide2ContentType')!.value + ';base64,' + editForm.get('imageSlide2')!.value" style="width: 54%;" *ngIf="editForm.get('imageSlide2')!.value" alt="dernieresNouvelles image"/>
+                            <div *ngIf="editForm.get('imageSlide2')!.value" class="form-text text-danger clearfix">
+                                <span class="pull-left">{{ editForm.get('imageSlide2ContentType')!.value }}, {{ byteSize(editForm.get('imageSlide2')!.value) }}</span>
+                                <button type="button" (click)="clearInputImage('imageSlide2', 'imageSlide2ContentType', 'file_imageSlide2')" class="btn btn-secondary btn-xs pull-right">
+                                    <fa-icon icon="times"></fa-icon>
+                                </button>
+                            </div>
+                            <input type="file" id="file_imageSlide2" (change)="setFileData($event, 'imageSlide2', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                        </div>
+                        <input type="hidden" class="form-control" name="imageSlide2" id="field_imageSlide2"
+                               formControlName="imageSlide2"/>
+                        <input type="hidden" class="form-control" name="imageSlide2ContentType" id="field_imageSlide2ContentType"
+                               formControlName="imageSlide2ContentType" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore2" for="field_readMore2">Read More 2</label>
+                        <input type="text" class="form-control" name="readMore2" id="field_readMore2"
+                               formControlName="readMore2"/>
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'contenuSlide3' || isDernieresNouvellesNoExist === 'true'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3En" for="field_textSlide3En">Text Slide 3 En</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide3En" 
+                        id="field_textSlide3En" formControlName="textSlide3En" 
+                        data="textSlide3En">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3Ger" for="field_textSlide3Ger">Text Slide 3 Ger</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide3Ger" 
+                        id="field_textSlide3Ger" formControlName="textSlide3Ger" 
+                        data="textSlide3Ger">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3Fr" for="field_textSlide3Fr">Text Slide 3 Fr</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide3Fr" 
+                        id="field_textSlide3Fr" formControlName="textSlide3Fr" 
+                        data="textSlide3Fr">
+                        </ckeditor> 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide3Sw" for="field_textSlide3Sw">Text Slide 3 Sw</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide3Sw" 
+                        id="field_textSlide3Sw" formControlName="textSlide3Sw" 
+                        data="textSlide3Sw">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date3" for="field_date3">Date 3</label>
+                        <input type="text" class="form-control" name="date3" id="field_date3"
+                               formControlName="date3"/>
+                    </div>
+
+                    <div class="form-group image-style">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide3" for="field_imageSlide3">Image Slide 3</label>
+                        <div>
+                            <img [src]="'data:' + editForm.get('imageSlide3ContentType')!.value + ';base64,' + editForm.get('imageSlide3')!.value" style="width: 54%;" *ngIf="editForm.get('imageSlide3')!.value" alt="dernieresNouvelles image"/>
+                            <div *ngIf="editForm.get('imageSlide3')!.value" class="form-text text-danger clearfix">
+                                <span class="pull-left">{{ editForm.get('imageSlide3ContentType')!.value }}, {{ byteSize(editForm.get('imageSlide3')!.value) }}</span>
+                                <button type="button" (click)="clearInputImage('imageSlide3', 'imageSlide3ContentType', 'file_imageSlide3')" class="btn btn-secondary btn-xs pull-right">
+                                    <fa-icon icon="times"></fa-icon>
+                                </button>
+                            </div>
+                            <input type="file" id="file_imageSlide3" (change)="setFileData($event, 'imageSlide3', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                        </div>
+                        <input type="hidden" class="form-control" name="imageSlide3" id="field_imageSlide3"
+                               formControlName="imageSlide3"/>
+                        <input type="hidden" class="form-control" name="imageSlide3ContentType" id="field_imageSlide3ContentType"
+                               formControlName="imageSlide3ContentType" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore3" for="field_readMore3">Read More 3</label>
+                        <input type="text" class="form-control" name="readMore3" id="field_readMore3"
+                               formControlName="readMore3"/>
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'contenuSlide4' || isDernieresNouvellesNoExist === 'true'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4En" for="field_textSlide4En">Text Slide 4 En</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide4En" 
+                        id="field_textSlide4En" formControlName="textSlide4En" 
+                        data="textSlide4En">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4Ger" for="field_textSlide4Ger">Text Slide 4 Ger</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide4Ger" 
+                        id="field_textSlide4Ger" formControlName="textSlide4Ger" 
+                        data="textSlide4Ger">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4Fr" for="field_textSlide4Fr">Text Slide 4 Fr</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide4Fr" 
+                        id="field_textSlide4Fr" formControlName="textSlide4Fr" 
+                        data="textSlide4Fr">
+                        </ckeditor> 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide4Sw" for="field_textSlide4Sw">Text Slide 4 Sw</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide4Sw" 
+                        id="field_textSlide4Sw" formControlName="textSlide4Sw" 
+                        data="textSlide4Sw">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date4" for="field_date4">Date 4</label>
+                        <input type="text" class="form-control" name="date4" id="field_date4"
+                               formControlName="date4"/>
+                    </div>
+
+                    <div class="form-group image-style">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide4" for="field_imageSlide4">Image Slide 4</label>
+                        <div>
+                            <img [src]="'data:' + editForm.get('imageSlide4ContentType')!.value + ';base64,' + editForm.get('imageSlide4')!.value" style="width: 54%;" *ngIf="editForm.get('imageSlide4')!.value" alt="dernieresNouvelles image"/>
+                            <div *ngIf="editForm.get('imageSlide4')!.value" class="form-text text-danger clearfix">
+                                <span class="pull-left">{{ editForm.get('imageSlide4ContentType')!.value }}, {{ byteSize(editForm.get('imageSlide4')!.value) }}</span>
+                                <button type="button" (click)="clearInputImage('imageSlide4', 'imageSlide4ContentType', 'file_imageSlide4')" class="btn btn-secondary btn-xs pull-right">
+                                    <fa-icon icon="times"></fa-icon>
+                                </button>
+                            </div>
+                            <input type="file" id="file_imageSlide4" (change)="setFileData($event, 'imageSlide4', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                        </div>
+                        <input type="hidden" class="form-control" name="imageSlide4" id="field_imageSlide4"
+                               formControlName="imageSlide4"/>
+                        <input type="hidden" class="form-control" name="imageSlide4ContentType" id="field_imageSlide4ContentType"
+                               formControlName="imageSlide4ContentType" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore4" for="field_readMore4">Read More 4</label>
+                        <input type="text" class="form-control" name="readMore4" id="field_readMore4"
+                               formControlName="readMore4"/>
+                    </div>
+                </div>
+
+
+
+                <div *ngIf="eltChoisi === 'contenuSlide5' || isDernieresNouvellesNoExist === 'true'"> 
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5En" for="field_textSlide5En">Text Slide 5 En</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide5En" 
+                        id="field_textSlide5En" formControlName="textSlide5En" 
+                        data="textSlide5En">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5Ger" for="field_textSlide5Ger">Text Slide 5 Ger</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide5Ger" 
+                        id="field_textSlide5Ger" formControlName="textSlide5Ger" 
+                        data="textSlide5Ger">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5Fr" for="field_textSlide5Fr">Text Slide 5 Fr</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide5Fr" 
+                        id="field_textSlide5Fr" formControlName="textSlide5Fr" 
+                        data="textSlide5Fr">
+                        </ckeditor> 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide5Sw" for="field_textSlide5Sw">Text Slide 5 Sw</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide5Sw" 
+                        id="field_textSlide5Sw" formControlName="textSlide5Sw" 
+                        data="textSlide5Sw">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date5" for="field_date5">Date 5</label>
+                        <input type="text" class="form-control" name="date5" id="field_date5"
+                               formControlName="date5"/>
+                    </div>
+
+                    <div class="form-group image-style">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide5" for="field_imageSlide5">Image Slide 5</label>
+                        <div>
+                            <img [src]="'data:' + editForm.get('imageSlide5ContentType')!.value + ';base64,' + editForm.get('imageSlide5')!.value" style="width: 54%;" *ngIf="editForm.get('imageSlide5')!.value" alt="dernieresNouvelles image"/>
+                            <div *ngIf="editForm.get('imageSlide5')!.value" class="form-text text-danger clearfix">
+                                <span class="pull-left">{{ editForm.get('imageSlide5ContentType')!.value }}, {{ byteSize(editForm.get('imageSlide5')!.value) }}</span>
+                                <button type="button" (click)="clearInputImage('imageSlide5', 'imageSlide5ContentType', 'file_imageSlide5')" class="btn btn-secondary btn-xs pull-right">
+                                    <fa-icon icon="times"></fa-icon>
+                                </button>
+                            </div>
+                            <input type="file" id="file_imageSlide5" (change)="setFileData($event, 'imageSlide5', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                        </div>
+                        <input type="hidden" class="form-control" name="imageSlide5" id="field_imageSlide5"
+                               formControlName="imageSlide5"/>
+                        <input type="hidden" class="form-control" name="imageSlide5ContentType" id="field_imageSlide5ContentType"
+                               formControlName="imageSlide5ContentType" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore5" for="field_readMore5">Read More 5</label>
+                        <input type="text" class="form-control" name="readMore5" id="field_readMore5"
+                               formControlName="readMore5"/>
+                    </div>
+                </div>
+
+
+
+                <div *ngIf="eltChoisi === 'contenuSlide6' || isDernieresNouvellesNoExist === 'true'">  
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6En" for="field_textSlide6En">Text Slide 6 En</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide6En" 
+                        id="field_textSlide6En" formControlName="textSlide6En" 
+                        data="textSlide6En">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6Ger" for="field_textSlide6Ger">Text Slide 6 Ger</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide6Ger" 
+                        id="field_textSlide6Ger" formControlName="textSlide6Ger" 
+                        data="textSlide6Ger">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide6Fr" for="field_textSlide6Fr">Text Slide 6 Fr</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide6Fr" 
+                        id="field_textSlide6Fr" formControlName="textSlide6Fr" 
+                        data="textSlide6Fr">
+                        </ckeditor> 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Sw" for="field_textSlide6Sw">Text Slide 6 Sw</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide6Sw" 
+                        id="field_textSlide6Sw" formControlName="textSlide6Sw" 
+                        data="textSlide6Sw">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date6" for="field_date6">Date 6</label>
+                        <input type="text" class="form-control" name="date6" id="field_date6"
+                               formControlName="date6"/>
+                    </div>
+
+                    <div class="form-group image-style">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide6" for="field_imageSlide6">Image Slide 6</label>
+                        <div>
+                            <img [src]="'data:' + editForm.get('imageSlide6ContentType')!.value + ';base64,' + editForm.get('imageSlide6')!.value" style="width: 54%;" *ngIf="editForm.get('imageSlide6')!.value" alt="dernieresNouvelles image"/>
+                            <div *ngIf="editForm.get('imageSlide6')!.value" class="form-text text-danger clearfix">
+                                <span class="pull-left">{{ editForm.get('imageSlide6ContentType')!.value }}, {{ byteSize(editForm.get('imageSlide6')!.value) }}</span>
+                                <button type="button" (click)="clearInputImage('imageSlide6', 'imageSlide6ContentType', 'file_imageSlide6')" class="btn btn-secondary btn-xs pull-right">
+                                    <fa-icon icon="times"></fa-icon>
+                                </button>
+                            </div>
+                            <input type="file" id="file_imageSlide6" (change)="setFileData($event, 'imageSlide6', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                        </div>
+                        <input type="hidden" class="form-control" name="imageSlide6" id="field_imageSlide6"
+                               formControlName="imageSlide6"/>
+                        <input type="hidden" class="form-control" name="imageSlide6ContentType" id="field_imageSlide6ContentType"
+                               formControlName="imageSlide6ContentType" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore6" for="field_readMore6">Read More 6</label>
+                        <input type="text" class="form-control" name="readMore6" id="field_readMore6"
+                               formControlName="readMore6"/>
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'contenuSlide7' || isDernieresNouvellesNoExist === 'true'">    
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7En" for="field_textSlide7En">Text Slide 7 En</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide7En" 
+                        id="field_textSlide7En" formControlName="textSlide7En" 
+                        data="textSlide7En">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Ger" for="field_textSlide7Ger">Text Slide 7 Ger</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide7Ger" 
+                        id="field_textSlide7Ger" formControlName="textSlide7Ger" 
+                        data="textSlide7Ger">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Fr" for="field_textSlide7Fr">Text Slide 7 Fr</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide7Fr" 
+                        id="field_textSlide7Fr" formControlName="textSlide7Fr" 
+                        data="textSlide7Fr">
+                        </ckeditor> 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide7Sw" for="field_textSlide7Sw">Text Slide 7 Sw</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide7Sw" 
+                        id="field_textSlide7Sw" formControlName="textSlide7Sw" 
+                        data="textSlide7Sw">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date7" for="field_date7">Date 7</label>
+                        <input type="text" class="form-control" name="date7" id="field_date7"
+                               formControlName="date7"/>
+                    </div>
+
+                    <div class="form-group image-style" >
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide7" for="field_imageSlide7">Image Slide 7</label>
+                        <div>
+                            <img [src]="'data:' + editForm.get('imageSlide7ContentType')!.value + ';base64,' + editForm.get('imageSlide7')!.value" style="width: 54%;" *ngIf="editForm.get('imageSlide7')!.value" alt="dernieresNouvelles image"/>
+                            <div *ngIf="editForm.get('imageSlide7')!.value" class="form-text text-danger clearfix">
+                                <span class="pull-left">{{ editForm.get('imageSlide7ContentType')!.value }}, {{ byteSize(editForm.get('imageSlide7')!.value) }}</span>
+                                <button type="button" (click)="clearInputImage('imageSlide7', 'imageSlide7ContentType', 'file_imageSlide7')" class="btn btn-secondary btn-xs pull-right">
+                                    <fa-icon icon="times"></fa-icon>
+                                </button>
+                            </div>
+                            <input type="file" id="file_imageSlide7" (change)="setFileData($event, 'imageSlide7', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                        </div>
+                        <input type="hidden" class="form-control" name="imageSlide7" id="field_imageSlide7"
+                               formControlName="imageSlide7"/>
+                        <input type="hidden" class="form-control" name="imageSlide7ContentType" id="field_imageSlide7ContentType"
+                               formControlName="imageSlide7ContentType" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore7" for="field_readMore7">Read More 7</label>
+                        <input type="text" class="form-control" name="readMore7" id="field_readMore7"
+                               formControlName="readMore7"/>
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'contenuSlide8' || isDernieresNouvellesNoExist === 'true'">
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8En" for="field_textSlide8En">Text Slide 8 En</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide8En" 
+                        id="field_textSlide8En" formControlName="textSlide8En" 
+                        data="textSlide8En">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Ger" for="field_textSlide8Ger">Text Slide 8 Ger</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide8Ger" 
+                        id="field_textSlide8Ger" formControlName="textSlide8Ger" 
+                        data="textSlide8Ger">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Fr" for="field_textSlide8Fr">Text Slide 8 Fr</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide8Fr" 
+                        id="field_textSlide8Fr" formControlName="textSlide8Fr" 
+                        data="textSlide8Fr">
+                        </ckeditor> 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide8Sw" for="field_textSlide8Sw">Text Slide 8 Sw</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide8Sw" 
+                        id="field_textSlide8Sw" formControlName="textSlide8Sw" 
+                        data="textSlide8Sw">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date8" for="field_date8">Date 8</label>
+                        <input type="text" class="form-control" name="date8" id="field_date8"
+                               formControlName="date8"/>
+                    </div>
+
+                    <div class="form-group image-style">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide8" for="field_imageSlide8">Image Slide 8</label>
+                        <div>
+                            <img [src]="'data:' + editForm.get('imageSlide8ContentType')!.value + ';base64,' + editForm.get('imageSlide8')!.value" style="width: 54%;" *ngIf="editForm.get('imageSlide8')!.value" alt="dernieresNouvelles image"/>
+                            <div *ngIf="editForm.get('imageSlide8')!.value" class="form-text text-danger clearfix">
+                                <span class="pull-left">{{ editForm.get('imageSlide8ContentType')!.value }}, {{ byteSize(editForm.get('imageSlide8')!.value) }}</span>
+                                <button type="button" (click)="clearInputImage('imageSlide8', 'imageSlide8ContentType', 'file_imageSlide8')" class="btn btn-secondary btn-xs pull-right">
+                                    <fa-icon icon="times"></fa-icon>
+                                </button>
+                            </div>
+                            <input type="file" id="file_imageSlide8" (change)="setFileData($event, 'imageSlide8', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                        </div>
+                        <input type="hidden" class="form-control" name="imageSlide8" id="field_imageSlide8"
+                            formControlName="imageSlide8"/>
+                        <input type="hidden" class="form-control" name="imageSlide8ContentType" id="field_imageSlide8ContentType"
+                            formControlName="imageSlide8ContentType" />
+                    </div>
+
+                    <div class="form-group" *ngIf="eltChoisi === 'contenuSlide8' || eltChoisi === 'readMore8' || isDernieresNouvellesNoExist === 'true'">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore8" for="field_readMore8">Read More 8</label>
+                        <input type="text" class="form-control" name="readMore8" id="field_readMore8"
+                               formControlName="readMore8"/>
+                    </div>
+                </div>
+
+
+
+                <!-- <div *ngIf="eltChoisi === 'contenuSlide9'">
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9En" for="field_textSlide9En">Text Slide 9 En</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide9En" 
+                        id="field_textSlide9En" formControlName="textSlide9En" 
+                        data="textSlide9En">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9Ger" for="field_textSlide9Ger">Text Slide 9 Ger</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide9Ger" 
+                        id="field_textSlide9Ger" formControlName="textSlide9Ger" 
+                        data="textSlide9Ger">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9Fr" for="field_textSlide9Fr">Text Slide 9 Fr</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide9Fr" 
+                        id="field_textSlide9Fr" formControlName="textSlide9Fr" 
+                        data="textSlide9Fr">
+                        </ckeditor> 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide9Sw" for="field_textSlide9Sw">Text Slide 9 Sw</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide9Sw" 
+                        id="field_textSlide9Sw" formControlName="textSlide9Sw" 
+                        data="textSlide9Sw">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide9" for="field_imageSlide9">Image Slide 9</label>
+                        <div>
+                            <img [src]="'data:' + editForm.get('imageSlide9ContentType')!.value + ';base64,' + editForm.get('imageSlide9')!.value" style="width: 54%;" *ngIf="editForm.get('imageSlide9')!.value" alt="dernieresNouvelles image"/>
+                            <div *ngIf="editForm.get('imageSlide9')!.value" class="form-text text-danger clearfix">
+                                <span class="pull-left">{{ editForm.get('imageSlide9ContentType')!.value }}, {{ byteSize(editForm.get('imageSlide9')!.value) }}</span>
+                                <button type="button" (click)="clearInputImage('imageSlide9', 'imageSlide9ContentType', 'file_imageSlide9')" class="btn btn-secondary btn-xs pull-right">
+                                    <fa-icon icon="times"></fa-icon>
+                                </button>
+                            </div>
+                            <input type="file" id="file_imageSlide9" (change)="setFileData($event, 'imageSlide9', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                        </div>
+                        <input type="hidden" class="form-control" name="imageSlide9" id="field_imageSlide9"
+                               formControlName="imageSlide9"/>
+                        <input type="hidden" class="form-control" name="imageSlide9ContentType" id="field_imageSlide9ContentType"
+                               formControlName="imageSlide9ContentType" />
+                    </div>
+                </div>
+
+
+                <div *ngIf="eltChoisi === 'contenuSlide10'">
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide10En" for="field_textSlide10En">Text Slide 10 En</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide10En" 
+                        id="field_textSlide10En" formControlName="textSlide10En" 
+                        data="textSlide10En">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide10Ger" for="field_textSlide10Ger">Text Slide 10 Ger</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide10Ger" 
+                        id="field_textSlide10Ger" formControlName="textSlide10Ger" 
+                        data="textSlide10Ger">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide10Fr" for="field_textSlide10Fr">Text Slide 10 Fr</label>                      
+                        <ckeditor [editor]="Editor" name="textSlide10Fr" 
+                        id="field_textSlide10Fr" formControlName="textSlide10Fr" 
+                        data="textSlide10Fr">
+                        </ckeditor> 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.textSlide10Sw" for="field_textSlide10Sw">Text Slide 10 Sw</label>                       
+                        <ckeditor [editor]="Editor" name="textSlide10Sw" 
+                        id="field_textSlide10Sw" formControlName="textSlide10Sw" 
+                        data="textSlide10Sw">
+                        </ckeditor>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.imageSlide10" for="field_imageSlide10">Image Slide 10</label>
+                        <div>
+                            <img [src]="'data:' + editForm.get('imageSlide10ContentType')!.value + ';base64,' + editForm.get('imageSlide10')!.value" style="width: 54%;" *ngIf="editForm.get('imageSlide10')!.value" alt="dernieresNouvelles image"/>
+                            <div *ngIf="editForm.get('imageSlide10')!.value" class="form-text text-danger clearfix">
+                                <span class="pull-left">{{ editForm.get('imageSlide10ContentType')!.value }}, {{ byteSize(editForm.get('imageSlide10')!.value) }}</span>
+                                <button type="button" (click)="clearInputImage('imageSlide10', 'imageSlide10ContentType', 'file_imageSlide10')" class="btn btn-secondary btn-xs pull-right">
+                                    <fa-icon icon="times"></fa-icon>
+                                </button>
+                            </div>
+                            <input type="file" id="file_imageSlide10" (change)="setFileData($event, 'imageSlide10', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                        </div>
+                        <input type="hidden" class="form-control" name="imageSlide10" id="field_imageSlide10"
+                               formControlName="imageSlide10"/>
+                        <input type="hidden" class="form-control" name="imageSlide10ContentType" id="field_imageSlide10ContentType"
+                               formControlName="imageSlide10ContentType" />
+                    </div>
+                </div> 
+            </div> -->
+            
+
+                
+                <!-- <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore9" for="field_readMore9">Read More 9</label>
+                    <input type="text" class="form-control" name="readMore9" id="field_readMore9"
+                           formControlName="readMore9"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.readMore10" for="field_readMore10">Read More 10</label>
+                    <input type="text" class="form-control" name="readMore10" id="field_readMore10"
+                           formControlName="readMore10"/>
+                </div> -->
+
+
+                <!-- <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date9" for="field_date9">Date 9</label>
+                    <input type="text" class="form-control" name="date9" id="field_date9"
+                           formControlName="date9"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="iotaOrignAdminApp.dernieresNouvelles.date10" for="field_date10">Date 10</label>
+                    <input type="text" class="form-control" name="date10" id="field_date10"
+                           formControlName="date10"/>
+                </div> -->
             </div>
 
             <div>

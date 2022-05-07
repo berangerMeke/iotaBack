@@ -1,0 +1,31 @@
+{
+  "iotaOrignAdminApp": {
+    "privacyPolicy": {
+      "home": {
+        "title": "Privacy policy Page",
+        "createLabel": "Create section",
+        "EditLabel": "Update Section",
+        "consigne": "Click on the item you want to update",
+        "notFound": "Empty section",
+        "backButton": "Back"
+      },
+      "created": "A new Privacy Policy is created with identifier {{ param }}",
+      "updated": "A Privacy Policy is updated with identifier {{ param }}",
+      "deleted": "A Privacy Policy is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Privacy Policy {{ id }}?"
+      },
+      "detail": {
+        "title": "Privacy Policy"
+      },
+      "titrePrivacyPolicyEn": "Title in English",
+      "titrePrivacyPolicyGer": "Title in German",
+      "titrePrivacyPolicyFr": "Title in French",
+      "titrePrivacyPolicySw": "Title in Swahili",
+      "contenuPrivacyPolicyEn": "Content in English",
+      "contenuPrivacyPolicyGer": "Content in German",
+      "contenuPrivacyPolicyFr": "Content in French",
+      "contenuPrivacyPolicySw": "Content in Swahili"
+    }
+  }
+}

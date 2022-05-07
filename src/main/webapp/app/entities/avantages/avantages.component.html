@@ -1,28 +1,45 @@
 <div>
-    <h2 id="page-heading">
-        <!-- <span jhiTranslate="iotaOrignAdminApp.avantages.home.title">Avantages</span> -->
-        <span>Benefits  Section</span>&nbsp;&nbsp; | &nbsp;&nbsp;
-        <span style="color: rgb(82, 82, 82); font-size:60%">Cliquez sur l'élément que vous souhaitez mettre à jour.</span>
-
-        <button *ngIf="avantages.length == 0"  id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-avantages" [routerLink]="['/avantages/new']">
-            <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="iotaOrignAdminApp.avantages.home.createLabel">
-            Create a new Avantages
+    <h3 id="page-heading" class="intro-button">
+        <a> 
+           <span (click)="back()">
+                <img src="../../../content/images/iotaOrign-images/arrow-left.png" width="3%" alt="back">
+                <span class="arrow-back" jhiTranslate="iotaOrignAdminApp.avantages.home.backButton">Back</span>    
             </span>
+        </a>
+        &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span jhiTranslate="iotaOrignAdminApp.avantages.home.title">About us Section</span>
+         &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span *ngIf="avantages.length > 0" style="color: rgb(82, 82, 82); font-size:60%" jhiTranslate="iotaOrignAdminApp.avantages.home.consigne">
+            Cliquez sur l'élément que vous souhaitez mettre à jour.
+        </span>    
+
+        <button *ngIf="avantages.length < 1" id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-avantages" 
+            [routerLink]="['/avantages/new']"
+            (click)="createAvantages()">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="iotaOrignAdminApp.avantages.home.createLabel">Create a new A Propos</span>
         </button>
-    </h2>
+        &nbsp;&nbsp;&nbsp;
+        <button *ngIf="avantages.length >= 1"  type="submit" (click)="delete(avantages[0])"
+                class="btn btn-danger btn-sm">
+            <fa-icon icon="times"></fa-icon>
+            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+        </button>
+    </h3>
 
     <hr>
 
-    <jhi-alert-error></jhi-alert-error>
+    <!-- <jhi-alert-error></jhi-alert-error> -->
 
     <jhi-alert></jhi-alert>
 
     <div class="alert alert-warning" id="no-result" *ngIf="avantages?.length === 0">
         <span jhiTranslate="iotaOrignAdminApp.avantages.home.notFound">No avantages found</span>
     </div>
-<!-- 
-    <div class="table-responsive" id="entities" *ngIf="avantages?.length > 0">
+
+
+
+    <!-- <div class="table-responsive" id="entities" *ngIf="avantages?.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
@@ -152,7 +169,6 @@
 
 
 
-
 <div>
 
         <!-- START THE SECTION 4 : THE BENEFITS  -->
@@ -164,7 +180,11 @@
                         class="display-3  fw-bold display-4--title anim-elt-11 title-style"
                         (click)="update('titre')">
                             <a [routerLink]="['/avantages', avantages[0].id, 'edit']">
-                                {{ avantages[0].titreFr }}
+                                <!-- {{ avantages[0].titreFr }} -->
+                                <span *ngIf="languageService.currentLang === 'fr'">{{avantages[0].titreFr}}</span>
+                                <span *ngIf="languageService.currentLang === 'en'">{{avantages[0].titreEn}}</span>
+                                <span *ngIf="languageService.currentLang === 'es'">{{avantages[0].titreSw}}</span>
+                                <span *ngIf="languageService.currentLang === 'de'">{{avantages[0].titreGer}}</span>
                             </a> 
                         </h1>
 
@@ -172,7 +192,11 @@
                         (click)="update('soustitre')">
                             <a [routerLink]="['/avantages', avantages[0].id, 'edit']" 
                             class="sousTitre-style">
-                                {{ avantages[0].sousTitreFr }}
+                                <!-- {{ avantages[0].sousTitreFr }} -->
+                                <span *ngIf="languageService.currentLang === 'fr'">{{avantages[0].sousTitreFr}}</span>
+                                <span *ngIf="languageService.currentLang === 'en'">{{avantages[0].sousTitreEn}}</span>
+                                <span *ngIf="languageService.currentLang === 'es'">{{avantages[0].sousTitreSw}}</span>
+                                <span *ngIf="languageService.currentLang === 'de'">{{avantages[0].sousTitreGer}}</span>
                             </a> 
                         </h4>
 
@@ -183,46 +207,40 @@
                                     <span class="item-icon"><i class="fas fa-check"></i></span>
                                     <a class="display-4--description anim-elt-10 text-vide"
                                     (click)="update('paragraphe1')"
-                                    [routerLink]="['/avantages', avantages[0].id, 'edit']">
-                                        {{ avantages[0].textParagraphe1FR }}
-                                    </a>
-                                </li>
-                                <li *ngIf="avantages[0]" class="anim-elt-14">
-                                    <span class="item-icon"><i class="fas fa-check"></i></span>
-                                    <a class="display-4--description anim-elt-10 text-vide"
-                                    (click)="update('paragraphe2')"
-                                    [routerLink]="['/avantages', avantages[0].id, 'edit']">
-                                        {{ avantages[0].textParagraphe2Fr }} 
-                                    </a>
-                                </li>
-                                <li class="anim-elt-15">
-                                    <span class="item-icon"><i class="fas fa-check"></i></span>
-                                    <a class="display-4--description anim-elt-10 text-vide"
-                                    (click)="update('paragraphe3')"
-                                    [routerLink]="['/avantages', avantages[0].id, 'edit']">
-                                        {{ avantages[0].textParagraphe3FR }} 
-                                    </a>
-                                </li>
-                                <li class="anim-elt-16">
-                                    <span class="item-icon"><i class="fas fa-check"></i></span>
-                                    <a class="display-4--description anim-elt-10 text-vide"
-                                    (click)="update('paragraphe4')"
-                                    [routerLink]="['/avantages', avantages[0].id, 'edit']">
-                                        {{ avantages[0].textParagraphe4Fr }}
+                                    [routerLink]="['/avantages', avantages[0].id, 'edit']">               
+                                    <!-- <div [innerHTML]="avantages[0].textParagraphe1FR"></div>  -->                                      
+                                    <div *ngIf="languageService.currentLang === 'fr'" [innerHTML]="avantages[0].textParagraphe1FR"></div>
+                                    <div *ngIf="languageService.currentLang === 'en'" [innerHTML]="avantages[0].textParagraphe1En"></div>
+                                    <div *ngIf="languageService.currentLang === 'es'" [innerHTML]="avantages[0].textParagraphe1Sw"></div>
+                                    <div *ngIf="languageService.currentLang === 'de'" [innerHTML]="avantages[0].textParagraphe1Ger"></div>
                                     </a>
                                 </li>
                             </ul>
                         </p>
                     </div>
+
                     <div class="col-md-6 display-4--img-box text-end">
-                            <a *ngIf="avantages[0]" class="brand d-inline-block mb-2 anim-elt-1" 
+                            <!-- <a *ngIf="avantages[0]" class="brand d-inline-block mb-2 anim-elt-1" 
                             (click)="update('image')"
                             [routerLink]="['/avantages', avantages[0].id, 'edit']" 
                             >
                                 <a *ngIf="avantages[0].image">
                                     <img [src]="'data:' + avantages[0].imageContentType + ';base64,' + avantages[0].image" style="max-height: 390px;" alt="accueil image"/>
                                 </a>
-                            </a>                                    
+                            </a>  -->                          
+
+                            <div >
+                                <a *ngIf="avantages[0]" class="brand d-inline-block mb-2 anim-elt-1" 
+                                (click)="update('image')"
+                                [routerLink]="['/avantages', avantages[0].id, 'edit']" 
+                                >
+                                    <a *ngIf="avantages[0].image">
+                                        <img [src]="'data:' + avantages[0].imageContentType + ';base64,' + avantages[0].image" style="width: 80%;" alt="accueil image"/>
+                                    </a>
+                                </a>                               
+                            </div>
+
+
                     </div>
                 </div>
             </div>
