@@ -53,7 +53,7 @@ spring:
     host: smtp.iotaorigin.de
     port: 587
     username: hello@iotaorigin.de
-    password: toutou123576
+    password: password_code
   thymeleaf:
     cache: true
 

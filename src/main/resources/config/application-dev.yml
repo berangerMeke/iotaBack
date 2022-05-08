@@ -60,10 +60,10 @@ spring:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
   mail:
-    host: smtp.gmail.com
+    host: smtp.iotaorigin.de
     port: 587
-    username: meke.branger@gmail.com
-    password: ihokrmrjxlctxlin
+    username: hello@iotaorigin.de
+    password: password_code
     protocol: smtp
     tls: true
     properties.mail.smtp:
